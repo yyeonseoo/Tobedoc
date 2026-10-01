@@ -27,7 +27,15 @@ PROFILE = ("Match these measured speech statistics of the speaker: 'er' ≈ {er_
            "immediate word repetitions ≈ {rep_per100:.1f} per 100 words, truncated word fragments ≈ {frag_per100:.1f} per 100 words, "
            "mean sentence length ≈ {sent_len_mean:.0f} words (sd {sent_len_sd:.0f}), moving-average type-token ratio ≈ {mattr:.2f}. "
            "Spontaneous spoken register: include false starts, self-corrections, and incomplete sentences at a similar rate "
-           "to the examples. Do not write polished prose.")
+           "to the examples. Do not write polished prose. {filler_rule} "
+           "Do not reuse word sequences from the examples; retell content in different wording.")
+# 파일럿 r1 이후 추가 (사용자 승인 옵션 2). 저채움말 화자 = 총 filler_per100 < LOW_FILLER_FACTOR x 그룹 응답 5백분위
+# (26CT11 1.70x, 02AR17 1.89x, 28CT11 2.13x; 다음 화자 23CT18 2.93x와 간격이 커서 2.5로 둠. CL은 5백분위가 0이라 해당 없음)
+LOW_FILLER_FACTOR = 2.5
+FILLER_FLOOR = ("Match the speaker's measured filler rates ('er', 'erm', other fillers) as a floor, not a ceiling: "
+                "do not go below them.")
+FILLER_EXACT = ("This speaker's measured filler rates are already near the low end for the group: aim to match them "
+                "exactly, and do not go below them.")
 
 
 def v1_windows(sents, prompt):
@@ -44,6 +52,9 @@ def v1_windows(sents, prompt):
 def plan_v2():
     corpus = pd.read_parquet(os.path.join(ROOT, CFG['paths']['corpus']))
     prof = pd.read_parquet(os.path.join(ROOT, 'data/processed/speaker_profiles.parquet')).set_index('speaker_id')
+    p5 = pd.read_parquet(os.path.join(ROOT, 'data/processed/response_profiles.parquet')).groupby('group').filler_per100.quantile(.05)
+    prof['filler_rule'] = [FILLER_EXACT if p5[g] > 0 and f < LOW_FILLER_FACTOR * p5[g] else FILLER_FLOOR
+                           for g, f in zip(prof.group, prof.filler_per100)]
     v1 = generate.plan()
     rng = np.random.default_rng(CFG['seed'] + 1)
     lo, hi = G['seed_segment_sentences']
@@ -102,7 +113,8 @@ def plan_v2():
             out.append(dict(sample_id=p['sample_id'].replace('syn_', 'syn2_'), seed_speaker_id=sid, group=p['group'],
                             temperature=p['temperature'], target_words=p['target_words'],
                             seed_windows=[win[w][0] for w in combo],
-                            profile={k2: round(float(v), 3) for k2, v in pr.items() if k2 not in ('group', 'n_responses', 'n_words')},
+                            profile={k2: round(float(v), 3) for k2, v in pr.items() if k2 not in ('group', 'n_responses', 'n_words', 'filler_rule')},
+                            filler_rule='exact' if pr['filler_rule'] == FILLER_EXACT else 'floor',
                             prompt=head + '\n\n' + PROFILE.format(**pr) + '\n\nTarget length:' + tail))
     return out, pd.DataFrame(overlap)
 
