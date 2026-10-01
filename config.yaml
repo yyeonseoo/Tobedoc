@@ -31,3 +31,30 @@ validate:
   cv_folds: 5
   near_dup_cosine: 0.95
   fillers: [er, erm, um, uh, mm, mhm, ah, oh, like, "you know", "i mean", "kind of", "sort of"]
+
+# ---------------------------------------------------------------------------
+# 2차 시도 판정 기준 — 선고정 (2차 생성 전에 커밋됨, 이후 변경 금지). 판정 코드: src/judge.py
+# 지표는 1차 validate.py 산출(validation_metrics.json)을 그대로 사용한다.
+thresholds:
+  fidelity:
+    # 대상 = 실제에서 응답 단위 BH q < 0.05 인 CL−CO 차이 피처 (1차: 8개)
+    alpha: 0.05
+    pass_min_direction_match: 6     # 사용자 제안값: 8개 중 6개 이상 방향 일치 = 합격
+    caution_min_direction_match: 4  # [추가] 4-5개 = 주의, 3개 이하 = 불합격. 근거: 제안안에 주의 구간이 없어 절반 보존을 경계로 둠
+    # 가짜 효과 = 실제 q >= alpha 인데 합성 q < alpha. 1개라도 있으면 개수 무관 불합격 (사용자 제안값)
+    spurious_effect_fails: true
+  diversity:
+    # 지표 = |합성 간 평균 pairwise cos − 실제 간 평균| (CL, CO 각각; 둘 중 큰 값으로 판정), 준중복 = 1차 정의(cos>=0.95 또는 5-gram Jaccard>=0.3)
+    pass_max_abs_diff: 0.05         # 사용자 제안값 (준중복 0 조건과 함께)
+    caution_max_abs_diff: 0.15      # [추가] 0.05-0.15 = 주의, 초과 또는 준중복 1쌍 이상 = 불합격. 근거: 1차 CO 차이 0.136을 '주의'로 본 판단과 일관
+  memorization:
+    # 지표 = pooled 5-gram overlap(합성→전체 실제) / 기준선(실제→다른 화자)
+    pass_max_ratio: 1.5             # 사용자 제안값
+    caution_max_ratio: 2.5          # 사용자 제안값, 초과 = 불합격
+  discriminability:
+    # 지표 = TF-IDF+로지스틱 5-fold CV AUC 평균
+    pass_max_auc: 0.75              # 사용자 제안값
+    caution_max_auc: 0.85           # 사용자 제안값, 초과 = 불합격 (2차 최종에서 초과 시 중단·보고)
+  stop_rules:
+    pilot_auc_worse_than: 0.94      # 2차 파일럿 AUC가 1차 전체 AUC보다 크면 전체 생성 전 중단
+    pilot_max_filter_reject_rate: 0.5

@@ -24,6 +24,13 @@ from preprocess import CFG, ROOT, clean, nlp, segment
 V = CFG['validate']
 SEED = CFG['seed']
 TAG = sys.argv[1] if len(sys.argv) > 1 else ''
+# 실행별 입출력 경로만 다르다 (평가 로직은 공통). TAG -> (합성 디렉터리, 리포트 파일, 제목, 산출물 접두어)
+RUNS = {'': ('synthetic', '03_validation.md', '03. 검증 (Step 3)', ''),
+        'pilot': ('synthetic', '02_pilot_preview.md', '02. 파일럿 검증 미리보기', 'pilot_'),
+        'v2': ('synthetic/v2', '05_validation_v2.md', '05. 2차 검증', 'v2_'),
+        'v2pilot': ('synthetic/v2', '05_pilot_preview_v2.md', '05. 2차 파일럿 검증 미리보기', 'v2pilot_')}
+SYN_DIR, REPORT_NAME, TITLE, PRE = RUNS[TAG]
+PILOT = TAG.endswith('pilot')
 REP = os.path.join(ROOT, CFG['paths']['reports'])
 FIG = os.path.join(REP, 'figures')
 os.makedirs(FIG, exist_ok=True)
@@ -166,16 +173,16 @@ def main():
     rng = np.random.default_rng(SEED)
     corpus = pd.read_parquet(os.path.join(ROOT, CFG['paths']['corpus']))
     real = corpus[corpus.substantive][['speaker_id', 'group', 'text']].reset_index(drop=True)
-    syn = pd.read_parquet(os.path.join(ROOT, CFG['paths']['synthetic_dir'], 'synthetic_corpus.parquet'))
+    syn = pd.read_parquet(os.path.join(ROOT, SYN_DIR, 'synthetic_corpus.parquet'))
     syn = syn.rename(columns={'seed_speaker_id': 'speaker_id'})[['sample_id', 'speaker_id', 'group', 'temperature', 'round', 'text']]
     syn['text'] = syn.text.map(clean)
-    if TAG == 'pilot':  # 파일럿: 생성된 시드 화자만 실제 쪽도 동일하게 제한
+    if PILOT:  # 파일럿: 생성된 시드 화자만 실제 쪽도 동일하게 제한
         real = real[real.speaker_id.isin(syn.speaker_id.unique())].reset_index(drop=True)
     model = SentenceTransformer(V['sbert_model'], device='cpu')
     R, ER = build(real, model)
     S, ES = build(syn, model)
     M, out = {}, []
-    pre = 'pilot_' if TAG else ''
+    pre = PRE
 
     # ============ 3a Fidelity
     out.append('## 3a. Fidelity (분포 충실도)\n')
@@ -443,17 +450,17 @@ def main():
                             index=['전체 (TF-IDF)', 'CL만', 'CO만', '기준선: log(토큰 수)만']).to_markdown())
     out.append(f'\n**합성 쪽으로 기우는 상위 피처**: {top_syn}\n\n**실제 쪽으로 기우는 상위 피처**: {top_real}\n')
 
-    title = '02. 파일럿 검증 미리보기' if TAG == 'pilot' else '03. 검증 (Step 3)'
+    title = TITLE
     head = (f'# {title}\n\n재현: `python src/validate.py {TAG}` (seed {SEED}). 실제 응답 {len(R)}개 '
             f'(CL {int((R.group == "CL").sum())}/CO {int((R.group == "CO").sum())}), 합성 {len(S)}개 '
             f'(CL {int((S.group == "CL").sum())}/CO {int((S.group == "CO").sum())}).\n'
-            + ('\n파일럿: 실제 쪽도 파일럿 시드 화자 4명으로 제한. 표본이 작아 검정력은 낮다. 이상 징후 확인 용도.\n' if TAG else '') + '\n')
-    name = '02_pilot_preview.md' if TAG == 'pilot' else '03_validation.md'
+            + ('\n파일럿: 실제 쪽도 파일럿 시드 화자 4명으로 제한. 표본이 작아 검정력은 낮다. 이상 징후 확인 용도.\n' if PILOT else '') + '\n')
+    name = REPORT_NAME
     open(os.path.join(REP, name), 'w', encoding='utf8').write(head + '\n'.join(out))
     json.dump(M, open(os.path.join(REP, f'{pre}validation_metrics.json'), 'w', encoding='utf8'), ensure_ascii=False,
               indent=1, default=lambda v: v.item() if hasattr(v, 'item') else str(v))
     S[['sample_id', 'speaker_id', 'group', 'temperature', 'ov_all', 'ov_seed', 'longest_span']].to_csv(
-        os.path.join(ROOT, CFG['paths']['synthetic_dir'], f'{pre}per_sample_overlap.csv'), index=False)
+        os.path.join(ROOT, SYN_DIR, f'{pre}per_sample_overlap.csv'), index=False)
     print(f'wrote reports/{name}')
 
 
