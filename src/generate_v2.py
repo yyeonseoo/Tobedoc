@@ -133,8 +133,38 @@ def prepare():
           f"zero-overlap samples {(ov.seed_sent_overlap_with_v1 == 0).mean():.0%}")
 
 
+# 치환 카탈로그: 시드에 나오면 출력에 쓰지 않을 표현. identifier = 인물·작품·기관·지명·상호·약물명(항상 치환),
+# lexical = 1명 화자 특이어(감사가 화자 수를 다시 세서 판정). 1차 substitutions.yaml의 항목 + 2차 시드에서 새로 확인한 항목.
+CATALOG = {
+    'identifier': ['NHS', 'NIHR', 'MSc', 'Oxford', 'Manchester', 'Gauguin', 'Lawrence', 'Maugham', 'Eliot', 'Nash',
+                   'Beautiful Mind', 'Eminem', 'Tupac', 'Drake', 'Mercury', 'Defsman', 'Portillo', 'KISS FM', 'Facebook',
+                   'Cantona', 'Warcraft', 'Conflict of Nations', 'Dungeons and Dragons', 'Sarat', 'Home Office', 'Argos',
+                   'Nikon', 'PyCharm', 'stack overflow', 'Olympic', 'olanzapine', 'clozapine', 'clozaril', 'Risperdal',
+                   'winter comet', 'lemon pepper', 'center cannot hold', 'Shakespeare', 'midlands', 'Rodney'],
+    'lexical': ['accidie', 'apotropaic', 'stroked', 'deaf', 'perfumed', 'lifescape', 'spoonerism', 'pleisure',
+                'Paintshop', 'JQuery', 'Netbeans', 'Notepad'],
+}
+
+
+def build_substitutions():
+    """시드 텍스트에 카탈로그 표현이 있는 샘플마다 치환 항목을 자동 기록 → synthetic/v2/substitutions.yaml (ingest 감사 대상)."""
+    import yaml
+    out = {}
+    for l in open(os.path.join(V2, 'prompts.jsonl'), encoding='utf8'):
+        p = json.loads(l)
+        seed = p['prompt'].split('\n\n', 1)[1].rsplit('\n\nMatch these measured', 1)[0]
+        items = [dict(term=t, replacement='-', category=c) for c, ts in CATALOG.items() for t in ts if generate.has(seed, t)]
+        if items and os.path.exists(os.path.join(V2, 'manual_responses', p['sample_id'] + '.txt')):
+            out[p['sample_id']] = items
+    with open(os.path.join(V2, 'substitutions.yaml'), 'w', encoding='utf8') as f:
+        f.write('# 자동 생성 (generate_v2.build_substitutions): 시드에 나온 카탈로그 표현. ingest 감사가 준수 여부를 검증.\n')
+        yaml.safe_dump(out, f, allow_unicode=True, sort_keys=True)
+    return out
+
+
 def ingest():
     import post_filter
+    build_substitutions()
     st = post_filter.status_map()
     generate.ingest(syn=V2, status=lambda sid: st.get(sid, 'unfiltered'), extra_log=post_filter.rejected_log())
 
