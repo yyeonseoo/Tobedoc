@@ -100,14 +100,14 @@ def has(text, term):
     return re.search(r'\b' + re.escape(term.lower()) + r'\b', text.lower()) is not None
 
 
-def substitution_audit():
+def substitution_audit(syn=SYN):
     """substitutions.yaml의 각 항목에 빈도 규칙(lexical) 또는 프라이버시 규칙(identifier)을 적용하고 최종 텍스트로 준수를 검증."""
-    subs = yaml.safe_load(open(os.path.join(SYN, 'substitutions.yaml'), encoding='utf8'))
+    subs = yaml.safe_load(open(os.path.join(syn, 'substitutions.yaml'), encoding='utf8')) or {}
     corpus = pd.read_parquet(os.path.join(ROOT, CFG['paths']['corpus']))
     spk_text = corpus.groupby(['group', 'speaker_id']).text.apply(' '.join)
     rows = []
     for sid, items in subs.items():
-        text = open(os.path.join(RESP, sid + '.txt'), encoding='utf8').read()
+        text = open(os.path.join(syn, 'manual_responses', sid + '.txt'), encoding='utf8').read()
         for it in items:
             users = [s for (g, s), t in spk_text.items() if has(t, it['term'])]
             ncl = sum(1 for (g, s), t in spk_text.items() if g == 'CL' and has(t, it['term']))
@@ -122,39 +122,43 @@ def substitution_audit():
                              n_speakers_CL=ncl, n_speakers_CO=len(users) - ncl, decision=decision,
                              replacement=None if decision.startswith('kept') else it['replacement'],
                              term_in_final_text=present, compliant=present == decision.startswith('kept')))
-    audit = pd.DataFrame(rows)
-    audit.to_csv(os.path.join(SYN, 'substitution_audit.csv'), index=False)
-    bad = audit[~audit.compliant]
+    audit = pd.DataFrame(rows, columns=['sample_id', 'term', 'category', 'n_speakers', 'n_speakers_CL', 'n_speakers_CO',
+                                        'decision', 'replacement', 'term_in_final_text', 'compliant'])
+    audit.to_csv(os.path.join(syn, 'substitution_audit.csv'), index=False)
+    bad = audit[~audit.compliant.astype(bool)]
     assert bad.empty, '치환 규칙 위반:\n' + bad.to_string()
     return {sid: d.drop(columns='sample_id').to_dict('records') for sid, d in audit.groupby('sample_id')}
 
 
-def ingest():
-    ps = [json.loads(l) for l in open(os.path.join(SYN, 'prompts.jsonl'), encoding='utf8')]
-    subs = substitution_audit()
+def ingest(syn=SYN, status=None, extra_log=()):
+    """status: sample_id -> 사후 필터 상태('pass' 등). 주어지면 'pass'만 parquet에 넣는다 (2차). extra_log: 탈락 시도 기록."""
+    ps = [json.loads(l) for l in open(os.path.join(syn, 'prompts.jsonl'), encoding='utf8')]
+    subs = substitution_audit(syn)
     pilot = {s for v in G['pilot_speakers'].values() for s in v}
     rows, log = [], []
     for p in ps:
-        f = os.path.join(RESP, p['sample_id'] + '.txt')
+        f = os.path.join(syn, 'manual_responses', p['sample_id'] + '.txt')
         if not os.path.exists(f):
             continue  # 아직 생성 안 됨 (파일럿 등)
         text = open(f, encoding='utf8').read().strip()
         ts = datetime.datetime.fromtimestamp(os.path.getmtime(f)).isoformat(timespec='seconds')
         refused = text.startswith('REFUSED')
+        fstat = status(p['sample_id']) if status else 'pass'
         rnd = 'pilot' if p['seed_speaker_id'] in pilot else 'full'
         log.append(dict(sample_id=p['sample_id'], timestamp=ts, mode=G['mode'], model='claude-opus-5-5',
                         params=dict(temperature_nominal=p['temperature'], target_words=p['target_words'],
-                                    seed_windows=p['seed_windows'], seed=CFG['seed'], round=rnd),
-                        prompt=p['prompt'], response=text, status='refused' if refused else 'ok',
+                                    seed_windows=p['seed_windows'], seed=CFG['seed'], round=rnd,
+                                    **({'profile': p['profile']} if 'profile' in p else {})),
+                        prompt=p['prompt'], response=text, status='refused' if refused else ('ok' if fstat == 'pass' else f'filter:{fstat}'),
                         substitutions=subs.get(p['sample_id'], [])))
-        if not refused:
+        if not refused and fstat == 'pass':
             rows.append(dict(sample_id=p['sample_id'], seed_speaker_id=p['seed_speaker_id'], group=p['group'],
                              temperature=p['temperature'], text=' '.join(text.split()), generated_at=ts,
                              round=rnd, synthetic=True))
-    with open(os.path.join(SYN, 'generation_log.jsonl'), 'w', encoding='utf8') as f:
-        for r in log:
+    with open(os.path.join(syn, 'generation_log.jsonl'), 'w', encoding='utf8') as f:
+        for r in list(extra_log) + log:
             f.write(json.dumps(r, ensure_ascii=False) + '\n')
-    pd.DataFrame(rows).to_parquet(os.path.join(SYN, 'synthetic_corpus.parquet'), index=False)
+    pd.DataFrame(rows).to_parquet(os.path.join(syn, 'synthetic_corpus.parquet'), index=False)
     n_ref = sum(r['status'] == 'refused' for r in log)
     print(f'ingested {len(log)} ({n_ref} refused, rate {n_ref / max(len(log), 1):.1%}), kept {len(rows)}')
 
