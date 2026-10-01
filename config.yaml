@@ -58,3 +58,18 @@ thresholds:
   stop_rules:
     pilot_auc_worse_than: 0.94      # 2차 파일럿 AUC가 1차 전체 AUC보다 크면 전체 생성 전 중단
     pilot_max_filter_reject_rate: 0.5
+
+# ---------------------------------------------------------------------------
+# 3차 시도: OpenAI Chat Completions 실제 샘플링 (src/generate_v3.py). 키는 .env의 OPENAI_API_KEY에서만 읽는다.
+generate_v3:
+  model: gpt-4o                 # 예상 비용 > hard_limit_usd 이면 gpt-4o-mini로 내림
+  fallback_model: gpt-4o-mini
+  temperature: 1.0
+  max_tokens_factor: 2.5        # max_tokens = target_words x factor + 50 (잘림 방지 여유)
+  hard_limit_usd: 5.0           # 누적 추정 지출이 이 값에 도달하면 즉시 중단
+  # 단가 (USD / 1M tokens, 표준 처리, 2026-10-01 developers.openai.com/api/docs/pricing 확인)
+  pricing:
+    gpt-4o: {input: 2.50, output: 10.00}
+    gpt-4o-mini: {input: 0.15, output: 0.60}
+  max_attempts: 3               # 최초 + 재샘플링 2회 (post_filter.MAX_ATTEMPTS와 동일)
+  api_retry: 1                  # API 오류·거부 시 같은 시도 내 재호출 1회

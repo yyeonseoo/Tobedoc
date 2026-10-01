@@ -1,3 +1,6 @@
+# API 키 (절대 커밋 금지)
+.env
+.env.*
 # 원본 코퍼스 (라이선스 미확인, 재배포 금지)
 DAIS-C-Annotated-Upload/
 # 전처리 산출물 (원본 텍스트 포함)
@@ -11,5 +14,8 @@ reports/05_validation_v2.md
 reports/05_pilot_preview_v2.md
 # 탈락 사유에 시드(원본)와 일치한 6-gram이 기록됨
 reports/04_post_filter.md
+reports/04_post_filter_v3.md
+reports/06_validation_v3.md
+reports/06_pilot_preview_v3.md
 __pycache__/
 *.pyc

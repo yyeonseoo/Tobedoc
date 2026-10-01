@@ -28,7 +28,9 @@ TAG = sys.argv[1] if len(sys.argv) > 1 else ''
 RUNS = {'': ('synthetic', '03_validation.md', '03. 검증 (Step 3)', ''),
         'pilot': ('synthetic', '02_pilot_preview.md', '02. 파일럿 검증 미리보기', 'pilot_'),
         'v2': ('synthetic/v2', '05_validation_v2.md', '05. 2차 검증', 'v2_'),
-        'v2pilot': ('synthetic/v2', '05_pilot_preview_v2.md', '05. 2차 파일럿 검증 미리보기', 'v2pilot_')}
+        'v2pilot': ('synthetic/v2', '05_pilot_preview_v2.md', '05. 2차 파일럿 검증 미리보기', 'v2pilot_'),
+        'v3': ('synthetic/v3', '06_validation_v3.md', '06. 3차 검증', 'v3_'),
+        'v3pilot': ('synthetic/v3', '06_pilot_preview_v3.md', '06. 3차 파일럿 검증 미리보기', 'v3pilot_')}
 SYN_DIR, REPORT_NAME, TITLE, PRE = RUNS[TAG]
 PILOT = TAG.endswith('pilot')
 REP = os.path.join(ROOT, CFG['paths']['reports'])
