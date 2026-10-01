@@ -100,7 +100,8 @@ def plan_v2():
             while True:
                 combo = tuple(sorted(int(order[(pos + t) % len(order)]) for t in range(k)))
                 pos += 1
-                if combo not in used and len(set(combo)) == k:
+                # 버그 수정: free와 rest에 같은 (시작, 길이) 윈도우가 함께 있을 수 있어, 한 프롬프트에 같은 예시가 두 번 들어가는 조합은 건너뛴다 (23CT18_00)
+                if combo not in used and len(set(combo)) == k and len({(win[w][0], len(win[w][1])) for w in combo}) == k:
                     break
             used.add(combo)
             pos += k - 1
