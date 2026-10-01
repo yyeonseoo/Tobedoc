@@ -1,0 +1,13 @@
+# 원본 코퍼스 (라이선스 미확인, 재배포 금지)
+DAIS-C-Annotated-Upload/
+# 전처리 산출물 (원본 텍스트 포함)
+data/
+# 합성 산출물: 합성 텍스트·프롬프트(원본 시드 발췌 포함)·로그·감사표(원본 유래 고유명사 포함) 전부 제외
+synthetic/
+# 원본 발췌가 나란히 실린 검증 리포트
+reports/02_pilot_preview.md
+reports/03_validation.md
+reports/05_validation_v2.md
+reports/05_pilot_preview_v2.md
+__pycache__/
+*.pyc

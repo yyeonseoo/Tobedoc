@@ -1,0 +1,33 @@
+seed: 42
+
+paths:
+  raw_root: "DAIS-C-Annotated-Upload/DAIS-C-Annotated - Upload"   # 실제 원본 위치 (./data/ 아님)
+  speaker_glob: "DAI-C-{group}/Interactional/Full tagged pass/Speaker_only_for_analysis/*_speaker.txt"
+  corpus: "data/processed/corpus.parquet"
+  synthetic_dir: "synthetic"
+  reports: "reports"
+
+preprocess:
+  spacy_model: en_core_web_sm
+  min_sentence_tokens: 3          # 미만이면 인접 문장에 병합
+  min_response_tokens: 30         # 비교/생성 단위로 쓰는 '실질 응답' 최소 토큰 수
+
+generate:
+  mode: manual                    # API 미사용: 모델(Claude)이 세션 내에서 직접 생성
+  seed_segments_per_prompt: [2, 3]
+  seed_segment_sentences: [5, 8]
+  exclude_speakers: [18UG10]      # 실질 응답 0개, 총 186토큰 -> 시드 구간 불가 (00_exploration §7)
+  samples_per_speaker: 4          # CL 14명x4=56
+  target_per_group: 56            # CO 13명x4=52 -> 실질 응답 많은 화자 순으로 +1씩 채워 56
+  max_target_tokens: 350          # 목표 길이 상한 (실제 실질 응답 중 >350은 소수; 리포트에 명시)
+  protocol_min_speakers: 2        # 시드 표현이 이 수 이상 화자(CL+CO)에 등장하면 프로토콜 주제어 → 치환하지 않고 유지
+  temperatures: [0.8, 1.0]        # manual 모드에서는 명목상 라벨 (실제 샘플링 파라미터 아님)
+  pilot_speakers: {CL: [03AR15, 21AP15], CO: [11AR18, 28CT11]}
+
+validate:
+  sbert_model: all-MiniLM-L6-v2
+  mattr_window: 50
+  ngram_n: 5
+  cv_folds: 5
+  near_dup_cosine: 0.95
+  fillers: [er, erm, um, uh, mm, mhm, ah, oh, like, "you know", "i mean", "kind of", "sort of"]
