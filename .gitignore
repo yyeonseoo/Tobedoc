@@ -9,5 +9,7 @@ reports/02_pilot_preview.md
 reports/03_validation.md
 reports/05_validation_v2.md
 reports/05_pilot_preview_v2.md
+# 탈락 사유에 시드(원본)와 일치한 6-gram이 기록됨
+reports/04_post_filter.md
 __pycache__/
 *.pyc
