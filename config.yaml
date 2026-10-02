@@ -16,7 +16,13 @@ preprocess:
 qa:
   full_glob: "DAI-C-{group}/Interactional/Full tagged pass/*-FULL.*"
   metadata: "Metadata/Metadata.xlsx"
-  k_sentences: 4                  # 답변 최소 문장 수 = 주 분석에서 쓰는 앞 K문장 (K=5,6은 민감도 분석)
+  # 주 분석: 답변 전체를 단어 조각으로 끝까지 나눔 (src/position_features.py)
+  chunk_words: 10                 # 조각 크기 (Corcoran 2018의 k단어 방식)
+  min_last_chunk: 5               # 마지막 조각이 이보다 짧으면 버림
+  min_chunks: 3                   # 기울기를 구할 최소 조각 수 (= 약 30단어)
+  max_chunks: 25                  # 위치 상한 (250단어). 그 뒤는 소수의 긴 답변만 남아 제외
+  sbert_model: all-MiniLM-L6-v2
+  fillers: [er, erm, mm, mhm, ah, oh]
   prompt_min_words: 3             # 면담자 턴에서 맞장구어를 뺀 단어가 이 수 이상이면 '질문' → 기준점 갱신, 미만이면 맞장구 → 답변 이어짐
   backchannel: [er, erm, mm, mhm, hmm, ah, oh, yeah, yes, yep, no, ok, okay, right, alright, sure, really, wow, great, cool, good, fine, uh, huh, aha, i, see]
   tags: [InAu, An, Lh, Gr, WS, TC, DT]   # 답변별 개수 기록 (피처 아님: InAu는 녹음 방식 교락, Gr/WS/TC/DT는 검증 기준)
