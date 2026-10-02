@@ -1,6 +1,6 @@
 """Step 1: speaker-only tagged 파일 -> 참여자 턴 단위 corpus.parquet (+ reports/01_preprocess.md).
 
-clean()/segment()는 generate.py, validate.py에서 합성 텍스트에도 동일하게 적용한다.
+clean()/segment()는 build_qa_units.py에서 재사용한다. (과거 합성 증강 코드도 사용 — archive/augmentation/)
 """
 import glob
 import os

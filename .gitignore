@@ -8,14 +8,14 @@ data/
 # 합성 산출물: 합성 텍스트·프롬프트(원본 시드 발췌 포함)·로그·감사표(원본 유래 고유명사 포함) 전부 제외
 synthetic/
 # 원본 발췌가 나란히 실린 검증 리포트
-reports/02_pilot_preview.md
-reports/03_validation.md
-reports/05_validation_v2.md
-reports/05_pilot_preview_v2.md
+archive/augmentation/reports/02_pilot_preview.md
+archive/augmentation/reports/03_validation.md
+archive/augmentation/reports/05_validation_v2.md
+archive/augmentation/reports/05_pilot_preview_v2.md
 # 탈락 사유에 시드(원본)와 일치한 6-gram이 기록됨
-reports/04_post_filter.md
-reports/04_post_filter_v3.md
-reports/06_validation_v3.md
-reports/06_pilot_preview_v3.md
+archive/augmentation/reports/04_post_filter.md
+archive/augmentation/reports/04_post_filter_v3.md
+archive/augmentation/reports/06_validation_v3.md
+archive/augmentation/reports/06_pilot_preview_v3.md
 __pycache__/
 *.pyc
