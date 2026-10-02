@@ -158,6 +158,9 @@ def run(which):
 
 
 def _point_filter_to_v3():
+    # 버그 수정(래퍼 쪽): post_filter가 import하는 validate.py는 import 시점에 sys.argv[1]을 실행 모드로 읽는다.
+    # generate_v3의 하위 명령('filter' 등)이 그대로 넘어가면 KeyError가 나므로, 인자 없이 실행한 것과 같게 만든다.
+    sys.argv = sys.argv[:1]
     import post_filter
     post_filter.V2 = V3                                   # 2차 코드 수정 없이 디렉터리만 v3로 지정
     post_filter.LOG = os.path.join(V3, 'filter_log.jsonl')
