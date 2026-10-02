@@ -108,7 +108,8 @@ def call(cli, p, attempt):
         if st['usd'] >= C3['hard_limit_usd']:
             raise HardLimit(f"누적 추정 지출 ${st['usd']:.4f} >= ${C3['hard_limit_usd']}")
         seed = secrets.randbelow(2 ** 31)
-        params = dict(model=model, temperature=C3['temperature'], seed=seed,
+        # store=False: 응답을 OpenAI distillation/evals 제품용으로 저장하지 않음 (학습 미사용은 API 기본 정책, ATTEMPT_3_SUMMARY §1)
+        params = dict(model=model, temperature=C3['temperature'], seed=seed, store=False,
                       max_tokens=int(p['target_words'] * C3['max_tokens_factor']) + 50)
         rec = dict(sample_id=p['sample_id'], attempt=attempt, api_try=k + 1, timestamp=datetime.datetime.now().isoformat(timespec='seconds'),
                    model=model, params=params, prompt_sha1=sha(p['prompt']))
