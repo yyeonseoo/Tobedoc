@@ -3,8 +3,11 @@
 E1: r/schizophrenia 안에서 본인 글 vs 가족·보호자 글 (게시판 장르를 맞춘 비교)
 E2: DAIS-C 답변을 SBERT 주제 군집으로 나누고, 두 그룹이 모두 있는 군집 안에서 혼합효과모형
 E3: Reddit 글을 SBERT 주제 군집으로 나누고, 두 그룹이 모두 있는 군집 안에서 주제 보정 회귀 (작성자 군집 강건 SE)
+E4: E1을 1인칭 축약어(im, ive, id, ill)를 지우고 다시 계산
+E5: DAIS-C 같은 화자 안에서 면담자가 되물은 답변 vs 나머지 답변
 """
 import os
+import re
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -15,7 +18,9 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 from analyze import FEATS, FIG, INK, INK2, LABEL, SEED, effects, fmt, grouped_cv, hedges_g, speaker_auc
-from text import CFG, path
+from features import C as CHUNK, unit_features
+from text import CFG, chunks, path, words
+from scipy import stats
 
 N = CFG['features']['n_words']
 
@@ -82,6 +87,40 @@ def e3(f):
     return sil, k, cnt, ok, m, pd.DataFrame(rows), per
 
 
+FIRST_PERSON = {'im', 'ive', 'id', 'ill'}
+CLAR = re.compile(r'what do you mean|did you say|\bsorry\b|pardon|\brepeat|what was that|not sure i follow|\byou mean\b|say that again|didnt catch|whats that')
+
+
+def e4(r1):
+    u = pd.read_parquet(os.path.join(path('processed'), 'reddit_units.parquet')).set_index('unit_id')
+    ws = {i: [w for w in u.loc[i, 'words'] if w not in FIRST_PERSON] for i in r1.unit_id}
+    keep = r1[[len(ws[i]) >= N for i in r1.unit_id]]
+    m = SentenceTransformer(CFG['features']['sbert_model'])
+    rows = []
+    for _, r in keep.iterrows():
+        w = ws[r.unit_id]
+        E = m.encode(chunks(w[:N], CHUNK), normalize_embeddings=True)
+        rows.append(dict(speaker_id=r.speaker_id, label=r.label, **unit_features(E, None, w, N)))
+    x = pd.DataFrame(rows)
+    return x, effects(x, 2000)
+
+
+def e5(f):
+    d = f[(f.corpus == 'daisc') & (f.n == 30)]
+    u = pd.read_parquet(os.path.join(path('processed'), 'daisc_units.parquet'))[['unit_id', 'next_prompt']]
+    d = d.merge(u, on='unit_id')
+    d['clar'] = d.next_prompt.fillna('').map(lambda s: bool(CLAR.search(' '.join(words(s)))))
+    both = d.groupby('speaker_id').clar.agg(lambda c: c.any() and not c.all())
+    d = d[d.speaker_id.isin(both[both].index)]
+    rows = []
+    for c in FEATS:
+        s = d.groupby(['speaker_id', 'clar'])[c].mean().unstack()
+        diff = s[True] - s[False]
+        rows.append(dict(feature=LABEL[c], speakers=len(diff), higher_after_clar=int((diff > 0).sum()),
+                         median_diff=diff.median(), p=stats.wilcoxon(diff).pvalue if len(diff) >= 5 else np.nan))
+    return d, pd.DataFrame(rows)
+
+
 def figure(ee1, mm, m3):
     fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
     y = np.arange(len(FEATS))[::-1]
@@ -109,6 +148,8 @@ def main():
     r1, ee1, auc1, nmix = e1(f)
     d, sil, k, tops, comp, ok, m, mm = e2(f)
     sil3, k3, cnt3, ok3, m3, mm3, per3 = e3(f)
+    x4, ee4 = e4(r1)
+    d5, t5 = e5(f)
     figure(ee1, mm, mm3)
     comp.columns = [f'{a}_{b}' for a, b in comp.columns]
     comp['대표 단어'] = pd.Series(tops)
@@ -145,6 +186,20 @@ DAIS-C는 답변이 적고 주제가 그룹과 거의 겹쳐 군집이 약하고
 
 군집별 그룹 차이 g (조현병 - 대조, 글 단위):
 {per3.to_markdown(floatfmt='.2f')}
+
+## E4: E1을 1인칭 축약어(im, ive, id, ill) 없이 다시 계산
+지운 뒤에도 내용어 {N}개 이상인 글 {len(x4)}개, 작성자 본인 {x4[x4.label == 1].speaker_id.nunique()}명 / 가족·보호자 {x4[x4.label == 0].speaker_id.nunique()}명.
+
+{fmt(ee4).replace('n_case', 'n_self').replace('n_ctrl', 'n_other')}
+
+## E5: DAIS-C 같은 화자 안에서 면담자가 되물은 답변 vs 나머지 (앞 30 내용어)
+- 되물음 답변 {int(d5.clar.sum())}개, 나머지 {int((~d5.clar).sum())}개. 두 종류가 모두 있는 화자 {d5.speaker_id.nunique()}명 (CL {d5[d5.label == 1].speaker_id.nunique()}, CO {d5[d5.label == 0].speaker_id.nunique()})
+- 되물음 답변 수가 적어 검정력이 낮다.
+
+{t5.to_markdown(index=False, floatfmt='.4f')}
+
+## 하지 않은 분석
+- 말 속도: 타임스탬프 턴 수가 27명 중 21명에서 대화 원본과 맞지 않고 21UN11은 파일이 없어 답변과 시간을 짝지을 수 없다.
 
 그림: `figures/fig4_exploratory.png`
 """

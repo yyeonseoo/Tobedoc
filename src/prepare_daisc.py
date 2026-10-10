@@ -43,16 +43,18 @@ def is_prompt(raw):
 
 
 def answers(seq):
+    """-> [(기준점 질문, 참여자 턴들, 답변 직후 면담자 질문)]. 직후 질문은 E5(되묻기)에 쓴다."""
     out, anchor, cur = [], None, []
     for role, raw in seq:
         if role == 'P':
             cur.append(raw)
         elif '<Mis>' in raw or is_prompt(raw):
+            nxt = None if '<Mis>' in raw else strip_tags(raw)
             if cur:
-                out.append((anchor, cur))
-            anchor, cur = (None if '<Mis>' in raw else strip_tags(raw)), []
+                out.append((anchor, cur, nxt))
+            anchor, cur = nxt, []
     if cur:
-        out.append((anchor, cur))
+        out.append((anchor, cur, None))
     return out
 
 
@@ -81,13 +83,13 @@ def main():
     for g in ['CL', 'CO']:
         for p in sorted(glob.glob(os.path.join(path('daisc_root'), CFG['paths']['daisc_full_glob'].format(group=g)))):
             sid = os.path.basename(p)[:6]
-            for i, (anchor, raws) in enumerate(answers(turns(read_full(p), sid))):
+            for i, (anchor, raws, nxt) in enumerate(answers(turns(read_full(p), sid))):
                 raw = ' '.join(raws)
                 tc = tagged_content(raw)
                 allw = words(strip_tags(raw))
                 rows.append(dict(
                     speaker_id=sid, group=g, unit_id=f'{sid}_{i:03d}', n_turns=len(raws),
-                    anchor=anchor, anchor_words=content(anchor) if anchor else [],
+                    anchor=anchor, anchor_words=content(anchor) if anchor else [], next_prompt=nxt,
                     words=[w for w, _ in tc], n_raw_words=len(allw),
                     filler_rate=sum(w in FILLERS for w in allw) / max(len(allw), 1),
                     **{f'in_{t}': [t in a for _, a in tc] for t in JUDGE}))
@@ -105,4 +107,5 @@ if __name__ == '__main__':
     assert [sorted(a) for _, a in tagged_content('a <Gr> big <DT> red </DT> </Gr> car')] == [['Gr'], ['DT', 'Gr'], []]
     assert [x[0] for x in answers([('O', 'do you use language creatively'), ('P', 'yes'), ('O', 'mm'), ('P', 'I do'),
                                   ('O', '<Mis> </Mis>'), ('P', 'well')])] == ['do you use language creatively', None]
+    assert [x[2] for x in answers([('O', 'how was it'), ('P', 'fine'), ('O', 'what do you mean by fine'), ('P', 'ok')])] == ['what do you mean by fine', None]
     main()
