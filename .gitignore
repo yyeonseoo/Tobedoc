@@ -1,21 +1,18 @@
 # API 키 (절대 커밋 금지)
 .env
 .env.*
-# 원본 코퍼스 (라이선스 미확인, 재배포 금지)
-DAIS-C-Annotated-Upload/
-# 전처리 산출물 (원본 텍스트 포함)
+# 원본 데이터와 전처리 산출물 (원문 포함): data/raw/dais-c, data/raw/reddit, data/processed, v1/data
 data/
-# 합성 산출물: 합성 텍스트·프롬프트(원본 시드 발췌 포함)·로그·감사표(원본 유래 고유명사 포함) 전부 제외
+# v1 LLM 증강 산출물: 합성 텍스트·프롬프트(원본 시드 발췌 포함)·로그·감사표
 synthetic/
-# 원본 발췌가 나란히 실린 검증 리포트
-archive/augmentation/reports/02_pilot_preview.md
-archive/augmentation/reports/03_validation.md
-archive/augmentation/reports/05_validation_v2.md
-archive/augmentation/reports/05_pilot_preview_v2.md
-# 탈락 사유에 시드(원본)와 일치한 6-gram이 기록됨
-archive/augmentation/reports/04_post_filter.md
-archive/augmentation/reports/04_post_filter_v3.md
-archive/augmentation/reports/06_validation_v3.md
-archive/augmentation/reports/06_pilot_preview_v3.md
+# v1 증강 리포트 중 원본 발췌가 실린 것
+v1/augmentation/reports/02_pilot_preview.md
+v1/augmentation/reports/03_validation.md
+v1/augmentation/reports/05_validation_v2.md
+v1/augmentation/reports/05_pilot_preview_v2.md
+v1/augmentation/reports/04_post_filter.md
+v1/augmentation/reports/04_post_filter_v3.md
+v1/augmentation/reports/06_validation_v3.md
+v1/augmentation/reports/06_pilot_preview_v3.md
 __pycache__/
 *.pyc
