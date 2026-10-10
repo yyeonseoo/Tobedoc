@@ -24,7 +24,8 @@ python src/prepare_daisc.py    # DAIS-C 질문-답변 단위, 판단 태그 위�
 python src/prepare_reddit.py   # Reddit 정리, 작성 주체 1차 분류         -> data/processed/reddit_units.parquet
 python src/features.py         # 앞 40 내용어 SBERT 지표 (30·60 민감도)  -> features.parquet, chunks.parquet
 python src/analyze.py          # 계획서의 분석 1-3, 민감도               -> reports/01_results.md, fig1-3
-python src/explore.py          # 탐색 분석 E1-E3 (계획서 변경 기록)     -> reports/02_exploratory.md, fig4
+python src/explore.py          # 탐색 분석 E1-E5 (계획서 변경 기록)     -> reports/02_exploratory.md, fig4
+python src/audit_notebook.py   # 팀 노트북 AUC 재현·점검 (E6)            -> reports/03_notebook_audit.md
 ```
 
 ## 처리 원칙
@@ -35,7 +36,7 @@ python src/explore.py          # 탐색 분석 E1-E3 (계획서 변경 기록)  
 
 ## 현재 결과 (2026-10-11)
 
-- Reddit: 길이를 맞추자 주 지표(이탈 기울기)의 그룹 차이가 거의 없다(g −0.05, 95% CI −0.10~0.00). 6개 지표 분류 AUC는 0.54로 우연보다는 높지만 작다. 본문 길이 하나만으로 AUC 0.69가 나와서, 팀 노트북의 AUC 0.78에는 길이 차이가 섞였을 가능성이 크다.
+- Reddit: 길이를 맞추자 주 지표(이탈 기울기)의 그룹 차이가 거의 없다(g −0.05, 95% CI −0.10~0.00). 6개 지표 분류 AUC는 0.54로 우연보다는 높지만 작다. 팀 노트북의 AUC 0.78은 그대로 재현되지만, 제목을 빼고 본문만 쓰면 0.63으로 떨어진다. 본문은 불용어가 지워져 있어 노트북의 1인칭·기능어 지표가 사실상 게시판마다 다른 제목 문체를 쟀다 ([reports/03_notebook_audit.md](reports/03_notebook_audit.md)). 글 길이를 고정해도 노트북 AUC는 거의 그대로였다(0.76).
 - DAIS-C: 주 지표 g +0.35(95% CI −0.42~1.30)로 Reddit과 방향이 반대다. 공변량을 넣은 혼합효과모형에서는 CL이 더 크다(p = 0.024). Reddit 모델을 그대로 적용한 AUC는 0.39다.
 - 연구자 판단 태그(DT, TC) 구간에서 같은 사람 안의 인접 거리 증가는 뚜렷하지 않다(p 0.34, 0.26).
 - 판정(계획서 기준): Reddit 발견 미지지, DAIS-C 재현 안 됨.
