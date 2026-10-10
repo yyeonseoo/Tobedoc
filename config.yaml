@@ -1,0 +1,33 @@
+seed: 42
+
+paths:
+  daisc_root: "data/raw/dais-c/DAIS-C-Annotated - Upload"
+  daisc_full_glob: "DAI-C-{group}/Interactional/Full tagged pass/*-FULL.*"   # 태그 포함 대화 원본. Speaker Only_Raw는 2명 불일치라 쓰지 않음
+  daisc_metadata: "Metadata/Metadata.xlsx"
+  reddit_csv: "data/raw/reddit/Reddit-Based Schizophrenia Detection Dataset.csv"   # Kaggle 원본 그대로 (본문은 제작자가 NLTK 불용어 제거)
+  processed: "data/processed"
+  reports: "reports"
+
+# 두 코퍼스 공통 가공: Reddit 본문이 이미 이렇게 가공돼 있어 DAIS-C에 같은 처리를 맞춘다
+text:
+  stopwords: nltk_english         # NLTK 198개. Reddit 본문에서 정확히 제거돼 있음을 확인
+  fillers: [er, erm, mm, mhm, ah, oh, um, uh, hmm]   # DAIS-C 더듬기. Reddit 글에는 없어 공통 지표에서 제거
+  direct_terms: ['schizophren\w*', 'schizo\w*', 'psychosis', 'psychotic', 'antipsychotic\w*', 'neuroleptic\w*',
+                 'haloperidol', 'clozapine', 'olanzapine', 'risperidone', 'quetiapine', 'aripiprazole',
+                 'diagnos\w*', 'hallucinat\w*', 'delusion\w*']   # 진단·증상 직접 단어 (노트북과 같음). 제거 후 단어 수를 센다
+
+daisc:
+  prompt_min_words: 3             # 면담자 턴에서 맞장구어를 뺀 단어가 이 수 이상이면 질문 -> 기준점 갱신
+  backchannel: [er, erm, mm, mhm, hmm, ah, oh, yeah, yes, yep, no, ok, okay, right, alright, sure, really, wow, great, cool, good, fine, uh, huh, aha, i, see]
+  judge_tags: [Gr, WS, TC, DT]    # 연구자 판단 표시: 모델 입력이 아니라 검증 기준
+
+reddit:
+  exclude_authors: ['[deleted]']
+
+features:
+  sbert_model: all-MiniLM-L6-v2
+  chunk_words: 5                  # 내용어 5개 = 원문 약 10단어
+  n_words: 40                     # 주 분석: 앞 내용어 40개 (8조각). EDA: 거리 곡선이 DAIS-C 약 25, Reddit 약 35-40 내용어에서 평평해짐
+  n_words_sensitivity: [30, 60]
+  late_from_chunk: 3              # late_slope: 첫 3조각(15 내용어) 평균을 기준점으로 그 뒤 조각들의 기울기
+  mattr_window: 20
