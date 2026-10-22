@@ -102,8 +102,9 @@ def main():
     df = raw[raw.author.ne('') & raw.author.ne('[deleted]') & raw.word_count.between(80, 1200)].reset_index(drop=True)
     masked = df.text_raw.map(lambda t: DIRECT_RE.sub('MASKTERM', t))
     removed = df.text_raw.map(lambda t: DIRECT_RE.sub(' ', t))
-    body80 = df.selftext.map(lambda t: ' '.join(DIRECT_RE.sub(' ', t).split()[:80]))
-    title_body80 = (df.title + '\n' + body80)
+    body = df.selftext.map(lambda t: DIRECT_RE.sub(' ', t))
+    cut = lambda s, n: s.map(lambda t: ' '.join(toks(t)[:n]))  # 노트북 10B와 같은 100 토큰
+    long_body = body.map(lambda t: len(toks(t))).ge(100)
 
     rows = []
     fa = pd.concat([df[['author', 'label', 'word_count']], featurize(masked)], axis=1)
@@ -112,12 +113,14 @@ def main():
     fc = pd.concat([df[['author', 'label']], featurize(removed)], axis=1)
     rows.append(('(c) 진단 단어를 치환 대신 삭제', author_auc(fc, STRUCTURAL)))
     rows.append(('(d) 글 길이(단어 수) 하나만', author_auc(fa, ['word_count'])))
-    fg = pd.concat([df[['author', 'label']], featurize(df.selftext.map(lambda t: DIRECT_RE.sub(' ', t)))], axis=1)
+    fg = pd.concat([df[['author', 'label']], featurize(body)], axis=1)
     rows.append(('(g) 삭제 + 제목 제외 (본문만, 길이 그대로)', author_auc(fg, STRUCTURAL)))
-    fe = pd.concat([df[['author', 'label']], featurize(title_body80)], axis=1)
-    rows.append(('(e) 삭제 + 본문 앞 80단어로 길이 고정 (제목 포함)', author_auc(fe, STRUCTURAL)))
-    ff = pd.concat([df[['author', 'label']], featurize(body80)], axis=1)
-    rows.append(('(f) (e)에서 제목 제외 (본문만)', author_auc(ff, STRUCTURAL)))
+    fe = pd.concat([df[['author', 'label']], featurize(cut(removed, 100))], axis=1)
+    rows.append(('(e) 삭제 + 제목+본문 앞 100 토큰 (노트북 10B 방식, 전체 표본)', author_auc(fe, STRUCTURAL)))
+    d2 = df[long_body].reset_index(drop=True)
+    ff = pd.concat([d2[['author', 'label']], featurize(cut(body[long_body], 100).reset_index(drop=True))], axis=1)
+    rows.append((f'(f) 삭제 + 제목 제외, 본문 100 토큰 이상인 글({int(long_body.sum())}개)의 앞 100 토큰 (정확히 같은 길이)',
+                 author_auc(ff, STRUCTURAL)))
     has_mask = masked.str.contains('MASKTERM')
     t = pd.DataFrame(rows, columns=['조건', '작성자 단위 AUC'])
     s = pd.Series(single, name='단독 AUC').to_frame()
@@ -136,7 +139,7 @@ def main():
 ## 참고
 - "MASKTERM"이 들어간 글: 조현병 {has_mask[df.label == 1].mean():.0%}, 대조 {has_mask[df.label == 0].mean():.0%}
 - 본문(selftext)은 데이터셋 제작자가 NLTK 불용어를 지운 상태라, 1인칭·기능어·접속사 단어는 대부분 제목에서 세어진다. 본문에는 NLTK 목록에 없는 일부(would, could, us, mine, might 등)만 남아 있다.
-- 해석: 제목 제외만으로 {rows[3][1] - rows[1][1]:+.3f}, 제목 포함 상태의 길이 고정만으로 {rows[4][1] - rows[1][1]:+.3f}, 둘 다 하면 {rows[5][1] - rows[1][1]:+.3f}. 제목이 있으면 제목 문체가 신호를 주도해 길이 고정의 효과가 보이지 않고, 제목을 빼면 본문 길이 차이가 남은 신호의 큰 부분이 된다.
+- 해석: 제목 제외만으로 {rows[3][1] - rows[1][1]:+.3f}, 제목 포함 상태의 길이 고정(100 토큰)만으로 {rows[4][1] - rows[1][1]:+.3f}, 둘 다 하면 {rows[5][1] - rows[1][1]:+.3f}. 제목이 있으면 제목 문체가 신호를 주도해 길이 고정의 효과가 보이지 않고, 제목을 빼면 본문 길이 차이가 남은 신호의 큰 부분이 된다.
 """
     open(os.path.join(path('reports'), '03_notebook_audit.md'), 'w', encoding='utf8').write(md)
     print(md)
