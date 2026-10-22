@@ -7,6 +7,7 @@ import re
 
 import numpy as np
 import pandas as pd
+from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
@@ -92,6 +93,27 @@ def featurize(texts):
     return pd.DataFrame([extract(t) for t in texts])
 
 
+def notebook_matching(df):
+    """노트북 7A 그대로: 가린 텍스트 TF-IDF -> SVD 40 -> 유사도 하위 25% 제외 -> 짝 찾기 어려운 글부터 1:1 비복원 매칭."""
+    vec = TfidfVectorizer(lowercase=True, stop_words='english', min_df=5, max_df=0.95, max_features=8000,
+                          ngram_range=(1, 2), token_pattern=r"(?u)\b[a-zA-Z][a-zA-Z'-]*\b")
+    Z = TruncatedSVD(n_components=40, random_state=SEED).fit_transform(vec.fit_transform(df.text_masked))
+    Z = Z / np.maximum(np.linalg.norm(Z, axis=1, keepdims=True), 1e-12)
+    lab = df.label.to_numpy()
+    pos, neg = np.where(lab == 1)[0], np.where(lab == 0)[0]
+    S = Z[pos] @ Z[neg].T
+    best = S.max(1)
+    cal = max(0.20, float(np.quantile(best, 0.25)))
+    avail, keep = np.ones(len(neg), bool), []
+    for pi in np.argsort(best):
+        cand = np.where(avail)[0]
+        j = cand[int(np.argmax(S[pi, cand]))]
+        if S[pi, j] >= cal:
+            keep += [pos[pi], neg[j]]
+            avail[j] = False
+    return df.iloc[sorted(keep)].reset_index(drop=True)
+
+
 def main():
     raw = pd.read_csv(path('reddit_csv'))
     for c in ['title', 'selftext', 'author', 'subreddit']:
@@ -100,46 +122,65 @@ def main():
     raw['text_raw'] = (raw.title.str.strip() + '\n' + raw.selftext.str.strip()).str.strip()
     raw['word_count'] = raw.text_raw.str.findall(r"\b[\w'-]+\b").str.len()
     df = raw[raw.author.ne('') & raw.author.ne('[deleted]') & raw.word_count.between(80, 1200)].reset_index(drop=True)
-    masked = df.text_raw.map(lambda t: DIRECT_RE.sub('MASKTERM', t))
-    removed = df.text_raw.map(lambda t: DIRECT_RE.sub(' ', t))
-    body = df.selftext.map(lambda t: DIRECT_RE.sub(' ', t))
-    cut = lambda s, n: s.map(lambda t: ' '.join(toks(t)[:n]))  # 노트북 10B와 같은 100 토큰
-    long_body = body.map(lambda t: len(toks(t))).ge(100)
+    df['text_masked'] = df.text_raw.map(lambda t: DIRECT_RE.sub('MASKTERM', t))
+    df['body_masked'] = df.selftext.map(lambda t: DIRECT_RE.sub('MASKTERM', t))
+    df['text_removed'] = df.text_raw.map(lambda t: DIRECT_RE.sub(' ', t))
+    df['body_removed'] = df.selftext.map(lambda t: DIRECT_RE.sub(' ', t))
 
-    rows = []
-    fa = pd.concat([df[['author', 'label', 'word_count']], featurize(masked)], axis=1)
-    rows.append(('(a) 노트북 재현: MASKTERM 치환, 길이 그대로', author_auc(fa, STRUCTURAL)))
+    def cut(s, n=100):  # 노트북 10B와 같은 100 토큰
+        return s.map(lambda t: ' '.join(toks(t)[:n]))
+
+    def auc(d, txt, cols=STRUCTURAL):
+        X = pd.concat([d[['author', 'label']].reset_index(drop=True), featurize(txt.reset_index(drop=True))], axis=1)
+        return author_auc(X, cols)
+
+    fa = pd.concat([df[['author', 'label', 'word_count']], featurize(df.text_masked)], axis=1)
     single = {c: author_auc(fa, [c]) for c in STRUCTURAL}
-    fc = pd.concat([df[['author', 'label']], featurize(removed)], axis=1)
-    rows.append(('(c) 진단 단어를 치환 대신 삭제', author_auc(fc, STRUCTURAL)))
-    rows.append(('(d) 글 길이(단어 수) 하나만', author_auc(fa, ['word_count'])))
-    fg = pd.concat([df[['author', 'label']], featurize(body)], axis=1)
-    rows.append(('(g) 삭제 + 제목 제외 (본문만, 길이 그대로)', author_auc(fg, STRUCTURAL)))
-    fe = pd.concat([df[['author', 'label']], featurize(cut(removed, 100))], axis=1)
-    rows.append(('(e) 삭제 + 제목+본문 앞 100 토큰 (노트북 10B 방식, 전체 표본)', author_auc(fe, STRUCTURAL)))
-    d2 = df[long_body].reset_index(drop=True)
-    ff = pd.concat([d2[['author', 'label']], featurize(cut(body[long_body], 100).reset_index(drop=True))], axis=1)
-    rows.append((f'(f) 삭제 + 제목 제외, 본문 100 토큰 이상인 글({int(long_body.sum())}개)의 앞 100 토큰 (정확히 같은 길이)',
-                 author_auc(ff, STRUCTURAL)))
-    has_mask = masked.str.contains('MASKTERM')
-    t = pd.DataFrame(rows, columns=['조건', '작성자 단위 AUC'])
+    t1 = [('노트북 그대로 (MASKTERM, 제목+본문, 길이 그대로)', author_auc(fa, STRUCTURAL)),
+          ('진단어를 MASKTERM 대신 삭제만', auc(df, df.text_removed)),
+          ('제목만 제외 (본문만)', auc(df, df.body_masked)),
+          ('길이만 고정: 제목+본문 앞 100 토큰 (10B 방식을 전체 표본에)', auc(df, cut(df.text_masked))),
+          ('참고: 글 길이(단어 수) 하나만', author_auc(fa, ['word_count']))]
+    m = notebook_matching(df)
+    t2 = [(f'노트북 10B 재현 (주제 매칭 {len(m) // 2}쌍, 제목+본문 앞 100 토큰)', auc(m, cut(m.text_masked))),
+          ('10B에서 제목만 제외 (본문 앞 100 토큰)', auc(m, cut(m.body_masked)))]
+    short_b = int(m.body_masked.map(lambda t: len(toks(t))).lt(100).sum())
+    lb = df.body_removed.map(lambda t: len(toks(t))).ge(100)
+    t3 = [('진단어 삭제', t1[1][1]),
+          ('진단어 삭제 + 제목 제외', auc(df, df.body_removed)),
+          (f'진단어 삭제 + 제목 제외 + 본문 100 토큰 이상인 글({int(lb.sum())}개)의 앞 100 토큰 (정확히 같은 길이)',
+           auc(df[lb], cut(df.body_removed[lb])))]
+    has_mask = df.text_masked.str.contains('MASKTERM')
+
+    def tab(rows):
+        return pd.DataFrame(rows, columns=['조건', '작성자 단위 AUC']).to_markdown(index=False, floatfmt='.3f')
     s = pd.Series(single, name='단독 AUC').to_frame()
     s['조현병 평균'] = fa[fa.label == 1][STRUCTURAL].mean()
     s['대조 평균'] = fa[fa.label == 0][STRUCTURAL].mean()
     md = f"""# 03. 팀 노트북 Reddit AUC 재현과 점검 (E6)
 
-재현: `python src/v2_notebook_audit.py`. 노트북(`v1/colab_v5_1.ipynb`)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 {len(df)}개, 작성자 {df.author.nunique()}명).
+재현: `python src/v2_notebook_audit.py`. 팀 노트북(`v1/colab_v5_1.ipynb`, 최신본 `v1/colab_latest.ipynb`도 전처리·피처·모델 코드가 같음)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 {len(df)}개, 작성자 {df.author.nunique()}명). 모델은 구조 지표 8개 로지스틱 회귀, 작성자 단위 5-fold.
 
-## 조건별 AUC (구조 지표 8개, 로지스틱 회귀, 작성자 단위 5-fold)
-{t.to_markdown(index=False, floatfmt='.3f')}
+## 1. 노트북 주 분석에서 한 가지씩만 바꿨을 때 (전체 표본)
+{tab(t1)}
 
-## (b) 지표 하나씩 단독 AUC (조건 a)
+## 2. 노트북 10B(주제 매칭 + 앞 100 토큰)에서 제목만 뺐을 때
+{tab(t2)}
+
+제목을 빼면 본문이 100 토큰보다 짧은 글이 {len(m)}개 중 {short_b}개 생긴다. 노트북 조건에서 제목만 바꾼 비교라 그대로 둔다.
+
+## 3. 문제를 모두 정리했을 때 (전체 표본)
+{tab(t3)}
+
+## 지표 하나씩 단독 AUC (노트북 그대로)
 {s.to_markdown(floatfmt='.3f')}
 
-## 참고
-- "MASKTERM"이 들어간 글: 조현병 {has_mask[df.label == 1].mean():.0%}, 대조 {has_mask[df.label == 0].mean():.0%}
+## 해석
 - 본문(selftext)은 데이터셋 제작자가 NLTK 불용어를 지운 상태라, 1인칭·기능어·접속사 단어는 대부분 제목에서 세어진다. 본문에는 NLTK 목록에 없는 일부(would, could, us, mine, might 등)만 남아 있다.
-- 해석: 제목 제외만으로 {rows[3][1] - rows[1][1]:+.3f}, 제목 포함 상태의 길이 고정(100 토큰)만으로 {rows[4][1] - rows[1][1]:+.3f}, 둘 다 하면 {rows[5][1] - rows[1][1]:+.3f}. 제목이 있으면 제목 문체가 신호를 주도해 길이 고정의 효과가 보이지 않고, 제목을 빼면 본문 길이 차이가 남은 신호의 큰 부분이 된다.
+- "MASKTERM"이 들어간 글: 조현병 {has_mask[df.label == 1].mean():.0%}, 대조 {has_mask[df.label == 0].mean():.0%}. 8글자 표시가 평균 단어 길이를 부풀린다.
+- 주 분석에서 제목만 빼면 {t1[2][1] - t1[0][1]:+.3f}, 길이만 고정하면 {t1[3][1] - t1[0][1]:+.3f}다. 제목이 있으면 제목 문체가 신호를 주도해 길이 고정의 효과가 보이지 않는다.
+- 주제와 길이를 이미 통제한 10B에서는 제목만 빼도 {t2[1][1] - t2[0][1]:+.3f}가 된다. 10B에서 성능이 유지된 부분의 상당 부분을 제목이 지탱했다.
+- 세 가지를 모두 정리하면 노트북 AUC {t1[0][1]:.3f}가 {t3[2][1]:.3f}가 된다. 남는 부분은 본문 어휘 차이로, 게시판 장르 차이인지 환자 언어 특징인지는 이 데이터만으로 가를 수 없다.
 """
     open(os.path.join(path('reports_v2'), '03_notebook_audit.md'), 'w', encoding='utf8').write(md)
     print(md)
