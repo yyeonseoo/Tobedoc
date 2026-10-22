@@ -112,6 +112,8 @@ def main():
     fc = pd.concat([df[['author', 'label']], featurize(removed)], axis=1)
     rows.append(('(c) 진단 단어를 치환 대신 삭제', author_auc(fc, STRUCTURAL)))
     rows.append(('(d) 글 길이(단어 수) 하나만', author_auc(fa, ['word_count'])))
+    fg = pd.concat([df[['author', 'label']], featurize(df.selftext.map(lambda t: DIRECT_RE.sub(' ', t)))], axis=1)
+    rows.append(('(g) 삭제 + 제목 제외 (본문만, 길이 그대로)', author_auc(fg, STRUCTURAL)))
     fe = pd.concat([df[['author', 'label']], featurize(title_body80)], axis=1)
     rows.append(('(e) 삭제 + 본문 앞 80단어로 길이 고정 (제목 포함)', author_auc(fe, STRUCTURAL)))
     ff = pd.concat([df[['author', 'label']], featurize(body80)], axis=1)
@@ -133,7 +135,8 @@ def main():
 
 ## 참고
 - "MASKTERM"이 들어간 글: 조현병 {has_mask[df.label == 1].mean():.0%}, 대조 {has_mask[df.label == 0].mean():.0%}
-- 본문(selftext)은 데이터셋 제작자가 NLTK 불용어를 지운 상태라, 1인칭·기능어·접속사 단어는 사실상 제목에서만 세어진다.
+- 본문(selftext)은 데이터셋 제작자가 NLTK 불용어를 지운 상태라, 1인칭·기능어·접속사 단어는 대부분 제목에서 세어진다. 본문에는 NLTK 목록에 없는 일부(would, could, us, mine, might 등)만 남아 있다.
+- 해석: 제목 제외만으로 {rows[3][1] - rows[1][1]:+.3f}, 제목 포함 상태의 길이 고정만으로 {rows[4][1] - rows[1][1]:+.3f}, 둘 다 하면 {rows[5][1] - rows[1][1]:+.3f}. 제목이 있으면 제목 문체가 신호를 주도해 길이 고정의 효과가 보이지 않고, 제목을 빼면 본문 길이 차이가 남은 신호의 큰 부분이 된다.
 """
     open(os.path.join(path('reports'), '03_notebook_audit.md'), 'w', encoding='utf8').write(md)
     print(md)
