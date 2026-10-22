@@ -1,6 +1,31 @@
 # MindCraft: 조현병 발화의 의미 이탈 정량화
 
-> 최근 진행 상황 (2026-10-16 기준). 지난 보고(10/02, [v1/reports/SUMMARY_2026-10-02.md](v1/reports/SUMMARY_2026-10-02.md)) 이후, 팀장님의 Kaggle Reddit 분석(Colab 노트북 v5.1, [v1/colab_v5_1.ipynb](v1/colab_v5_1.ipynb))을 바탕으로 두 데이터를 함께 분석한 내용이다. 저장소 사용법은 맨 아래에 있다.
+> 최신 업데이트 (2026-10-23): v3 임상 피처 엔지니어링 결과를 맨 위에 추가했다. 그 아래는 10/16 진행 상황 보고다.
+
+## v3. 임상 개념 기반 피처로 새 모델을 만들면 나아지는가 (2026-10-23)
+
+질문: 형식적 사고장애(FTD)의 임상 개념에서 출발한 피처를 새로 만들면, 길이·주제·게시판 장르로 설명되는 부분을 넘어서는 정보를 줄 수 있는가. 계획은 결과를 보기 전에 [reports/v3/00_plan.md](reports/v3/00_plan.md)로 고정했고, 세부 결과는 [reports/v3/01_results.md](reports/v3/01_results.md)에 있다.
+
+피처 13개 (모두 앞 40 내용어에서 계산): 이탈(이탈 기울기, 평균 이탈, 후반 기울기), 탈선(인접 거리, 최대 점프, 인접 거리 변동성), 연합 이완(전역 응집도), 보속(의미 되풀이, 어휘 재등장률), 사고 빈곤(MATTR, 의미 밀도), 단어 근사·신조어(희귀어 비율), 음운 연상(각운 연결). 문장 임베딩 벡터는 주제를 배우므로 주 모델에 넣지 않고 참고 모델(R1)로만 확인했다.
+
+![v3 모델별 AUC](reports/v3/figures/fig1_auc.png)
+
+- 교란 기준선(글 길이, 주제 군집, 제목 질문형 여부, 제목 길이)만으로 AUC 0.947이 나온다. 이 데이터의 라벨이 사실상 게시판 구분이라는 뜻이다.
+- 임상 피처 13개를 더하면 AUC가 0.003 오른다(95% CI +0.001~+0.004). 통계적으로는 0보다 크지만 실질적인 의미는 거의 없다.
+- 참고 R1(문장 임베딩)은 Reddit에서 0.956이지만 DAIS-C에 그대로 적용하면 0.506이다. 임베딩은 주제를 배운다는 것을 확인했다.
+
+![v3 피처별 효과](reports/v3/figures/fig2_features.png)
+
+- 교란을 보정한 Reddit 효과는 모두 작다(|g| 0.15 이하). 조현병 게시판 쪽이 전역 응집도·의미 되풀이가 낮고 인접 거리가 컸지만, 같은 게시판 안에서 본인 글과 가족·보호자 글을 비교하면 방향이 반대로 나온다(본인 글의 전역 응집도 g +0.23). 환자의 언어보다 게시판 글의 성격으로 보인다.
+- DAIS-C 방향 일치는 13개 중 7개, Reddit 모델을 DAIS-C에 적용한 AUC는 0.58(95% CI 0.34~0.80)이다.
+- 사전 기준 세 가지를 모두 통과한 피처는 평균 이탈과 의미 되풀이다. 다만 DAIS-C와 되물음 분석에서 유의하지 않고, 같은 게시판 안 비교에서는 방향이 뒤집혀 근거가 약하다.
+- 탐색 수준의 단서: 면담자가 되물은 답변에서 이탈 기울기가 컸다(10명 중 8명, p = 0.02, 13개 보정 시 q = 0.25). DAIS-C 조현병군은 희귀어 비율이 높았다(g +0.73, 보정 후 q = 0.45).
+
+결론: 이 Reddit 데이터에서는 피처를 새로 만들어도 게시판 차이를 넘어서는 조현병 언어 신호를 분리하기 어렵다. 피처 설계보다 데이터 구조(라벨이 게시판)의 한계다. 다음 진전에는 진단이 확인된 발화, 같은 조건에서 비교할 수 있는 설계, 더 큰 임상 표본이 필요하다.
+
+---
+
+> 10/16 진행 상황 (2026-10-16 기준). 지난 보고(10/02, [v1/reports/SUMMARY_2026-10-02.md](v1/reports/SUMMARY_2026-10-02.md)) 이후, 팀장님의 Kaggle Reddit 분석(Colab 노트북 v5.1, [v1/colab_v5_1.ipynb](v1/colab_v5_1.ipynb))을 바탕으로 두 데이터를 함께 분석한 내용이다. 저장소 사용법은 맨 아래에 있다.
 
 Reddit에서 지표를 찾고(발견), 같은 지표를 DAIS-C 임상 면담에 그대로 적용해 확인하는(검증) 구조로 진행했다.
 
@@ -114,10 +139,12 @@ E5는 이번에 얻은 가장 긍정적인 단서다. 같은 사람 안에서 �
 | 경로 | 내용 |
 |---|---|
 | `config.yaml` | 설정 하나로 관리 |
-| `src/` | v2 코드 |
-| `reports/` | 분석 계획(00), 주 분석(01), 탐색 분석(02), 노트북 점검(03), 그림 |
+| `src/text.py`, `prep_daisc.py`, `prep_reddit.py` | 공통 전처리 (두 코퍼스 같은 가공, 단위 구축) |
+| `src/v2_*.py` | v2: SBERT 이탈 지표 분석, 탐색 분석, 팀 노트북 점검 |
+| `src/v3_*.py` | v3: 임상 피처 13개와 교란 기준선 모델 |
+| `reports/v2/`, `reports/v3/` | 버전별 계획(00), 결과(01~), 그림 |
 | `data/raw/`, `data/processed/` | 원본과 산출물 (git 제외) |
-| `v1/` | 이전 작업 보관 (DAIS-C 단독 분석, LLM 증강, 팀 Colab 노트북) |
+| `v1/` | 이전 작업 보관 (DAIS-C 단독 분석, LLM 증강, 팀 Colab 노트북 v5.1과 최신본) |
 
 ## 데이터
 
@@ -127,10 +154,15 @@ E5는 이번에 얻은 가장 긍정적인 단서다. 같은 사람 안에서 �
 ## 실행 순서
 
 ```
-python src/prep_daisc.py    # DAIS-C 질문-답변 단위, 판단 태그 위치  -> data/processed/daisc_units.parquet
-python src/prep_reddit.py   # Reddit 정리, 작성 주체 1차 분류         -> data/processed/reddit_units.parquet
-python src/v2_features.py         # 앞 40 내용어 SBERT 지표 (30·60 민감도)  -> features.parquet, chunks.parquet
-python src/v2_analyze.py          # 계획서의 분석 1-3, 민감도               -> reports/v2/01_results.md, fig1-3
-python src/v2_explore.py          # 탐색 분석 E1-E5 (계획서 변경 기록)     -> reports/v2/02_exploratory.md, fig4
-python src/v2_notebook_audit.py   # 팀 노트북 AUC 재현·점검 (E6)            -> reports/v2/03_notebook_audit.md
+# 공통 전처리
+python src/prep_daisc.py           # DAIS-C 질문-답변 단위, 판단 태그 위치  -> data/processed/daisc_units.parquet
+python src/prep_reddit.py          # Reddit 정리, 작성 주체 1차 분류         -> data/processed/reddit_units.parquet
+# v2
+python src/v2_features.py          # 앞 40 내용어 SBERT 지표 (30·60 민감도)  -> features.parquet, chunks.parquet
+python src/v2_analyze.py           # 계획서의 분석 1-3, 민감도               -> reports/v2/01_results.md, fig1-3
+python src/v2_explore.py           # 탐색 분석 E1-E5                          -> reports/v2/02_exploratory.md, fig4
+python src/v2_notebook_audit.py    # 팀 노트북 AUC 재현·점검 (E6)            -> reports/v2/03_notebook_audit.md
+# v3
+python src/v3_features.py          # 임상 피처 13개, 교란 기준선 변수         -> data/processed/v3_features.parquet
+python src/v3_model.py             # M1-M4, 참고 R1                           -> reports/v3/01_results.md, fig1-2
 ```
