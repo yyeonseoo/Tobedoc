@@ -1,6 +1,6 @@
 # 01. 결과 (v2)
 
-재현: `python src/analyze.py`. 계획은 `00_analysis_plan.md`. 모든 지표는 앞 40 내용어(5개씩 8조각)에서 계산했다.
+재현: `python src/v2_analyze.py`. 계획은 `00_analysis_plan.md`. 모든 지표는 앞 40 내용어(5개씩 8조각)에서 계산했다.
 
 ## 표본
 - Reddit (가족·보호자 글 제외): 글 6577개, 작성자 조현병 2555명 / 대조 3238명

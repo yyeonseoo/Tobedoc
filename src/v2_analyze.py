@@ -28,7 +28,7 @@ PRIMARY = 'drift_slope'
 FEATS = ['drift_slope', 'drift_mean', 'adj_mean', 'late_slope', 'recurrence', 'mattr']
 LABEL = {'drift_slope': '이탈 기울기 (주)', 'drift_mean': '평균 이탈', 'adj_mean': '인접 조각 거리',
          'late_slope': '후반 기울기', 'recurrence': '어휘 재등장률', 'mattr': 'MATTR'}
-FIG = os.path.join(path('reports'), 'figures')
+FIG = os.path.join(path('reports_v2'), 'figures')
 COL = {1: '#2a78d6', 0: '#eb6834'}
 INK, INK2, GRID, BG = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
 plt.rcParams.update({'font.family': 'Malgun Gothic', 'axes.unicode_minus': False, 'figure.facecolor': BG,
@@ -252,7 +252,7 @@ def main():
 
     md_txt = f"""# 01. 결과 (v2)
 
-재현: `python src/analyze.py`. 계획은 `00_analysis_plan.md`. 모든 지표는 앞 {N} 내용어(5개씩 {N // 5}조각)에서 계산했다.
+재현: `python src/v2_analyze.py`. 계획은 `00_analysis_plan.md`. 모든 지표는 앞 {N} 내용어(5개씩 {N // 5}조각)에서 계산했다.
 
 ## 표본
 - Reddit (가족·보호자 글 제외): 글 {len(r)}개, 작성자 조현병 {r[r.label == 1].speaker_id.nunique()}명 / 대조 {r[r.label == 0].speaker_id.nunique()}명
@@ -297,7 +297,7 @@ def main():
 
 그림: `figures/fig1_effects.png`, `fig2_drift_curves.png`, `fig3_tag_validation.png`
 """
-    open(os.path.join(path('reports'), '01_results.md'), 'w', encoding='utf8').write(md_txt)
+    open(os.path.join(path('reports_v2'), '01_results.md'), 'w', encoding='utf8').write(md_txt)
     print(md_txt)
 
 

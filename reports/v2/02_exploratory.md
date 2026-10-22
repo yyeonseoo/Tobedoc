@@ -1,6 +1,6 @@
 # 02. 탐색 분석 (계획 외, 00_analysis_plan.md 변경 기록 E1·E2)
 
-재현: `python src/explore.py`. 본 분석 판정(01)은 바꾸지 않는다.
+재현: `python src/v2_explore.py`. 본 분석 판정(01)은 바꾸지 않는다.
 
 ## E1: r/schizophrenia 안에서 본인 글 vs 가족·보호자 글
 같은 게시판이라 장르와 주제가 비슷하다. 작성 주체는 규칙 기반 1차 분류라 예비 결과다 (팀 수작업 확인 전).

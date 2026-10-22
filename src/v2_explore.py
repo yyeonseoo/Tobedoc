@@ -17,8 +17,8 @@ from sentence_transformers import SentenceTransformer
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
-from analyze import FEATS, FIG, INK, INK2, LABEL, SEED, effects, fmt, grouped_cv, hedges_g, speaker_auc
-from features import C as CHUNK, unit_features
+from v2_analyze import FEATS, FIG, INK, INK2, LABEL, SEED, effects, fmt, grouped_cv, hedges_g, speaker_auc
+from v2_features import C as CHUNK, unit_features
 from text import CFG, chunks, path, words
 from scipy import stats
 
@@ -155,7 +155,7 @@ def main():
     comp['대표 단어'] = pd.Series(tops)
     md = f"""# 02. 탐색 분석 (계획 외, 00_analysis_plan.md 변경 기록 E1·E2)
 
-재현: `python src/explore.py`. 본 분석 판정(01)은 바꾸지 않는다.
+재현: `python src/v2_explore.py`. 본 분석 판정(01)은 바꾸지 않는다.
 
 ## E1: r/schizophrenia 안에서 본인 글 vs 가족·보호자 글
 같은 게시판이라 장르와 주제가 비슷하다. 작성 주체는 규칙 기반 1차 분류라 예비 결과다 (팀 수작업 확인 전).
@@ -203,7 +203,7 @@ DAIS-C는 답변이 적고 주제가 그룹과 거의 겹쳐 군집이 약하고
 
 그림: `figures/fig4_exploratory.png`
 """
-    open(os.path.join(path('reports'), '02_exploratory.md'), 'w', encoding='utf8').write(md)
+    open(os.path.join(path('reports_v2'), '02_exploratory.md'), 'w', encoding='utf8').write(md)
     print(md)
 
 

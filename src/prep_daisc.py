@@ -1,6 +1,6 @@
 """DAIS-C Interactional(FULL) 파일 -> 질문-답변 단위 (data/processed/daisc_units.parquet).
 
-질문-답변 묶기 규칙은 v1(build_qa_units.py)과 같다.
+질문-답변 묶기 규칙은 v1(v1/src/build_qa_units.py)과 같다.
 - 면담자·가족·임상의 턴이 맞장구면 참여자 턴을 이어 붙이고, 질문이면 기준점을 갱신한다.
 - <Mis>(면담자 발화 전사 누락, 23EB14)는 경계로 쓰고 기준점 텍스트는 비운다.
 v2에서 추가: 내용어마다 연구자 판단 태그(Gr/WS/TC/DT) 안에 있었는지 표시해 같은 사람 안에서 비교할 수 있게 한다.

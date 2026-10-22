@@ -6,7 +6,8 @@ paths:
   daisc_metadata: "Metadata/Metadata.xlsx"
   reddit_csv: "data/raw/reddit/Reddit-Based Schizophrenia Detection Dataset.csv"   # Kaggle 원본 그대로 (본문은 제작자가 NLTK 불용어 제거)
   processed: "data/processed"
-  reports: "reports"
+  reports_v2: "reports/v2"   # v2: SBERT 이탈 지표 (계획, 결과, 탐색, 노트북 점검)
+  reports_v3: "reports/v3"   # v3: 임상 피처 엔지니어링 모델
 
 # 두 코퍼스 공통 가공: Reddit 본문이 이미 이렇게 가공돼 있어 DAIS-C에 같은 처리를 맞춘다
 text:

@@ -128,7 +128,7 @@ def main():
     s['대조 평균'] = fa[fa.label == 0][STRUCTURAL].mean()
     md = f"""# 03. 팀 노트북 Reddit AUC 재현과 점검 (E6)
 
-재현: `python src/audit_notebook.py`. 노트북(`v1/colab_v5_1.ipynb`)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 {len(df)}개, 작성자 {df.author.nunique()}명).
+재현: `python src/v2_notebook_audit.py`. 노트북(`v1/colab_v5_1.ipynb`)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 {len(df)}개, 작성자 {df.author.nunique()}명).
 
 ## 조건별 AUC (구조 지표 8개, 로지스틱 회귀, 작성자 단위 5-fold)
 {t.to_markdown(index=False, floatfmt='.3f')}
@@ -141,7 +141,7 @@ def main():
 - 본문(selftext)은 데이터셋 제작자가 NLTK 불용어를 지운 상태라, 1인칭·기능어·접속사 단어는 대부분 제목에서 세어진다. 본문에는 NLTK 목록에 없는 일부(would, could, us, mine, might 등)만 남아 있다.
 - 해석: 제목 제외만으로 {rows[3][1] - rows[1][1]:+.3f}, 제목 포함 상태의 길이 고정(100 토큰)만으로 {rows[4][1] - rows[1][1]:+.3f}, 둘 다 하면 {rows[5][1] - rows[1][1]:+.3f}. 제목이 있으면 제목 문체가 신호를 주도해 길이 고정의 효과가 보이지 않고, 제목을 빼면 본문 길이 차이가 남은 신호의 큰 부분이 된다.
 """
-    open(os.path.join(path('reports'), '03_notebook_audit.md'), 'w', encoding='utf8').write(md)
+    open(os.path.join(path('reports_v2'), '03_notebook_audit.md'), 'w', encoding='utf8').write(md)
     print(md)
 
 

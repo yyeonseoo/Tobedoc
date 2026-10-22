@@ -36,11 +36,11 @@ Reddit에서 지표를 찾고(발견), 같은 지표를 DAIS-C 임상 면담에 
 
 지표는 6개다. 핵심은 이탈 기울기이고, 보조로 평균 이탈, 인접 조각 거리, 후반 기울기(출발 부분을 뺀 이탈), 어휘 재등장률, MATTR(어휘 다양성)을 쓴다.
 
-결과를 보기 전에 분석 계획서([reports/00_analysis_plan.md](reports/00_analysis_plan.md))를 먼저 저장소에 올렸다. 결과를 본 뒤 방법을 바꾸지 않았다는 근거를 남기기 위해서다. 이후 추가한 분석도 실행 전에 계획서의 변경 기록에 먼저 적었다.
+결과를 보기 전에 분석 계획서([reports/00_analysis_plan.md](reports/v2/00_analysis_plan.md))를 먼저 저장소에 올렸다. 결과를 본 뒤 방법을 바꾸지 않았다는 근거를 남기기 위해서다. 이후 추가한 분석도 실행 전에 계획서의 변경 기록에 먼저 적었다.
 
 ## 3. 주 분석 결과
 
-![그룹 차이: Reddit 발견과 DAIS-C 검증](reports/figures/fig1_effects.png)
+![그룹 차이: Reddit 발견과 DAIS-C 검증](reports/v2/figures/fig1_effects.png)
 
 Reddit (작성자 5,793명)
 - 이탈 기울기: g −0.05 (95% CI −0.10~0.00). 두 그룹 차이가 없다.
@@ -52,14 +52,14 @@ DAIS-C (26명)
 - 시작 질문, 성별, 질문 길이를 보정한 모형에서는 조현병군의 기울기가 컸다(p = 0.024). 다만 26명 규모이고, 녹음 방식처럼 보정할 수 없는 차이가 남아 있다.
 - Reddit에서 학습한 모델을 DAIS-C에 그대로 적용한 AUC는 0.39다.
 
-![말한 분량에 따른 첫 조각과의 거리](reports/figures/fig2_drift_curves.png)
+![말한 분량에 따른 첫 조각과의 거리](reports/v2/figures/fig2_drift_curves.png)
 
 연구자 표시와의 비교
 - DAIS-C 저자들이 "담화 추적 어려움(DT)"을 표시한 구간에서, 같은 사람 안의 인접 거리가 커지는 경향은 있었지만 뚜렷하지 않았다(12명 중 8명, p = 0.34).
 
-![같은 사람 안에서 태그 구간의 인접 거리](reports/figures/fig3_tag_validation.png)
+![같은 사람 안에서 태그 구간의 인접 거리](reports/v2/figures/fig3_tag_validation.png)
 
-계획서 기준 판정은 "Reddit 발견 미지지, DAIS-C 재현 안 됨"이다. 세부 수치는 [reports/01_results.md](reports/01_results.md).
+계획서 기준 판정은 "Reddit 발견 미지지, DAIS-C 재현 안 됨"이다. 세부 수치는 [reports/01_results.md](reports/v2/01_results.md).
 
 ## 4. 추가 확인 (탐색 분석)
 
@@ -71,11 +71,11 @@ DAIS-C (26명)
 | E4 | E1을 1인칭 축약어(im, ive 등)를 빼고 다시 계산 | E1에서 보였던 본인 글의 반복 증가, 어휘 감소가 절반 이하로 줄어 유의하지 않음 |
 | E5 | DAIS-C에서 면담자가 "what do you mean?"처럼 되물은 답변과 같은 사람의 다른 답변 비교 | 되물은 답변의 이탈 기울기가 큼 (10명 중 8명, p = 0.020) |
 
-![탐색 분석 E1-E3](reports/figures/fig4_exploratory.png)
+![탐색 분석 E1-E3](reports/v2/figures/fig4_exploratory.png)
 
 E1과 E3를 함께 보면, Reddit의 인접 거리 차이는 환자의 언어라기보다 조현병 게시판 글의 성격(증상 나열, 질문, 경험담)에서 왔을 가능성이 크다. 같은 게시판의 가족·보호자 글에서도 같은 차이가 나타나기 때문이다.
 
-E5는 이번에 얻은 가장 긍정적인 단서다. 같은 사람 안에서 비교하므로 그룹 간 차이가 섞이지 않고, "듣는 사람이 실제로 따라가기 어려워했다"는 사실을 기준으로 삼는다. 이탈 지표가 높은 답변일수록 면담자가 되물었다는 것은 이 지표가 실제 소통의 어려움과 관련이 있다는 뜻이다. 다만 되물은 답변이 24개뿐이라 예비 결과로 본다. 세부 수치는 [reports/02_exploratory.md](reports/02_exploratory.md).
+E5는 이번에 얻은 가장 긍정적인 단서다. 같은 사람 안에서 비교하므로 그룹 간 차이가 섞이지 않고, "듣는 사람이 실제로 따라가기 어려워했다"는 사실을 기준으로 삼는다. 이탈 지표가 높은 답변일수록 면담자가 되물었다는 것은 이 지표가 실제 소통의 어려움과 관련이 있다는 뜻이다. 다만 되물은 답변이 24개뿐이라 예비 결과로 본다. 세부 수치는 [reports/02_exploratory.md](reports/v2/02_exploratory.md).
 
 ## 5. 노트북 AUC 0.78은 어디서 왔나 (E6)
 
@@ -91,7 +91,7 @@ E5는 이번에 얻은 가장 긍정적인 단서다. 같은 사람 안에서 �
 
 제목과 길이가 함께 작용했다. 제목이 있으면 노트북 10B처럼 길이를 맞춰도 AUC가 그대로였고, 제목을 빼면 0.71로 내려간 뒤 길이까지 맞추면 0.65가 됐다. 제목이 있을 때는 제목 문체가 신호를 주도하고, 제목이 빠지면 본문 길이 차이가 남은 신호의 큰 부분을 차지한다는 뜻이다. 본문에는 불용어가 거의 없고 제목에만 있으므로, 1인칭 비율과 기능어 비율은 대부분 제목의 문체를 재게 된다. 제목 문체는 게시판마다 다르다. 예를 들어 연애 게시판 제목은 "My (24F) boyfriend..."처럼 1인칭으로 시작하는 경우가 많다. 반면 이탈 기울기는 제목을 빼도 단독 AUC가 0.65에서 0.64로 거의 그대로여서, 이 지표에는 제목의 영향이 작았다.
 
-데이터셋 설명만으로는 본문이 가공돼 있다는 것을 알기 어렵기 때문에, 이 데이터셋을 쓰는 다른 연구에서도 같은 일이 생길 수 있다. 우리 연구에서는 이것을 데이터셋의 특성을 확인한 방법론적 발견으로 정리할 수 있다. 세부 수치는 [reports/03_notebook_audit.md](reports/03_notebook_audit.md).
+데이터셋 설명만으로는 본문이 가공돼 있다는 것을 알기 어렵기 때문에, 이 데이터셋을 쓰는 다른 연구에서도 같은 일이 생길 수 있다. 우리 연구에서는 이것을 데이터셋의 특성을 확인한 방법론적 발견으로 정리할 수 있다. 세부 수치는 [reports/03_notebook_audit.md](reports/v2/03_notebook_audit.md).
 
 ## 6. 지금까지의 결론
 
@@ -127,10 +127,10 @@ E5는 이번에 얻은 가장 긍정적인 단서다. 같은 사람 안에서 �
 ## 실행 순서
 
 ```
-python src/prepare_daisc.py    # DAIS-C 질문-답변 단위, 판단 태그 위치  -> data/processed/daisc_units.parquet
-python src/prepare_reddit.py   # Reddit 정리, 작성 주체 1차 분류         -> data/processed/reddit_units.parquet
-python src/features.py         # 앞 40 내용어 SBERT 지표 (30·60 민감도)  -> features.parquet, chunks.parquet
-python src/analyze.py          # 계획서의 분석 1-3, 민감도               -> reports/01_results.md, fig1-3
-python src/explore.py          # 탐색 분석 E1-E5 (계획서 변경 기록)     -> reports/02_exploratory.md, fig4
-python src/audit_notebook.py   # 팀 노트북 AUC 재현·점검 (E6)            -> reports/03_notebook_audit.md
+python src/prep_daisc.py    # DAIS-C 질문-답변 단위, 판단 태그 위치  -> data/processed/daisc_units.parquet
+python src/prep_reddit.py   # Reddit 정리, 작성 주체 1차 분류         -> data/processed/reddit_units.parquet
+python src/v2_features.py         # 앞 40 내용어 SBERT 지표 (30·60 민감도)  -> features.parquet, chunks.parquet
+python src/v2_analyze.py          # 계획서의 분석 1-3, 민감도               -> reports/v2/01_results.md, fig1-3
+python src/v2_explore.py          # 탐색 분석 E1-E5 (계획서 변경 기록)     -> reports/v2/02_exploratory.md, fig4
+python src/v2_notebook_audit.py   # 팀 노트북 AUC 재현·점검 (E6)            -> reports/v2/03_notebook_audit.md
 ```

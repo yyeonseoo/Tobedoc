@@ -1,6 +1,6 @@
 # 03. 팀 노트북 Reddit AUC 재현과 점검 (E6)
 
-재현: `python src/audit_notebook.py`. 노트북(`v1/colab_v5_1.ipynb`)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 4950개, 작성자 4566명).
+재현: `python src/v2_notebook_audit.py`. 노트북(`v1/colab_v5_1.ipynb`)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 4950개, 작성자 4566명).
 
 ## 조건별 AUC (구조 지표 8개, 로지스틱 회귀, 작성자 단위 5-fold)
 | 조건                                                                                   |   작성자 단위 AUC |
