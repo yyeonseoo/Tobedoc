@@ -1,18 +1,27 @@
 # API 키 (절대 커밋 금지)
 .env
 .env.*
-# 원본 데이터와 전처리 산출물 (원문 포함): data/raw/dais-c, data/raw/reddit, data/processed, v1/data
+
+# MCS-SOFA: 병원 환자 데이터와 미발표 연구 자료. 비식별본과 코드까지 폴더 전체를 올리지 않는다
+mcs_sofa/
+
+# 조현병: 원본 데이터와 전처리 산출물 (원문 포함) - schizophrenia/data, schizophrenia/v1/data
 data/
 # v1 LLM 증강 산출물: 합성 텍스트·프롬프트(원본 시드 발췌 포함)·로그·감사표
 synthetic/
 # v1 증강 리포트 중 원본 발췌가 실린 것
-v1/augmentation/reports/02_pilot_preview.md
-v1/augmentation/reports/03_validation.md
-v1/augmentation/reports/05_validation_v2.md
-v1/augmentation/reports/05_pilot_preview_v2.md
-v1/augmentation/reports/04_post_filter.md
-v1/augmentation/reports/04_post_filter_v3.md
-v1/augmentation/reports/06_validation_v3.md
-v1/augmentation/reports/06_pilot_preview_v3.md
+schizophrenia/v1/augmentation/reports/02_pilot_preview.md
+schizophrenia/v1/augmentation/reports/03_validation.md
+schizophrenia/v1/augmentation/reports/05_validation_v2.md
+schizophrenia/v1/augmentation/reports/05_pilot_preview_v2.md
+schizophrenia/v1/augmentation/reports/04_post_filter.md
+schizophrenia/v1/augmentation/reports/04_post_filter_v3.md
+schizophrenia/v1/augmentation/reports/06_validation_v3.md
+schizophrenia/v1/augmentation/reports/06_pilot_preview_v3.md
+
+# 엑셀·워드 파일은 어디에 있든 올리지 않는다
+*.xlsx
+*.docx
+
 __pycache__/
 *.pyc
