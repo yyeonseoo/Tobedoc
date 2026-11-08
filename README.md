@@ -16,7 +16,7 @@
 | DAIS-C 파일 | `Speaker Only_Raw` 폴더의 21AN11은 발화가 약 절반 빠져 있고 21UN11은 다른 텍스트가 섞여 있다. 타임스탬프 파일은 27명 중 21명이 전사와 턴 수가 맞지 않는다 | 태그 포함 파일을 써야 한다. 말 속도 분석은 할 수 없다 |
 | DAIS-C 태그 | 연구자 판단 태그(DT 등)를 붙인 절차, 맹검 여부, 평가자 일치도가 공개되지 않았다 | 정답으로 쓰기 어렵고 참고 기준으로만 쓸 수 있다 |
 | Reddit 라벨 | 라벨이 진단이 아니라 게시판이다(조현병 게시판 대 농담·연애·육아 게시판). 조현병 게시판에는 가족·보호자 글도 섞여 있다 | 모델이 조현병이 아니라 게시판을 구분할 수 있다 |
-| Reddit 본문 | 데이터셋 제작자가 본문만 소문자화, 문장부호 제거, NLTK 불용어 제거를 해 두었고 제목은 원문이다. 데이터셋 설명에는 "preprocessing"이라는 말만 있다 | 제목과 본문을 섞어 쓰면 제목 문체가 피처에 섞인다. 1인칭·기능어 같은 피처는 본문에서 계산할 수 없다 |
+| Reddit 본문 | 데이터셋 제작자가 본문만 소문자화, 문장부호 제거, NLTK 불용어 제거를 해 두었고 제목은 원문이다. 데이터셋 설명에는 "preprocessing"이라는 말만 있다 | 제목과 본문을 섞어 쓰면 제목 문체가 Feature에 섞인다. 1인칭·기능어 같은 Feature는 본문에서 계산할 수 없다 |
 | Reddit 길이 | 조현병 게시판 글이 짧다(중앙값 127 대 179단어) | 글 길이 하나만으로 AUC 0.65가 나온다 |
 
 ### 2. 분석 과정에서 확인한 문제와 그 영향
@@ -36,18 +36,18 @@
 | 분석 | 결과 |
 |---|---|
 | Reddit, SBERT 이탈 기울기 (본문만, 길이 통일) | 그룹 차이 없음(g −0.05). 6개 지표 분류 AUC 0.54 |
-| Reddit, 임상 개념 피처 13개 (v3) | 교란 기준선 대비 AUC +0.003. 같은 게시판 안에서 본인 글과 가족·보호자 글을 비교하면 방향이 뒤집혀, 남은 차이도 게시판 성격으로 보인다 |
+| Reddit, 임상 개념 Feature 13개 (v3) | 교란 기준선 대비 AUC +0.003. 같은 게시판 안에서 본인 글과 가족·보호자 글을 비교하면 방향이 뒤집혀, 남은 차이도 게시판 성격으로 보인다 |
 | DAIS-C 검증 | Reddit과 방향 일치는 우연 수준(13개 중 7개). Reddit 모델을 그대로 적용한 AUC 0.58(95% CI 0.34~0.80) |
 | DAIS-C 혼합효과모형 | 시작 질문·성별·질문 길이를 보정하면 조현병군의 이탈 기울기가 컸다(p = 0.024). 26명 규모이고 녹음 방식 교락이 남아 있어 잠정적이다 |
-| DAIS-C 같은 사람 안 비교 | 면담자가 "what do you mean?"처럼 되물은 답변에서 이탈 기울기가 컸다(10명 중 8명, p = 0.02, 여러 피처 보정 시 q = 0.25). 교락이 들어오지 않는 설계라 가장 의미 있는 단서다 |
+| DAIS-C 같은 사람 안 비교 | 면담자가 "what do you mean?"처럼 되물은 답변에서 이탈 기울기가 컸다(10명 중 8명, p = 0.02, 여러 Feature 보정 시 q = 0.25). 교락이 들어오지 않는 설계라 가장 의미 있는 단서다 |
 
-### 4. 피처 정리: 팀장님 노트북 피처와 연서 제안 피처
+### 4. Feature 정리: 인성님 노트북 Feature와 연서님 제안 Feature
 
-**팀장님 노트북 피처 (9개, `v1/colab_latest.ipynb`)**
+**인성님 노트북 Feature (9개, `v1/colab_latest.ipynb`)**
 
-제목+본문을 40단어 창(20단어씩 겹침)으로 나눠 계산한다. 단독 AUC는 노트북 조건을 재현해 피처 하나만으로 로지스틱 회귀를 돌린 값이다(`src/v2_notebook_audit.py`). DAIS-C g는 노트북 출력값이다(양수 = 조현병군이 큼).
+제목+본문을 40단어 창(20단어씩 겹침)으로 나눠 계산한다. 단독 AUC는 노트북 조건을 재현해 Feature 하나만으로 로지스틱 회귀를 돌린 값이다(`src/v2_notebook_audit.py`). DAIS-C g는 노트북 출력값이다(양수 = 조현병군이 큼).
 
-| 피처 | 정의 | 단독 AUC (노트북 그대로 → 제목 제외) | Reddit g | DAIS-C g | 비고 |
+| Feature | 정의 | 단독 AUC (노트북 그대로 → 제목 제외) | Reddit g | DAIS-C g | 비고 |
 |---|---|---|---|---|---|
 | `adj_semantic_distance` | 인접 창 TF-IDF 거리 | 0.656 → 0.659 | +0.45 | +0.26 | 창이 50% 겹쳐 겹침 구조의 영향을 받음 |
 | `semantic_drift_slope` | 첫 창과의 TF-IDF 거리 기울기 | 0.652 → 0.636 | +0.54 | +0.26 | 제목 영향은 작음. 길이 통제 없음 |
@@ -59,13 +59,13 @@
 | `conjunction_ratio` | 접속사 비율 | 0.545 → 0.530 | −0.13 | −0.28 | 대부분 제목에서 셈 |
 | `paranoia_content_ratio` (내용) | 편집증 관련 단어 비율 | 주 모델 제외 | +0.44 | 미적용 | 주제 단어라 내용 지표로만 사용 |
 
-**연서 제안 피처 (v2·v3)**
+**연서 제안 Feature (v2·v3)**
 
 공통 가공(두 데이터 모두 불용어 제거) 후 내용어 앞 40개를 5개씩 8조각으로 나눠 SBERT로 계산한다. Reddit g는 교란 기준선(길이, 주제, 제목)으로 보정한 잔차의 효과 크기다. "되물음"은 DAIS-C 같은 사람 안에서 면담자가 되물은 답변의 값이 더 큰 화자 수다(10명 중).
 
-| 피처 | 임상 개념 | 도입 | 정의 | Reddit 보정 g | DAIS-C g | 되물음 |
+| Feature | 임상 개념 | 도입 | 정의 | Reddit 보정 g | DAIS-C g | 되물음 |
 |---|---|---|---|---|---|---|
-| `drift_slope` | 이탈 | v2 | 첫 조각과의 SBERT 거리 기울기 (팀장님 피처를 의미 기반·길이 고정으로 바꾼 것) | +0.01 | +0.35 | 8/10 (p = 0.02) |
+| `drift_slope` | 이탈 | v2 | 첫 조각과의 SBERT 거리 기울기 (인성님 Feature를 의미 기반·길이 고정으로 바꾼 것) | +0.01 | +0.35 | 8/10 (p = 0.02) |
 | `drift_mean` | 이탈 | v2 | 첫 조각과의 평균 거리 | +0.08 | +0.02 | 6/10 |
 | `adj_mean` | 탈선 | v2 | 인접 조각 거리 (겹치지 않는 조각) | +0.10 | −0.70 | 3/10 |
 | `late_slope` | 이탈 | v2 | 첫 15단어 이후의 기울기 (출발부 효과 제외) | +0.00 | +0.49 | 5/10 |
@@ -81,13 +81,13 @@
 
 연서 제안의 DAIS-C 전용 설계: 면담자 질문을 기준점으로 한 질문-답변 단위, 질문과 답변 사이 거리(상대 관련성), 면담자 되물음을 이용한 같은 사람 안 검증.
 
-정리하면, 팀장님 피처 중 큰 효과를 보인 문체 피처(평균 단어 길이, 1인칭·기능어 비율)는 본문 가공과 제목의 영향을 크게 받았고 DAIS-C에서 방향이 반대였다. 연서 제안 피처는 교란을 보정하면 Reddit 효과가 모두 작았다(|g| 0.15 이하). 이탈 기울기만 같은 사람 안 되물음 분석에서 예비 신호를 보였다.
+정리하면, 인성님 Feature 중 큰 효과를 보인 문체 Feature(평균 단어 길이, 1인칭·기능어 비율)는 본문 가공과 제목의 영향을 크게 받았고 DAIS-C에서 방향이 반대였다. 연서 제안 Feature는 교란을 보정하면 Reddit 효과가 모두 작았다(|g| 0.15 이하). 이탈 기울기만 같은 사람 안 되물음 분석에서 예비 신호를 보였다.
 
 ### 5. 결론
 
 - 말할 수 있는 것: 이 데이터셋들의 함정(본문만 가공된 Reddit, 게시판 라벨, 길이, DAIS-C 교락과 파일 오류)을 직접 확인했고, 그것을 정리하면 높은 분류 성능이 사라진다는 것. 이탈 지표가 같은 사람 안에서 듣는 사람의 혼란과 함께 움직인다는 예비 결과.
 - 말할 수 없는 것: 조현병을 감별하는 모델의 성능. 조현병 환자의 언어가 더 이탈한다는 그룹 차이.
-- 이유: 피처 설계보다 데이터 구조의 한계가 크다. 라벨이 진단이 아니거나(Reddit), 표본이 작고 조건이 그룹과 겹친다(DAIS-C).
+- 이유: Feature 설계보다 데이터 구조의 한계가 크다. 라벨이 진단이 아니거나(Reddit), 표본이 작고 조건이 그룹과 겹친다(DAIS-C).
 
 ### 6. 다음 단계 제안
 
@@ -104,7 +104,7 @@
 
 | 내용 | 문서 |
 |---|---|
-| v3 임상 피처 13개 결과 | [reports/v3/01_results.md](reports/v3/01_results.md), 계획 [reports/v3/00_plan.md](reports/v3/00_plan.md) |
+| v3 임상 Feature 13개 결과 | [reports/v3/01_results.md](reports/v3/01_results.md), 계획 [reports/v3/00_plan.md](reports/v3/00_plan.md) |
 | 팀 노트북 재현·점검 | [reports/v2/03_notebook_audit.md](reports/v2/03_notebook_audit.md) |
 | v2 진행 상황 보고 (10/16) | [reports/v2/SUMMARY_2026-10-16.md](reports/v2/SUMMARY_2026-10-16.md) |
 | v2 주 분석·탐색 분석 | [reports/v2/01_results.md](reports/v2/01_results.md), [reports/v2/02_exploratory.md](reports/v2/02_exploratory.md), 계획 [reports/v2/00_analysis_plan.md](reports/v2/00_analysis_plan.md) |
@@ -112,7 +112,7 @@
 
 ![v3 모델별 AUC](reports/v3/figures/fig1_auc.png)
 
-![v3 피처별 효과](reports/v3/figures/fig2_features.png)
+![v3 Feature별 효과](reports/v3/figures/fig2_features.png)
 
 ---
 
@@ -125,7 +125,7 @@
 | `config.yaml` | 설정 하나로 관리 |
 | `src/text.py`, `prep_daisc.py`, `prep_reddit.py` | 공통 전처리 (두 코퍼스 같은 가공, 단위 구축) |
 | `src/v2_*.py` | v2: SBERT 이탈 지표 분석, 탐색 분석, 팀 노트북 점검 |
-| `src/v3_*.py` | v3: 임상 피처 13개와 교란 기준선 모델 |
+| `src/v3_*.py` | v3: 임상 Feature 13개와 교란 기준선 모델 |
 | `reports/v2/`, `reports/v3/` | 버전별 계획(00), 결과(01~), 보고서, 그림 |
 | `data/raw/`, `data/processed/` | 원본과 산출물 (git 제외) |
 | `v1/` | 이전 작업 보관 (DAIS-C 단독 분석, LLM 증강, 팀 Colab 노트북 v5.1과 최신본) |
@@ -147,6 +147,6 @@ python src/v2_analyze.py           # 계획서의 분석 1-3, 민감도         
 python src/v2_explore.py           # 탐색 분석 E1-E5                          -> reports/v2/02_exploratory.md, fig4
 python src/v2_notebook_audit.py    # 팀 노트북 AUC 재현·점검 (E6)            -> reports/v2/03_notebook_audit.md
 # v3
-python src/v3_features.py          # 임상 피처 13개, 교란 기준선 변수         -> data/processed/v3_features.parquet
+python src/v3_features.py          # 임상 Feature 13개, 교란 기준선 변수         -> data/processed/v3_features.parquet
 python src/v3_model.py             # M1-M4, 참고 R1                           -> reports/v3/01_results.md, fig1-2
 ```
