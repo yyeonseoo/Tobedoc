@@ -1,0 +1,47 @@
+{
+  "source_hashes": {
+    "analysis/psyche-thought-v01/responses/D-bookshop-source_operationalized-derailment-work-20261105.json": "60c57565634b88e0160534a207c5aedccd0237a00593b02b8efec28080566277",
+    "analysis/psyche-thought-v01/responses/D-bookshop-hub_category-normal-morning-20261105.json": "bbb6a29940a3ce096b390cc76f64d4160e7b33d6b52d6ab333eb7afb81c82360",
+    "analysis/psyche-thought-v01/responses/D-bookshop-hub_category-derailment-morning-20261105.json": "5574de1ceb362ee3730c8528db2567c983743f6b36867d7f4e990178317b3258",
+    "analysis/psyche-thought-v01/responses/D-bookshop-source_operationalized-derailment-morning-20261105.json": "06bbb0a807de8497af787705b13a7f53cb27deeacd3d47e2ff02ee6b549545c0",
+    "analysis/psyche-thought-v01/responses/D-bookshop-hub_category-normal-work-20261105.json": "331093e77e3291b60e2f4622853698cd5fced0d72f55a22942ae4e2da56b4f02",
+    "analysis/psyche-thought-v01/responses/D-bookshop-source_operationalized-normal-work-20261105.json": "bc012509a835f7a6cba08127bfc811139c13364d55460f86ab8ffb6197efcc6e",
+    "analysis/psyche-thought-v01/responses/D-bookshop-hub_category-derailment-work-20261105.json": "fe06c14d9774471b661926c69fc98878844a7ca9866b41da523dc832eaed7599",
+    "analysis/psyche-thought-v01/responses/D-bookshop-source_operationalized-normal-morning-20261105.json": "8ee7050b08d3dc87c851bf8e624769225ade588abe47ecd797c54fb3901a2186",
+    "data/team-corpus-20261104/utterances.csv": "5b8d11491f2ab5fc4ef0612e6ddc28411c59e70719ecf3147fd400775185c116",
+    "config/main-comparison-v01.json": "38dcc541ede5ea55b4291a5be3494efa68e1d630d028b96ff0f80c5214ac83b6",
+    "config/psyche-thought-v01.json": "749d19b3507cfb37f7a1fd20a1fdba672d0134237d8d49ec26cb721d3bd95bec",
+    "analysis/psyche-thought-v01/requests.json": "c26d5eae08bfa762c8720701147cb519d594416f8963dea20433cb8a7c01d9a5",
+    "scripts/NativeFeatures.swift": "c143ce19fc3e82cc1d75262806237fe7d512f2c707eb547bb60d7cee1ed3d802",
+    "scripts/extract_automatic_features.py": "60c4d0481d28bee9333bb138fd93c6cb7815cbe2d64e7dbd04b26d20392db0ac",
+    "scripts/topic_local_separation.py": "6aa629924cf62c2e6e0201d0ea56b45bf4336ea4c9116b7a690a3f85a3f55826",
+    "analysis/topic-local-separation-v01/results.json": "c35f3d930a436150adbe1e0fa5f6c0f759cd00b7ca12914cdb8235ba9057000f",
+    "analysis/topic-local-separation-v01/response-details.json": "1ae839b00bb50c1a5eb1a31f68e1613437480022638599b89fa72627c664e12e",
+    "analysis/topic-trajectory-v01/native-output.json": "a7d3988384f0feb71199d70df2d2bcacd0049a5533c89df781c9dee59d04bbde",
+    "analysis/measurement-external-v03/results.json": "5d969c1215468fa0285281885839741829ade46b911c91b00e31959eaf2f84f5"
+  },
+  "prior_provenance_files_checked": 107,
+  "responses_local_formulas_recomputed": 48,
+  "matched_insertion_pairs_recomputed": 48,
+  "other_topic_increased_adjacent_cos": 20,
+  "external_nonclinical_spearman": 0.03172687265499582,
+  "human_packet": {
+    "rows": 16,
+    "psyche_existing": 8,
+    "team_existing": 8,
+    "completed_annotations": 0
+  },
+  "old_holdout_requests": 32,
+  "old_holdout_outputs": 0,
+  "new_generation": 0,
+  "new_embeddings": 0,
+  "review_packet_selection": "Existing development first seed, all arms/thought/questions (8) + team Q03 both generators N0/NMULTI/CIRC2/DER2 (8); chosen for calibration coverage, not random performance estimation",
+  "metric_decisions": {
+    "question_answer_cos": "actual question centroid vs answer sentence centroid; auxiliary association only",
+    "topic_association": "mean maximum sentence-to-fixed-event-prototype cosine, not actual question similarity",
+    "adjacent_cos": "secondary descriptor; fails monotonicity under some same-length other-event insertions",
+    "adjacency_excess": "arrangement descriptor with reversal invariance; not clinical coherence",
+    "raw_lexical_diversity": "composition confound monitor based on INC3 analysis, not target outcome"
+  },
+  "interpretation": "Single reviewer annotation calibration pending; not clinical validation or independent agreement."
+}

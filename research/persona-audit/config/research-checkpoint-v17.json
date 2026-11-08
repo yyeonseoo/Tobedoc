@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-05",
+  "roadmap_stage": 2,
+  "previous_checkpoint": "config/research-checkpoint-v16.json",
+  "development_ai_readings": 16,
+  "source_mix": "8 development + 8 selected team utterances; not independent confirmation",
+  "counts_B": {
+    "yes": 3,
+    "no": 9,
+    "uncertain": 4,
+    "unassessable": 0
+  },
+  "human_readings": 0,
+  "new_speech_outputs": 0,
+  "rubric_and_sampling_plan": "share/main-comparison-v01/AI\ud310\ub3c5\uae30\uc900_v1.md",
+  "audit": "python3 scripts/audit_ai_calibration.py",
+  "next": "Freeze case/question manifest, prompts and fact lists; no generation.",
+  "scope": "AI descriptive endpoint only; no independent clinical endpoint established."
+}

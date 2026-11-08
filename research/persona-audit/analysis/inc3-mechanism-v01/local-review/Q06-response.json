@@ -1,0 +1,14 @@
+{
+  "model": "qwen3:14b",
+  "created_at": "2026-11-04T06:36:19.919305Z",
+  "response": "{\n  \"items\": [\n    {\n      \"id\": \"3b6a313a731d\",\n      \"observation\": \"The text contains frequent repetition of connecting/grammatical words and lacks clear sentence structure, appearing more list-like with ambiguous connections between ideas.\",\n      \"quotes\": [\"Cooking the table football corner salt jumping potato sometimes, you know, the fridge blue spoon waiting\", \"Spinach clock chicken, walking through cup, lemon fork early, and shoes with boiling water\"]\n    },\n    {\n      \"id\": \"3c7c737a7fee\",\n      \"observation\": \"The text uses connecting/grammatical words appropriately to form coherent, sentence-like structures with clear progression of ideas.\",\n      \"quotes\": [\"I do a decent spaghetti bolognese, that’s probably my favourite, because it’s simple but tastes good\", \"I also make a good breakfast – proper English fry-up at the weekend, bit of bacon, eggs, mushrooms, that sort of thing\"]\n    },\n    {\n      \"id\": \"501b5518ead0\",\n      \"observation\": \"The text is highly repetitive with connecting/grammatical words and concrete nouns, but lacks clear sentence structure, appearing more list-like with ambiguous relationships between phrases.\",\n      \"quotes\": [\"Curries the pan of evenings the proudest chicken of slow\", \"Shows the ideas of trying the off day of new of things\"]\n    },\n    {\n      \"id\": \"dc3d05979316\",\n      \"observation\": \"The text uses connecting/grammatical words effectively to form coherent, sentence-like structures with clear and logical progression of ideas.\",\n      \"quotes\": [\"I mostly cook curries, because my mate at the warehouse taught me how to do a proper one from scratch\", \"I try to cook in big batches and freeze portions for the week, because after a long shift I don't want to start from nothing\"]\n    }\n  ]\n}",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 37462960459,
+  "load_duration": 3591584,
+  "prompt_eval_count": 989,
+  "prompt_eval_cached_count": 141,
+  "prompt_eval_duration": 3342922000,
+  "eval_count": 414,
+  "eval_duration": 34058066000
+}

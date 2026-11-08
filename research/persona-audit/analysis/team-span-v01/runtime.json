@@ -1,0 +1,16 @@
+{
+  "name": "qwen3:14b",
+  "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "quant": "Q4_K_M",
+  "template_sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4",
+  "options": {
+    "temperature": 0,
+    "seed": 20261108,
+    "num_ctx": 4096,
+    "num_predict": 540
+  },
+  "version": {
+    "version": "0.40.6"
+  },
+  "context": "fresh per batch; no past answers or condition labels; no clinical decisions"
+}

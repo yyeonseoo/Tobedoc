@@ -1,0 +1,104 @@
+{
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "For each left and right fragment, copy a single short exact contiguous phrase naming a central entity or action from THAT side only. Return an empty string if none. Preserve spelling and case. Do not label relations or symptoms, paraphrase, or complete any speech.\n[{\"id\": \"S09\", \"left\": \"so it was always about football\", \"right\": \"football most days after school\"}, {\"id\": \"S10\", \"left\": \"The detective makes it\", \"right\": \"I keep thinking about the detective\"}, {\"id\": \"S11\", \"left\": \"so in the summers we’d often be out there until it got dark\", \"right\": \"just messing about or sometimes trying to cook sausages on a little fire\"}, {\"id\": \"S12\", \"left\": \"and she said I looked tired\", \"right\": \"and I said I'd tried to have a lie in\"}]",
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "S09": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S10": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S11": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S12": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "S09",
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 20261108,
+      "num_ctx": 4096,
+      "num_predict": 540
+    }
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-08T03:49:55.719195Z",
+    "response": "{\"S09\": {\"left\": \"football\", \"right\": \"football\"}, \"S10\": {\"left\": \"The detective\", \"right\": \"the detective\"}, \"S11\": {\"left\": \"messing about\", \"right\": \"trying to cook sausages\"}, \"S12\": {\"left\": \"looked tired\", \"right\": \"had a lie in\"}}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7315615917,
+    "load_duration": 381167,
+    "prompt_eval_count": 209,
+    "prompt_eval_cached_count": 62,
+    "prompt_eval_duration": 729325000,
+    "eval_count": 83,
+    "eval_duration": 6575752000
+  }
+}

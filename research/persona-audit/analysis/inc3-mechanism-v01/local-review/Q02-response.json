@@ -1,0 +1,14 @@
+{
+  "model": "qwen3:14b",
+  "created_at": "2026-11-04T06:33:54.233441Z",
+  "response": "{\n  \"items\": [\n    {\n      \"id\": \"3745b14945d3\",\n      \"observation\": \"The text uses frequent repetition of connecting/grammatical words and lacks clear sentence structure, appearing more list-like.\",\n      \"quotes\": [\"Warehouse the beeping of aisle the scanner hand of Tuesday trolley.\", \"Stock control the counting of shelves the someday chance of round the coming.\"]\n    },\n    {\n      \"id\": \"6899df75d7ad\",\n      \"observation\": \"The text uses a balanced mix of concrete and connecting words, forming coherent, sentence-like structures.\",\n      \"quotes\": [\"Most of the shifts are evening or nights, so it can get a bit tiring but it suits me, since I’m not much of a morning person anyway.\", \"The work itself is quite straightforward and not too stressful.\"]\n    },\n    {\n      \"id\": \"72f6bda4ae90\",\n      \"observation\": \"The text uses a moderate amount of connecting/grammatical words with a clear sentence-like structure and concrete details.\",\n      \"quotes\": [\"My job is picking, so I get a handheld scanner that tells me what items to collect and which aisle they're in, and I fill a trolley and take it to the packing area.\", \"It's not what I want to do forever, but it pays the rent and the hours work for me at the moment.\"]\n    },\n    {\n      \"id\": \"cea919bc51e7\",\n      \"observation\": \"The text contains frequent repetition of connecting/grammatical words and concrete words, with an ambiguous, list-like structure.\",\n      \"quotes\": [\"Well, the job warehouse so shift mornings banana boxes sometimes, well, in, you know, hands moving shelves run.\", \"I, you know, talk to barcodes, code, the shelf dinner, like, when pallet, I go fish chicken clock, till the beep.\"]\n    }\n  ]\n}",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 38418863541,
+  "load_duration": 1984208,
+  "prompt_eval_count": 1002,
+  "prompt_eval_cached_count": 141,
+  "prompt_eval_duration": 2985395000,
+  "eval_count": 415,
+  "eval_duration": 35402616000
+}

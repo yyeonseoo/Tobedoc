@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-04",
+  "roadmap_stage": 2,
+  "status": "Comparison architecture fixed; human annotation rubric awaiting 16-item calibration. Not preregistration or permission to generate.",
+  "question": "In a fixed local PSYCHE-style prompt port, does an operational thought-transition instruction increase evidence-backed unclear transitions beyond a category label, after accounting for its effect under Normal, and what happens to question answering and supplied facts?",
+  "scope": "Instruction-module experiment using a third-party PSYCHE-style implementation, not native PSYCHE efficacy or a clinical symptom score",
+  "implementation_commit": "54d5c8761a9055a1e86d153715607ef9fa26358a",
+  "existing_source_spec": "config/psyche-thought-v01.json",
+  "conditions": [
+    {
+      "id": "C0",
+      "name": "neutral",
+      "rule": "Omit Thought process and Experimental thought-process instruction; preserve all other profile and output fields"
+    },
+    {
+      "id": "C1",
+      "name": "category_normal",
+      "reuse_arm": "hub_category",
+      "thought": "Normal"
+    },
+    {
+      "id": "C2",
+      "name": "category_derailment",
+      "reuse_arm": "hub_category",
+      "thought": "Derailment"
+    },
+    {
+      "id": "C3",
+      "name": "operational_normal",
+      "reuse_arm": "source_operationalized",
+      "thought": "Normal"
+    },
+    {
+      "id": "C4",
+      "name": "operational_derailment",
+      "reuse_arm": "source_operationalized",
+      "thought": "Derailment"
+    },
+    {
+      "id": "C5",
+      "name": "coherent_multitopic",
+      "rule": "Same as neutral with benign instruction",
+      "instruction": "Discuss several aspects of the requested activity, keeping the transitions understandable through ordinary temporal, causal, or elaborative connections. Keep answering the question. Do not name this instruction."
+    }
+  ],
+  "operational_instructions_policy": "Reuse the two verbatim researcher-authored instructions in psyche-thought-v01; source-informed paraphrases, not original PSYCHE prompts. Export hashes before generation.",
+  "fixed_factors": [
+    "same supplied profile/history",
+    "same question and context",
+    "same backend digest/template/options",
+    "fresh independent conversation per cell",
+    "same 100-140-word request and Normal productivity",
+    "same seed within a comparison block; paired seed is not guaranteed shared randomness"
+  ],
+  "backend": {
+    "model": "qwen3:14b",
+    "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "quantization": "Q4_K_M",
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repeat_penalty": 1.0,
+    "num_ctx": 16384,
+    "num_predict": 768,
+    "think": false
+  },
+  "primary_endpoint": "Single human reviewer: at least one interpretable clause/sentence transition with an unclear or oblique connection, backed by ordered verbatim evidence spans and a reason; yes/no/uncertain/unassessable",
+  "primary_estimand": "(C4-C3)-(C2-C1) in response-level transition-presence proportion, first averaged across question/seed blocks per fictional case, then equally across cases",
+  "primary_bound": "Unknown ratings are not zero. Compute full-denominator binary bounds for each cell; contrast lower bound L4-U3-U2+L1 and upper U4-L3-L2+U1. Missing outputs likewise remain unknown. No threshold chosen after holdout.",
+  "secondary": [
+    "direct/partial/absent/uncertain question answer with quote",
+    "within-clause unintelligibility with quote",
+    "supplied-fact present/contradicted/absent/uncertain with quote; claim presence alone is not correctness",
+    "word/sentence counts and pairwise length mismatch",
+    "literal clinical-label leakage"
+  ],
+  "metric_audit_only": [
+    "existing OS sentence embedding 512D revision1 question-answer cosine",
+    "topic prototype association only if fixed before outcomes; never mislabeled as actual-question cosine",
+    "adjacent cosine and adjacency excess; not success criteria",
+    "MATTR and repetition as confound descriptors"
+  ],
+  "human_review": {
+    "available_reviewers": 1,
+    "qualification": "medical student researcher; not clinical gold",
+    "calibration_n": 16,
+    "independent_interrater_reliability_available": false,
+    "blinding": "hide condition/model/arm and metric results; preserve original question/text; content recognition remains possible",
+    "calibration_rule": "Review all 16; fix ambiguous rules with version log and verify quotes before any confirmatory generation. Do not optimize rubric to separate intended labels.",
+    "rubric_freeze_status": "pending actual user feedback",
+    "no_rater_fallback": "If transition annotation remains infeasible, narrow to question-answer/fact preservation after an explicit design amendment; do not replace human criterion with cosine or unvalidated Qwen judge."
+  },
+  "development": {
+    "existing_case": "D-bookshop",
+    "questions": 2,
+    "seeds": [
+      20261105,
+      20261106
+    ],
+    "reuse_existing_outputs": 16,
+    "future_missing_neutral_and_benign_outputs": 8,
+    "total_if_generated": 24,
+    "generation_authorized_now": false
+  },
+  "confirmation_plan": {
+    "new_cases": 4,
+    "questions_per_case": 2,
+    "seeds_per_question": 2,
+    "conditions": 6,
+    "outputs_if_later_released": 96,
+    "generation_authorized_now": false,
+    "case_and_question_manifest_status": "not yet authored/frozen; required before release",
+    "independent_units": "4 authored cases, not 96 patients",
+    "old_32_holdout_requests": "untouched; not automatically released or called equivalent to the new design",
+    "analysis": "case-level effects plus all blocks; no p-values treating seeds or sentences as patients"
+  },
+  "decision_rule": "Report estimated interaction and unknown-value bounds, control flags, and side effects. Directionally consistent candidate only if interaction lower bound >0 overall and positive point estimates in at least 3/4 cases; operational study rule, not clinical threshold or powered efficacy test. Any worsened within-clause intelligibility, answering or factual contradiction is reported separately and prevents an unqualified improvement claim.",
+  "repair_policy": "Only one demonstrated evaluable failure may trigger stage4; changes freeze before stage5. If no repair is justified, stage5 confirms the original comparison. Holdout is never used to choose a repair.",
+  "stage3_release_requirements": [
+    "calibration completed and rubric version fixed",
+    "literal prompts and input manifests frozen",
+    "model/template/options match or reuse analyzed separately",
+    "explicit bounded generation decision; no paid API/model install",
+    "fact inventory and evidence scoring rules fixed before inspecting newly generated outputs"
+  ],
+  "stop_this_turn": "Produce evidence audit, one-page design and blank blinded calibration packet. No new speech, embedding or clinical annotation.",
+  "primary_point_estimate_policy": "Within each case, use only question/seed blocks with definite yes/no in all C1-C4 for the point interaction. Report joint-complete blocks and all-block unknown-value bounds separately. Zero joint-complete blocks gives null case point estimate and cannot satisfy directional-consistency criterion; do not silently reweight across different available cells."
+}

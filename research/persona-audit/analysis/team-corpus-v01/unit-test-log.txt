@@ -1,0 +1,12 @@
+test_apostrophes_and_hyphens (test_team_corpus.TestTeamCorpus.test_apostrophes_and_hyphens) ... ok
+test_exact_inference (test_team_corpus.TestTeamCorpus.test_exact_inference) ... ok
+test_mattr_rolling_window (test_team_corpus.TestTeamCorpus.test_mattr_rolling_window) ... ok
+test_one_sentence_overlap_is_missing_not_zero (test_team_corpus.TestTeamCorpus.test_one_sentence_overlap_is_missing_not_zero) ... ok
+test_overlap_repetition_denominator (test_team_corpus.TestTeamCorpus.test_overlap_repetition_denominator) ... ok
+test_prefix_exact_length_and_punctuation (test_team_corpus.TestTeamCorpus.test_prefix_exact_length_and_punctuation) ... ok
+test_rank_ties (test_team_corpus.TestTeamCorpus.test_rank_ties) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.003s
+
+OK

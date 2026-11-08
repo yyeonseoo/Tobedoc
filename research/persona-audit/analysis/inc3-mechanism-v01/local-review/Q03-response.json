@@ -1,0 +1,14 @@
+{
+  "model": "qwen3:14b",
+  "created_at": "2026-11-04T06:34:28.131162Z",
+  "response": "{\n  \"items\": [\n    {\n      \"id\": \"278bc3822f2a\",\n      \"observation\": \"The text uses a balanced mix of connecting and concrete words, forming coherent, sentence-like structures.\",\n      \"quotes\": [\"My family's quite small really. There's my mum, who lives about twenty minutes away on the bus\", \"We're not the kind of family that talks about feelings much, but we look out for each other\"]\n    },\n    {\n      \"id\": \"41acef2c9f74\",\n      \"observation\": \"The text is list-like with frequent repetition of connecting/grammatical words and lacks clear sentence structure, often containing ambiguous phrases.\",\n      \"quotes\": [\"Family carpets picture window sky ladders with the blue running tap, you know, always when Sunday\", \"The lamp is talking brother hats, drawer cupboard, and outside inside the mug is car park biscuit\"]\n    },\n    {\n      \"id\": \"60efa7e07bed\",\n      \"observation\": \"The text uses a moderate number of connecting words and concrete details, forming mostly sentence-like structures with some conversational flow.\",\n      \"quotes\": [\"They live about an hour away, so I don’t see them as much as I’d like, but we keep in touch quite a bit – phone calls and all that\", \"We all get together for Christmas and birthdays, that sort of thing\"]\n    },\n    {\n      \"id\": \"ee9b2fcfc84a\",\n      \"observation\": \"The text is highly fragmented, with minimal use of connecting words and a list-like structure composed of disjointed, ambiguous phrases.\",\n      \"quotes\": [\"Mum the canteen of custard the skin of four the Sunday table\", \"Family the table the people of them the yes of quiet the mine\"]\n    }\n  ]\n}",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 33856678417,
+  "load_duration": 4275542,
+  "prompt_eval_count": 1002,
+  "prompt_eval_cached_count": 141,
+  "prompt_eval_duration": 3169828000,
+  "eval_count": 390,
+  "eval_duration": 30636575000
+}

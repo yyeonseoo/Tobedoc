@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-05",
+  "previous": "config/research-checkpoint-v18.json",
+  "roadmap_stage": 3,
+  "status": "로드맵 3/6: 기존 서점 발화 16개 비교 완료. 구체 지시 Derailment 4/4 불확실, 완전 블록 0/4, 상호작용 범위 −50~+100%p. 새 생성 및 전문의 판독 0.",
+  "masked_ratings_commit": "e0dd84a",
+  "result": "analysis/main-dev-v01/results.json",
+  "next": "Prepare balanced boundary examples for later qualitative consultation, without modifying the endpoint or releasing generation."
+}

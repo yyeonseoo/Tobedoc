@@ -1,0 +1,266 @@
+[
+  {
+    "id": "S01",
+    "side": "left",
+    "extraction": "give us a bonus at Christmas",
+    "status": "exact"
+  },
+  {
+    "id": "S01",
+    "side": "right",
+    "extraction": "the stressful part",
+    "status": "exact"
+  },
+  {
+    "id": "S02",
+    "side": "left",
+    "extraction": "other kids about to play football",
+    "status": "exact"
+  },
+  {
+    "id": "S02",
+    "side": "right",
+    "extraction": "The local school was all right",
+    "status": "exact"
+  },
+  {
+    "id": "S03",
+    "side": "left",
+    "extraction": "ready meals that say they’re Italian",
+    "status": "exact"
+  },
+  {
+    "id": "S03",
+    "side": "right",
+    "extraction": "I wonder why that is",
+    "status": "exact"
+  },
+  {
+    "id": "S04",
+    "side": "left",
+    "extraction": "the sea itself",
+    "status": "exact"
+  },
+  {
+    "id": "S04",
+    "side": "right",
+    "extraction": "a big part of being a kid there",
+    "status": "exact"
+  },
+  {
+    "id": "S05",
+    "side": "left",
+    "extraction": "make bolognese",
+    "status": "exact"
+  },
+  {
+    "id": "S05",
+    "side": "right",
+    "extraction": "mostly curry",
+    "status": "exact"
+  },
+  {
+    "id": "S06",
+    "side": "left",
+    "extraction": "where my grandad was stationed in the army",
+    "status": "exact"
+  },
+  {
+    "id": "S06",
+    "side": "right",
+    "extraction": "had a medal in a drawer",
+    "status": "exact"
+  },
+  {
+    "id": "S07",
+    "side": "left",
+    "extraction": "need to make sure I've got snacks in",
+    "status": "exact"
+  },
+  {
+    "id": "S07",
+    "side": "right",
+    "extraction": "Speaking of snacks",
+    "status": "exact"
+  },
+  {
+    "id": "S08",
+    "side": "left",
+    "extraction": "best curry",
+    "status": "exact"
+  },
+  {
+    "id": "S08",
+    "side": "right",
+    "extraction": "make curry on my days off and freeze the curry for after work",
+    "status": "exact"
+  },
+  {
+    "id": "S09",
+    "side": "left",
+    "extraction": "football",
+    "status": "exact"
+  },
+  {
+    "id": "S09",
+    "side": "right",
+    "extraction": "football",
+    "status": "exact"
+  },
+  {
+    "id": "S10",
+    "side": "left",
+    "extraction": "The detective",
+    "status": "exact"
+  },
+  {
+    "id": "S10",
+    "side": "right",
+    "extraction": "the detective",
+    "status": "exact"
+  },
+  {
+    "id": "S11",
+    "side": "left",
+    "extraction": "messing about",
+    "status": "mismatch"
+  },
+  {
+    "id": "S11",
+    "side": "right",
+    "extraction": "trying to cook sausages",
+    "status": "exact"
+  },
+  {
+    "id": "S12",
+    "side": "left",
+    "extraction": "looked tired",
+    "status": "exact"
+  },
+  {
+    "id": "S12",
+    "side": "right",
+    "extraction": "had a lie in",
+    "status": "mismatch"
+  },
+  {
+    "id": "S13",
+    "side": "left",
+    "extraction": "Thai green curry",
+    "status": "exact"
+  },
+  {
+    "id": "S13",
+    "side": "right",
+    "extraction": "make it again",
+    "status": "exact"
+  },
+  {
+    "id": "S14",
+    "side": "left",
+    "extraction": "snakes shed their skins",
+    "status": "exact"
+  },
+  {
+    "id": "S14",
+    "side": "right",
+    "extraction": "skin is the biggest organ of the body",
+    "status": "exact"
+  },
+  {
+    "id": "S15",
+    "side": "left",
+    "extraction": "after that he did taxis at night",
+    "status": "exact"
+  },
+  {
+    "id": "S15",
+    "side": "right",
+    "extraction": "Taxis at night",
+    "status": "exact"
+  },
+  {
+    "id": "S16",
+    "side": "left",
+    "extraction": "after a late shift",
+    "status": "exact"
+  },
+  {
+    "id": "S16",
+    "side": "right",
+    "extraction": "something quick",
+    "status": "exact"
+  },
+  {
+    "id": "S17",
+    "side": "left",
+    "extraction": "that’s what I did",
+    "status": "exact"
+  },
+  {
+    "id": "S17",
+    "side": "right",
+    "extraction": "just watched lots of football",
+    "status": "exact"
+  },
+  {
+    "id": "S18",
+    "side": "left",
+    "extraction": "stacking boxes",
+    "status": "exact"
+  },
+  {
+    "id": "S18",
+    "side": "right",
+    "extraction": "It’s not too bad",
+    "status": "exact"
+  },
+  {
+    "id": "S19",
+    "side": "left",
+    "extraction": "just watching football",
+    "status": "exact"
+  },
+  {
+    "id": "S19",
+    "side": "right",
+    "extraction": "I do like football",
+    "status": "exact"
+  },
+  {
+    "id": "S20",
+    "side": "left",
+    "extraction": "not too strict as long as you get your work done",
+    "status": "exact"
+  },
+  {
+    "id": "S20",
+    "side": "right",
+    "extraction": "I'm on a flexible contract",
+    "status": "exact"
+  },
+  {
+    "id": "S21",
+    "side": "left",
+    "extraction": "big gloves",
+    "status": "exact"
+  },
+  {
+    "id": "S21",
+    "side": "right",
+    "extraction": "gloves remind",
+    "status": "exact"
+  },
+  {
+    "id": "S22",
+    "side": "left",
+    "extraction": "managers are decent",
+    "status": "exact"
+  },
+  {
+    "id": "S22",
+    "side": "right",
+    "extraction": "get your work done",
+    "status": "exact"
+  }
+]

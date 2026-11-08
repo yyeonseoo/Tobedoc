@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "date": "2026-11-04",
+  "status": "Exploratory analysis specification fixed after schema/description inspection and before feature results; not preregistration",
+  "input": "data/team-corpus-20261104/utterances.csv",
+  "question": "Which directly observable linguistic features differ by instructed condition within each generation protocol, and do benign controls show similar changes?",
+  "design": "2 protocols x 6 questions x 19 conditions; one persona, one output per cell",
+  "controls": [
+    "N0",
+    "NMULTI",
+    "CIRC1",
+    "CIRC2"
+  ],
+  "target_types": [
+    "DER",
+    "TAN",
+    "INC",
+    "PER",
+    "CLANG"
+  ],
+  "primary_feature": "repeated_trigram_fraction",
+  "primary_contrast": "PER3 minus N0, paired within question, separately per generator; check NMULTI/CIRC1/CIRC2 and all other target types for specificity",
+  "secondary_features": [
+    "words",
+    "sentences",
+    "mattr50",
+    "adjacent_jaccard",
+    "repeated_bigram_fraction"
+  ],
+  "tokenizer": "lowercase ASCII English words with internal straight/curly apostrophe; normalize curly apostrophe; no stemming or stopword removal",
+  "sentence_splitter": "split at runs of .!? followed by whitespace or end; punctuation proxy, not syntactic annotation",
+  "repetition": "(number of overlapping n-gram occurrences minus unique n-grams) / occurrences; n-grams span sentence boundaries",
+  "mattr50": "mean type-token ratio in all sliding 50-word windows; null if fewer than 50 words",
+  "adjacent_jaccard": "mean set intersection/union of neighboring sentence word sets, including function words; lexical overlap, not semantic coherence",
+  "length_sensitivity": "repeat feature calculations using first 100 lexical tokens; retain original punctuation by slicing text at token end",
+  "uncertainty": "exact enumeration of all 6^6 question-block bootstrap means, percentile 95% interval for paired contrasts; reflects variation across these six prompts only",
+  "primary_test": "two-sided exact sign-flip test of paired mean, all 2^6 signs; Holm adjustment over the two protocol primary tests; exploratory exchangeability assumption, no causal or population inference",
+  "trends": "Spearman across instructed levels 1,2,3 within each question, report per-question values and average; descriptive only",
+  "limitations": [
+    "Claude conversational generation with feedback adaptation, pilot IDs unknown",
+    "GPT-4.1 API temperature 0.9",
+    "Generator and protocol confounded",
+    "No independent patients or generation replicates",
+    "No clinical ratings or original prompts supplied",
+    "CIRC CSV levels 1/2 retained but excluded from target severity trends",
+    "All cells are exploratory, no untouched holdout"
+  ],
+  "stop_rule": "Finish these feature comparisons, original-text examples and reproducibility checks; no generation, embeddings, classifier or new metric search in this stage",
+  "missing_value_policy": "Adjacent Jaccard undefined for fewer than 2 punctuation-delimited sentences; pairwise complete questions, explicit n; no zero imputation. Added after initial executable assertion exposed one-sentence outputs."
+}

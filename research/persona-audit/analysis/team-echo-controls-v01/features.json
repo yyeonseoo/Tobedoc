@@ -1,0 +1,3262 @@
+[
+  {
+    "generator": "Claude",
+    "condition": "CIRC2",
+    "question": "Q01",
+    "text_sha256": "d3201ac182b0a08c0f7bb66a45fbfd067e29fc02e5466bf33ca7f78f3723cb38",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "CIRC2",
+    "question": "Q02",
+    "text_sha256": "25d8535bdb81c42c1f0091043566a5a0567d14af54922bed20d974ce015d9f4a",
+    "hits": [
+      {
+        "before": "which leaves at ten past from the stop outside the launderette",
+        "after": "the launderette's been there forever",
+        "shared": [
+          "launderette"
+        ]
+      },
+      {
+        "before": "and you scan your badge",
+        "after": "and the badge photo of me is terrible because they took it on my first day when I had a cold",
+        "shared": [
+          "badge"
+        ]
+      }
+    ],
+    "boundaries": 17,
+    "rate": 0.11764705882352941
+  },
+  {
+    "generator": "Claude",
+    "condition": "CIRC2",
+    "question": "Q04",
+    "text_sha256": "0e2559035c039bee75e40a1cef29da2a34e4230104efcda6a0e2854a46a16b55",
+    "hits": [],
+    "boundaries": 17,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "CIRC2",
+    "question": "Q05",
+    "text_sha256": "f7167f67024ecef9c23a17bd263b9eb0d9167e7deb2d783b5742c24960c662b6",
+    "hits": [
+      {
+        "before": "and it ended up in the local paper",
+        "after": "the paper's gone now",
+        "shared": [
+          "paper"
+        ]
+      },
+      {
+        "before": "the office became a vape shop",
+        "after": "Next to the vape shop there's the chippy",
+        "shared": [
+          "vape"
+        ]
+      },
+      {
+        "before": "Next to the vape shop there's the chippy",
+        "after": "and behind the chippy is the alley you cut through to get to Albert Street",
+        "shared": [
+          "chippy"
+        ]
+      }
+    ],
+    "boundaries": 20,
+    "rate": 0.15
+  },
+  {
+    "generator": "Claude",
+    "condition": "CIRC2",
+    "question": "Q06",
+    "text_sha256": "d9a66830fa9cff5e1fe5edcf47dea4c3fa80405d994bd0219745f2e13dbae419",
+    "hits": [],
+    "boundaries": 21,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER1",
+    "question": "Q01",
+    "text_sha256": "8fcc944a14ce6e40e418e3b3787491a6efc33d4944c236085f52852fd5ad5e94",
+    "hits": [],
+    "boundaries": 17,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER1",
+    "question": "Q02",
+    "text_sha256": "c57ce78339498e6ef9e9ba016363e08961ba9216fb8b7f90db243170d05ee923",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER1",
+    "question": "Q04",
+    "text_sha256": "a1601082e7d52d840a6ca226f220244279fa261ebe6fa567c57c1c3bb4bea6a6",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER1",
+    "question": "Q05",
+    "text_sha256": "005746ea5130076db24f13dc5e09db36c768ea5ba2434c0c7ee8e5c4cc5bec36",
+    "hits": [
+      {
+        "before": "in the arcades",
+        "after": "The arcades had those coin pusher machines",
+        "shared": [
+          "arcades"
+        ]
+      }
+    ],
+    "boundaries": 21,
+    "rate": 0.047619047619047616
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER1",
+    "question": "Q06",
+    "text_sha256": "e8884c1e1c11d6bd997bca1bf369c0febdaa6fbe2497d2cb6f401b95343744bf",
+    "hits": [
+      {
+        "before": "and the ships were full of rats",
+        "after": "and the rats brought the plague",
+        "shared": [
+          "rats"
+        ]
+      }
+    ],
+    "boundaries": 22,
+    "rate": 0.045454545454545456
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER2",
+    "question": "Q01",
+    "text_sha256": "090e22ca408eee3b9cb85cd20f4e7e1a3142feaa9dc1d66ffd66ba1b7d34b323",
+    "hits": [
+      {
+        "before": "Keepers wear those big gloves",
+        "after": "and gloves remind me of winter",
+        "shared": [
+          "gloves"
+        ]
+      },
+      {
+        "before": "and gloves remind me of winter",
+        "after": "and winter is when the boiler in my building always breaks",
+        "shared": [
+          "winter"
+        ]
+      },
+      {
+        "before": "instant everything now",
+        "after": "instant coffee",
+        "shared": [
+          "instant"
+        ]
+      },
+      {
+        "before": "instant coffee",
+        "after": "instant messages",
+        "shared": [
+          "instant"
+        ]
+      }
+    ],
+    "boundaries": 24,
+    "rate": 0.16666666666666666
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER2",
+    "question": "Q02",
+    "text_sha256": "9c6bd9be9ac0f734e75654ffbb63443e550aeb7f9139cbc2e5e07360e6d8ac62",
+    "hits": [
+      {
+        "before": "You get a scanner and it beeps when you scan",
+        "after": "beeps all day",
+        "shared": [
+          "beeps"
+        ]
+      },
+      {
+        "before": "she scraped it on a bollard last week and the insurance is a nightmare",
+        "after": "insurance companies have those adverts with the meerkats",
+        "shared": [
+          "insurance"
+        ]
+      },
+      {
+        "before": "insurance companies have those adverts with the meerkats",
+        "after": "and meerkats live in deserts",
+        "shared": [
+          "meerkats"
+        ]
+      }
+    ],
+    "boundaries": 21,
+    "rate": 0.14285714285714285
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER2",
+    "question": "Q04",
+    "text_sha256": "122174ab479d30b5145d0e4755693bf8368c2a763472830409849cee5f9fcff5",
+    "hits": [
+      {
+        "before": "I've been watching a crime drama about a detective in a fishing town",
+        "after": "Fishing towns have seagulls",
+        "shared": [
+          "fishing"
+        ]
+      },
+      {
+        "before": "Fishing towns have seagulls",
+        "after": "and the seagulls in town steal chips right out of your hand",
+        "shared": [
+          "seagulls"
+        ]
+      },
+      {
+        "before": "one took a whole sausage roll from a woman outside the bakery",
+        "after": "the bakery that does the doughnuts on a Thursday",
+        "shared": [
+          "bakery"
+        ]
+      },
+      {
+        "before": "the bakery that does the doughnuts on a Thursday",
+        "after": "Thursday used to be bin day before the council changed it",
+        "shared": [
+          "thursday"
+        ]
+      },
+      {
+        "before": "Thursday used to be bin day before the council changed it",
+        "after": "they changed it because of the new lorries",
+        "shared": [
+          "changed"
+        ]
+      },
+      {
+        "before": "they changed it because of the new lorries",
+        "after": "the lorries are electric now and you can't hear them coming",
+        "shared": [
+          "lorries"
+        ]
+      },
+      {
+        "before": "A boy goes missing in it",
+        "after": "Missing things",
+        "shared": [
+          "missing"
+        ]
+      },
+      {
+        "before": "Missing things",
+        "after": "I'm always missing my keys",
+        "shared": [
+          "missing"
+        ]
+      },
+      {
+        "before": "she said she'd add it to her list",
+        "after": "her list is very long though",
+        "shared": [
+          "list"
+        ]
+      }
+    ],
+    "boundaries": 18,
+    "rate": 0.5
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER2",
+    "question": "Q05",
+    "text_sha256": "2730bd235033ad094b01efbcb110d21e3dae78d476082e47f343bd9f86d2d02d",
+    "hits": [
+      {
+        "before": "I learned that at school",
+        "after": "and school had a science teacher with one eyebrow",
+        "shared": [
+          "school"
+        ]
+      },
+      {
+        "before": "and school had a science teacher with one eyebrow",
+        "after": "one big eyebrow across",
+        "shared": [
+          "eyebrow"
+        ]
+      },
+      {
+        "before": "they put that on a poster at the doctor's",
+        "after": "The doctor's in our town was above the bank",
+        "shared": [
+          "doctor"
+        ]
+      },
+      {
+        "before": "The doctor's in our town was above the bank",
+        "after": "the bank closed",
+        "shared": [
+          "bank"
+        ]
+      },
+      {
+        "before": "the bank closed",
+        "after": "the docks closed",
+        "shared": [
+          "closed"
+        ]
+      },
+      {
+        "before": "and after that he did taxis at night",
+        "after": "Taxis at night are dangerous",
+        "shared": [
+          "night",
+          "taxis"
+        ]
+      }
+    ],
+    "boundaries": 25,
+    "rate": 0.24
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER2",
+    "question": "Q06",
+    "text_sha256": "6a77e3a01c5655fec9b0b2fa9bdd442052673a3f4a22ef80ea6856cd8108cdca",
+    "hits": [
+      {
+        "before": "I like cooking curries",
+        "after": "Curries need spices",
+        "shared": [
+          "curries"
+        ]
+      },
+      {
+        "before": "Curries need spices",
+        "after": "spices came on ships",
+        "shared": [
+          "spices"
+        ]
+      },
+      {
+        "before": "spices came on ships",
+        "after": "ships had rats",
+        "shared": [
+          "ships"
+        ]
+      },
+      {
+        "before": "ships had rats",
+        "after": "rats brought the plague",
+        "shared": [
+          "rats"
+        ]
+      },
+      {
+        "before": "rats brought the plague",
+        "after": "the plague doctors wore bird masks",
+        "shared": [
+          "plague"
+        ]
+      },
+      {
+        "before": "birds migrate south in winter",
+        "after": "south is where Spain is",
+        "shared": [
+          "south"
+        ]
+      },
+      {
+        "before": "I also make bolognese and stir fries",
+        "after": "Stir fries need a wok",
+        "shared": [
+          "fries",
+          "stir"
+        ]
+      },
+      {
+        "before": "and woks get really hot",
+        "after": "hot like the summer we had a few years back when the tarmac melted on the road outside Mum's",
+        "shared": [
+          "hot"
+        ]
+      },
+      {
+        "before": "I burned a risotto last month",
+        "after": "Risotto is from Italy",
+        "shared": [
+          "risotto"
+        ]
+      },
+      {
+        "before": "Risotto is from Italy",
+        "after": "Italy is a boot shape",
+        "shared": [
+          "italy"
+        ]
+      }
+    ],
+    "boundaries": 27,
+    "rate": 0.37037037037037035
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER3",
+    "question": "Q01",
+    "text_sha256": "2b131bb072f05ea4b27e393feefc7fd79e281c3084dfeb6762dae0eda037c528",
+    "hits": [
+      {
+        "before": "the keeper's gloves",
+        "after": "and gloves are for the cold",
+        "shared": [
+          "gloves"
+        ]
+      },
+      {
+        "before": "and gloves are for the cold",
+        "after": "and the cold gets into the pipes",
+        "shared": [
+          "cold"
+        ]
+      },
+      {
+        "before": "and the cold gets into the pipes",
+        "after": "the landlord's pipes from Germany",
+        "shared": [
+          "pipes"
+        ]
+      },
+      {
+        "before": "my grandad's medal in the drawer with the batteries and the string",
+        "after": "String holds parcels together and parcels come to the warehouse on Monday",
+        "shared": [
+          "string"
+        ]
+      },
+      {
+        "before": "String holds parcels together and parcels come to the warehouse on Monday",
+        "after": "Monday is grey like the pigeons on the bus shelter",
+        "shared": [
+          "monday"
+        ]
+      },
+      {
+        "before": "they don't pay the fare either",
+        "after": "The fare went up again",
+        "shared": [
+          "fare"
+        ]
+      },
+      {
+        "before": "which smells of the roast",
+        "after": "the roast is Sunday",
+        "shared": [
+          "roast"
+        ]
+      },
+      {
+        "before": "the roast is Sunday",
+        "after": "Sunday is a day of rest",
+        "shared": [
+          "sunday"
+        ]
+      },
+      {
+        "before": "Sunday is a day of rest",
+        "after": "rest is what the doctor says to everyone",
+        "shared": [
+          "rest"
+        ]
+      },
+      {
+        "before": "rest is what the doctor says to everyone",
+        "after": "Everyone at the bus stop looks at their phones and the phones want updates",
+        "shared": [
+          "everyone"
+        ]
+      },
+      {
+        "before": "Everyone at the bus stop looks at their phones and the phones want updates",
+        "after": "updates on the news",
+        "shared": [
+          "updates"
+        ]
+      },
+      {
+        "before": "updates on the news",
+        "after": "the news has the weather girl",
+        "shared": [
+          "news"
+        ]
+      },
+      {
+        "before": "the news has the weather girl",
+        "after": "the weather is weather",
+        "shared": [
+          "weather"
+        ]
+      },
+      {
+        "before": "My sister's boy presses buttons",
+        "after": "Buttons on coats",
+        "shared": [
+          "buttons"
+        ]
+      },
+      {
+        "before": "Buttons on coats",
+        "after": "coats on hooks",
+        "shared": [
+          "coats"
+        ]
+      },
+      {
+        "before": "coats on hooks",
+        "after": "hooks for fishing",
+        "shared": [
+          "hooks"
+        ]
+      },
+      {
+        "before": "fish on Friday",
+        "after": "Friday the late shift",
+        "shared": [
+          "friday"
+        ]
+      }
+    ],
+    "boundaries": 30,
+    "rate": 0.5666666666666667
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER3",
+    "question": "Q02",
+    "text_sha256": "5e3a77ef40bfc8ac36adab6015c0f546aefad88e21994f44b75ed873e73e5c2d",
+    "hits": [
+      {
+        "before": "the insurance meerkats in the desert",
+        "after": "the desert sand in the egg timer on my mum's windowsill next to the tomatoes",
+        "shared": [
+          "desert"
+        ]
+      },
+      {
+        "before": "the desert sand in the egg timer on my mum's windowsill next to the tomatoes",
+        "after": "The tomatoes go red",
+        "shared": [
+          "tomatoes"
+        ]
+      },
+      {
+        "before": "The tomatoes go red",
+        "after": "red like the light on the scanner",
+        "shared": [
+          "red"
+        ]
+      },
+      {
+        "before": "red like the light on the scanner",
+        "after": "the scanner knows where everything is",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the trolley rolls down the slope by packing",
+        "after": "packing tape screams when you pull it",
+        "shared": [
+          "packing"
+        ]
+      },
+      {
+        "before": "Screaming on the rides at the fair",
+        "after": "the fair came every August",
+        "shared": [
+          "fair"
+        ]
+      },
+      {
+        "before": "the fair came every August",
+        "after": "August is hot in the van",
+        "shared": [
+          "august"
+        ]
+      },
+      {
+        "before": "August is hot in the van",
+        "after": "the van has no radio",
+        "shared": [
+          "van"
+        ]
+      },
+      {
+        "before": "the van has no radio",
+        "after": "radio waves go through walls",
+        "shared": [
+          "radio"
+        ]
+      },
+      {
+        "before": "radio waves go through walls",
+        "after": "walls of boxes",
+        "shared": [
+          "walls"
+        ]
+      },
+      {
+        "before": "walls of boxes",
+        "after": "boxes in boxes",
+        "shared": [
+          "boxes"
+        ]
+      },
+      {
+        "before": "The supervisor's screen with the numbers",
+        "after": "numbers on the bus",
+        "shared": [
+          "numbers"
+        ]
+      },
+      {
+        "before": "beep",
+        "after": "beep",
+        "shared": [
+          "beep"
+        ]
+      }
+    ],
+    "boundaries": 34,
+    "rate": 0.38235294117647056
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER3",
+    "question": "Q04",
+    "text_sha256": "f65a80fbf31d9149e87ab3850948e570111a939327c9b572620b2fff85cbf757",
+    "hits": [
+      {
+        "before": "Thursday doughnuts",
+        "after": "Thursday bins",
+        "shared": [
+          "thursday"
+        ]
+      },
+      {
+        "before": "electric lorries silent like the detective",
+        "after": "silent like the boy who's missing",
+        "shared": [
+          "silent"
+        ]
+      },
+      {
+        "before": "silent like the boy who's missing",
+        "after": "missing keys",
+        "shared": [
+          "missing"
+        ]
+      },
+      {
+        "before": "batteries in the remote",
+        "after": "the remote in the carrier bag",
+        "shared": [
+          "remote"
+        ]
+      },
+      {
+        "before": "bags for life",
+        "after": "life jackets on the fishing boats",
+        "shared": [
+          "life"
+        ]
+      },
+      {
+        "before": "life jackets on the fishing boats",
+        "after": "boats float on salt",
+        "shared": [
+          "boats"
+        ]
+      },
+      {
+        "before": "boats float on salt",
+        "after": "salt on chips",
+        "shared": [
+          "salt"
+        ]
+      },
+      {
+        "before": "salt on chips",
+        "after": "chips in the hand again",
+        "shared": [
+          "chips"
+        ]
+      },
+      {
+        "before": "chips in the hand again",
+        "after": "the hand of the clock",
+        "shared": [
+          "hand"
+        ]
+      },
+      {
+        "before": "the hand of the clock",
+        "after": "the clock in the station",
+        "shared": [
+          "clock"
+        ]
+      },
+      {
+        "before": "the clock in the station",
+        "after": "the station on Station Road",
+        "shared": [
+          "station"
+        ]
+      },
+      {
+        "before": "my mum's lift",
+        "after": "the lift goes up and down like the waves",
+        "shared": [
+          "lift"
+        ]
+      },
+      {
+        "before": "the lift goes up and down like the waves",
+        "after": "waves on the beach",
+        "shared": [
+          "waves"
+        ]
+      },
+      {
+        "before": "arms of the chair",
+        "after": "the chair empty",
+        "shared": [
+          "chair"
+        ]
+      },
+      {
+        "before": "the chair empty",
+        "after": "the empty seat on the 42",
+        "shared": [
+          "empty"
+        ]
+      },
+      {
+        "before": "six",
+        "after": "six legs on an insect",
+        "shared": [
+          "six"
+        ]
+      },
+      {
+        "before": "insects in the light",
+        "after": "the light on the telly",
+        "shared": [
+          "light"
+        ]
+      },
+      {
+        "before": "the light on the telly",
+        "after": "the telly from the closing down sale",
+        "shared": [
+          "telly"
+        ]
+      },
+      {
+        "before": "the telly from the closing down sale",
+        "after": "closing down",
+        "shared": [
+          "closing",
+          "down"
+        ]
+      }
+    ],
+    "boundaries": 38,
+    "rate": 0.5
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER3",
+    "question": "Q05",
+    "text_sha256": "52e741004fd620df8da45eea5afd54c8691b72a920e661e159e3d4ee23aba6ae",
+    "hits": [
+      {
+        "before": "the salt from the rocks",
+        "after": "rocks at school",
+        "shared": [
+          "rocks"
+        ]
+      },
+      {
+        "before": "organs in the church",
+        "after": "the church with the green door painted red",
+        "shared": [
+          "church"
+        ]
+      },
+      {
+        "before": "the church with the green door painted red",
+        "after": "red for the fire on the pier",
+        "shared": [
+          "red"
+        ]
+      },
+      {
+        "before": "metal detectors at low tide",
+        "after": "the tide pulled by the moon",
+        "shared": [
+          "tide"
+        ]
+      },
+      {
+        "before": "the tide pulled by the moon",
+        "after": "the moon on the flag",
+        "shared": [
+          "moon"
+        ]
+      },
+      {
+        "before": "flags at the football",
+        "after": "football on the green",
+        "shared": [
+          "football"
+        ]
+      },
+      {
+        "before": "football on the green",
+        "after": "the green of the bus",
+        "shared": [
+          "green"
+        ]
+      },
+      {
+        "before": "Dad in the taxi at night",
+        "after": "night shift",
+        "shared": [
+          "night"
+        ]
+      },
+      {
+        "before": "scanning the beach for crabs",
+        "after": "crabs walk sideways",
+        "shared": [
+          "crabs"
+        ]
+      },
+      {
+        "before": "crabs walk sideways",
+        "after": "sideways like the lift in Mum's block",
+        "shared": [
+          "sideways"
+        ]
+      },
+      {
+        "before": "sideways like the lift in Mum's block",
+        "after": "Mum waiting up",
+        "shared": [
+          "mum"
+        ]
+      },
+      {
+        "before": "Mum waiting up",
+        "after": "waiting rooms",
+        "shared": [
+          "waiting"
+        ]
+      },
+      {
+        "before": "banks of the river",
+        "after": "the river carries salt",
+        "shared": [
+          "river"
+        ]
+      },
+      {
+        "before": "the river carries salt",
+        "after": "the salt",
+        "shared": [
+          "salt"
+        ]
+      },
+      {
+        "before": "quiet",
+        "after": "quiet like winter",
+        "shared": [
+          "quiet"
+        ]
+      },
+      {
+        "before": "quiet like winter",
+        "after": "winter in the arcades",
+        "shared": [
+          "winter"
+        ]
+      }
+    ],
+    "boundaries": 42,
+    "rate": 0.38095238095238093
+  },
+  {
+    "generator": "Claude",
+    "condition": "DER3",
+    "question": "Q06",
+    "text_sha256": "3ea2214c67bbe0563d957cd30eca0374eeb04373a6bfc490999f24b6236c5ffc",
+    "hits": [
+      {
+        "before": "hot",
+        "after": "the hot summer",
+        "shared": [
+          "hot"
+        ]
+      },
+      {
+        "before": "the lorry stuck",
+        "after": "stuck in the lift",
+        "shared": [
+          "stuck"
+        ]
+      },
+      {
+        "before": "stuck in the lift",
+        "after": "Mum's lift",
+        "shared": [
+          "lift"
+        ]
+      },
+      {
+        "before": "my nephew presses buttons",
+        "after": "buttons on coats",
+        "shared": [
+          "buttons"
+        ]
+      },
+      {
+        "before": "buttons on coats",
+        "after": "coats in winter",
+        "shared": [
+          "coats"
+        ]
+      },
+      {
+        "before": "coats in winter",
+        "after": "winter in the arcades",
+        "shared": [
+          "winter"
+        ]
+      },
+      {
+        "before": "the till in the sea",
+        "after": "the sea is salt",
+        "shared": [
+          "sea"
+        ]
+      },
+      {
+        "before": "the sea is salt",
+        "after": "salt in the curry",
+        "shared": [
+          "salt"
+        ]
+      },
+      {
+        "before": "salt in the curry",
+        "after": "the curry is chicken",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "chickens cross roads",
+        "after": "roads widened",
+        "shared": [
+          "roads"
+        ]
+      },
+      {
+        "before": "the oak tree with the chains",
+        "after": "chains on bikes",
+        "shared": [
+          "chains"
+        ]
+      },
+      {
+        "before": "chains on bikes",
+        "after": "bikes on the seafront",
+        "shared": [
+          "bikes"
+        ]
+      },
+      {
+        "before": "boots on the warehouse floor",
+        "after": "the floor is concrete",
+        "shared": [
+          "floor"
+        ]
+      },
+      {
+        "before": "the floor is concrete",
+        "after": "concrete makes legs ache",
+        "shared": [
+          "concrete"
+        ]
+      },
+      {
+        "before": "I never bought them",
+        "after": "bought",
+        "shared": [
+          "bought"
+        ]
+      },
+      {
+        "before": "brought",
+        "after": "Raj brought samosas",
+        "shared": [
+          "brought"
+        ]
+      },
+      {
+        "before": "Raj brought samosas",
+        "after": "samosas are triangles",
+        "shared": [
+          "samosas"
+        ]
+      },
+      {
+        "before": "samosas are triangles",
+        "after": "triangles have three sides",
+        "shared": [
+          "triangles"
+        ]
+      },
+      {
+        "before": "triangles have three sides",
+        "after": "three",
+        "shared": [
+          "three"
+        ]
+      }
+    ],
+    "boundaries": 52,
+    "rate": 0.36538461538461536
+  },
+  {
+    "generator": "Claude",
+    "condition": "N0",
+    "question": "Q01",
+    "text_sha256": "9e94d3bd0b8e34c61333c2ec25f40e055ecc7ff387590e90a1b42a2d6bb087c7",
+    "hits": [],
+    "boundaries": 19,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "N0",
+    "question": "Q02",
+    "text_sha256": "9a4c7676fbb66eed5ce64cd73d2e41e4a0b8b6c58a34bbd22f55a05919afc953",
+    "hits": [],
+    "boundaries": 19,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "N0",
+    "question": "Q04",
+    "text_sha256": "646b43b240f3b56bcc29f0feca5d960f94ba99d3952b56edd81e650de5148f79",
+    "hits": [
+      {
+        "before": "What I liked most was that it wasn't just about who did it",
+        "after": "it was about how the whole town reacts",
+        "shared": [
+          "about"
+        ]
+      }
+    ],
+    "boundaries": 19,
+    "rate": 0.05263157894736842
+  },
+  {
+    "generator": "Claude",
+    "condition": "N0",
+    "question": "Q05",
+    "text_sha256": "07f174e542f89ef8c5ba02381d25d89ea6453f3a1f87be7a997719ead2378f1f",
+    "hits": [],
+    "boundaries": 19,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "N0",
+    "question": "Q06",
+    "text_sha256": "55002edf7098e6aa2aeb33c30edefa5dbf206b8f138215aaa7da4830d6d607f2",
+    "hits": [],
+    "boundaries": 21,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "NMULTI",
+    "question": "Q01",
+    "text_sha256": "fdd4c8d909d1895eb1d65a2a7b323f581396a924df4bbfbf10b906341c3826d2",
+    "hits": [],
+    "boundaries": 21,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "NMULTI",
+    "question": "Q02",
+    "text_sha256": "2777a13b7f119eddf27262f6eaa39199982c294cbdd10a985c44310f82f74e8c",
+    "hits": [
+      {
+        "before": "and they give us a bonus at Christmas if we hit the targets",
+        "after": "The targets are the stressful part",
+        "shared": [
+          "targets"
+        ]
+      }
+    ],
+    "boundaries": 22,
+    "rate": 0.045454545454545456
+  },
+  {
+    "generator": "Claude",
+    "condition": "NMULTI",
+    "question": "Q04",
+    "text_sha256": "83157ac669490f90a4f7f1677f4bc4b6255bf6c6357377a08d4fa3bf5822beeb",
+    "hits": [],
+    "boundaries": 21,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "NMULTI",
+    "question": "Q05",
+    "text_sha256": "a0447f02b42e058aae81d7e8645043c086a8bdcf961d1eee746922fe7442f03b",
+    "hits": [],
+    "boundaries": 27,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "NMULTI",
+    "question": "Q06",
+    "text_sha256": "97a72db1cacb6576a5f7b990396a4686c3c177c735f22b7309d12fe2fe0312db",
+    "hits": [],
+    "boundaries": 23,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER1",
+    "question": "Q01",
+    "text_sha256": "719a99e2a09187714461e08ecd7041b7964fc24e6c88a71768180a4b3904b563",
+    "hits": [],
+    "boundaries": 17,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER1",
+    "question": "Q02",
+    "text_sha256": "30af9f13c5db6b3ae7fe730baf81aceb823a8fcb52bbe6bd59d9f3495601aa50",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER1",
+    "question": "Q04",
+    "text_sha256": "a5ac41c56300952d53cdd870dded171726aad74b373a9a7ccd1436281f5861ae",
+    "hits": [
+      {
+        "before": "What I liked was that it wasn't just about who did it",
+        "after": "it was about the town",
+        "shared": [
+          "about"
+        ]
+      },
+      {
+        "before": "it was about the town",
+        "after": "how the town reacts",
+        "shared": [
+          "town"
+        ]
+      }
+    ],
+    "boundaries": 23,
+    "rate": 0.08695652173913043
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER1",
+    "question": "Q05",
+    "text_sha256": "44b2cf38671505058e8366c4ac9433197d5124c965b59cacdaabdce3c78583cf",
+    "hits": [],
+    "boundaries": 21,
+    "rate": 0.0
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER1",
+    "question": "Q06",
+    "text_sha256": "b2ad005bea5aa6478035d5bfea21106c69014b8c97224a7be982460ff947dcf0",
+    "hits": [
+      {
+        "before": "usually curry",
+        "after": "because curry freezes really well",
+        "shared": [
+          "curry"
+        ]
+      }
+    ],
+    "boundaries": 24,
+    "rate": 0.041666666666666664
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER2",
+    "question": "Q01",
+    "text_sha256": "208dd3cb4be00a7f5ce0d2214ee5becc51330dad4643b1371aeeae20bd9c2547",
+    "hits": [
+      {
+        "before": "Last weekend I had a lie in on Saturday",
+        "after": "A lie in is important",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "and she said I looked tired",
+        "after": "and I said I'd tried to have a lie in",
+        "shared": [
+          "said"
+        ]
+      }
+    ],
+    "boundaries": 24,
+    "rate": 0.08333333333333333
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER2",
+    "question": "Q02",
+    "text_sha256": "17dabd86bec2678395037d5320e09b227196b2b08610a4281c65564011ecf94a",
+    "hits": [
+      {
+        "before": "picking orders with a scanner",
+        "after": "The scanner tells you what to get",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "and then it's back to the scanner",
+        "after": "Sometimes the scanner loses signal at the back and you have to walk to the front for the scanner to work",
+        "shared": [
+          "scanner"
+        ]
+      }
+    ],
+    "boundaries": 24,
+    "rate": 0.08333333333333333
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER2",
+    "question": "Q04",
+    "text_sha256": "2cc4fd3cf7c3544dc2dbef11741cc556cf727299a8b834fdad4766a8d5c73bf8",
+    "hits": [
+      {
+        "before": "I watched a crime drama with a detective",
+        "after": "The detective is in a fishing town",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "The detective is very quiet",
+        "after": "I liked the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "I told my sister about the detective",
+        "after": "My sister likes detectives",
+        "shared": [
+          "sister"
+        ]
+      },
+      {
+        "before": "My sister likes detectives",
+        "after": "my mum likes detectives too",
+        "shared": [
+          "detectives",
+          "likes"
+        ]
+      },
+      {
+        "before": "I hope they keep the detective",
+        "after": "The detective makes it",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "So the show I enjoyed is the detective show",
+        "after": "with the detective",
+        "shared": [
+          "detective"
+        ]
+      }
+    ],
+    "boundaries": 26,
+    "rate": 0.23076923076923078
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER2",
+    "question": "Q05",
+    "text_sha256": "6a6430f6b8ddd53d26677fbf25a18417b44ce767a7b61c99e4a89b78000c8c26",
+    "hits": [
+      {
+        "before": "I grew up by the beach",
+        "after": "The beach was everything",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "and every day after school we went to the beach",
+        "after": "In summer the beach was full of tourists",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "so people moved away from the beach",
+        "after": "I moved away from the beach",
+        "shared": [
+          "away"
+        ]
+      }
+    ],
+    "boundaries": 26,
+    "rate": 0.11538461538461539
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER2",
+    "question": "Q06",
+    "text_sha256": "a67cdd974247599a3ff32f8c1310a2fd3e74cb9ebb97ddd7ba6308908d325236",
+    "hits": [
+      {
+        "before": "I like cooking curry",
+        "after": "Curry is my favourite",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "My mate taught me to make curry",
+        "after": "proper curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "that's my best curry",
+        "after": "I make curry on my days off and freeze the curry for after work",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "but I've never burned a curry",
+        "after": "Curry is cheaper than takeaways",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "especially a curry takeaway",
+        "after": "So I cook curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "chicken curry or lentil curry",
+        "after": "Curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "Curry",
+        "after": "I'd say curry is what I like to cook",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "and if I had to cook one thing for the rest of my life it would be curry",
+        "after": "definitely curry",
+        "shared": [
+          "curry"
+        ]
+      }
+    ],
+    "boundaries": 26,
+    "rate": 0.3076923076923077
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER3",
+    "question": "Q01",
+    "text_sha256": "465440e51e5c7db8c2c4e72f7edcf874bfe39cd532e6ab733acddb3c55cb8886",
+    "hits": [
+      {
+        "before": "Saturday I had a lie in",
+        "after": "a lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "the keeper needed a lie in",
+        "after": "A lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "then bed early for a lie in",
+        "after": "but no lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "the shifts",
+        "after": "the shifts take away the lie in",
+        "shared": [
+          "shifts"
+        ]
+      },
+      {
+        "before": "the shifts take away the lie in",
+        "after": "Lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "she said I looked tired",
+        "after": "I said lie in",
+        "shared": [
+          "said"
+        ]
+      },
+      {
+        "before": "I said lie in",
+        "after": "I tried a lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "I tried a lie in",
+        "after": "The lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "no lie in for her",
+        "after": "never a lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "Monday",
+        "after": "no lie in Monday",
+        "shared": [
+          "monday"
+        ]
+      },
+      {
+        "before": "no lie in Monday",
+        "after": "Lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "Lie in",
+        "after": "Saturday the lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "Saturday the lie in",
+        "after": "Sunday no lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "the shifts",
+        "after": "the shifts and the lie in",
+        "shared": [
+          "shifts"
+        ]
+      },
+      {
+        "before": "I keep thinking about the lie in",
+        "after": "A proper lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "A proper lie in",
+        "after": "Lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "Lie in",
+        "after": "lie in",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "the lie in and the roast and the lie in",
+        "after": "The lie in was the weekend really",
+        "shared": [
+          "lie"
+        ]
+      },
+      {
+        "before": "the lie in",
+        "after": "the lie in",
+        "shared": [
+          "lie"
+        ]
+      }
+    ],
+    "boundaries": 44,
+    "rate": 0.4318181818181818
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER3",
+    "question": "Q02",
+    "text_sha256": "80cd7c6d62dc3669a17320be59420a2ec398a92a8afd12fe50c1bc383689e682",
+    "hits": [
+      {
+        "before": "The scanner",
+        "after": "I use the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "I use the scanner",
+        "after": "the scanner beeps",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner beeps",
+        "after": "the scanner tells you",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner tells you",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "scanner",
+        "after": "The scanner counts the picks",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "The scanner counts the picks",
+        "after": "the scanner knows",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner knows",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "Twenty five hours with the scanner",
+        "after": "the scanner and the trolley",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner and the trolley",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "The scanner loses signal",
+        "after": "the scanner at the back",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "walk to the front for the scanner",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "back to the scanner",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "Three years of the scanner",
+        "after": "The scanner pays the rent",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "The scanner pays the rent",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "Stock control has scanners",
+        "after": "scanners there too",
+        "shared": [
+          "scanners"
+        ]
+      },
+      {
+        "before": "Beep",
+        "after": "beep",
+        "shared": [
+          "beep"
+        ]
+      },
+      {
+        "before": "The job is the scanner",
+        "after": "the scanner is the job",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner is the job",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner",
+        "after": "I see the scanner when I close my eyes",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner",
+        "after": "The scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner",
+        "after": "The scanner and me",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "The scanner and me",
+        "after": "Scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "Scanner",
+        "after": "The scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      },
+      {
+        "before": "the scanner",
+        "after": "the scanner",
+        "shared": [
+          "scanner"
+        ]
+      }
+    ],
+    "boundaries": 53,
+    "rate": 0.49056603773584906
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER3",
+    "question": "Q04",
+    "text_sha256": "974a4fb701c13f11ea66a4b2fef1a8adf47d76ddaeb2f85884609eaba25afb7f",
+    "hits": [
+      {
+        "before": "The detective",
+        "after": "The detective show",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "The detective show",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective looks",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective looks",
+        "after": "The detective is quiet",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "The detective is quiet",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective listens",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective knows",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective was right",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective was right",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "keep the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "keep the detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "The detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "The detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "The detective show is the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "The detective show is the detective",
+        "after": "The detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "The detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the detective",
+        "after": "the quiet detective",
+        "shared": [
+          "detective"
+        ]
+      },
+      {
+        "before": "the quiet detective",
+        "after": "the detective",
+        "shared": [
+          "detective"
+        ]
+      }
+    ],
+    "boundaries": 55,
+    "rate": 0.4
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER3",
+    "question": "Q05",
+    "text_sha256": "46494112d64cc910957c33eea59bc675a2d149017f62ca74088397747cf7f40a",
+    "hits": [
+      {
+        "before": "I grew up by the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach every day",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach every day",
+        "after": "The beach after school",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "The beach after school",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "tourists on the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "tourists on the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "empty beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "empty beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "The docks at the end of the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "walking on the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "walking on the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "People moved away from the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach first",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach doesn't",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach doesn't",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "The beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "The beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "Growing up was the beach",
+        "after": "the beach was growing up",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach was growing up",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "The beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "The beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      },
+      {
+        "before": "the beach",
+        "after": "the beach",
+        "shared": [
+          "beach"
+        ]
+      }
+    ],
+    "boundaries": 59,
+    "rate": 0.4915254237288136
+  },
+  {
+    "generator": "Claude",
+    "condition": "PER3",
+    "question": "Q06",
+    "text_sha256": "40f1e64032eb822c7320d0efb5509de497f7f3a16400f764ee5afa1b5558d7fd",
+    "hits": [
+      {
+        "before": "Curry",
+        "after": "I like curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "I like curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "cooking curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "cooking curry",
+        "after": "Curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "Chicken curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "Chicken curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "the best curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "the best curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "freeze the curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "freeze the curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "my curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "my curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "Risotto burned",
+        "after": "curry never burned",
+        "shared": [
+          "burned"
+        ]
+      },
+      {
+        "before": "curry never burned",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "takeaway curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "takeaway curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "chicken curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "chicken curry",
+        "after": "lentil curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "lentil curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "Curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "Curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "I cook curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "I cook curry",
+        "after": "curry is cooking",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry is cooking",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "Curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "Curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "the curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "the curry",
+        "after": "the curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "the curry",
+        "after": "Curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "Curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      },
+      {
+        "before": "curry",
+        "after": "curry",
+        "shared": [
+          "curry"
+        ]
+      }
+    ],
+    "boundaries": 81,
+    "rate": 0.5802469135802469
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "CIRC2",
+    "question": "Q01",
+    "text_sha256": "442689288dd33c9360cf76b4843d83ec13b962587567b4e599f6697520415b39",
+    "hits": [],
+    "boundaries": 30,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "CIRC2",
+    "question": "Q02",
+    "text_sha256": "0570fd32370bd4663bc8307f338c98c8df88cea0ca99ff2141d8d39a0dda5fbf",
+    "hits": [],
+    "boundaries": 28,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "CIRC2",
+    "question": "Q04",
+    "text_sha256": "b3b2613f0cefdb3814e0c0f279ad59af782fcdb6c36fb09b00ce311d2f6bbfa5",
+    "hits": [],
+    "boundaries": 26,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "CIRC2",
+    "question": "Q05",
+    "text_sha256": "28820346f3719c5e621c59c8e3f39f151be269a52860a1a60b9e258748e48458",
+    "hits": [],
+    "boundaries": 30,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "CIRC2",
+    "question": "Q06",
+    "text_sha256": "4bd790e471a3d5de4ddd5e8eb301c0d1afe586e041c950756aecb76944370d0d",
+    "hits": [],
+    "boundaries": 24,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER1",
+    "question": "Q01",
+    "text_sha256": "3c2c5357f3a0ea834fe292b7d630ccf919e8f19c114d5d3759f434a6692cd3c5",
+    "hits": [
+      {
+        "before": "and thought I should bring bread next time",
+        "after": "though I heard bread’s not really good for them",
+        "shared": [
+          "bread"
+        ]
+      }
+    ],
+    "boundaries": 21,
+    "rate": 0.047619047619047616
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER1",
+    "question": "Q02",
+    "text_sha256": "67d8d55b624bb4936f2dc5f258623542a5b6e4dbca66d3565518783115af8afa",
+    "hits": [],
+    "boundaries": 28,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER1",
+    "question": "Q04",
+    "text_sha256": "3c4a7d1a37633e51a4e1966657446d2c594521df9c3bc23aa9e46574cacf466f",
+    "hits": [],
+    "boundaries": 25,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER1",
+    "question": "Q05",
+    "text_sha256": "dde256477d49424dda8f160362fba827ee7b96657e236e6e06c7c0368ec0fdd0",
+    "hits": [
+      {
+        "before": "just messing about with what was in the house",
+        "after": "The house itself was kind of old",
+        "shared": [
+          "house"
+        ]
+      }
+    ],
+    "boundaries": 21,
+    "rate": 0.047619047619047616
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER1",
+    "question": "Q06",
+    "text_sha256": "0decc64c30ce2b268d759193ec65ecfa74fbb492b0bf3c037d4e2da1fd1f911d",
+    "hits": [],
+    "boundaries": 18,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER2",
+    "question": "Q01",
+    "text_sha256": "72d5a9097ec8041c77212d095a76d9d18a09eaba816abc41891ea2bb84403cd5",
+    "hits": [],
+    "boundaries": 28,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER2",
+    "question": "Q02",
+    "text_sha256": "c9cb358810fbfa51cb356b09272868352f1ae03f37aa5d9c9a9967f40555c829",
+    "hits": [],
+    "boundaries": 24,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER2",
+    "question": "Q04",
+    "text_sha256": "55144932d85afb147cdd831a736581fb3335aa7f736bbf271fccc95b10de8270",
+    "hits": [
+      {
+        "before": "so I need to make sure I've got snacks in",
+        "after": "Speaking of snacks",
+        "shared": [
+          "snacks"
+        ]
+      },
+      {
+        "before": "I’m trying to cook a few new things because I get bored of the same meals after work",
+        "after": "especially after a late shift",
+        "shared": [
+          "after"
+        ]
+      }
+    ],
+    "boundaries": 21,
+    "rate": 0.09523809523809523
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER2",
+    "question": "Q05",
+    "text_sha256": "9426c50c650e0781e61687074a4fce9bee0d45ba046e37e40da6c06dca3cab79",
+    "hits": [],
+    "boundaries": 19,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER2",
+    "question": "Q06",
+    "text_sha256": "bbeb4e0909a3eaa3b66c1accfeaee42629c2972c4d1d6b7712846f6d5acb0b61",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER3",
+    "question": "Q01",
+    "text_sha256": "f87029cdfdc94e9c61a48f56ab4dcabdeba4d86d7d4bf7e1e4d2508b86cb568a",
+    "hits": [],
+    "boundaries": 18,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER3",
+    "question": "Q02",
+    "text_sha256": "4f2eb2c8c654129f49571e5ad78cc8147d6172fd0879c4312e6ab94454628581",
+    "hits": [
+      {
+        "before": "and I used to walk to school in the mornings",
+        "after": "not that school was much fun except for PE",
+        "shared": [
+          "school"
+        ]
+      },
+      {
+        "before": "In the warehouse mostly I move boxes",
+        "after": "and the boxes are sometimes really heavy",
+        "shared": [
+          "boxes"
+        ]
+      },
+      {
+        "before": "and the boxes are sometimes really heavy",
+        "after": "but not as heavy as when you do lifting at the gym",
+        "shared": [
+          "heavy"
+        ]
+      }
+    ],
+    "boundaries": 26,
+    "rate": 0.11538461538461539
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER3",
+    "question": "Q04",
+    "text_sha256": "ed4a1bd9e5e8f72625766c894d5ce4ab766312dae1f6963837b60fa25577e472",
+    "hits": [],
+    "boundaries": 25,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER3",
+    "question": "Q05",
+    "text_sha256": "ac6aac340c8b9f93008fc5e8f46f1fce4bd81202a8377e0f00cd5d3537e95f07",
+    "hits": [],
+    "boundaries": 27,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "DER3",
+    "question": "Q06",
+    "text_sha256": "d826b57aa93596747c36f544daa540f171d8f430c811ec385e27366d1e09edad",
+    "hits": [],
+    "boundaries": 18,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "N0",
+    "question": "Q01",
+    "text_sha256": "d75f8920e46b95ccbc09fdfa44d9e6deb25ea1911ef56bda8633830e50186471",
+    "hits": [],
+    "boundaries": 25,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "N0",
+    "question": "Q02",
+    "text_sha256": "15ea70cb3aabc02edad9f8cdf51ea070eb7f5b6a4d7dd73ad77beec764eb5136",
+    "hits": [],
+    "boundaries": 21,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "N0",
+    "question": "Q04",
+    "text_sha256": "bd2226d5c4c2048d6418c3ffde151bef89c741fe57ec933145432ce81cdf2620",
+    "hits": [],
+    "boundaries": 21,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "N0",
+    "question": "Q05",
+    "text_sha256": "c8b197c2a5597f6ec166149711a478ea74e097190a85543e2e5c9e3d39b1f206",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "N0",
+    "question": "Q06",
+    "text_sha256": "b0ed0b0cfc55f7ee3be858cb775a38359fe56c5d8f4e65ee6f510b61925929f9",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "NMULTI",
+    "question": "Q01",
+    "text_sha256": "676532dc4d43bd5e34d7a622421f606006504517da0f288b6646c94bf6eebf1e",
+    "hits": [],
+    "boundaries": 23,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "NMULTI",
+    "question": "Q02",
+    "text_sha256": "726b43aded17f7cc2deea0bc2129bb02e63f9c74a09eba0fd608979f5ff330c2",
+    "hits": [
+      {
+        "before": "The managers are decent too",
+        "after": "not too strict as long as you get your work done",
+        "shared": [
+          "too"
+        ]
+      }
+    ],
+    "boundaries": 24,
+    "rate": 0.041666666666666664
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "NMULTI",
+    "question": "Q04",
+    "text_sha256": "e9e70f8460fc3519c2809855b5227c3238789cbf263193c6d6049dcb8a882e0f",
+    "hits": [],
+    "boundaries": 25,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "NMULTI",
+    "question": "Q05",
+    "text_sha256": "09df1017ff6500c37e0254cebb08d8dafd5d89693ea8d2ac34bca8f0070c22b5",
+    "hits": [
+      {
+        "before": "so there were always other kids about to play football with after school",
+        "after": "The local school was all right",
+        "shared": [
+          "school"
+        ]
+      }
+    ],
+    "boundaries": 19,
+    "rate": 0.05263157894736842
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "NMULTI",
+    "question": "Q06",
+    "text_sha256": "8c6255f13b4c48e11d52027bae655146a3f69c39f1ca60a86761fdb4d9a58031",
+    "hits": [],
+    "boundaries": 20,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER1",
+    "question": "Q01",
+    "text_sha256": "dfcb2fe4b17cd4297753328e2afce515c38eb99f1b5e5fd5866f535803f92d22",
+    "hits": [
+      {
+        "before": "but I do like to keep things sorted",
+        "after": "good to keep things tidy",
+        "shared": [
+          "keep",
+          "things"
+        ]
+      }
+    ],
+    "boundaries": 32,
+    "rate": 0.03125
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER1",
+    "question": "Q02",
+    "text_sha256": "289a246248611e56c1aa220ac081d38da39facec13a0173f5c1cbe81f68bf5d6",
+    "hits": [],
+    "boundaries": 27,
+    "rate": 0.0
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER1",
+    "question": "Q04",
+    "text_sha256": "5db1c3283b9bb5beb4bf4d0f507392ebbf39e871c4abe344453802e0e7070334",
+    "hits": [
+      {
+        "before": "and I really liked it",
+        "after": "I liked how it showed the team",
+        "shared": [
+          "liked"
+        ]
+      },
+      {
+        "before": "and I think I just like watching anything to do with teams",
+        "after": "especially football teams",
+        "shared": [
+          "teams"
+        ]
+      }
+    ],
+    "boundaries": 28,
+    "rate": 0.07142857142857142
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER1",
+    "question": "Q05",
+    "text_sha256": "9a4ac215614d65b2807376d925ae0b1ec98c689a7030ad9878eb1dda16ecde7d",
+    "hits": [
+      {
+        "before": "just the same things",
+        "after": "same things all the time",
+        "shared": [
+          "same",
+          "things"
+        ]
+      }
+    ],
+    "boundaries": 31,
+    "rate": 0.03225806451612903
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER1",
+    "question": "Q06",
+    "text_sha256": "9e70fc6da1d66045c213c4e9a62e28c0e1cc0ed11f774ce1f163c1bc5c10cc2b",
+    "hits": [
+      {
+        "before": "but mostly pasta",
+        "after": "Pasta’s good ‘cause it doesn’t take long and you can use whatever you’ve got in the fridge",
+        "shared": [
+          "pasta"
+        ]
+      }
+    ],
+    "boundaries": 27,
+    "rate": 0.037037037037037035
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER2",
+    "question": "Q01",
+    "text_sha256": "a1bd7c8ab0f7db6bbad39a6e80a969fcf6c91c0cb8b9e5a3edcf597c49686ee9",
+    "hits": [
+      {
+        "before": "I watched some highlights",
+        "after": "watched more football",
+        "shared": [
+          "watched"
+        ]
+      },
+      {
+        "before": "just me and the football",
+        "after": "so mainly football",
+        "shared": [
+          "football"
+        ]
+      }
+    ],
+    "boundaries": 36,
+    "rate": 0.05555555555555555
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER2",
+    "question": "Q02",
+    "text_sha256": "018bb98c346cf0803dcfe31c5f5991d8010acc73cea02d23d77d68e61b7b60a4",
+    "hits": [
+      {
+        "before": "but a lot of the time it’s just me and the boxes",
+        "after": "just stacking boxes and making sure they’re in the right spot",
+        "shared": [
+          "boxes"
+        ]
+      },
+      {
+        "before": "just a lot of shifting boxes about",
+        "after": "stacking and moving boxes",
+        "shared": [
+          "boxes"
+        ]
+      }
+    ],
+    "boundaries": 23,
+    "rate": 0.08695652173913043
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER2",
+    "question": "Q04",
+    "text_sha256": "54c8ea108fd98fabf2415666a0098c2c280ccc8ae21e251cd3d9a12be533c1ba",
+    "hits": [
+      {
+        "before": "just watching football",
+        "after": "I do like football",
+        "shared": [
+          "football"
+        ]
+      },
+      {
+        "before": "the football goals",
+        "after": "everything football",
+        "shared": [
+          "football"
+        ]
+      },
+      {
+        "before": "cooking shows too a bit but mainly football",
+        "after": "football stuff",
+        "shared": [
+          "football"
+        ]
+      }
+    ],
+    "boundaries": 47,
+    "rate": 0.06382978723404255
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER2",
+    "question": "Q05",
+    "text_sha256": "084b4b555f73a7497d916993b47496ee678bca69d50f2d96640338458f5da92d",
+    "hits": [
+      {
+        "before": "It was quiet",
+        "after": "really quiet",
+        "shared": [
+          "quiet"
+        ]
+      },
+      {
+        "before": "just quiet",
+        "after": "quiet sort of place",
+        "shared": [
+          "quiet"
+        ]
+      },
+      {
+        "before": "fields everywhere",
+        "after": "loads of green fields where we’d go play football",
+        "shared": [
+          "fields"
+        ]
+      },
+      {
+        "before": "so it was always about football",
+        "after": "football most days after school",
+        "shared": [
+          "football"
+        ]
+      },
+      {
+        "before": "like a proper quiet village",
+        "after": "quiet with not much in the way of shops or things to do",
+        "shared": [
+          "quiet"
+        ]
+      }
+    ],
+    "boundaries": 39,
+    "rate": 0.1282051282051282
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER2",
+    "question": "Q06",
+    "text_sha256": "151cdc645ad92b15778c6314aab26c30e226b52d09852effa9fb33ea4bcfd8ef",
+    "hits": [
+      {
+        "before": "I like spaghetti",
+        "after": "like spaghetti pasta",
+        "shared": [
+          "spaghetti"
+        ]
+      },
+      {
+        "before": "Sometimes tomato sauce",
+        "after": "sometimes creamy sauce",
+        "shared": [
+          "sauce",
+          "sometimes"
+        ]
+      }
+    ],
+    "boundaries": 35,
+    "rate": 0.05714285714285714
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER3",
+    "question": "Q01",
+    "text_sha256": "faaa25aff0eebbd9d32e8ea9885b254f71f23b2a095468b1ca3e6fc30062a2d6",
+    "hits": [
+      {
+        "before": "last weekend I watched the football",
+        "after": "I watched the football",
+        "shared": [
+          "football",
+          "watched"
+        ]
+      },
+      {
+        "before": "I watched the football",
+        "after": "I like football",
+        "shared": [
+          "football"
+        ]
+      },
+      {
+        "before": "so I watch the football",
+        "after": "I always watch the football",
+        "shared": [
+          "watch"
+        ]
+      },
+      {
+        "before": "I always watch the football",
+        "after": "I always do that",
+        "shared": [
+          "always"
+        ]
+      },
+      {
+        "before": "It was on Saturday",
+        "after": "it was on Saturday",
+        "shared": [
+          "saturday"
+        ]
+      },
+      {
+        "before": "I still thought about the football because the match was good",
+        "after": "it was a good match",
+        "shared": [
+          "good"
+        ]
+      },
+      {
+        "before": "just the football",
+        "after": "just the football really",
+        "shared": [
+          "football"
+        ]
+      },
+      {
+        "before": "I still thought about the football",
+        "after": "about who scored and all that",
+        "shared": [
+          "about"
+        ]
+      }
+    ],
+    "boundaries": 37,
+    "rate": 0.21621621621621623
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER3",
+    "question": "Q02",
+    "text_sha256": "bd19951257fed4dd89d90af9b3ebb231a8eeeb22887f51db8f0fc054e9d905ee",
+    "hits": [
+      {
+        "before": "so my job at the warehouse",
+        "after": "it’s a warehouse job",
+        "shared": [
+          "warehouse"
+        ]
+      },
+      {
+        "before": "it’s always about shifts because sometimes I work mornings",
+        "after": "sometimes afternoons",
+        "shared": [
+          "sometimes"
+        ]
+      }
+    ],
+    "boundaries": 28,
+    "rate": 0.07142857142857142
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER3",
+    "question": "Q04",
+    "text_sha256": "08c65ed1d44875e148356333a88a3e7506162e562e1b5110b7c62dfd1223ff91",
+    "hits": [
+      {
+        "before": "I like the way they show the match",
+        "after": "I think Match of the Day is the best for highlights",
+        "shared": [
+          "match"
+        ]
+      }
+    ],
+    "boundaries": 29,
+    "rate": 0.034482758620689655
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER3",
+    "question": "Q05",
+    "text_sha256": "a43f1e801432aedba5e550474a970db549a456aeec40a118cf9b19c998c7374e",
+    "hits": [
+      {
+        "before": "it was always busy",
+        "after": "really busy",
+        "shared": [
+          "busy"
+        ]
+      },
+      {
+        "before": "We had streets that were busy",
+        "after": "shops that were busy",
+        "shared": [
+          "busy"
+        ]
+      },
+      {
+        "before": "so you’d always see people everywhere",
+        "after": "people just busy with their own things",
+        "shared": [
+          "people"
+        ]
+      },
+      {
+        "before": "my mum was always busy",
+        "after": "and my dad busy as well",
+        "shared": [
+          "busy"
+        ]
+      },
+      {
+        "before": "it was just busy noise and busy people",
+        "after": "busy faces",
+        "shared": [
+          "busy"
+        ]
+      },
+      {
+        "before": "busy faces",
+        "after": "busy days",
+        "shared": [
+          "busy"
+        ]
+      }
+    ],
+    "boundaries": 32,
+    "rate": 0.1875
+  },
+  {
+    "generator": "GPT-4.1",
+    "condition": "PER3",
+    "question": "Q06",
+    "text_sha256": "a501ccf899e6aeca350f37b800cdc443d8cc9e5aaa035898e7614394f25d13f3",
+    "hits": [
+      {
+        "before": "I really like to cook pasta",
+        "after": "I like pasta a lot",
+        "shared": [
+          "pasta"
+        ]
+      },
+      {
+        "before": "I like pasta a lot",
+        "after": "sometimes I make pasta with tomato sauce",
+        "shared": [
+          "pasta"
+        ]
+      },
+      {
+        "before": "but mostly pasta",
+        "after": "I like pasta because it's easy",
+        "shared": [
+          "pasta"
+        ]
+      },
+      {
+        "before": "I often have pasta too",
+        "after": "So pasta’s just",
+        "shared": [
+          "pasta"
+        ]
+      },
+      {
+        "before": "it’s mostly pasta for me",
+        "after": "I think pasta is just the best thing to cook",
+        "shared": [
+          "pasta"
+        ]
+      }
+    ],
+    "boundaries": 28,
+    "rate": 0.17857142857142858
+  }
+]

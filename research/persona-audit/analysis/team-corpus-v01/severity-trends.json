@@ -1,0 +1,962 @@
+[
+  {
+    "generator": "Claude",
+    "type": "DER",
+    "metric": "words",
+    "within_question_spearman": [
+      0.5,
+      -0.5,
+      -0.5,
+      -1.0,
+      -0.5,
+      -0.5
+    ],
+    "mean_rho": -0.4166666666666667,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "DER",
+    "metric": "sentences",
+    "within_question_spearman": [
+      -0.8660254037844387,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -0.5
+    ],
+    "mean_rho": -0.8943375672974064,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "DER",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "mean_rho": -1.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "DER",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      0.5,
+      1.0,
+      null,
+      null,
+      null,
+      null
+    ],
+    "mean_rho": 0.75,
+    "defined_questions": 2,
+    "strictly_increasing_questions": 1
+  },
+  {
+    "generator": "Claude",
+    "type": "DER",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mean_rho": 0.9166666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 5
+  },
+  {
+    "generator": "Claude",
+    "type": "DER",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      null,
+      0.8660254037844387,
+      null,
+      0.8660254037844387,
+      0.0,
+      null
+    ],
+    "mean_rho": 0.5773502691896258,
+    "defined_questions": 3,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "TAN",
+    "metric": "words",
+    "within_question_spearman": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      -0.5,
+      -0.5
+    ],
+    "mean_rho": 0.16666666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "TAN",
+    "metric": "sentences",
+    "within_question_spearman": [
+      0.5,
+      0.0,
+      -0.8660254037844387,
+      0.0,
+      0.0,
+      -0.8660254037844387
+    ],
+    "mean_rho": -0.20534180126147958,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "TAN",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      0.5,
+      -1.0,
+      0.5,
+      -0.5,
+      -0.5,
+      -0.5
+    ],
+    "mean_rho": -0.25,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "TAN",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      -1.0,
+      0.5,
+      1.0,
+      0.5,
+      1.0,
+      -0.5
+    ],
+    "mean_rho": 0.25,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "Claude",
+    "type": "TAN",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      -0.5,
+      -0.5,
+      -0.5,
+      -0.5,
+      0.5,
+      0.5
+    ],
+    "mean_rho": -0.16666666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "TAN",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      null,
+      null,
+      -0.8660254037844387,
+      0.0,
+      -0.8660254037844387,
+      null
+    ],
+    "mean_rho": -0.5773502691896258,
+    "defined_questions": 3,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "INC",
+    "metric": "words",
+    "within_question_spearman": [
+      0.8660254037844387,
+      0.5,
+      1.0,
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "mean_rho": 0.22767090063073978,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 1
+  },
+  {
+    "generator": "Claude",
+    "type": "INC",
+    "metric": "sentences",
+    "within_question_spearman": [
+      0.8660254037844387,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      1.0
+    ],
+    "mean_rho": 0.8943375672974064,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 4
+  },
+  {
+    "generator": "Claude",
+    "type": "INC",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "mean_rho": -1.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "INC",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      0.5,
+      1.0,
+      0.5,
+      1.0,
+      0.5,
+      0.5
+    ],
+    "mean_rho": 0.6666666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "Claude",
+    "type": "INC",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      1.0,
+      -0.5,
+      -0.5,
+      0.5,
+      -0.5,
+      0.5
+    ],
+    "mean_rho": 0.08333333333333333,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 1
+  },
+  {
+    "generator": "Claude",
+    "type": "INC",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      null,
+      0.0,
+      0.5,
+      0.8660254037844387,
+      0.5,
+      0.0
+    ],
+    "mean_rho": 0.37320508075688774,
+    "defined_questions": 5,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "PER",
+    "metric": "words",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -0.5,
+      -1.0
+    ],
+    "mean_rho": -0.9166666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "PER",
+    "metric": "sentences",
+    "within_question_spearman": [
+      0.5,
+      1.0,
+      1.0,
+      0.8660254037844387,
+      1.0,
+      1.0
+    ],
+    "mean_rho": 0.8943375672974064,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 4
+  },
+  {
+    "generator": "Claude",
+    "type": "PER",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "mean_rho": -1.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "PER",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mean_rho": 1.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 6
+  },
+  {
+    "generator": "Claude",
+    "type": "PER",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mean_rho": 1.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 6
+  },
+  {
+    "generator": "Claude",
+    "type": "PER",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5
+    ],
+    "mean_rho": 0.9166666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 5
+  },
+  {
+    "generator": "Claude",
+    "type": "CLANG",
+    "metric": "words",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      -0.5,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "mean_rho": -0.9166666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "CLANG",
+    "metric": "sentences",
+    "within_question_spearman": [
+      0.5,
+      0.8660254037844387,
+      0.5,
+      0.8660254037844387,
+      0.5,
+      0.5
+    ],
+    "mean_rho": 0.6220084679281462,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "CLANG",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      1.0,
+      0.5
+    ],
+    "mean_rho": 0.5833333333333334,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 1
+  },
+  {
+    "generator": "Claude",
+    "type": "CLANG",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "mean_rho": -1.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "CLANG",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      -1.0,
+      0.0,
+      -0.5,
+      -0.5,
+      -1.0,
+      -0.5
+    ],
+    "mean_rho": -0.5833333333333334,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "Claude",
+    "type": "CLANG",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      -0.5,
+      null,
+      0.0,
+      null,
+      0.0,
+      null
+    ],
+    "mean_rho": -0.16666666666666666,
+    "defined_questions": 3,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "DER",
+    "metric": "words",
+    "within_question_spearman": [
+      -0.5,
+      0.5,
+      0.5,
+      0.5,
+      1.0,
+      1.0
+    ],
+    "mean_rho": 0.5,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "DER",
+    "metric": "sentences",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      0.5,
+      -0.5,
+      null,
+      -1.0
+    ],
+    "mean_rho": -0.6,
+    "defined_questions": 5,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "DER",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      -0.5,
+      -0.5,
+      0.5,
+      -0.5,
+      0.5,
+      -1.0
+    ],
+    "mean_rho": -0.25,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "DER",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      null,
+      1.0,
+      -0.5,
+      1.0,
+      -0.5,
+      1.0
+    ],
+    "mean_rho": 0.4,
+    "defined_questions": 5,
+    "strictly_increasing_questions": 3
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "DER",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      0.5,
+      1.0,
+      -0.5,
+      -1.0,
+      -1.0,
+      1.0
+    ],
+    "mean_rho": 0.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "DER",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      null,
+      null,
+      0.8660254037844387,
+      null,
+      null,
+      0.8660254037844387
+    ],
+    "mean_rho": 0.8660254037844387,
+    "defined_questions": 2,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "TAN",
+    "metric": "words",
+    "within_question_spearman": [
+      1.0,
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "mean_rho": 0.6666666666666666,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "TAN",
+    "metric": "sentences",
+    "within_question_spearman": [
+      -0.5,
+      -0.8660254037844387,
+      -1.0,
+      0.0,
+      -0.5,
+      -0.5
+    ],
+    "mean_rho": -0.5610042339640731,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "TAN",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      -0.5,
+      0.5,
+      1.0,
+      0.5,
+      -1.0,
+      -0.5
+    ],
+    "mean_rho": 0.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 1
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "TAN",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      0.5,
+      0.5,
+      1.0,
+      -0.5,
+      1.0,
+      -0.5
+    ],
+    "mean_rho": 0.3333333333333333,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "TAN",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      0.5,
+      -0.5,
+      0.5,
+      -0.5,
+      -1.0,
+      0.5
+    ],
+    "mean_rho": -0.08333333333333333,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "TAN",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      null,
+      0.8660254037844387,
+      0.8660254037844387,
+      -0.5,
+      -0.8660254037844387,
+      null
+    ],
+    "mean_rho": 0.09150635094610968,
+    "defined_questions": 4,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "INC",
+    "metric": "words",
+    "within_question_spearman": [
+      -0.5,
+      -0.5,
+      0.5,
+      0.5,
+      0.5,
+      -1.0
+    ],
+    "mean_rho": -0.08333333333333333,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "INC",
+    "metric": "sentences",
+    "within_question_spearman": [
+      0.8660254037844387,
+      -0.8660254037844387,
+      0.5,
+      0.8660254037844387,
+      -1.0,
+      0.5
+    ],
+    "mean_rho": 0.14433756729740646,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "INC",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "mean_rho": 0.5,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "INC",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      -0.5,
+      null,
+      -1.0,
+      -0.5,
+      null,
+      -0.5
+    ],
+    "mean_rho": -0.625,
+    "defined_questions": 4,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "INC",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      -0.5,
+      0.5,
+      1.0,
+      0.5,
+      -0.5,
+      -1.0
+    ],
+    "mean_rho": 0.0,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 1
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "INC",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      0.0,
+      0.0,
+      null,
+      null,
+      null,
+      null
+    ],
+    "mean_rho": 0.0,
+    "defined_questions": 2,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "PER",
+    "metric": "words",
+    "within_question_spearman": [
+      -0.5,
+      0.8660254037844387,
+      -1.0,
+      1.0,
+      0.5,
+      1.0
+    ],
+    "mean_rho": 0.3110042339640731,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "PER",
+    "metric": "sentences",
+    "within_question_spearman": [
+      -1.0,
+      0.0,
+      -1.0,
+      -0.8660254037844387,
+      -0.8660254037844387,
+      -1.0
+    ],
+    "mean_rho": -0.7886751345948129,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "PER",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      -1.0,
+      -1.0,
+      -0.5,
+      -1.0,
+      -0.5,
+      -0.5
+    ],
+    "mean_rho": -0.75,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "PER",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      1.0,
+      0.5,
+      null,
+      0.5,
+      1.0,
+      0.5
+    ],
+    "mean_rho": 0.7,
+    "defined_questions": 5,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "PER",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      1.0,
+      0.8660254037844387,
+      0.5,
+      0.5,
+      1.0,
+      1.0
+    ],
+    "mean_rho": 0.8110042339640731,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 3
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "PER",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      0.5,
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "mean_rho": 0.5833333333333334,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 1
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "CLANG",
+    "metric": "words",
+    "within_question_spearman": [
+      0.8660254037844387,
+      -0.5,
+      -0.5,
+      -0.5,
+      -0.5,
+      -0.5
+    ],
+    "mean_rho": -0.2723290993692602,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "CLANG",
+    "metric": "sentences",
+    "within_question_spearman": [
+      1.0,
+      0.5,
+      0.0,
+      0.5,
+      0.8660254037844387,
+      1.0
+    ],
+    "mean_rho": 0.6443375672974064,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "CLANG",
+    "metric": "mattr50",
+    "within_question_spearman": [
+      1.0,
+      -0.5,
+      0.5,
+      0.5,
+      -0.5,
+      1.0
+    ],
+    "mean_rho": 0.3333333333333333,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 2
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "CLANG",
+    "metric": "adjacent_jaccard",
+    "within_question_spearman": [
+      -0.5,
+      -0.5,
+      -0.5,
+      -1.0,
+      0.5,
+      -1.0
+    ],
+    "mean_rho": -0.5,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "CLANG",
+    "metric": "repeated_bigram_fraction",
+    "within_question_spearman": [
+      -0.8660254037844387,
+      -1.0,
+      -0.5,
+      0.5,
+      0.5,
+      -0.5
+    ],
+    "mean_rho": -0.3110042339640731,
+    "defined_questions": 6,
+    "strictly_increasing_questions": 0
+  },
+  {
+    "generator": "GPT-4.1",
+    "type": "CLANG",
+    "metric": "repeated_trigram_fraction",
+    "within_question_spearman": [
+      -0.5,
+      -0.8660254037844387,
+      -0.8660254037844387,
+      null,
+      0.8660254037844387,
+      -0.8660254037844387
+    ],
+    "mean_rho": -0.4464101615137755,
+    "defined_questions": 5,
+    "strictly_increasing_questions": 0
+  }
+]

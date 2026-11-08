@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-08",
+  "roadmap_stage": 3,
+  "previous": "config/research-checkpoint-v20.json",
+  "new_speech": 0,
+  "clinical_ratings": 0,
+  "existing_outputs_read": 30,
+  "overlap_with_prior_calibration": 0,
+  "role": "exploratory AI textual ratings, partially masked; no independent validation",
+  "protocol_commit": "591f991",
+  "ratings_commit": "608f5fd",
+  "result": "analysis/team-transition-v01/results.json",
+  "posthoc": "analysis/team-transition-v01/echo.json",
+  "next": "Apply frozen lexical echo measure to existing controls and DER levels; test specificity, no new generation."
+}

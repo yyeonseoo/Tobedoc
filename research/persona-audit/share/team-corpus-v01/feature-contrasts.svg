@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="370" viewBox="0 0 1180 370">
+<rect width="1180" height="370" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#20262c} .small{font-size:11px} .label{font-size:12px}</style>
+<text x="24" y="26" font-size="18" font-weight="bold">Observed condition effects within each generation protocol</text>
+<text x="24" y="63" font-size="13" font-weight="bold">PER3 minus N0: repeated trigrams</text>
+<line x1="118.52631578947368" y1="85" x2="118.52631578947368" y2="245" stroke="#aab2ba" stroke-dasharray="4 3"/>
+<line x1="118.52631578947368" y1="250" x2="118.52631578947368" y2="255" stroke="#59636d"/><text x="118.52631578947368" y="271" class="small" text-anchor="middle">0</text>
+<line x1="191.15789473684208" y1="250" x2="191.15789473684208" y2="255" stroke="#59636d"/><text x="191.15789473684208" y="271" class="small" text-anchor="middle">10</text>
+<line x1="263.7894736842105" y1="250" x2="263.7894736842105" y2="255" stroke="#59636d"/><text x="263.7894736842105" y="271" class="small" text-anchor="middle">20</text>
+<line x1="336.42105263157896" y1="250" x2="336.42105263157896" y2="255" stroke="#59636d"/><text x="336.42105263157896" y="271" class="small" text-anchor="middle">30</text>
+<text x="24" y="119" class="label">Claude</text>
+<line x1="291.50644951012407" y1="115" x2="337.530701754386" y2="115" stroke="#155e75" stroke-width="3"/>
+<circle cx="314.19117009257195" cy="115" r="5" fill="#155e75"/>
+<text x="314.19117009257195" y="139" class="small" text-anchor="middle">+26.939 [23.816, 30.153]</text>
+<text x="24" y="211" class="label">GPT-4.1</text>
+<line x1="146.95830616251732" y1="207" x2="218.49659850681903" y2="207" stroke="#a04e23" stroke-width="3"/>
+<circle cx="179.81078797680914" cy="207" r="5" fill="#a04e23"/>
+<text x="179.81078797680914" y="231" class="small" text-anchor="middle">+8.438 [3.915, 13.764]</text>
+<text x="242.0" y="296" class="label" text-anchor="middle">Difference (percentage points)</text>
+<text x="412" y="63" font-size="13" font-weight="bold">INC3 minus N0: lexical diversity</text>
+<line x1="684.0" y1="85" x2="684.0" y2="245" stroke="#aab2ba" stroke-dasharray="4 3"/>
+<line x1="504.0" y1="250" x2="504.0" y2="255" stroke="#59636d"/><text x="504.0" y="271" class="small" text-anchor="middle">-0.3</text>
+<line x1="564.0" y1="250" x2="564.0" y2="255" stroke="#59636d"/><text x="564.0" y="271" class="small" text-anchor="middle">-0.2</text>
+<line x1="624.0" y1="250" x2="624.0" y2="255" stroke="#59636d"/><text x="624.0" y="271" class="small" text-anchor="middle">-0.1</text>
+<line x1="684.0" y1="250" x2="684.0" y2="255" stroke="#59636d"/><text x="684.0" y="271" class="small" text-anchor="middle">0</text>
+<line x1="744.0" y1="250" x2="744.0" y2="255" stroke="#59636d"/><text x="744.0" y="271" class="small" text-anchor="middle">0.1</text>
+<text x="412" y="119" class="label">Claude</text>
+<line x1="522.9721314813854" y1="115" x2="559.7159316382892" y2="115" stroke="#155e75" stroke-width="3"/>
+<circle cx="541.223701505545" cy="115" r="5" fill="#155e75"/>
+<text x="541.223701505545" y="139" class="small" text-anchor="middle">-0.238 [-0.268, -0.207]</text>
+<text x="412" y="211" class="label">GPT-4.1</text>
+<line x1="698.5815247337105" y1="207" x2="742.0943373637758" y2="207" stroke="#a04e23" stroke-width="3"/>
+<circle cx="718.5153291699969" cy="207" r="5" fill="#a04e23"/>
+<text x="718.5153291699969" y="231" class="small" text-anchor="middle">+0.058 [0.024, 0.097]</text>
+<text x="630.0" y="296" class="label" text-anchor="middle">Difference in MATTR50 (0-1 scale)</text>
+<text x="800" y="63" font-size="13" font-weight="bold">PER3 minus N0: first 100 words</text>
+<line x1="894.5263157894736" y1="85" x2="894.5263157894736" y2="245" stroke="#aab2ba" stroke-dasharray="4 3"/>
+<line x1="894.5263157894736" y1="250" x2="894.5263157894736" y2="255" stroke="#59636d"/><text x="894.5263157894736" y="271" class="small" text-anchor="middle">0</text>
+<line x1="967.1578947368421" y1="250" x2="967.1578947368421" y2="255" stroke="#59636d"/><text x="967.1578947368421" y="271" class="small" text-anchor="middle">10</text>
+<line x1="1039.7894736842104" y1="250" x2="1039.7894736842104" y2="255" stroke="#59636d"/><text x="1039.7894736842104" y="271" class="small" text-anchor="middle">20</text>
+<line x1="1112.421052631579" y1="250" x2="1112.421052631579" y2="255" stroke="#59636d"/><text x="1112.421052631579" y="271" class="small" text-anchor="middle">30</text>
+<text x="800" y="119" class="label">Claude</text>
+<line x1="1008.1675617615467" y1="115" x2="1061.2824919441462" y2="115" stroke="#155e75" stroke-width="3"/>
+<circle cx="1034.1074113856068" cy="115" r="5" fill="#155e75"/>
+<text x="1034.1074113856068" y="139" class="small" text-anchor="middle">+19.218 [15.646, 22.959]</text>
+<text x="800" y="211" class="label">GPT-4.1</text>
+<line x1="917.9957035445757" y1="207" x2="1001.9914070891515" y2="207" stroke="#a04e23" stroke-width="3"/>
+<circle cx="957.5230934479055" cy="207" r="5" fill="#a04e23"/>
+<text x="957.5230934479055" y="231" class="small" text-anchor="middle">+8.673 [3.231, 14.796]</text>
+<text x="1018.0" y="296" class="label" text-anchor="middle">Difference (percentage points)</text>
+<text x="24" y="329" class="small">Dots: mean paired difference over Q01-Q06. Bars: exact question-bootstrap percentile 95% interval (6^6 resamples).</text>
+<text x="24" y="349" class="small">Source: acquired 228-output corpus, analyzed 2026-11-04. One persona; one output per cell. No patient-level inference.</text>
+</svg>

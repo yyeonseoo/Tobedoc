@@ -1,0 +1,126 @@
+{
+  "rater": "Codex (AI); one contextual reading, same study context; partial masking, source recognition possible",
+  "rubric": "share/main-comparison-v01/블라인드16개_검토.md",
+  "rows": [
+    {
+      "blind_id": "B05",
+      "text_sha256": "ff79ccb2cd2462fca8d052b9f4f7d8a5231877edc5419e625539130039dde592",
+      "opening_answer": "direct",
+      "unclear_transition": "uncertain",
+      "within_clause_difficulty": "no",
+      "excerpt": "maybe they eat different from how we do—",
+      "next_excerpt": "like I tend to eat mostly pasta after late shifts, it’s fastest.",
+      "rationale": "기린과 자신의 식사를 비교한다고 명시하지만 늦은 근무 후 식단이 무엇을 설명하는지는 약하다. 단순한 예시와 피상적 연상 양쪽이 가능하다. 빵과 축구의 비유는 인내와 타이밍을 직접 설명한다."
+    },
+    {
+      "blind_id": "B06",
+      "text_sha256": "02c138ca75cd3862f2e1b554ec66575191886c9325a8c30b0af641bb5204f07e",
+      "opening_answer": "direct",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "My family's quite small really.",
+      "next_excerpt": null,
+      "rationale": "가족별 소개, 함께 보내는 시간, 친밀함을 차례로 뒷받침한다."
+    },
+    {
+      "blind_id": "B07",
+      "text_sha256": "965ac35f8d901f343e50a1e10ae7669e039742f3aeac84ae4622959af967fff7",
+      "opening_answer": "direct",
+      "unclear_transition": "yes",
+      "within_clause_difficulty": "no",
+      "excerpt": "I try to keep things routine because that seems to help me feel more stable.",
+      "next_excerpt": "Sometimes I hear a voice when I’m alone, but that doesn’t happen every day.",
+      "rationale": "일과가 안정감을 준다는 이유를 설명한 뒤 혼자 있을 때의 경험을 새로 꺼낸다. 직전 문장이나 현재 아침 상황과 해당 경험을 연결할 구체적 단서가 없다. 안정이라는 넓은 공통 주제만으로는 부족하다."
+    },
+    {
+      "blind_id": "B08",
+      "text_sha256": "b8a2c571dd86e5e0c12cce7cedadfcb6e991168bb5f12cce80c58eb8dac796cc",
+      "opening_answer": "direct",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "The busiest times are in the afternoons, when more people come in.",
+      "next_excerpt": "I try to stay calm and friendly, even when it gets a bit hectic.",
+      "rationale": "바쁜 시간대와 그때의 응대를 이어 설명한다. 나머지 순서도 개점부터 퇴점까지 따라갈 수 있다."
+    },
+    {
+      "blind_id": "B09",
+      "text_sha256": "a9212b3a35bd7f50d672498db43d642e08fe7472154fa608f4a8bd0814820a2d",
+      "opening_answer": "direct",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "My mum’s really into gardening, she’s always sending me photos of the stuff she’s grown.",
+      "next_excerpt": "My dad’s more of a football fan, so we talk about matches and that, especially when our team’s playing.",
+      "rationale": "취미는 달라도 부모별 관계를 나란히 소개한다."
+    },
+    {
+      "blind_id": "B10",
+      "text_sha256": "cf604929f8a5e42d41c1bf658a43cab98c63557a8a9f8b12a8a2a98ef72b8d58",
+      "opening_answer": "direct",
+      "unclear_transition": "uncertain",
+      "within_clause_difficulty": "no",
+      "excerpt": "I don’t mind the quiet morning, actually—it helps me feel more in control.",
+      "next_excerpt": "I sometimes hear a voice when I’m alone, but that’s not every day.",
+      "rationale": "조용한 아침과 혼자 있을 때라는 두 환경이 연결될 수 있지만, 실제 같은 상황인지는 명시되지 않는다."
+    },
+    {
+      "blind_id": "B11",
+      "text_sha256": "37a2f6998b359a0e2e7e8e0ed2e0e8385df42d2061bf1113ea394d4a1f025f67",
+      "opening_answer": "direct",
+      "unclear_transition": "yes",
+      "within_clause_difficulty": "no",
+      "excerpt": "the custard had skin on it,",
+      "next_excerpt": "skin peels in summer at the seaside,",
+      "rationale": "급식 커스터드의 막에서 여름에 벗겨지는 사람 피부로 넘어간다. skin이라는 말은 이어지지만 두 진술 사이의 내용상 관계는 설명되지 않는다. 각각의 진술은 이해된다."
+    },
+    {
+      "blind_id": "B12",
+      "text_sha256": "bf13c819ddd29a949b535a0d32f9eb1ec62ecf683d4b4d149817a26f9e370b65",
+      "opening_answer": "partial",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "The Fiesta went for scrap in the end, the man gave us eighty pounds,",
+      "next_excerpt": "and my dad spent it on a new barbecue that we used about twice because it always rains in August.",
+      "rationale": "가족 설명은 지연되지만 집터·주차장·운전 연습 등은 장소나 같은 사건을 공유한다. 자동차에서 바비큐로 이동하는 구간도 매각 대금의 쓰임을 명시한다. 가족 질문으로 돌아오는 대목은 명시적인 복귀다."
+    },
+    {
+      "blind_id": "B13",
+      "text_sha256": "637057d0effbc5a23df2be973f6aa700085c261abc5525857fd5bab6d9cfeb9b",
+      "opening_answer": "direct",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "My mum’s really supportive, she always checks in, especially if she knows I’ve got a rough shift coming up.",
+      "next_excerpt": null,
+      "rationale": "가족 구성원과 교류 방식에 관한 구체적 예로 이어진다."
+    },
+    {
+      "blind_id": "B14",
+      "text_sha256": "dc28a2fdf39301a820bbad660b6e212f093efff046d805b562d43cab4a9b7a0a",
+      "opening_answer": "absent",
+      "unclear_transition": "uncertain",
+      "within_clause_difficulty": "no",
+      "excerpt": "I leave around five, take the bus home, and spend the evening with my sister.",
+      "next_excerpt": "I don’t really think about the voice when I’m working, but it sometimes comes back when I’m alone.",
+      "rationale": "시작은 개점 전의 기상과 식사로 질문 대상인 서점 업무에 답하지 않는다. 끝의 근무 중과 혼자일 때의 대조는 뜻이 통하지만, 직전의 여동생과 보낸 저녁에 어떻게 이어지는지는 불분명하다."
+    },
+    {
+      "blind_id": "B15",
+      "text_sha256": "8f86acfdc7af50a09826352cec8998e945659a9cc82543a289b003a61d126ec5",
+      "opening_answer": "direct",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "It's a quiet job, and I find that helps me stay calm.",
+      "next_excerpt": null,
+      "rationale": "개점부터 귀가까지 순서를 따르고, 마지막에 그 일의 성격을 요약한다."
+    },
+    {
+      "blind_id": "B16",
+      "text_sha256": "a053a96c4b75d43a795f9034597b08331493c718b9727d1d46ee026df82dd7e0",
+      "opening_answer": "absent",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "I usually get up around seven, make a cup of tea, and have some toast.",
+      "next_excerpt": "Then I feed the cat before heading to the shop.",
+      "rationale": "개점 전 아침으로 시작해 질문 대상에서 벗어나지만 출근·개점·업무로 시간순 연결된다. 마지막 일과 요약도 앞 내용과 연결된다."
+    }
+  ]
+}

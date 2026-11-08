@@ -1,0 +1,178 @@
+[
+  {
+    "id": "R01",
+    "text_sha256": "a053a96c4b75d43a795f9034597b08331493c718b9727d1d46ee026df82dd7e0",
+    "A": "absent",
+    "opening_quote": "I usually get up around seven, make a cup of tea, and have some toast.",
+    "B": "no",
+    "left": "I take the bus to work and meet my colleague to open the shop.",
+    "right": null,
+    "reason": "개점 전부터 시작하나 이동과 업무는 시간순이다.",
+    "C": "no"
+  },
+  {
+    "id": "R02",
+    "text_sha256": "fa1dd3babc6755f37fc2cf1f6126bfebb05252a4b3574f8858ae615ff7a89ca4",
+    "A": "direct",
+    "opening_quote": "I get there around seven thirty, usually.",
+    "B": "no",
+    "left": "I like the quiet of it, actually.",
+    "right": "It helps me focus.",
+    "reason": "고요해서 집중한다는 설명 뒤 조용한 가게에서 겪는 경험이라는 상황 연결을 명시한다.",
+    "C": "no"
+  },
+  {
+    "id": "R03",
+    "text_sha256": "c4143cade34402e0c630e34e4a2e0760cd7af9a6bd3805c8002d00af35222502",
+    "A": "absent",
+    "opening_quote": "I usually get up around seven, make a cup of tea, and have some toast.",
+    "B": "no",
+    "left": "The work is pretty routine, and I find it calming.",
+    "right": null,
+    "reason": "시작은 기상·식사이지만 개점부터 귀가까지 순서와 일과에 대한 설명이 이어진다.",
+    "C": "no"
+  },
+  {
+    "id": "R04",
+    "text_sha256": "b8a2c571dd86e5e0c12cce7cedadfcb6e991168bb5f12cce80c58eb8dac796cc",
+    "A": "direct",
+    "opening_quote": "I get there around eight, usually.",
+    "B": "no",
+    "left": "The busiest times are in the afternoons, when more people come in.",
+    "right": null,
+    "reason": "혼잡한 시간과 대처, 퇴점으로 이어진다.",
+    "C": "no"
+  },
+  {
+    "id": "R05",
+    "text_sha256": "15ea262594d55f6aa6afc1db50437c96b46fe1546561636e6da7b246f244dd69",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, maybe a bit later if I’ve had a rough night.",
+    "B": "yes",
+    "left": "I like the routine—it keeps me grounded.",
+    "right": "I don’t really think about the voice much during the day, but sometimes I hear it when I’m alone.",
+    "reason": "일과가 안정감을 준다는 설명 뒤 혼자 목소리를 듣는 경험으로 옮겨가나 구체적인 관계가 없다. 시간 단서는 약하다.",
+    "C": "no"
+  },
+  {
+    "id": "R06",
+    "text_sha256": "47d7ab3a21722ec92f6eb12415723702bdc3e8051788ee306d9b4bcc13d65876",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, maybe a bit later sometimes.",
+    "B": "uncertain",
+    "left": "The bus ride is pretty quiet, so I often listen to music or just think.",
+    "right": "I don’t really pay much attention to the voice unless I’m tired.",
+    "reason": "조용한 버스·음악·목소리에 대한 주의가 소리라는 연결을 암시하지만 명확하지 않다.",
+    "C": "no"
+  },
+  {
+    "id": "R07",
+    "text_sha256": "965ac35f8d901f343e50a1e10ae7669e039742f3aeac84ae4622959af967fff7",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, maybe a bit later some days.",
+    "B": "yes",
+    "left": "I try to keep things routine because that seems to help me feel more stable.",
+    "right": "Sometimes I hear a voice when I’m alone, but that doesn’t happen every day.",
+    "reason": "안정감을 주는 일과와 혼자 있을 때 목소리가 들리는 빈도 사이의 관계를 제시하지 않는다.",
+    "C": "no"
+  },
+  {
+    "id": "R08",
+    "text_sha256": "41c9908af1a6b8fd10d421807e521ee363284f8e1041342c3891362068cbf778",
+    "A": "direct",
+    "opening_quote": "I get there around eight, usually.",
+    "B": "uncertain",
+    "left": "I like arranging the books, especially the fiction section.",
+    "right": "Some days I feel more motivated than others.",
+    "reason": "특정 업무의 선호와 근무 의욕은 연결될 수 있으나, 왜 소설 진열에서 날마다 달라지는 의욕으로 옮겨가는지 불분명하다. 뒤의 공간 언급은 목소리 경험과 약한 장소 연결을 제공한다.",
+    "C": "no"
+  },
+  {
+    "id": "R09",
+    "text_sha256": "cf604929f8a5e42d41c1bf658a43cab98c63557a8a9f8b12a8a2a98ef72b8d58",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, maybe a bit later some days.",
+    "B": "uncertain",
+    "left": "I don’t mind the quiet morning, actually—it helps me feel more in control.",
+    "right": "I sometimes hear a voice when I’m alone, but that’s not every day.",
+    "reason": "조용한 아침과 혼자 있는 상황이 겹칠 수 있지만 같은 상황인지는 밝히지 않는다.",
+    "C": "no"
+  },
+  {
+    "id": "R10",
+    "text_sha256": "284537a06afd7fae0f791b5108386ddb7c1b3c7e5903a97880d49c23960735f3",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, though sometimes I oversleep a bit.",
+    "B": "uncertain",
+    "left": "I don’t really think about anything much during the morning—just go through the motions.",
+    "right": "Sometimes I hear a voice, but it’s not every day.",
+    "reason": "아침에 무슨 생각을 하는지의 연장으로 경험을 소개한다고 읽을 수 있지만 발생 시간이 아침인지는 불명확하다.",
+    "C": "no"
+  },
+  {
+    "id": "R11",
+    "text_sha256": "dc28a2fdf39301a820bbad660b6e212f093efff046d805b562d43cab4a9b7a0a",
+    "A": "absent",
+    "opening_quote": "I usually get up around seven, make a cup of tea, and have some toast.",
+    "B": "uncertain",
+    "left": "I leave around five, take the bus home, and spend the evening with my sister.",
+    "right": "I don’t really think about the voice when I’m working, but it sometimes comes back when I’m alone.",
+    "reason": "근무 중과 혼자일 때의 대비는 이해되나 가족과 함께 보내는 저녁에서 이 대비가 나오는 연결은 약하다.",
+    "C": "no"
+  },
+  {
+    "id": "R12",
+    "text_sha256": "0e3c23ffea3395ec6fa6cfa9195932f0c68c957e794898ee02fd7e79af874d97",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, maybe a bit later if I’ve had a rough night.",
+    "B": "yes",
+    "left": "I don’t mind the routine—it helps me feel more in control.",
+    "right": "Sometimes I hear a voice when I’m alone, but it doesn’t happen every day.",
+    "reason": "안정감을 주는 일과에서 목소리를 듣는 상황과 빈도로 넘어가나 관계를 명시하지 않는다. 이후 버스로 돌아가도 이 구간의 관계는 복원되지 않는다.",
+    "C": "no"
+  },
+  {
+    "id": "R13",
+    "text_sha256": "6fbe5caef848a5f98e4102968a72f451d32e92a89f1112c488bf62ef90d5175e",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, though sometimes I oversleep if I’m tired.",
+    "B": "uncertain",
+    "left": "I don’t mind the routine—it helps me feel calm.",
+    "right": "I don’t hear the voice every day, just sometimes, especially if I haven’t slept well.",
+    "reason": "수면 부족이 첫 기상 설명으로 돌아가는 단서이나, 바로 앞의 차분한 일과와 이어지는지는 불확실하다.",
+    "C": "no"
+  },
+  {
+    "id": "R14",
+    "text_sha256": "2c5a1782465cd4394c0fb55baeeb4d96fcaef43b1211904764d41a7d2d6ee746",
+    "A": "direct",
+    "opening_quote": "I usually wake up around seven, maybe a bit later if I’ve had a rough night.",
+    "B": "no",
+    "left": "I like the routine—it helps me feel grounded.",
+    "right": "I don’t really notice the voice in the morning, but it can show up later, especially if I’m tired.",
+    "reason": "아침 일과 중의 경험과 나중의 경험을 명시적으로 대비하므로 질문의 시간 범위와 연결된다.",
+    "C": "no"
+  },
+  {
+    "id": "R15",
+    "text_sha256": "0292bb7b2067383f5d3f738c533e1540815e206ea4426933607791dfda803085",
+    "A": "absent",
+    "opening_quote": "I usually get up around seven, have a quick breakfast, and then head to the shop.",
+    "B": "no",
+    "left": "I stay until closing, then take the bus home.",
+    "right": null,
+    "reason": "아침식사로 시작하지만 출근·업무·퇴근 순으로 이어진다.",
+    "C": "no"
+  },
+  {
+    "id": "R16",
+    "text_sha256": "8f86acfdc7af50a09826352cec8998e945659a9cc82543a289b003a61d126ec5",
+    "A": "direct",
+    "opening_quote": "I get there around seven, usually.",
+    "B": "no",
+    "left": "It's a quiet job, and I find that helps me stay calm.",
+    "right": null,
+    "reason": "퇴근 후 업무 환경이 자신에게 주는 영향을 요약한다.",
+    "C": "no"
+  }
+]

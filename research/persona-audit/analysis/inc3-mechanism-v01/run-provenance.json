@@ -1,0 +1,16 @@
+{
+  "input_sha256": "5b8d11491f2ab5fc4ef0612e6ddc28411c59e70719ecf3147fd400775185c116",
+  "config_sha256": "88627f43db29ddce4b5cb72b254b1419fa53107e6f53521e1822e53c7bd5cb14",
+  "script_sha256": "c95d65732266548b891712fca976545af2163d9f63967101a98a716bbeaf6dbe",
+  "shared_feature_code_sha256": "1991b550016ef13f0ff22eac995dd7584aca7b8d94066b3f3d04209c925da294",
+  "numpy": "2.3.5",
+  "source_rows": 96,
+  "primary_pairs": 6,
+  "lexicon_sizes": {
+    "extended": 240,
+    "base": 191
+  },
+  "new_speech": 0,
+  "new_embeddings": 0,
+  "clinical_ratings": 0
+}

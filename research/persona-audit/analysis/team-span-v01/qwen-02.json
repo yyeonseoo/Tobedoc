@@ -1,0 +1,104 @@
+{
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "For each left and right fragment, copy a single short exact contiguous phrase naming a central entity or action from THAT side only. Return an empty string if none. Preserve spelling and case. Do not label relations or symptoms, paraphrase, or complete any speech.\n[{\"id\": \"S05\", \"left\": \"I also make bolognese\", \"right\": \"but mostly curry\"}, {\"id\": \"S06\", \"left\": \"which is where my grandad was stationed in the army\", \"right\": \"He had a medal in a drawer\"}, {\"id\": \"S07\", \"left\": \"so I need to make sure I've got snacks in\", \"right\": \"Speaking of snacks\"}, {\"id\": \"S08\", \"left\": \"that's my best curry\", \"right\": \"I make curry on my days off and freeze the curry for after work\"}]",
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "S05": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S06": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S07": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S08": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "S05",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 20261108,
+      "num_ctx": 4096,
+      "num_predict": 540
+    }
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-08T03:49:48.393563Z",
+    "response": "{\"S05\": {\"left\": \"make bolognese\", \"right\": \"mostly curry\"}, \"S06\": {\"left\": \"where my grandad was stationed in the army\", \"right\": \"had a medal in a drawer\"}, \"S07\": {\"left\": \"need to make sure I've got snacks in\", \"right\": \"Speaking of snacks\"}, \"S08\": {\"left\": \"best curry\", \"right\": \"make curry on my days off and freeze the curry for after work\"}}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 9485500084,
+    "load_duration": 2264459,
+    "prompt_eval_count": 203,
+    "prompt_eval_cached_count": 62,
+    "prompt_eval_duration": 721781000,
+    "eval_count": 110,
+    "eval_duration": 8753533000
+  }
+}

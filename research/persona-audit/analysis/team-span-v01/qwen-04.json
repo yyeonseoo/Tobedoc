@@ -1,0 +1,104 @@
+{
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "For each left and right fragment, copy a single short exact contiguous phrase naming a central entity or action from THAT side only. Return an empty string if none. Preserve spelling and case. Do not label relations or symptoms, paraphrase, or complete any speech.\n[{\"id\": \"S13\", \"left\": \"a Thai green curry\", \"right\": \"which came out a bit too spicy but I'd make it again\"}, {\"id\": \"S14\", \"left\": \"and snakes shed their skins\", \"right\": \"and skin is the biggest organ of the body\"}, {\"id\": \"S15\", \"left\": \"and after that he did taxis at night\", \"right\": \"Taxis at night are dangerous\"}, {\"id\": \"S16\", \"left\": \"especially after a late shift\", \"right\": \"you just want something quick\"}]",
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "S13": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S14": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S15": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S16": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "S13",
+        "S14",
+        "S15",
+        "S16"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 20261108,
+      "num_ctx": 4096,
+      "num_predict": 540
+    }
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-08T03:50:04.144939Z",
+    "response": "{\"S13\": {\"left\": \"Thai green curry\", \"right\": \"make it again\"}, \"S14\": {\"left\": \"snakes shed their skins\", \"right\": \"skin is the biggest organ of the body\"}, \"S15\": {\"left\": \"after that he did taxis at night\", \"right\": \"Taxis at night\"}, \"S16\": {\"left\": \"after a late shift\", \"right\": \"something quick\"}}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 8417015500,
+    "load_duration": 371000,
+    "prompt_eval_count": 197,
+    "prompt_eval_cached_count": 61,
+    "prompt_eval_duration": 722151000,
+    "eval_count": 97,
+    "eval_duration": 7686294000
+  }
+}

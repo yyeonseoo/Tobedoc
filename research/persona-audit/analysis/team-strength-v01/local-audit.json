@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M05",
+    "field": "before",
+    "snippet": "supermarkets always rearrange things",
+    "exact": true
+  },
+  {
+    "id": "M05",
+    "field": "after",
+    "snippet": "football match and the team changes formation",
+    "exact": true
+  },
+  {
+    "id": "M07",
+    "field": "before",
+    "snippet": "packaging rips",
+    "exact": true
+  },
+  {
+    "id": "M07",
+    "field": "after",
+    "snippet": "need to get some cling film for the kitchen",
+    "exact": true
+  },
+  {
+    "id": "M09",
+    "field": "before",
+    "snippet": "pitch turned into just puddles",
+    "exact": true
+  },
+  {
+    "id": "M09",
+    "field": "after",
+    "snippet": "washing machine at my place, it sometimes doesn’t spin properly",
+    "exact": true
+  },
+  {
+    "id": "M18",
+    "field": "before",
+    "snippet": "jars like that now except in maybe, like, museums or those fancy food shops",
+    "exact": true
+  },
+  {
+    "id": "M18",
+    "field": "after",
+    "snippet": "football pitches, there was a muddy one, always flooded, but we still played",
+    "exact": true
+  },
+  {
+    "id": "M21",
+    "field": "before",
+    "snippet": "racing cars",
+    "exact": true
+  },
+  {
+    "id": "M21",
+    "field": "after",
+    "snippet": "actually went in a car was when I got my hair cut",
+    "exact": true
+  }
+]

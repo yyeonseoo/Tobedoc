@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-04",
+  "previous_checkpoint": "config/research-checkpoint-v13.json",
+  "reason": "User corrected premature transition to manuscript; latest supplied roadmap inspected",
+  "user_horizon": "Approximately one month of follow-up research before manuscript writing",
+  "roadmap_copy": "docs/followup-roadmap-20261104.user-supplied.txt",
+  "roadmap_original": "/Users/ohs/Downloads/투비닥터 연구/04_후속연구_실행로드맵_최신.txt",
+  "roadmap_sha256": "c00ca62245e43e193624e6d81237278646f3afa0ea796a32534bfdf5156f14c7",
+  "current_stage": "Stage 1 exploratory direct features and post-hoc INC3 decomposition performed; stage 2 main comparison not fixed",
+  "completed_evidence": [
+    "228-output direct feature comparison",
+    "96-output INC3 lexical accounting with controls"
+  ],
+  "not_completed": [
+    "Fixed main experimental comparison and criterion",
+    "Matched instruction/control experiment",
+    "Targeted repair when justified",
+    "Unused-condition evaluation",
+    "Final consultation/team-data integration"
+  ],
+  "next_action": "Inspect existing semantic relevance/coherence code and failure controls; use exploratory findings and relevant literature to fix one main comparison on one page",
+  "new_generation_now": false,
+  "reporting_format": [
+    "Current stage in full process",
+    "Results so far",
+    "Next step"
+  ],
+  "superseded_by": "config/research-checkpoint-v15.json"
+}

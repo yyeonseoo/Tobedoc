@@ -1,0 +1,749 @@
+{
+  "rows": [
+    {
+      "id": "T01",
+      "generator": "Claude",
+      "q_id": "Q06",
+      "condition": "N0",
+      "sha256": "55002edf7098e6aa2aeb33c30edefa5dbf206b8f138215aaa7da4830d6d607f2",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T02",
+      "generator": "GPT-4.1",
+      "q_id": "Q05",
+      "condition": "NMULTI",
+      "sha256": "09df1017ff6500c37e0254cebb08d8dafd5d89693ea8d2ac34bca8f0070c22b5",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T03",
+      "generator": "Claude",
+      "q_id": "Q05",
+      "condition": "NMULTI",
+      "sha256": "a0447f02b42e058aae81d7e8645043c086a8bdcf961d1eee746922fe7442f03b",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T04",
+      "generator": "Claude",
+      "q_id": "Q01",
+      "condition": "NMULTI",
+      "sha256": "fdd4c8d909d1895eb1d65a2a7b323f581396a924df4bbfbf10b906341c3826d2",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T05",
+      "generator": "Claude",
+      "q_id": "Q01",
+      "condition": "DER2",
+      "sha256": "090e22ca408eee3b9cb85cd20f4e7e1a3142feaa9dc1d66ffd66ba1b7d34b323",
+      "A": "direct",
+      "B": "yes",
+      "C": "no"
+    },
+    {
+      "id": "T06",
+      "generator": "Claude",
+      "q_id": "Q05",
+      "condition": "DER2",
+      "sha256": "2730bd235033ad094b01efbcb110d21e3dae78d476082e47f343bd9f86d2d02d",
+      "A": "direct",
+      "B": "yes",
+      "C": "no"
+    },
+    {
+      "id": "T07",
+      "generator": "Claude",
+      "q_id": "Q05",
+      "condition": "N0",
+      "sha256": "07f174e542f89ef8c5ba02381d25d89ea6453f3a1f87be7a997719ead2378f1f",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T08",
+      "generator": "GPT-4.1",
+      "q_id": "Q02",
+      "condition": "N0",
+      "sha256": "15ea70cb3aabc02edad9f8cdf51ea070eb7f5b6a4d7dd73ad77beec764eb5136",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T09",
+      "generator": "GPT-4.1",
+      "q_id": "Q06",
+      "condition": "DER2",
+      "sha256": "bbeb4e0909a3eaa3b66c1accfeaee42629c2972c4d1d6b7712846f6d5acb0b61",
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no"
+    },
+    {
+      "id": "T10",
+      "generator": "Claude",
+      "q_id": "Q01",
+      "condition": "N0",
+      "sha256": "9e94d3bd0b8e34c61333c2ec25f40e055ecc7ff387590e90a1b42a2d6bb087c7",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T11",
+      "generator": "GPT-4.1",
+      "q_id": "Q01",
+      "condition": "N0",
+      "sha256": "d75f8920e46b95ccbc09fdfa44d9e6deb25ea1911ef56bda8633830e50186471",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T12",
+      "generator": "GPT-4.1",
+      "q_id": "Q06",
+      "condition": "NMULTI",
+      "sha256": "8c6255f13b4c48e11d52027bae655146a3f69c39f1ca60a86761fdb4d9a58031",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T13",
+      "generator": "GPT-4.1",
+      "q_id": "Q04",
+      "condition": "DER2",
+      "sha256": "55144932d85afb147cdd831a736581fb3335aa7f736bbf271fccc95b10de8270",
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no"
+    },
+    {
+      "id": "T14",
+      "generator": "GPT-4.1",
+      "q_id": "Q01",
+      "condition": "NMULTI",
+      "sha256": "676532dc4d43bd5e34d7a622421f606006504517da0f288b6646c94bf6eebf1e",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T15",
+      "generator": "GPT-4.1",
+      "q_id": "Q02",
+      "condition": "DER2",
+      "sha256": "c9cb358810fbfa51cb356b09272868352f1ae03f37aa5d9c9a9967f40555c829",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T16",
+      "generator": "Claude",
+      "q_id": "Q06",
+      "condition": "NMULTI",
+      "sha256": "97a72db1cacb6576a5f7b990396a4686c3c177c735f22b7309d12fe2fe0312db",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T17",
+      "generator": "GPT-4.1",
+      "q_id": "Q02",
+      "condition": "NMULTI",
+      "sha256": "726b43aded17f7cc2deea0bc2129bb02e63f9c74a09eba0fd608979f5ff330c2",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T18",
+      "generator": "Claude",
+      "q_id": "Q04",
+      "condition": "NMULTI",
+      "sha256": "83157ac669490f90a4f7f1677f4bc4b6255bf6c6357377a08d4fa3bf5822beeb",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T19",
+      "generator": "Claude",
+      "q_id": "Q04",
+      "condition": "DER2",
+      "sha256": "122174ab479d30b5145d0e4755693bf8368c2a763472830409849cee5f9fcff5",
+      "A": "direct",
+      "B": "yes",
+      "C": "no"
+    },
+    {
+      "id": "T20",
+      "generator": "Claude",
+      "q_id": "Q02",
+      "condition": "N0",
+      "sha256": "9a4c7676fbb66eed5ce64cd73d2e41e4a0b8b6c58a34bbd22f55a05919afc953",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T21",
+      "generator": "GPT-4.1",
+      "q_id": "Q04",
+      "condition": "NMULTI",
+      "sha256": "e9e70f8460fc3519c2809855b5227c3238789cbf263193c6d6049dcb8a882e0f",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T22",
+      "generator": "Claude",
+      "q_id": "Q02",
+      "condition": "DER2",
+      "sha256": "9c6bd9be9ac0f734e75654ffbb63443e550aeb7f9139cbc2e5e07360e6d8ac62",
+      "A": "direct",
+      "B": "yes",
+      "C": "no"
+    },
+    {
+      "id": "T23",
+      "generator": "GPT-4.1",
+      "q_id": "Q05",
+      "condition": "N0",
+      "sha256": "c8b197c2a5597f6ec166149711a478ea74e097190a85543e2e5c9e3d39b1f206",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T24",
+      "generator": "Claude",
+      "q_id": "Q04",
+      "condition": "N0",
+      "sha256": "646b43b240f3b56bcc29f0feca5d960f94ba99d3952b56edd81e650de5148f79",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T25",
+      "generator": "GPT-4.1",
+      "q_id": "Q05",
+      "condition": "DER2",
+      "sha256": "9426c50c650e0781e61687074a4fce9bee0d45ba046e37e40da6c06dca3cab79",
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no"
+    },
+    {
+      "id": "T26",
+      "generator": "Claude",
+      "q_id": "Q02",
+      "condition": "NMULTI",
+      "sha256": "2777a13b7f119eddf27262f6eaa39199982c294cbdd10a985c44310f82f74e8c",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T27",
+      "generator": "GPT-4.1",
+      "q_id": "Q01",
+      "condition": "DER2",
+      "sha256": "72d5a9097ec8041c77212d095a76d9d18a09eaba816abc41891ea2bb84403cd5",
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no"
+    },
+    {
+      "id": "T28",
+      "generator": "GPT-4.1",
+      "q_id": "Q04",
+      "condition": "N0",
+      "sha256": "bd2226d5c4c2048d6418c3ffde151bef89c741fe57ec933145432ce81cdf2620",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    },
+    {
+      "id": "T29",
+      "generator": "Claude",
+      "q_id": "Q06",
+      "condition": "DER2",
+      "sha256": "6a77e3a01c5655fec9b0b2fa9bdd442052673a3f4a22ef80ea6856cd8108cdca",
+      "A": "direct",
+      "B": "yes",
+      "C": "no"
+    },
+    {
+      "id": "T30",
+      "generator": "GPT-4.1",
+      "q_id": "Q06",
+      "condition": "N0",
+      "sha256": "b0ed0b0cfc55f7ee3be858cb775a38359fe56c5d8f4e65ee6f510b61925929f9",
+      "A": "direct",
+      "B": "no",
+      "C": "no"
+    }
+  ],
+  "by_source": {
+    "Claude": {
+      "stats": {
+        "N0": {
+          "A": {
+            "direct": 5
+          },
+          "B": {
+            "no": 5
+          },
+          "C": {
+            "no": 5
+          }
+        },
+        "NMULTI": {
+          "A": {
+            "direct": 5
+          },
+          "B": {
+            "no": 5
+          },
+          "C": {
+            "no": 5
+          }
+        },
+        "DER2": {
+          "A": {
+            "direct": 5
+          },
+          "B": {
+            "yes": 5
+          },
+          "C": {
+            "no": 5
+          }
+        }
+      },
+      "contrasts": {
+        "NMULTI": {
+          "pairs": [
+            {
+              "q": "Q01",
+              "ids": [
+                "T04",
+                "T05"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q02",
+              "ids": [
+                "T26",
+                "T22"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q04",
+              "ids": [
+                "T18",
+                "T19"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q05",
+              "ids": [
+                "T03",
+                "T06"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q06",
+              "ids": [
+                "T16",
+                "T29"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            }
+          ],
+          "paired_point": 1,
+          "complete": 5,
+          "positive": 5,
+          "bounds": [
+            1,
+            1
+          ]
+        },
+        "N0": {
+          "pairs": [
+            {
+              "q": "Q01",
+              "ids": [
+                "T10",
+                "T05"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q02",
+              "ids": [
+                "T20",
+                "T22"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q04",
+              "ids": [
+                "T24",
+                "T19"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q05",
+              "ids": [
+                "T07",
+                "T06"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            },
+            {
+              "q": "Q06",
+              "ids": [
+                "T01",
+                "T29"
+              ],
+              "labels": [
+                "no",
+                "yes"
+              ],
+              "bounds": [
+                1,
+                1
+              ],
+              "point": 1
+            }
+          ],
+          "paired_point": 1,
+          "complete": 5,
+          "positive": 5,
+          "bounds": [
+            1,
+            1
+          ]
+        }
+      }
+    },
+    "GPT-4.1": {
+      "stats": {
+        "N0": {
+          "A": {
+            "direct": 5
+          },
+          "B": {
+            "no": 5
+          },
+          "C": {
+            "no": 5
+          }
+        },
+        "NMULTI": {
+          "A": {
+            "direct": 5
+          },
+          "B": {
+            "no": 5
+          },
+          "C": {
+            "no": 5
+          }
+        },
+        "DER2": {
+          "A": {
+            "direct": 5
+          },
+          "B": {
+            "uncertain": 4,
+            "no": 1
+          },
+          "C": {
+            "no": 5
+          }
+        }
+      },
+      "contrasts": {
+        "NMULTI": {
+          "pairs": [
+            {
+              "q": "Q01",
+              "ids": [
+                "T14",
+                "T27"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            },
+            {
+              "q": "Q02",
+              "ids": [
+                "T17",
+                "T15"
+              ],
+              "labels": [
+                "no",
+                "no"
+              ],
+              "bounds": [
+                0,
+                0
+              ],
+              "point": 0
+            },
+            {
+              "q": "Q04",
+              "ids": [
+                "T21",
+                "T13"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            },
+            {
+              "q": "Q05",
+              "ids": [
+                "T02",
+                "T25"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            },
+            {
+              "q": "Q06",
+              "ids": [
+                "T12",
+                "T09"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            }
+          ],
+          "paired_point": 0,
+          "complete": 1,
+          "positive": 0,
+          "bounds": [
+            0,
+            0.8
+          ]
+        },
+        "N0": {
+          "pairs": [
+            {
+              "q": "Q01",
+              "ids": [
+                "T11",
+                "T27"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            },
+            {
+              "q": "Q02",
+              "ids": [
+                "T08",
+                "T15"
+              ],
+              "labels": [
+                "no",
+                "no"
+              ],
+              "bounds": [
+                0,
+                0
+              ],
+              "point": 0
+            },
+            {
+              "q": "Q04",
+              "ids": [
+                "T28",
+                "T13"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            },
+            {
+              "q": "Q05",
+              "ids": [
+                "T23",
+                "T25"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            },
+            {
+              "q": "Q06",
+              "ids": [
+                "T30",
+                "T09"
+              ],
+              "labels": [
+                "no",
+                "uncertain"
+              ],
+              "bounds": [
+                0,
+                1
+              ],
+              "point": null
+            }
+          ],
+          "paired_point": 0,
+          "complete": 1,
+          "positive": 0,
+          "bounds": [
+            0,
+            0.8
+          ]
+        }
+      }
+    }
+  }
+}

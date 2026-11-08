@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-04",
+  "status": "Post-hoc mechanism analysis motivated by v01; specification fixed before this stage's decomposition results; not independent confirmation",
+  "input": "data/team-corpus-20261104/utterances.csv",
+  "primary_contrast": "INC3 minus N0 paired by question within each generation protocol",
+  "controls": ["NMULTI", "CIRC1", "CIRC2"],
+  "context_conditions": ["INC1", "INC2", "PER3"],
+  "question": "Does the opposite INC3 MATTR50 direction arise from repeated function-list words, other-word repetition, or both?",
+  "function_word_base": "a an the this that these those i me my mine myself we us our ours ourselves you your yours yourself yourselves he him his himself she her hers herself it its itself they them their theirs themselves who whom whose which what whoever whatever whichever all another any both each either every everybody everyone everything few many more most much neither nobody none nothing one other others several some somebody someone something such am is are was were be been being do does did have has had having can could may might must shall should will would ought need dare not no nor and or but if because although though while whereas since unless until when whenever where wherever whether as than so yet for of in on at by from to with about above across after against along among around before behind below beneath beside between beyond during except inside into near off onto out outside over past through throughout toward towards under underneath up upon within without there here then once only just also even too very same own how why never ever always still now again well",
+  "extended_additions": "don't doesn't didn't isn't aren't wasn't weren't haven't hasn't hadn't can't cannot couldn't wouldn't shouldn't won't mustn't needn't i'm you're he's she's it's we're they're i've you've we've they've i'd you'd he'd she'd we'd they'd i'll you'll he'll she'll it'll we'll they'll that's there's here's what's who's let's o'clock",
+  "lexicon_policy": "Fixed operational word lists, not contextual POS tagging. Primary uses base+extended; sensitivity base only. Unlisted words are called non-list words, not validated content words. Homographs, auxiliaries used lexically, adverbs and contractions limit linguistic interpretation.",
+  "tokenizer": "Reuse v01 ASCII English tokens and apostrophe normalization; no stemming or synonym merging",
+  "exact_decomposition": "For each original 50-token sliding window, MATTR = 1 - (n_function - unique_function)/50 - (n_nonlist - unique_nonlist)/50. Average components over identical windows; compare paired differences.",
+  "secondary": ["function-list token proportion", "non-list MATTR25 after deleting function-list tokens", "top five token frequencies by class"],
+  "length_sensitivity": "Repeat decomposition on first 100 original lexical tokens",
+  "uncertainty": "Enumerate all 6^6 question bootstrap means for paired deltas, descriptive 95% percentile intervals; one persona, not population or generation-sampling uncertainty",
+  "causal_limit": "Accounting decomposition and deletion sensitivity do not identify causal linguistic mechanisms or syntax/semantic coherence",
+  "qwen": {"role":"Brief evidence-linked linguistic descriptions of 24 N0/INC3 texts, never clinical scoring", "batches":6,"texts_per_batch":4,"blinding":"opaque IDs and hash-sorted order; generator/condition/intended stage and metric results withheld; blinding cannot prevent style inference", "temperature":0,"seed":20261104,"num_ctx":8192,"num_predict":900,"think":false,"quote_validation":"Each returned excerpt must be an exact contiguous substring; invalid excerpts flagged, no automated retries"},
+  "stop_rule": "Finish this fixed decomposition, control comparisons and six local annotation batches; preserve non-supportive findings; no new speech, embeddings, metrics search or clinical claims"
+}

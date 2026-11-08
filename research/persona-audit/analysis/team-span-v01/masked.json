@@ -1,0 +1,156 @@
+[
+  {
+    "id": "S01",
+    "question": "Can you tell me a bit about your job?",
+    "left": "and they give us a bonus at Christmas if we hit the targets",
+    "right": "The targets are the stressful part",
+    "context": "The pay is okay, a bit above minimum, and they give us a bonus at Christmas if we hit the targets. The targets are the stressful part, because they track your picks per hour on a screen and everyone can see it. The commute is fine"
+  },
+  {
+    "id": "S02",
+    "question": "What was it like where you grew up?",
+    "left": "so there were always other kids about to play football with after school",
+    "right": "The local school was all right",
+    "context": "and it was a decent place to live as a kid. Our house was on the edge of a big estate, so there were always other kids about to play football with after school. The local school was all right, nothing fancy, but most of my friends from primary went there so it felt pretty familiar"
+  },
+  {
+    "id": "S03",
+    "question": "What do you like to cook?",
+    "left": "But sometimes you get these ready meals that say they’re Italian but they don’t really taste like it does in restaurants",
+    "right": "and I wonder why that is",
+    "context": "actually, they lost last week. But sometimes you get these ready meals that say they’re Italian but they don’t really taste like it does in restaurants, and I wonder why that is, maybe it’s the sort of herbs they use or something. I like using garlic"
+  },
+  {
+    "id": "S04",
+    "question": "What was it like where you grew up?",
+    "left": "so first there's the sea itself",
+    "right": "which was a big part of being a kid there",
+    "context": "there's a few things to say. It was a small seaside town on the east coast, so first there's the sea itself, which was a big part of being a kid there, we were on the beach all summer. Then there's the town"
+  },
+  {
+    "id": "S05",
+    "question": "What do you like to cook?",
+    "left": "I also make bolognese",
+    "right": "but mostly curry",
+    "context": "that's my best curry. I make curry on my days off and freeze the curry for after work. I also make bolognese, but mostly curry. When my sister comes round, curry"
+  },
+  {
+    "id": "S06",
+    "question": "What did you do last weekend?",
+    "left": "which is where my grandad was stationed in the army",
+    "right": "He had a medal in a drawer",
+    "context": "and winter is when the boiler in my building always breaks, the landlord says the parts come from Germany, which is where my grandad was stationed in the army. He had a medal in a drawer. Anyway, Sunday I went to my mum's for lunch"
+  },
+  {
+    "id": "S07",
+    "question": "What's a film or TV show you've enjoyed recently?",
+    "left": "so I need to make sure I've got snacks in",
+    "right": "Speaking of snacks",
+    "context": "Actually, my team is playing this weekend, so I need to make sure I've got snacks in. Speaking of snacks, I made a really good curry the other day and it was surprisingly easy. I’m trying to cook a few new things because I get bored of the same meals after work"
+  },
+  {
+    "id": "S08",
+    "question": "What do you like to cook?",
+    "left": "that's my best curry",
+    "right": "I make curry on my days off and freeze the curry for after work",
+    "context": "with the spices toasted. Chicken curry, that's my best curry. I make curry on my days off and freeze the curry for after work. I also make bolognese, but mostly curry"
+  },
+  {
+    "id": "S09",
+    "question": "What was it like where you grew up?",
+    "left": "so it was always about football",
+    "right": "football most days after school",
+    "context": "loads of green fields where we’d go play football, me and my mates, so it was always about football, football most days after school. It was a small place, though"
+  },
+  {
+    "id": "S10",
+    "question": "What's a film or TV show you've enjoyed recently?",
+    "left": "The detective makes it",
+    "right": "I keep thinking about the detective",
+    "context": "The second series, I hope they keep the detective. The detective makes it. I keep thinking about the detective, the way she looks at people. So the show I enjoyed is the detective show"
+  },
+  {
+    "id": "S11",
+    "question": "What was it like where you grew up?",
+    "left": "so in the summers we’d often be out there until it got dark",
+    "right": "just messing about or sometimes trying to cook sausages on a little fire",
+    "context": "but most of my friends from primary went there so it felt pretty familiar. There was a big park nearby too, so in the summers we’d often be out there until it got dark, just messing about or sometimes trying to cook sausages on a little fire, which looking back probably wasn’t a great idea. My family didn’t have a car for ages"
+  },
+  {
+    "id": "S12",
+    "question": "What did you do last weekend?",
+    "left": "and she said I looked tired",
+    "right": "and I said I'd tried to have a lie in",
+    "context": "you can't have a lie in even when you're allowed one. Sunday I went to my mum's for a roast, and she said I looked tired, and I said I'd tried to have a lie in. My sister was there with her boy, he never lets her have a lie in"
+  },
+  {
+    "id": "S13",
+    "question": "What did you do last weekend?",
+    "left": "a Thai green curry",
+    "right": "which came out a bit too spicy but I'd make it again",
+    "context": "but the atmosphere was good. In the evening I tried a new recipe, a Thai green curry, which came out a bit too spicy but I'd make it again. On Sunday I went to my mum's for a roast. My sister and her little boy were there too"
+  },
+  {
+    "id": "S14",
+    "question": "What was it like where you grew up?",
+    "left": "and snakes shed their skins",
+    "right": "and skin is the biggest organ of the body",
+    "context": "one big eyebrow across, and he kept a snake in a tank, and snakes shed their skins, and skin is the biggest organ of the body, they put that on a poster at the doctor's. The doctor's in our town was above the bank"
+  },
+  {
+    "id": "S15",
+    "question": "What was it like where you grew up?",
+    "left": "and after that he did taxis at night",
+    "right": "Taxis at night are dangerous",
+    "context": "the docks closed, my dad worked at the docks, and after that he did taxis at night. Taxis at night are dangerous, my mum used to wait up. We lived in a terrace near the beach"
+  },
+  {
+    "id": "S16",
+    "question": "What's a film or TV show you've enjoyed recently?",
+    "left": "especially after a late shift",
+    "right": "you just want something quick",
+    "context": "I made a really good curry the other day and it was surprisingly easy. I’m trying to cook a few new things because I get bored of the same meals after work, especially after a late shift, you just want something quick. Work’s not been too busy lately, which gives me more time in the evenings"
+  },
+  {
+    "id": "S17",
+    "question": "What did you do last weekend?",
+    "left": "that’s what I did",
+    "right": "just watched lots of football",
+    "context": "just me and the football, so mainly football, that’s what I did, just watched lots of football"
+  },
+  {
+    "id": "S18",
+    "question": "Can you tell me a bit about your job?",
+    "left": "I really just spend most of my shift stacking boxes honestly",
+    "right": "It’s not too bad",
+    "context": "so then I have to put the boxes back, which is a bit annoying. I really just spend most of my shift stacking boxes honestly. It’s not too bad, just a lot of shifting boxes about, stacking and moving boxes"
+  },
+  {
+    "id": "S19",
+    "question": "What's a film or TV show you've enjoyed recently?",
+    "left": "just watching football",
+    "right": "I do like football",
+    "context": "yeah. It helps me relax, just watching football, I do like football, you know, like the matches"
+  },
+  {
+    "id": "S20",
+    "question": "Can you tell me a bit about your job?",
+    "left": "not too strict as long as you get your work done",
+    "right": "I'm on a flexible contract",
+    "context": "and look out for each other. The managers are decent too, not too strict as long as you get your work done. I'm on a flexible contract, so I can pick up extra shifts if I need a bit more money, which is handy"
+  },
+  {
+    "id": "S21",
+    "question": "What did you do last weekend?",
+    "left": "Keepers wear those big gloves",
+    "right": "and gloves remind me of winter",
+    "context": "We lost, the keeper was all over the place. Keepers wear those big gloves, and gloves remind me of winter, and winter is when the boiler in my building always breaks, the landlord says the parts come from Germany"
+  },
+  {
+    "id": "S22",
+    "question": "Can you tell me a bit about your job?",
+    "left": "The managers are decent too",
+    "right": "not too strict as long as you get your work done",
+    "context": "have a laugh when it’s not too busy, and look out for each other. The managers are decent too, not too strict as long as you get your work done. I'm on a flexible contract, so I can pick up extra shifts if I need a bit more money"
+  }
+]

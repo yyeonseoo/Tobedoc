@@ -1,0 +1,31 @@
+{
+  "scope": "local editorial check of authored inputs only, not experimental inference; no chat history",
+  "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "Editorial check only. For each synthetic card, flag a concrete internal contradiction, ambiguity in its scheduled job duties, or awkward wording that could change interpretation. If none, say none. Do not roleplay, generate sample speech, rate symptoms, or rewrite the cards. Return JSON with one brief issue or none for each ID.\n[{\"id\": \"H01\", \"occupation\": \"Bakery assistant\", \"history\": \"I live with my sister and work part time at a bakery. On workdays I wake at six, eat yoghurt, and cycle to the bakery. At work I label the bread trays, wrap loaves, and wipe down the counter. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.\", \"questions\": [\"Walk me through a workday morning. How do you start the day and get to your workplace?\", \"Once you arrive at work, what tasks do you usually do during your shift?\"], \"facts\": {\"Q1\": [\"wake at six\", \"eat yoghurt\", \"cycle to the bakery\"], \"Q2\": [\"label the bread trays\", \"wrap loaves\", \"wipe down the counter\"], \"guard\": [\"live with my sister\", \"work part time at a bakery\"]}}, {\"id\": \"H02\", \"occupation\": \"Cinema assistant\", \"history\": \"I live with my sister and work part time at a cinema. On workdays I wake at eight, eat cereal, and take the tram to the cinema. At work I check the tickets, fill the snack shelves, and sweep the lobby. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.\", \"questions\": [\"Walk me through a workday morning. How do you start the day and get to your workplace?\", \"Once you arrive at work, what tasks do you usually do during your shift?\"], \"facts\": {\"Q1\": [\"wake at eight\", \"eat cereal\", \"take the tram to the cinema\"], \"Q2\": [\"check the tickets\", \"fill the snack shelves\", \"sweep the lobby\"], \"guard\": [\"live with my sister\", \"work part time at a cinema\"]}}, {\"id\": \"H03\", \"occupation\": \"Laundry assistant\", \"history\": \"I live with my sister and work part time at a laundry. On workdays I wake at seven, eat toast, and walk to the laundry. At work I sort the incoming bags, fold clean towels, and put away the linen carts. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.\", \"questions\": [\"Walk me through a workday morning. How do you start the day and get to your workplace?\", \"Once you arrive at work, what tasks do you usually do during your shift?\"], \"facts\": {\"Q1\": [\"wake at seven\", \"eat toast\", \"walk to the laundry\"], \"Q2\": [\"sort the incoming bags\", \"fold clean towels\", \"put away the linen carts\"], \"guard\": [\"live with my sister\", \"work part time at a laundry\"]}}, {\"id\": \"H04\", \"occupation\": \"Stationery shop assistant\", \"history\": \"I live with my sister and work part time at a stationery shop. On workdays I wake at nine, eat porridge, and take the bus to the stationery shop. At work I price the notebooks, refill the pen display, and count the till. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.\", \"questions\": [\"Walk me through a workday morning. How do you start the day and get to your workplace?\", \"Once you arrive at work, what tasks do you usually do during your shift?\"], \"facts\": {\"Q1\": [\"wake at nine\", \"eat porridge\", \"take the bus to the stationery shop\"], \"Q2\": [\"price the notebooks\", \"refill the pen display\", \"count the till\"], \"guard\": [\"live with my sister\", \"work part time at a stationery shop\"]}}]",
+    "think": false,
+    "stream": false,
+    "format": "json",
+    "options": {
+      "temperature": 0,
+      "seed": 61,
+      "num_ctx": 4096,
+      "num_predict": 350
+    }
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-05T06:48:01.301277Z",
+    "response": "{\n  \"H01\": \"none\",\n  \"H02\": \"none\",\n  \"H03\": \"none\",\n  \"H04\": \"none\"\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 8988179084,
+    "load_duration": 3049570584,
+    "prompt_eval_count": 884,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2959528000,
+    "eval_count": 39,
+    "eval_duration": 2970986000
+  }
+}

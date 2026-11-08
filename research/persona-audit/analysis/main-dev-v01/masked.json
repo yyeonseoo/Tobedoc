@@ -1,0 +1,98 @@
+[
+  {
+    "id": "R01",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I usually get up around seven, make a cup of tea, and have some toast. Then I feed the cat before heading to the shop. I take the bus to work and meet my colleague to open the shop. We unlock the doors, turn on the lights, and start arranging the books. I spend most of my time helping customers, restocking shelves, and keeping the shop tidy. I like talking to people and recommending books. My shift ends around four, and I take the bus home. I try to keep a quiet routine because that seems to help me feel more stable.",
+    "text_sha256": "a053a96c4b75d43a795f9034597b08331493c718b9727d1d46ee026df82dd7e0"
+  },
+  {
+    "id": "R02",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I get there around seven thirty, usually. My colleague and I open the shop together—check the locks, turn on the lights, make sure the display shelves look neat. Then I spend most of the day restocking, helping customers find books, and tidying up. There's not too much else to do really. I like the quiet of it, actually. It helps me focus. Sometimes, when it's really still in the shop, I think I hear a voice, but I can't be sure. It's not every day, just now and then. I just try to keep going with my work.",
+    "text_sha256": "fa1dd3babc6755f37fc2cf1f6126bfebb05252a4b3574f8858ae615ff7a89ca4"
+  },
+  {
+    "id": "R03",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I usually get up around seven, make a cup of tea, and have some toast. Then I feed the cat before heading to the shop. My shift starts at nine, and I open the shop with a colleague. We tidy up the displays, check the stock, and make sure everything is ready for customers. Throughout the day, I help customers find books, restock shelves, and sometimes run the till. The work is pretty routine, and I find it calming. I like the quiet of the shop, and it helps me feel more in control. I usually finish around five and take the bus home.",
+    "text_sha256": "c4143cade34402e0c630e34e4a2e0760cd7af9a6bd3805c8002d00af35222502"
+  },
+  {
+    "id": "R04",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I get there around eight, usually. My colleague and I open the shop together—unlock the door, switch on the lights, and tidy up a bit. Then we start arranging the books, making sure the shelves look neat. Throughout the day, I help customers find things, maybe restock some shelves when they get too low. I also take care of the cash register, so I handle the payments and keep track of the till. The busiest times are in the afternoons, when more people come in. I try to stay calm and friendly, even when it gets a bit hectic. By the time my shift ends, I just close up, lock the door, and go home.",
+    "text_sha256": "b8a2c571dd86e5e0c12cce7cedadfcb6e991168bb5f12cce80c58eb8dac796cc"
+  },
+  {
+    "id": "R05",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, maybe a bit later if I’ve had a rough night. I make a cup of tea and toast, then feed the cat before getting dressed. I take the bus to work, so I leave the house just in time to catch it. My sister and I live together, so she’s usually up too, but she’s still asleep most mornings. I like the routine—it keeps me grounded. I don’t really think about the voice much during the day, but sometimes I hear it when I’m alone. It’s not loud, just… there. I don’t know what it’s saying, but it’s not threatening. I just try to ignore it and keep going with my day.",
+    "text_sha256": "15ea262594d55f6aa6afc1db50437c96b46fe1546561636e6da7b246f244dd69"
+  },
+  {
+    "id": "R06",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, maybe a bit later sometimes. I make tea and toast, then feed the cat before heading out. The bus ride is pretty quiet, so I often listen to music or just think. I don’t really pay much attention to the voice unless I’m tired. It’s been like this for a while—on and off. I don’t know what it means, but it doesn’t bother me too much. I just try to keep things routine. Work is fine, I guess. I don’t have many responsibilities there. My sister helps me with things when I need it. I don’t know if there’s anything else to say about it.",
+    "text_sha256": "47d7ab3a21722ec92f6eb12415723702bdc3e8051788ee306d9b4bcc13d65876"
+  },
+  {
+    "id": "R07",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, maybe a bit later some days. I make a cup of tea and have some toast, then feed the cat before leaving. I take the bus to work, so I leave home about half an hour before my shift starts. I work part time in a bookshop, so I don’t get there too early. Most days I walk with a colleague to open the shop. I try to keep things routine because that seems to help me feel more stable. Sometimes I hear a voice when I’m alone, but that doesn’t happen every day.",
+    "text_sha256": "965ac35f8d901f343e50a1e10ae7669e039742f3aeac84ae4622959af967fff7"
+  },
+  {
+    "id": "R08",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I get there around eight, usually. My colleague and I open the shop together, check the shelves, make sure the displays are tidy. I like arranging the books, especially the fiction section. Some days I feel more motivated than others. There's a quiet part of the shop where I like to sit and read when there's not much happening. I don't know, sometimes I think I hear a voice in the back room, but I'm not sure if it's real or just my imagination. I try not to let it bother me too much. The rest of the day is pretty routine—helping customers, restocking, closing up. I go home, make dinner, and watch some TV.",
+    "text_sha256": "41c9908af1a6b8fd10d421807e521ee363284f8e1041342c3891362068cbf778"
+  },
+  {
+    "id": "R09",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, maybe a bit later some days. I make a cup of tea and have some toast, then feed the cat before leaving. I take the bus to work, so I leave home about half an hour before my shift starts. I work part time in a bookshop, so I don’t get there too early. Most days are pretty routine. I don’t mind the quiet morning, actually—it helps me feel more in control. I sometimes hear a voice when I’m alone, but that’s not every day. It’s more like… occasional. I don’t know what it means, but it doesn’t happen when I’m busy.",
+    "text_sha256": "cf604929f8a5e42d41c1bf658a43cab98c63557a8a9f8b12a8a2a98ef72b8d58"
+  },
+  {
+    "id": "R10",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, though sometimes I oversleep a bit. I make myself a cup of tea and some toast, then feed the cat before heading out. The bus ride is pretty quiet, and I usually get to work just in time. I don’t really think about anything much during the morning—just go through the motions. Sometimes I hear a voice, but it’s not every day. It’s more like a whisper, almost like someone is talking to me but not really there. I don’t know what it means, but it doesn’t bother me too much. I just try to keep going with my routine.",
+    "text_sha256": "284537a06afd7fae0f791b5108386ddb7c1b3c7e5903a97880d49c23960735f3"
+  },
+  {
+    "id": "R11",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I usually get up around seven, make a cup of tea, and have some toast. Then I feed the cat before heading to the shop. My shift starts at nine, and I open the shop with a colleague. We tidy up the displays and check the stock. Most of the day is spent helping customers, restocking shelves, and organizing books. I like arranging the novels by author. Sometimes I sit at the counter and read a bit when it's slow. I leave around five, take the bus home, and spend the evening with my sister. I don’t really think about the voice when I’m working, but it sometimes comes back when I’m alone.",
+    "text_sha256": "dc28a2fdf39301a820bbad660b6e212f093efff046d805b562d43cab4a9b7a0a"
+  },
+  {
+    "id": "R12",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, maybe a bit later if I’ve had a rough night. I make myself a cup of tea and some toast, then feed the cat before getting dressed. I take the bus to work, so I leave the house just after eight. My sister lives with me, and she’s usually still asleep when I get up. I don’t mind the routine—it helps me feel more in control. Sometimes I hear a voice when I’m alone, but it doesn’t happen every day. I try not to think about it too much. The bus ride is quiet, and I like to read a bit on the way. I usually get to work around nine, and my colleague helps me open the shop. It’s a simple day, but it keeps me going.",
+    "text_sha256": "0e3c23ffea3395ec6fa6cfa9195932f0c68c957e794898ee02fd7e79af874d97"
+  },
+  {
+    "id": "R13",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, though sometimes I oversleep if I’m tired. I make a cup of tea and toast, then feed the cat before getting dressed. I take the bus to work, which takes about twenty minutes. I live with my sister, so she’s usually up too, but she’s still asleep most mornings. I don’t mind the routine—it helps me feel calm. I don’t hear the voice every day, just sometimes, especially if I haven’t slept well. It’s not loud or threatening, more like a whisper. I try not to think about it too much.",
+    "text_sha256": "6fbe5caef848a5f98e4102968a72f451d32e92a89f1112c488bf62ef90d5175e"
+  },
+  {
+    "id": "R14",
+    "question": "Tell me about your usual morning, from waking up until you get to work.",
+    "text": "I usually wake up around seven, maybe a bit later if I’ve had a rough night. I make myself a cup of tea and some toast, then feed the cat before getting dressed. I take the bus to work, so I leave the house just in time to catch it. My sister lives with me, so we sometimes talk before I leave, but most days it’s pretty quiet. I like the routine—it helps me feel grounded. I don’t really notice the voice in the morning, but it can show up later, especially if I’m tired.",
+    "text_sha256": "2c5a1782465cd4394c0fb55baeeb4d96fcaef43b1211904764d41a7d2d6ee746"
+  },
+  {
+    "id": "R15",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I usually get up around seven, have a quick breakfast, and then head to the shop. I open the door, check the stock, and make sure everything is tidy. My colleague helps me with the heavier tasks, like restocking shelves. Most of the time, I just greet customers, help them find books, and maybe chat a bit. The busiest part is in the afternoon when more people come in. I like the quiet moments too, when I can just sit and read. I stay until closing, then take the bus home. It’s a simple routine, but it keeps me grounded.",
+    "text_sha256": "0292bb7b2067383f5d3f738c533e1540815e206ea4426933607791dfda803085"
+  },
+  {
+    "id": "R16",
+    "question": "Tell me about what you do at the bookshop, from opening until the end of your shift.",
+    "text": "I get there around seven, usually. My colleague and I open the shop together—unlock the door, turn on the lights, check the shelves. I like to make sure everything looks neat before customers come in. During the day, I help people find books, restock the shelves, and sometimes read a bit if it's slow. I take breaks when I can, mostly in the back room. The busiest times are in the afternoon, so I keep moving then. I close up at five, lock the door, and take the bus home. It's a quiet job, and I find that helps me stay calm.",
+    "text_sha256": "8f86acfdc7af50a09826352cec8998e945659a9cc82543a289b003a61d126ec5"
+  }
+]

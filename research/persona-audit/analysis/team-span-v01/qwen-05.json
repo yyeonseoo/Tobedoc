@@ -1,0 +1,104 @@
+{
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "For each left and right fragment, copy a single short exact contiguous phrase naming a central entity or action from THAT side only. Return an empty string if none. Preserve spelling and case. Do not label relations or symptoms, paraphrase, or complete any speech.\n[{\"id\": \"S17\", \"left\": \"that’s what I did\", \"right\": \"just watched lots of football\"}, {\"id\": \"S18\", \"left\": \"I really just spend most of my shift stacking boxes honestly\", \"right\": \"It’s not too bad\"}, {\"id\": \"S19\", \"left\": \"just watching football\", \"right\": \"I do like football\"}, {\"id\": \"S20\", \"left\": \"not too strict as long as you get your work done\", \"right\": \"I'm on a flexible contract\"}]",
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "S17": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S18": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S19": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S20": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "S17",
+        "S18",
+        "S19",
+        "S20"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 20261108,
+      "num_ctx": 4096,
+      "num_predict": 540
+    }
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-08T03:50:13.093102Z",
+    "response": "{\"S17\": {\"left\": \"that’s what I did\", \"right\": \"just watched lots of football\"}, \"S18\": {\"left\": \"stacking boxes\", \"right\": \"It’s not too bad\"}, \"S19\": {\"left\": \"just watching football\", \"right\": \"I do like football\"}, \"S20\": {\"left\": \"not too strict as long as you get your work done\", \"right\": \"I'm on a flexible contract\"}}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 8939324875,
+    "load_duration": 423208,
+    "prompt_eval_count": 192,
+    "prompt_eval_cached_count": 62,
+    "prompt_eval_duration": 718170000,
+    "eval_count": 103,
+    "eval_duration": 8212282999
+  }
+}

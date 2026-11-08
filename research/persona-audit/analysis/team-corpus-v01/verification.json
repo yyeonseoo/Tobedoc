@@ -1,0 +1,22 @@
+{
+  "input_hashes_verified": true,
+  "independently_recounted_ngram_values": 912,
+  "unit_tests_passed": 7,
+  "offline_replay_identical": true,
+  "artifact_sha256": {
+    "analysis/team-corpus-v01/features.csv": "639ecf990ad7b27cf84e227619613441e5f0cb79c5a61e733c8f09a377b5b0dc",
+    "analysis/team-corpus-v01/condition-summary.csv": "70989e13c3b886bf18210e9d8456b03c3b4b017300100dae65691a7a41bd520f",
+    "analysis/team-corpus-v01/results.json": "1d9343b0a62c204be5303c1f18c7902c6ce43c9076e0432e1d47ae87dad4ece1",
+    "analysis/team-corpus-v01/severity-trends.json": "525570b8e4f97cebcb4063cfd8d117efb9a853f2ebb080143a7fc87cb6db270e",
+    "analysis/team-corpus-v01/response-details.json": "2e00fddc5a092352aacb951e3ea06ffd4c75ef2457708f69897bd75fddb2b64f",
+    "analysis/team-corpus-v01/run-provenance.json": "cd49d5c8ff69c06fba383f199477ae007d9cb449e8f49132be7e5e7e67c3227e",
+    "analysis/team-corpus-v01/validation.json": "3d31ad9cc0fa9d86232ba85e9c25390c9b179d8c997e425355dd71fe35bff6ea",
+    "analysis/team-corpus-v01/contrasts.json": "901a74df48d360e11f78f8b8b35dd064d4af6ad93e23a1f61b24fde57ec0ebfe",
+    "share/team-corpus-v01/전체조건표.md": "0dc541184660cfa4dd725a160a4e81c5c4d112ed0b472dcf044cbf9a7da7d450",
+    "share/team-corpus-v01/원문예시.md": "13068ebdecbf21159c5d4f87729d02b21d0900a1c1795231513211a8ccd1d52f",
+    "share/team-corpus-v01/검증메모.md": "54b431b315b8be7377dca5ee9247339be2cc61c345abaa5b1ab7337b4c364f27",
+    "share/team-corpus-v01/특징비교보고서.md": "8af00dc47d0c68483667dcedf1a9729eaa1b3657c47e220ca768b6014bd3b019",
+    "share/team-corpus-v01/feature-contrasts.svg": "e550fa5d7b7a48f89abb4834788f0c1705bcc454da5123710386702c90aa8a4d"
+  },
+  "new_model_calls_during_verification": 0
+}

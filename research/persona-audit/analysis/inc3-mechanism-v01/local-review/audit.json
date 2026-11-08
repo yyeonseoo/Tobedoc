@@ -1,0 +1,490 @@
+{
+  "usage": {
+    "calls": 6,
+    "prompt_tokens": 5914,
+    "output_tokens": 2460
+  },
+  "items": [
+    {
+      "row_id": "Claude:Q01:INC3",
+      "observation": "The text contains frequent repetition of connecting/grammatical words and lacks clear sentence structure, appearing more list-like with ambiguous phrases.",
+      "quotes": [
+        {
+          "text": "Saturday of the pub the keeper glove of losing two and nil the carpet.",
+          "exact_substring": true,
+          "whitespace_words": 14,
+          "length_instruction_met": true
+        },
+        {
+          "text": "The tomatoes of nan the windowsill growing the warm red of carpet.",
+          "exact_substring": true,
+          "whitespace_words": 12,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q01:N0",
+      "observation": "The text uses a balanced mix of concrete and connecting words, forming coherent, sentence-like structures with minimal ambiguity.",
+      "quotes": [
+        {
+          "text": "On Saturday morning I had a lie in, which I don't usually get because of my shifts, and then I went down to the shops to get food for the week.",
+          "exact_substring": true,
+          "whitespace_words": 31,
+          "length_instruction_met": false
+        },
+        {
+          "text": "We lost two nil, which was annoying, but it was still a good afternoon out.",
+          "exact_substring": true,
+          "whitespace_words": 15,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q01:N0",
+      "observation": "The text uses a balanced mix of concrete and connecting words, forming coherent, sentence-like structures with minimal ambiguity.",
+      "quotes": [
+        {
+          "text": "On Saturday I had work in the morning, just an early shift at the warehouse, so I finished about twelve.",
+          "exact_substring": true,
+          "whitespace_words": 20,
+          "length_instruction_met": false
+        },
+        {
+          "text": "In the afternoon I tried a new recipe for curry, turned out pretty decent actually.",
+          "exact_substring": true,
+          "whitespace_words": 15,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q01:INC3",
+      "observation": "The text contains frequent repetition of connecting/grammatical words and lacks clear sentence structure, appearing more list-like with highly ambiguous phrases.",
+      "quotes": [
+        {
+          "text": "Last weekend the toast blue football kettle wonder sky running early, yes, the pan whistle cooked the game bicycle shoes, you know, socks like onions.",
+          "exact_substring": true,
+          "whitespace_words": 25,
+          "length_instruction_met": false
+        },
+        {
+          "text": "I like shoes beans box frying bake morning, mug night chair blanket, my world runs boots garlic side.",
+          "exact_substring": true,
+          "whitespace_words": 18,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q02:INC3",
+      "observation": "The text uses frequent repetition of connecting/grammatical words and lacks clear sentence structure, appearing more list-like.",
+      "quotes": [
+        {
+          "text": "Warehouse the beeping of aisle the scanner hand of Tuesday trolley.",
+          "exact_substring": true,
+          "whitespace_words": 11,
+          "length_instruction_met": true
+        },
+        {
+          "text": "Stock control the counting of shelves the someday chance of round the coming.",
+          "exact_substring": true,
+          "whitespace_words": 13,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q02:N0",
+      "observation": "The text uses a balanced mix of concrete and connecting words, forming coherent, sentence-like structures.",
+      "quotes": [
+        {
+          "text": "Most of the shifts are evening or nights, so it can get a bit tiring but it suits me, since I’m not much of a morning person anyway.",
+          "exact_substring": true,
+          "whitespace_words": 28,
+          "length_instruction_met": false
+        },
+        {
+          "text": "The work itself is quite straightforward and not too stressful.",
+          "exact_substring": true,
+          "whitespace_words": 10,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q02:N0",
+      "observation": "The text uses a moderate amount of connecting/grammatical words with a clear sentence-like structure and concrete details.",
+      "quotes": [
+        {
+          "text": "My job is picking, so I get a handheld scanner that tells me what items to collect and which aisle they're in, and I fill a trolley and take it to the packing area.",
+          "exact_substring": true,
+          "whitespace_words": 34,
+          "length_instruction_met": false
+        },
+        {
+          "text": "It's not what I want to do forever, but it pays the rent and the hours work for me at the moment.",
+          "exact_substring": true,
+          "whitespace_words": 22,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q02:INC3",
+      "observation": "The text contains frequent repetition of connecting/grammatical words and concrete words, with an ambiguous, list-like structure.",
+      "quotes": [
+        {
+          "text": "Well, the job warehouse so shift mornings banana boxes sometimes, well, in, you know, hands moving shelves run.",
+          "exact_substring": false,
+          "whitespace_words": 18,
+          "length_instruction_met": true
+        },
+        {
+          "text": "I, you know, talk to barcodes, code, the shelf dinner, like, when pallet, I go fish chicken clock, till the beep.",
+          "exact_substring": false,
+          "whitespace_words": 21,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q03:N0",
+      "observation": "The text uses a balanced mix of connecting and concrete words, forming coherent, sentence-like structures.",
+      "quotes": [
+        {
+          "text": "My family's quite small really. There's my mum, who lives about twenty minutes away on the bus",
+          "exact_substring": true,
+          "whitespace_words": 17,
+          "length_instruction_met": true
+        },
+        {
+          "text": "We're not the kind of family that talks about feelings much, but we look out for each other",
+          "exact_substring": true,
+          "whitespace_words": 18,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q03:INC3",
+      "observation": "The text is list-like with frequent repetition of connecting/grammatical words and lacks clear sentence structure, often containing ambiguous phrases.",
+      "quotes": [
+        {
+          "text": "Family carpets picture window sky ladders with the blue running tap, you know, always when Sunday",
+          "exact_substring": true,
+          "whitespace_words": 16,
+          "length_instruction_met": true
+        },
+        {
+          "text": "The lamp is talking brother hats, drawer cupboard, and outside inside the mug is car park biscuit",
+          "exact_substring": true,
+          "whitespace_words": 17,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q03:N0",
+      "observation": "The text uses a moderate number of connecting words and concrete details, forming mostly sentence-like structures with some conversational flow.",
+      "quotes": [
+        {
+          "text": "They live about an hour away, so I don’t see them as much as I’d like, but we keep in touch quite a bit – phone calls and all that",
+          "exact_substring": true,
+          "whitespace_words": 30,
+          "length_instruction_met": false
+        },
+        {
+          "text": "We all get together for Christmas and birthdays, that sort of thing",
+          "exact_substring": true,
+          "whitespace_words": 12,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q03:INC3",
+      "observation": "The text is highly fragmented, with minimal use of connecting words and a list-like structure composed of disjointed, ambiguous phrases.",
+      "quotes": [
+        {
+          "text": "Mum the canteen of custard the skin of four the Sunday table",
+          "exact_substring": true,
+          "whitespace_words": 12,
+          "length_instruction_met": true
+        },
+        {
+          "text": "Family the table the people of them the yes of quiet the mine",
+          "exact_substring": true,
+          "whitespace_words": 13,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q04:N0",
+      "observation": "The text uses a balanced mix of concrete and connecting words, forming coherent, sentence-like structures.",
+      "quotes": [
+        {
+          "text": "It's quite slow at the start, but it pulls you in because everyone in the town seems to be hiding something.",
+          "exact_substring": true,
+          "whitespace_words": 21,
+          "length_instruction_met": false
+        },
+        {
+          "text": "What I liked most was that it wasn't just about who did it, it was about how the whole town reacts, the gossip, the families turning on each other.",
+          "exact_substring": true,
+          "whitespace_words": 29,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q04:N0",
+      "observation": "The text uses a moderate amount of connecting words and concrete details, forming mostly sentence-like structures with some list-like elements.",
+      "quotes": [
+        {
+          "text": "I was just flicking through looking for something to watch after work one evening, and the trailer caught my eye.",
+          "exact_substring": true,
+          "whitespace_words": 20,
+          "length_instruction_met": false
+        },
+        {
+          "text": "The characters were actually pretty decent, and it wasn't too over the top.",
+          "exact_substring": true,
+          "whitespace_words": 13,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q04:INC3",
+      "observation": "The text contains a high frequency of concrete words with minimal connecting words, forming a list-like structure with frequent ambiguity.",
+      "quotes": [
+        {
+          "text": "Recently, the chase was blue, kitchen lights when running ball over the sky dinner plate football matches, spice up the corner flat, good noise fridge tells laughter on Monday clock.",
+          "exact_substring": true,
+          "whitespace_words": 30,
+          "length_instruction_met": false
+        },
+        {
+          "text": "Shouting the cup, it’s goals boiling story, washing goals in cold rain T-shirt makes scenes louder, but the taste just marching holiday, peppers and road red.",
+          "exact_substring": true,
+          "whitespace_words": 26,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q04:INC3",
+      "observation": "The text is highly fragmented, with minimal connecting words and a predominance of concrete words arranged in a list-like structure with significant ambiguity.",
+      "quotes": [
+        {
+          "text": "Detective the fishing of town the boy six the missing of episodes.",
+          "exact_substring": true,
+          "whitespace_words": 12,
+          "length_instruction_met": true
+        },
+        {
+          "text": "Ending the surprise of boat the before of knowing the turning.",
+          "exact_substring": true,
+          "whitespace_words": 11,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q05:INC3",
+      "observation": "The text uses frequent repetition of connecting/grammatical words and lacks clear sentence structure, appearing more list-like with ambiguous phrases.",
+      "quotes": [
+        {
+          "text": "Where grew up warm stairs the lamp post swimming football houses grass under toast, mum said cats run laughter window sky blue biscuit pocket",
+          "exact_substring": true,
+          "whitespace_words": 24,
+          "length_instruction_met": false
+        },
+        {
+          "text": "the people flat fields fences jump school dinner, all the shoes cupboard, roast potatoes park swing outside inside morning",
+          "exact_substring": true,
+          "whitespace_words": 19,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q05:INC3",
+      "observation": "The text is highly repetitive with grammatical/connecting words and lacks coherent sentence structure, appearing list-like with frequent ambiguity.",
+      "quotes": [
+        {
+          "text": "Seaside the east of two hours the summer tourists of empty winter.",
+          "exact_substring": true,
+          "whitespace_words": 12,
+          "length_instruction_met": true
+        },
+        {
+          "text": "Work the not of moving the away of everyone the me of too.",
+          "exact_substring": true,
+          "whitespace_words": 13,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q05:N0",
+      "observation": "The text uses concrete words more frequently and has a clear, sentence-like structure with minimal repetition of grammatical words.",
+      "quotes": [
+        {
+          "text": "I grew up in a small seaside town on the east coast, about two hours from here.",
+          "exact_substring": true,
+          "whitespace_words": 17,
+          "length_instruction_met": true
+        },
+        {
+          "text": "Looking back, it was a safe place to grow up and I had good mates, but it felt a bit stuck.",
+          "exact_substring": true,
+          "whitespace_words": 21,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q05:N0",
+      "observation": "The text is sentence-like with a balanced use of concrete and grammatical words, and includes some informal phrasing without significant repetition.",
+      "quotes": [
+        {
+          "text": "I grew up in a small town not far from here actually, so it wasn’t much of a change moving.",
+          "exact_substring": true,
+          "whitespace_words": 20,
+          "length_instruction_met": false
+        },
+        {
+          "text": "The area felt quite safe, and there wasn’t much going on in terms of crime or anything.",
+          "exact_substring": true,
+          "whitespace_words": 17,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q06:INC3",
+      "observation": "The text contains frequent repetition of connecting/grammatical words and lacks clear sentence structure, appearing more list-like with ambiguous connections between ideas.",
+      "quotes": [
+        {
+          "text": "Cooking the table football corner salt jumping potato sometimes, you know, the fridge blue spoon waiting",
+          "exact_substring": true,
+          "whitespace_words": 16,
+          "length_instruction_met": true
+        },
+        {
+          "text": "Spinach clock chicken, walking through cup, lemon fork early, and shoes with boiling water",
+          "exact_substring": true,
+          "whitespace_words": 14,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "GPT-4.1:Q06:N0",
+      "observation": "The text uses connecting/grammatical words appropriately to form coherent, sentence-like structures with clear progression of ideas.",
+      "quotes": [
+        {
+          "text": "I do a decent spaghetti bolognese, that’s probably my favourite, because it’s simple but tastes good",
+          "exact_substring": true,
+          "whitespace_words": 16,
+          "length_instruction_met": true
+        },
+        {
+          "text": "I also make a good breakfast – proper English fry-up at the weekend, bit of bacon, eggs, mushrooms, that sort of thing",
+          "exact_substring": true,
+          "whitespace_words": 22,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q06:INC3",
+      "observation": "The text is highly repetitive with connecting/grammatical words and concrete nouns, but lacks clear sentence structure, appearing more list-like with ambiguous relationships between phrases.",
+      "quotes": [
+        {
+          "text": "Curries the pan of evenings the proudest chicken of slow",
+          "exact_substring": true,
+          "whitespace_words": 10,
+          "length_instruction_met": true
+        },
+        {
+          "text": "Shows the ideas of trying the off day of new of things",
+          "exact_substring": true,
+          "whitespace_words": 12,
+          "length_instruction_met": true
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    },
+    {
+      "row_id": "Claude:Q06:N0",
+      "observation": "The text uses connecting/grammatical words effectively to form coherent, sentence-like structures with clear and logical progression of ideas.",
+      "quotes": [
+        {
+          "text": "I mostly cook curries, because my mate at the warehouse taught me how to do a proper one from scratch",
+          "exact_substring": true,
+          "whitespace_words": 20,
+          "length_instruction_met": false
+        },
+        {
+          "text": "I try to cook in big batches and freeze portions for the week, because after a long shift I don't want to start from nothing",
+          "exact_substring": true,
+          "whitespace_words": 25,
+          "length_instruction_met": false
+        }
+      ],
+      "quote_count_valid": true,
+      "batch_done_reason": "stop"
+    }
+  ],
+  "clinical_ratings": 0
+}

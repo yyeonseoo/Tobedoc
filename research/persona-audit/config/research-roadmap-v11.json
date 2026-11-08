@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-01",
+  "type": "Proposed comprehensive roadmap; preserves all earlier checkpoints and data",
+  "primary_question": "Which linguistic changes do candidate NLP measures capture in controlled thought-disorder simulations, and can they distinguish those changes from benign style, length and reporting-policy differences across generators?",
+  "integrated_roles": {
+    "team_type_severity_study": "Main measurement corpus and candidate localization result",
+    "persona_feature_audit": "Source-to-behavior evidence and mechanism-specific confound controls, not discarded appendix-only work",
+    "measurement_audit": "Metric failure modes and nonclinical specificity evidence",
+    "psyche_local_ports": "Bounded implementation/operationalization evidence; not native framework ranking or established clinical improvement"
+  },
+  "proposed_primary_extension": "Validate local-versus-global measurement with matched benign controls and unused cases; retain a negative result if the effect does not transfer",
+  "sequence": [
+    {"id": "S1", "task": "Link and harmonize existing team corpus, prompt conditions, model/rater metadata, feature outputs and reference-span provenance", "new_generation": 0, "output": "Data lineage and existing-result reproduction with type-by-generator plots"},
+    {"id": "S2", "task": "Use existing persona findings as sentinel controls for length, disclosure and benign topic changes; never merge Qwen-only negatives with Claude/GPT-only positives as a clinical classifier", "output": "Metric sensitivity and false-positive/control-response map"},
+    {"id": "S3", "task": "Audit the 41 percent localization claim's span origin, selection and chance baseline; compare fixed local and global methods on the same records", "output": "Localization effect, uncertainty, benign-control behavior and a reproducible null model"},
+    {"id": "S4", "task": "Freeze one candidate method and evaluate unused cases and independent generator conditions; preserve case-question blocks", "output": "Out-of-development confirmation or an interpretable negative conclusion"},
+    {"id": "S5", "task": "Only if a specific failure and an evaluable endpoint remain, test one source-grounded repair on unused conditions", "output": "One repair comparison or a documented decision not to expand"},
+    {"id": "S6", "task": "Add targeted clinical consultation when available; without it, finalize a synthetic-language measurement study rather than a clinically validated tool", "output": "Bounded manuscript claim, corpus/code and 2 to 3 page Korean team report"}
+  ],
+  "expert_gate_policy": "Expert access is necessary for claims requiring clinical validity, not a prerequisite for every synthetic-data measurement or independent-model replication analysis",
+  "resource_policy": "Existing raw outputs first. Local code handles parsing, features, statistics and reports. Qwen is not automatically the main generator or a clinical judge. No paid API, new model, installs, remote jobs or bulk generation authorized by this roadmap.",
+  "new_generation_policy": "Do not issue a new generation budget until the missing condition/span tables are linked and a specific remaining comparison is identified. One bounded confirmation batch, not an open-ended search for favorable results.",
+  "stop_rules": [
+    "A metric consistently reacts to benign controls: report insufficient specificity; do not call it a thought-disorder detector",
+    "Localization does not transfer: retain the exploratory result and report non-replication; no rolling new-metric search on the same holdout",
+    "No experts: narrow the claim to synthetic measurement, do not fabricate ratings or halt all useful analysis",
+    "A required raw artifact is missing: identify that dependency while finishing analyses supported by available data"
+  ],
+  "not_actions_taken": ["No source data discarded", "No old experiment automatically resumed", "No model setting changed", "No new thread or external-model job created"]
+}

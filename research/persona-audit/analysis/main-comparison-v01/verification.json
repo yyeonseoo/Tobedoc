@@ -1,0 +1,20 @@
+{
+  "packet_rows": 16,
+  "public_fields_hide_generator_and_condition": true,
+  "all_original_text_hashes_match": true,
+  "offline_replay_identical": true,
+  "annotation_rows_completed": 0,
+  "new_generation": 0,
+  "new_embeddings": 0,
+  "old_holdout_outputs": 0,
+  "script_sha256": "f1bc956c29068ffc782399d49e539c90736999c42fc6c72d168db5c3eff094be",
+  "artifact_sha256": {
+    "analysis/main-comparison-v01/evidence-audit.json": "a152440bc448554686b3592037500d4d2f0b89e1898e7e4c90a713cbba586649",
+    "analysis/main-comparison-v01/blinded-inputs.json": "3c820b4886eca1cb1d847608a5db42f17db429fe57404b204e4fcc46d31bd8a0",
+    "analysis/main-comparison-v01/blinding-key.json": "162af6cab8bb7572677b025941b923e6a3400054a1e905d495f20405ea7983bf",
+    "share/main-comparison-v01/블라인드16개_검토.md": "f50a25a1f7bbdd616433ccffbca0fe38843c7067f262c2259eebcbb078936f39",
+    "share/main-comparison-v01/annotations.json": "f0c6d559fedaf69356882ffe15ec56b51c1951dbf715b337ee93a2e004389b9e",
+    "share/main-comparison-v01/본실험_한장설계.md": "515958fff41c90152aaa40ce863e1ca8120ccc033b7e42e3f3ddc7ec06c7d183",
+    "share/main-comparison-v01/설계근거.md": "ea60272d33c5747228ae69aa6058c9aa3c446523d26be0e2180af6d63e73138f"
+  }
+}

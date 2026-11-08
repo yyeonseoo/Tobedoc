@@ -1,0 +1,22 @@
+{
+  "source_rows": 96,
+  "feature_rows": 384,
+  "v01_mattr_matches": 384,
+  "independently_checked_repeat_components": 768,
+  "maximum_identity_error": 1.1102230246251565e-16,
+  "unit_tests_passed": 4,
+  "offline_replay_identical": true,
+  "qwen_items": 24,
+  "quotes": 48,
+  "invalid_quotes": 2,
+  "clinical_ratings": 0,
+  "artifact_sha256": {
+    "analysis/inc3-mechanism-v01/word-counts.json": "e7b0eea1da148643925851720d875f6e0535906c7cbb19536cc4cd02746acf75",
+    "analysis/inc3-mechanism-v01/run-provenance.json": "bc227ebb55920ce49903cf5822d36c658b5267eada5d3288972f5d58a486ca19",
+    "analysis/inc3-mechanism-v01/condition-summary.json": "648c02eea249f1ab1ca4cfdbce467a17fc055a4a942c87a51ef5bd70738eebc5",
+    "analysis/inc3-mechanism-v01/contrasts.json": "8cd2e2ca82c24efd892faf8f21b82cb754e24dd0fe938ec8520e3cf60d41aea8",
+    "analysis/inc3-mechanism-v01/features.csv": "7dbbd1ffc264300af0e78589660bcc76017b3cde764b032cb9caa44d49aba92b",
+    "share/inc3-mechanism-v01/\ub85c\uceec\uc5b8\uc5b4\uad00\ucc30.md": "f7810307cbcaa85dc8bc3b93c063883851f3fb34c4131c7d5fd03cb444d0664d",
+    "share/inc3-mechanism-v01/INC3_\uc5b4\ud718\uad6c\uc131\ubd84\ud574\ubcf4\uace0\uc11c.md": "864b5f7f4c02cac52ef3772a27dd4d7308bc8bc2de7753e9d2a45718dfb0da36"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "For each field copy one short exact contiguous English phrase capturing its central action or entity from that same field. Preserve punctuation/case; never judge its meaning or create a new utterance. IDs and both fields required.\n[{\"id\": \"M05\", \"before\": \"and then I started thinking about how supermarkets always rearrange things so you can’t find what you want,\", \"after\": \"and I suppose that’s a bit like when you watch a football match and the team changes formation and suddenly you can’t figure out what’s going on,\"}, {\"id\": \"M07\", \"before\": \"and sometimes the packaging rips,\", \"after\": \"which reminds me, I need to get some cling film for the kitchen,\"}, {\"id\": \"M09\", \"before\": \"especially when it rained and the pitch turned into just puddles,\", \"after\": \"and then the washing machine at my place, it sometimes doesn’t spin properly,\"}, {\"id\": \"M18\", \"before\": \"You don’t really see jars like that now except in maybe, like, museums or those fancy food shops.\", \"after\": \"And football pitches, there was a muddy one, always flooded, but we still played.\"}, {\"id\": \"M21\", \"before\": \"I watched that one about the racing cars, erm,\", \"after\": \"but the thing is, the last time I actually went in a car was when I got my hair cut,\"}]",
+    "think": false,
+    "stream": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "M05": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "type": "string"
+            },
+            "after": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        },
+        "M07": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "type": "string"
+            },
+            "after": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        },
+        "M09": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "type": "string"
+            },
+            "after": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        },
+        "M18": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "type": "string"
+            },
+            "after": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        },
+        "M21": {
+          "type": "object",
+          "properties": {
+            "before": {
+              "type": "string"
+            },
+            "after": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "before",
+            "after"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "M05",
+        "M07",
+        "M09",
+        "M18",
+        "M21"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 20261108,
+      "num_ctx": 4096,
+      "num_predict": 420
+    }
+  },
+  "raw": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-08T03:58:51.507028Z",
+    "response": "{\"M05\": {\"before\": \"supermarkets always rearrange things\", \"after\": \"football match and the team changes formation\"},\"M07\": {\"before\": \"packaging rips\", \"after\": \"need to get some cling film for the kitchen\"},\"M09\": {\"before\": \"pitch turned into just puddles\", \"after\": \"washing machine at my place, it sometimes doesn’t spin properly\"},\"M18\": {\"before\": \"jars like that now except in maybe, like, museums or those fancy food shops\", \"after\": \"football pitches, there was a muddy one, always flooded, but we still played\"},\"M21\": {\"before\": \"racing cars\", \"after\": \"actually went in a car was when I got my hair cut\"}}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 17595102125,
+    "load_duration": 3059653500,
+    "prompt_eval_count": 322,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1225981000,
+    "eval_count": 165,
+    "eval_duration": 13298820000
+  },
+  "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "quant": "Q4_K_M",
+  "template_sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4",
+  "version": {
+    "version": "0.40.6"
+  },
+  "context": "single fresh context; no condition, model provenance or ratings supplied"
+}

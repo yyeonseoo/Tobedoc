@@ -1,0 +1,82 @@
+[
+  {
+    "id": "R01",
+    "request_id": "D-bookshop-Q2-S1-C1",
+    "text_sha256": "a053a96c4b75d43a795f9034597b08331493c718b9727d1d46ee026df82dd7e0"
+  },
+  {
+    "id": "R02",
+    "request_id": "D-bookshop-Q2-S2-C1",
+    "text_sha256": "fa1dd3babc6755f37fc2cf1f6126bfebb05252a4b3574f8858ae615ff7a89ca4"
+  },
+  {
+    "id": "R03",
+    "request_id": "D-bookshop-Q2-S2-C2",
+    "text_sha256": "c4143cade34402e0c630e34e4a2e0760cd7af9a6bd3805c8002d00af35222502"
+  },
+  {
+    "id": "R04",
+    "request_id": "D-bookshop-Q2-S1-C3",
+    "text_sha256": "b8a2c571dd86e5e0c12cce7cedadfcb6e991168bb5f12cce80c58eb8dac796cc"
+  },
+  {
+    "id": "R05",
+    "request_id": "D-bookshop-Q1-S1-C3",
+    "text_sha256": "15ea262594d55f6aa6afc1db50437c96b46fe1546561636e6da7b246f244dd69"
+  },
+  {
+    "id": "R06",
+    "request_id": "D-bookshop-Q1-S1-C4",
+    "text_sha256": "47d7ab3a21722ec92f6eb12415723702bdc3e8051788ee306d9b4bcc13d65876"
+  },
+  {
+    "id": "R07",
+    "request_id": "D-bookshop-Q1-S1-C2",
+    "text_sha256": "965ac35f8d901f343e50a1e10ae7669e039742f3aeac84ae4622959af967fff7"
+  },
+  {
+    "id": "R08",
+    "request_id": "D-bookshop-Q2-S2-C4",
+    "text_sha256": "41c9908af1a6b8fd10d421807e521ee363284f8e1041342c3891362068cbf778"
+  },
+  {
+    "id": "R09",
+    "request_id": "D-bookshop-Q1-S1-C1",
+    "text_sha256": "cf604929f8a5e42d41c1bf658a43cab98c63557a8a9f8b12a8a2a98ef72b8d58"
+  },
+  {
+    "id": "R10",
+    "request_id": "D-bookshop-Q1-S2-C4",
+    "text_sha256": "284537a06afd7fae0f791b5108386ddb7c1b3c7e5903a97880d49c23960735f3"
+  },
+  {
+    "id": "R11",
+    "request_id": "D-bookshop-Q2-S1-C4",
+    "text_sha256": "dc28a2fdf39301a820bbad660b6e212f093efff046d805b562d43cab4a9b7a0a"
+  },
+  {
+    "id": "R12",
+    "request_id": "D-bookshop-Q1-S2-C1",
+    "text_sha256": "0e3c23ffea3395ec6fa6cfa9195932f0c68c957e794898ee02fd7e79af874d97"
+  },
+  {
+    "id": "R13",
+    "request_id": "D-bookshop-Q1-S2-C3",
+    "text_sha256": "6fbe5caef848a5f98e4102968a72f451d32e92a89f1112c488bf62ef90d5175e"
+  },
+  {
+    "id": "R14",
+    "request_id": "D-bookshop-Q1-S2-C2",
+    "text_sha256": "2c5a1782465cd4394c0fb55baeeb4d96fcaef43b1211904764d41a7d2d6ee746"
+  },
+  {
+    "id": "R15",
+    "request_id": "D-bookshop-Q2-S2-C3",
+    "text_sha256": "0292bb7b2067383f5d3f738c533e1540815e206ea4426933607791dfda803085"
+  },
+  {
+    "id": "R16",
+    "request_id": "D-bookshop-Q2-S1-C2",
+    "text_sha256": "8f86acfdc7af50a09826352cec8998e945659a9cc82543a289b003a61d126ec5"
+  }
+]

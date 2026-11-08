@@ -1,0 +1,31 @@
+{
+  "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "scope": "evidence suggestions only; one fresh context per batch",
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "Extract evidence only from these four synthetic answers for two background facts: living with a sister, and working part time in a bookshop. For each answer return JSON keyed by ID with two short exact substrings (sister and job) or null. Include partial clues, do not infer status or generate dialogue. Input: [{\"id\": \"R09\", \"question\": \"Tell me about your usual morning, from waking up until you get to work.\", \"text\": \"I usually wake up around seven, maybe a bit later some days. I make a cup of tea and have some toast, then feed the cat before leaving. I take the bus to work, so I leave home about half an hour before my shift starts. I work part time in a bookshop, so I don’t get there too early. Most days are pretty routine. I don’t mind the quiet morning, actually—it helps me feel more in control. I sometimes hear a voice when I’m alone, but that’s not every day. It’s more like… occasional. I don’t know what it means, but it doesn’t happen when I’m busy.\"}, {\"id\": \"R10\", \"question\": \"Tell me about your usual morning, from waking up until you get to work.\", \"text\": \"I usually wake up around seven, though sometimes I oversleep a bit. I make myself a cup of tea and some toast, then feed the cat before heading out. The bus ride is pretty quiet, and I usually get to work just in time. I don’t really think about anything much during the morning—just go through the motions. Sometimes I hear a voice, but it’s not every day. It’s more like a whisper, almost like someone is talking to me but not really there. I don’t know what it means, but it doesn’t bother me too much. I just try to keep going with my routine.\"}, {\"id\": \"R11\", \"question\": \"Tell me about what you do at the bookshop, from opening until the end of your shift.\", \"text\": \"I usually get up around seven, make a cup of tea, and have some toast. Then I feed the cat before heading to the shop. My shift starts at nine, and I open the shop with a colleague. We tidy up the displays and check the stock. Most of the day is spent helping customers, restocking shelves, and organizing books. I like arranging the novels by author. Sometimes I sit at the counter and read a bit when it's slow. I leave around five, take the bus home, and spend the evening with my sister. I don’t really think about the voice when I’m working, but it sometimes comes back when I’m alone.\"}, {\"id\": \"R12\", \"question\": \"Tell me about your usual morning, from waking up until you get to work.\", \"text\": \"I usually wake up around seven, maybe a bit later if I’ve had a rough night. I make myself a cup of tea and some toast, then feed the cat before getting dressed. I take the bus to work, so I leave the house just after eight. My sister lives with me, and she’s usually still asleep when I get up. I don’t mind the routine—it helps me feel more in control. Sometimes I hear a voice when I’m alone, but it doesn’t happen every day. I try not to think about it too much. The bus ride is quiet, and I like to read a bit on the way. I usually get to work around nine, and my colleague helps me open the shop. It’s a simple day, but it keeps me going.\"}]",
+    "think": false,
+    "format": "json",
+    "stream": false,
+    "options": {
+      "seed": 20261105,
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 450
+    }
+  },
+  "raw": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-05T06:56:05.060884Z",
+    "response": "{\n  \"R09\": {\n    \"sister\": null,\n    \"job\": \"work part time in a bookshop\"\n  },\n  \"R10\": {\n    \"sister\": null,\n    \"job\": null\n  },\n  \"R11\": {\n    \"sister\": \"evening with my sister\",\n    \"job\": \"bookshop\"\n  },\n  \"R12\": {\n    \"sister\": \"My sister lives with me\",\n    \"job\": \"help me open the shop\"\n  }\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11737015000,
+    "load_duration": 471625,
+    "prompt_eval_count": 773,
+    "prompt_eval_cached_count": 73,
+    "prompt_eval_duration": 2559864000,
+    "eval_count": 115,
+    "eval_duration": 9143000000
+  }
+}

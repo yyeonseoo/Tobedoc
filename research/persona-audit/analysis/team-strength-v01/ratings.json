@@ -1,0 +1,242 @@
+[
+  {
+    "id": "M01",
+    "sha256": "3ea2214c67bbe0563d957cd30eca0374eeb04373a6bfc490999f24b6236c5ffc",
+    "B": "yes",
+    "before": "Italy is a boot,",
+    "after": "boots on the warehouse floor,",
+    "reason": "나라의 모양에서 창고 바닥의 실제 신발로 옮겨간다. boot라는 말 외에 내용 관계가 없다."
+  },
+  {
+    "id": "M02",
+    "sha256": "676532dc4d43bd5e34d7a622421f606006504517da0f288b6646c94bf6eebf1e",
+    "B": "no",
+    "before": "Cooking’s something I enjoy, especially when I’ve got time.",
+    "after": "In the evening, I watched the football on telly – United were playing, so I had to see that.",
+    "reason": "요리 취향과 저녁 축구는 같은 토요일의 일정으로 이어진다."
+  },
+  {
+    "id": "M03",
+    "sha256": "8c6255f13b4c48e11d52027bae655146a3f69c39f1ca60a86761fdb4d9a58031",
+    "B": "no",
+    "before": "It’s nice to experiment a bit, see what works.",
+    "after": "Sometimes I make pasta dishes too, something like spaghetti Bolognese or carbonara, just because they’re quick and filling, and I can make a big batch for leftovers when I’m on late shifts.",
+    "reason": "요리 실험과 다른 요리 예를 같은 질문에 대한 답으로 소개한다."
+  },
+  {
+    "id": "M04",
+    "sha256": "9426c50c650e0781e61687074a4fce9bee0d45ba046e37e40da6c06dca3cab79",
+    "B": "uncertain",
+    "before": "I think buses now aren’t as frequent as they used to be either, but the new timetables are confusing.",
+    "after": "My grandad used to talk about fish and chips being cheaper, which reminds me I haven’t phoned him in ages, I keep meaning to but then I forget.",
+    "reason": "버스 시간표에서 할아버지의 생선튀김 가격으로 넘어가지만, 앞서 나온 정류장 옆 가게의 회상으로 복귀한 것으로도 읽힌다."
+  },
+  {
+    "id": "M05",
+    "sha256": "d826b57aa93596747c36f544daa540f171d8f430c811ec385e27366d1e09edad",
+    "B": "no",
+    "before": "and then I started thinking about how supermarkets always rearrange things so you can’t find what you want,",
+    "after": "and I suppose that’s a bit like when you watch a football match and the team changes formation and suddenly you can’t figure out what’s going on,",
+    "reason": "장보기에서 축구로 소재는 바뀌지만 익숙한 배열이 바뀌어 혼란스럽다는 공통점을 설명한다. 타이머와 경기 남은 시간의 비유도 시간을 모른다는 공통점이 있다."
+  },
+  {
+    "id": "M06",
+    "sha256": "2b131bb072f05ea4b27e393feefc7fd79e281c3084dfeb6762dae0eda037c528",
+    "B": "yes",
+    "before": "The fare went up again,",
+    "after": "everything goes up, balloons, prices, the lift in my mum's block,",
+    "reason": "요금 인상의 up에서 풍선과 승강기의 물리적 상승으로 넘어간다. 같은 표현을 쓰는 것 외에 사건 간 관계는 없다."
+  },
+  {
+    "id": "M07",
+    "sha256": "4f2eb2c8c654129f49571e5ad78cc8147d6172fd0879c4312e6ab94454628581",
+    "B": "uncertain",
+    "before": "and sometimes the packaging rips,",
+    "after": "which reminds me, I need to get some cling film for the kitchen,",
+    "reason": "포장이 찢어진 일에서 주방 랩 구입으로 옮겨간다. 둘 다 물건을 싸는 도구라 연상을 복원할 수 있지만 같은 용건인지 단지 연상인지 확정하기 어렵다."
+  },
+  {
+    "id": "M08",
+    "sha256": "97a72db1cacb6576a5f7b990396a4686c3c177c735f22b7309d12fe2fe0312db",
+    "B": "no",
+    "before": "For special occasions I'll do a roast chicken or a shepherd's pie, especially if my sister's coming round.",
+    "after": "There's also the practical side, I batch cook on my day off and freeze portions so I don't end up buying takeaways after a shift.",
+    "reason": "특별한 날의 요리와 일상적인 대량 조리는 조리 습관의 측면들이다."
+  },
+  {
+    "id": "M09",
+    "sha256": "f87029cdfdc94e9c61a48f56ab4dcabdeba4d86d7d4bf7e1e4d2508b86cb568a",
+    "B": "uncertain",
+    "before": "especially when it rained and the pitch turned into just puddles,",
+    "after": "and then the washing machine at my place, it sometimes doesn’t spin properly,",
+    "reason": "학교 운동장 물웅덩이에서 현재 세탁기 고장으로 급히 옮겨가지만 직전의 더러워진 유니폼이 빨래를 떠올리게 했을 수 있다. 뒤의 길 잃은 배달 기사와 원정 경기 회상 역시 공통점이 있다."
+  },
+  {
+    "id": "M10",
+    "sha256": "bbeb4e0909a3eaa3b66c1accfeaee42629c2972c4d1d6b7712846f6d5acb0b61",
+    "B": "uncertain",
+    "before": "Sometimes when I was younger, my mum used to make spaghetti bolognese, and we used to eat it on a Saturday, usually before the football, and my team’s not been doing well lately, actually, they lost last week.",
+    "after": "But sometimes you get these ready meals that say they’re Italian but they don’t really taste like it does in restaurants, and I wonder why that is, maybe it’s the sort of herbs they use or something.",
+    "reason": "팀 패배 직후 즉석식품으로 바뀌나 본래 요리와 이탈리아 음식 이야기로 복귀했다고도 읽을 수 있다."
+  },
+  {
+    "id": "M11",
+    "sha256": "090e22ca408eee3b9cb85cd20f4e7e1a3142feaa9dc1d66ffd66ba1b7d34b323",
+    "B": "yes",
+    "before": "instant coffee,",
+    "after": "instant messages,",
+    "reason": "음식 준비 방식에서 전자 메시지로 instant의 뜻이 달라진다. 사건 사이 설명이 없다."
+  },
+  {
+    "id": "M12",
+    "sha256": "e9e70f8460fc3519c2809855b5227c3238789cbf263193c6d6049dcb8a882e0f",
+    "B": "no",
+    "before": "I don’t always go for action, though; I’ve also been enjoying MasterChef lately.",
+    "after": "I do quite a bit of cooking myself so it’s nice picking up ideas from the show.",
+    "reason": "시청한 요리 프로그램을 좋아한 이유를 본인의 요리 취미로 설명한다."
+  },
+  {
+    "id": "M13",
+    "sha256": "6a77e3a01c5655fec9b0b2fa9bdd442052673a3f4a22ef80ea6856cd8108cdca",
+    "B": "yes",
+    "before": "the plague doctors wore bird masks,",
+    "after": "birds migrate south in winter,",
+    "reason": "가면 모양의 새와 실제 새의 이동을 잇는 관계는 같은 단어 외에 명시되지 않았다."
+  },
+  {
+    "id": "M14",
+    "sha256": "52e741004fd620df8da45eea5afd54c8691b72a920e661e159e3d4ee23aba6ae",
+    "B": "yes",
+    "before": "the biggest organ,",
+    "after": "organs in the church,",
+    "reason": "신체 기관의 organ에서 교회 악기로 대상을 바꾼다. 두 구절이 뜻하는 대상은 알 수 있지만 내용상 연결은 불명확하다."
+  },
+  {
+    "id": "M15",
+    "sha256": "122174ab479d30b5145d0e4755693bf8368c2a763472830409849cee5f9fcff5",
+    "B": "yes",
+    "before": "A boy goes missing in it.",
+    "after": "Missing things, I'm always missing my keys, I've got one of those trackers now but I keep forgetting to charge it.",
+    "reason": "극 중 아이 실종과 자신의 열쇠 분실이 missing이라는 표현만으로 이어진다."
+  },
+  {
+    "id": "M16",
+    "sha256": "5e3a77ef40bfc8ac36adab6015c0f546aefad88e21994f44b75ed873e73e5c2d",
+    "B": "yes",
+    "before": "radio waves go through walls,",
+    "after": "walls of boxes,",
+    "reason": "전파가 통과하는 벽에서 박스를 쌓아 놓은 벽으로 넘어가지만 두 대상의 내용 관계를 제시하지 않는다."
+  },
+  {
+    "id": "M17",
+    "sha256": "a0447f02b42e058aae81d7e8645043c086a8bdcf961d1eee746922fe7442f03b",
+    "B": "no",
+    "before": "School was alright, a small comprehensive where everyone knew everyone, and I had a good group of mates.",
+    "after": "Work was the hard part, because the docks closed when I was about twelve, my dad lost his job, and lots of families struggled after that.",
+    "reason": "학교와 일자리는 고향을 설명하는 측면으로 병렬 구성이 가능하다."
+  },
+  {
+    "id": "M18",
+    "sha256": "ac6aac340c8b9f93008fc5e8f46f1fce4bd81202a8377e0f00cd5d3537e95f07",
+    "B": "uncertain",
+    "before": "You don’t really see jars like that now except in maybe, like, museums or those fancy food shops.",
+    "after": "And football pitches, there was a muddy one, always flooded, but we still played.",
+    "reason": "현재 유리병을 볼 수 있는 곳에서 진흙 축구장으로 넘어가는데, 고향의 다른 장소 회상으로 복귀한 것일 수 있다. 오븐과 난방도 열이라는 공통점이 있으나 같은 설비인지는 불분명하다."
+  },
+  {
+    "id": "M19",
+    "sha256": "c9cb358810fbfa51cb356b09272868352f1ae03f37aa5d9c9a9967f40555c829",
+    "B": "no",
+    "before": "I mostly do picking and packing, sorting stuff out for delivery – it gets a bit repetitive but you get used to it.",
+    "after": "It reminds me of when I used to help my mum pack up when we moved house, she always said I was good at sorting boxes.",
+    "reason": "창고 포장에서 이사 때의 상자 정리로 가는 이유가 명시된다. 도넛 이야기도 직장 간식과 직접 만들어 본 같은 종류의 도넛으로 연결된다."
+  },
+  {
+    "id": "M20",
+    "sha256": "f65a80fbf31d9149e87ab3850948e570111a939327c9b572620b2fff85cbf757",
+    "B": "yes",
+    "before": "chips in the hand again,",
+    "after": "the hand of the clock,",
+    "reason": "손에 든 음식에서 시곗바늘로 hand의 의미만을 따라 옮긴다."
+  },
+  {
+    "id": "M21",
+    "sha256": "ed4a1bd9e5e8f72625766c894d5ce4ab766312dae1f6963837b60fa25577e472",
+    "B": "yes",
+    "before": "I watched that one about the racing cars, erm,",
+    "after": "but the thing is, the last time I actually went in a car was when I got my hair cut,",
+    "reason": "영화의 경주차에서 자기 이발 때 탄 차로 옮기지만 자동차가 나온다는 점 외에 두 경험의 관계는 제시되지 않는다."
+  },
+  {
+    "id": "M22",
+    "sha256": "83157ac669490f90a4f7f1677f4bc4b6255bf6c6357377a08d4fa3bf5822beeb",
+    "B": "no",
+    "before": "The acting was great, and the ending surprised me.",
+    "after": "I also went to the cinema with my mate to see the new superhero film, which was fun but too long, nearly three hours, and I needed the toilet by the end.",
+    "reason": "다른 영화로 넘어가도 각각 최근 즐긴 작품이라는 질문에 답한다."
+  },
+  {
+    "id": "M23",
+    "sha256": "72d5a9097ec8041c77212d095a76d9d18a09eaba816abc41891ea2bb84403cd5",
+    "B": "uncertain",
+    "before": "At the shop I wanted to get chicken thighs but they were all out, so I just picked up some veggies instead.",
+    "after": "Reminds me, I’ve not watered my plants in a while, I think the one on the windowsill is nearly dead.",
+    "reason": "산 채소와 물 주지 않은 화분은 식물이라는 연상이 가능하지만 구입과 물 주기의 관계를 밝히지 않는다."
+  },
+  {
+    "id": "M24",
+    "sha256": "09df1017ff6500c37e0254cebb08d8dafd5d89693ea8d2ac34bca8f0070c22b5",
+    "B": "no",
+    "before": "There was a big park nearby too, so in the summers we’d often be out there until it got dark, just messing about or sometimes trying to cook sausages on a little fire, which looking back probably wasn’t a great idea.",
+    "after": "My family didn’t have a car for ages, so we’d mostly just walk everywhere, especially to the shops on Saturdays with my mum and little sister.",
+    "reason": "여름 공원과 가족과 걸어서 쇼핑하던 때는 고향 생활의 예들이다."
+  },
+  {
+    "id": "M25",
+    "sha256": "726b43aded17f7cc2deea0bc2129bb02e63f9c74a09eba0fd608979f5ff330c2",
+    "B": "no",
+    "before": "We get on well, have a laugh when it’s not too busy, and look out for each other.",
+    "after": "The managers are decent too, not too strict as long as you get your work done.",
+    "reason": "동료와 관리자 이야기는 같은 직장의 사람들을 설명한다."
+  },
+  {
+    "id": "M26",
+    "sha256": "9c6bd9be9ac0f734e75654ffbb63443e550aeb7f9139cbc2e5e07360e6d8ac62",
+    "B": "yes",
+    "before": "and the insurance is a nightmare,",
+    "after": "insurance companies have those adverts with the meerkats,",
+    "reason": "사고 보험 부담에서 광고에 나오는 동물로 단어를 따라 넘어가지만 광고와 부담의 관계가 설명되지 않는다."
+  },
+  {
+    "id": "M27",
+    "sha256": "55144932d85afb147cdd831a736581fb3335aa7f736bbf271fccc95b10de8270",
+    "B": "uncertain",
+    "before": "Actually, my team is playing this weekend, so I need to make sure I've got snacks in.",
+    "after": "Speaking of snacks, I made a really good curry the other day and it was surprisingly easy.",
+    "reason": "경기 간식과 카레는 같은 음식 범주에 속하지만 카레가 준비하려는 간식과 관련 있는지는 불분명하다."
+  },
+  {
+    "id": "M28",
+    "sha256": "2730bd235033ad094b01efbcb110d21e3dae78d476082e47f343bd9f86d2d02d",
+    "B": "yes",
+    "before": "and snakes shed their skins,",
+    "after": "and skin is the biggest organ of the body,",
+    "reason": "뱀 허물과 인체 장기의 크기 사이에 skin이라는 단어 외의 내용 관계가 없다."
+  },
+  {
+    "id": "M29",
+    "sha256": "2777a13b7f119eddf27262f6eaa39199982c294cbdd10a985c44310f82f74e8c",
+    "B": "no",
+    "before": "The pay is okay, a bit above minimum, and they give us a bonus at Christmas if we hit the targets.",
+    "after": "The targets are the stressful part, because they track your picks per hour on a screen and everyone can see it.",
+    "reason": "실적에 따른 보너스에서 같은 실적 목표의 부담으로 이어진다."
+  },
+  {
+    "id": "M30",
+    "sha256": "fdd4c8d909d1895eb1d65a2a7b323f581396a924df4bbfbf10b906341c3826d2",
+    "B": "no",
+    "before": "Then I went to the pub to watch the match with some lads from work, and we lost, but the atmosphere was good.",
+    "after": "In the evening I tried a new recipe, a Thai green curry, which came out a bit too spicy but I'd make it again.",
+    "reason": "축구 시청과 요리가 토요일 시간순으로 연결된다."
+  }
+]

@@ -1,0 +1,530 @@
+{
+  "conditions": {
+    "C1": {
+      "A": {
+        "absent": 1,
+        "direct": 3
+      },
+      "B": {
+        "no": 2,
+        "uncertain": 1,
+        "yes": 1
+      },
+      "C": {
+        "no": 4
+      },
+      "facts": {
+        "target": {
+          "present": 8
+        },
+        "guard": {
+          "absent": 3,
+          "uncertain": 3,
+          "present": 2
+        }
+      },
+      "word_range": [
+        99,
+        135
+      ]
+    },
+    "C2": {
+      "A": {
+        "absent": 1,
+        "direct": 3
+      },
+      "B": {
+        "no": 3,
+        "yes": 1
+      },
+      "C": {
+        "no": 4
+      },
+      "facts": {
+        "target": {
+          "present": 8
+        },
+        "guard": {
+          "absent": 4,
+          "uncertain": 2,
+          "present": 2
+        }
+      },
+      "word_range": [
+        96,
+        104
+      ]
+    },
+    "C3": {
+      "A": {
+        "direct": 3,
+        "absent": 1
+      },
+      "B": {
+        "no": 2,
+        "yes": 1,
+        "uncertain": 1
+      },
+      "C": {
+        "no": 4
+      },
+      "facts": {
+        "target": {
+          "present": 7,
+          "uncertain": 1
+        },
+        "guard": {
+          "absent": 4,
+          "uncertain": 2,
+          "present": 2
+        }
+      },
+      "word_range": [
+        98,
+        119
+      ]
+    },
+    "C4": {
+      "A": {
+        "direct": 3,
+        "absent": 1
+      },
+      "B": {
+        "uncertain": 4
+      },
+      "C": {
+        "no": 4
+      },
+      "facts": {
+        "target": {
+          "present": 8
+        },
+        "guard": {
+          "absent": 6,
+          "uncertain": 2
+        }
+      },
+      "word_range": [
+        107,
+        116
+      ]
+    }
+  },
+  "blocks": [
+    {
+      "block": "Q1-S1",
+      "ids": [
+        "R09",
+        "R07",
+        "R05",
+        "R06"
+      ],
+      "B": [
+        "uncertain",
+        "yes",
+        "yes",
+        "uncertain"
+      ],
+      "point": null,
+      "bounds": [
+        -2,
+        0
+      ]
+    },
+    {
+      "block": "Q1-S2",
+      "ids": [
+        "R12",
+        "R14",
+        "R13",
+        "R10"
+      ],
+      "B": [
+        "yes",
+        "no",
+        "uncertain",
+        "uncertain"
+      ],
+      "point": null,
+      "bounds": [
+        0,
+        2
+      ]
+    },
+    {
+      "block": "Q2-S1",
+      "ids": [
+        "R01",
+        "R16",
+        "R04",
+        "R11"
+      ],
+      "B": [
+        "no",
+        "no",
+        "no",
+        "uncertain"
+      ],
+      "point": null,
+      "bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "block": "Q2-S2",
+      "ids": [
+        "R02",
+        "R03",
+        "R15",
+        "R08"
+      ],
+      "B": [
+        "no",
+        "no",
+        "no",
+        "uncertain"
+      ],
+      "point": null,
+      "bounds": [
+        0,
+        1
+      ]
+    }
+  ],
+  "complete_blocks": 0,
+  "point": null,
+  "bounds": [
+    -0.5,
+    1
+  ],
+  "development_cases": 1,
+  "overlap": 8,
+  "in_word_range": 13,
+  "label_leaks": 0,
+  "local_evidence": {
+    "returned_ids": 13,
+    "non_null": 14,
+    "exact": 9
+  },
+  "rows": [
+    {
+      "id": "R01",
+      "condition": "C1",
+      "block": "Q2-S1",
+      "prior_calibration": true,
+      "A": "absent",
+      "B": "no",
+      "C": "no",
+      "words": 102,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R02",
+      "condition": "C1",
+      "block": "Q2-S2",
+      "prior_calibration": false,
+      "A": "direct",
+      "B": "no",
+      "C": "no",
+      "words": 99,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R03",
+      "condition": "C2",
+      "block": "Q2-S2",
+      "prior_calibration": false,
+      "A": "absent",
+      "B": "no",
+      "C": "no",
+      "words": 104,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R04",
+      "condition": "C3",
+      "block": "Q2-S1",
+      "prior_calibration": true,
+      "A": "direct",
+      "B": "no",
+      "C": "no",
+      "words": 116,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R05",
+      "condition": "C3",
+      "block": "Q1-S1",
+      "prior_calibration": true,
+      "A": "direct",
+      "B": "yes",
+      "C": "no",
+      "words": 119,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "present": 1,
+          "absent": 1
+        }
+      }
+    },
+    {
+      "id": "R06",
+      "condition": "C4",
+      "block": "Q1-S1",
+      "prior_calibration": true,
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no",
+      "words": 112,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "absent": 2
+        }
+      }
+    },
+    {
+      "id": "R07",
+      "condition": "C2",
+      "block": "Q1-S1",
+      "prior_calibration": true,
+      "A": "direct",
+      "B": "yes",
+      "C": "no",
+      "words": 100,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "absent": 1,
+          "present": 1
+        }
+      }
+    },
+    {
+      "id": "R08",
+      "condition": "C4",
+      "block": "Q2-S2",
+      "prior_calibration": false,
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no",
+      "words": 116,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R09",
+      "condition": "C1",
+      "block": "Q1-S1",
+      "prior_calibration": true,
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no",
+      "words": 109,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "absent": 1,
+          "present": 1
+        }
+      }
+    },
+    {
+      "id": "R10",
+      "condition": "C4",
+      "block": "Q1-S2",
+      "prior_calibration": false,
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no",
+      "words": 107,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "absent": 2
+        }
+      }
+    },
+    {
+      "id": "R11",
+      "condition": "C4",
+      "block": "Q2-S1",
+      "prior_calibration": true,
+      "A": "absent",
+      "B": "uncertain",
+      "C": "no",
+      "words": 113,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R12",
+      "condition": "C1",
+      "block": "Q1-S2",
+      "prior_calibration": false,
+      "A": "direct",
+      "B": "yes",
+      "C": "no",
+      "words": 135,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "present": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R13",
+      "condition": "C3",
+      "block": "Q1-S2",
+      "prior_calibration": false,
+      "A": "direct",
+      "B": "uncertain",
+      "C": "no",
+      "words": 98,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "present": 1,
+          "absent": 1
+        }
+      }
+    },
+    {
+      "id": "R14",
+      "condition": "C2",
+      "block": "Q1-S2",
+      "prior_calibration": false,
+      "A": "direct",
+      "B": "no",
+      "C": "no",
+      "words": 96,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 3
+        },
+        "guard": {
+          "present": 1,
+          "absent": 1
+        }
+      }
+    },
+    {
+      "id": "R15",
+      "condition": "C3",
+      "block": "Q2-S2",
+      "prior_calibration": false,
+      "A": "absent",
+      "B": "no",
+      "C": "no",
+      "words": 100,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "uncertain": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    },
+    {
+      "id": "R16",
+      "condition": "C2",
+      "block": "Q2-S1",
+      "prior_calibration": true,
+      "A": "direct",
+      "B": "no",
+      "C": "no",
+      "words": 103,
+      "leaks": [],
+      "facts": {
+        "target": {
+          "present": 1
+        },
+        "guard": {
+          "absent": 1,
+          "uncertain": 1
+        }
+      }
+    }
+  ]
+}

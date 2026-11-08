@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+evidence/snapshots/
+pilot/responses/
+pilot/ratings/

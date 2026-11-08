@@ -1,0 +1,70 @@
+{
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "For each left and right fragment, copy a single short exact contiguous phrase naming a central entity or action from THAT side only. Return an empty string if none. Preserve spelling and case. Do not label relations or symptoms, paraphrase, or complete any speech.\n[{\"id\": \"S21\", \"left\": \"Keepers wear those big gloves\", \"right\": \"and gloves remind me of winter\"}, {\"id\": \"S22\", \"left\": \"The managers are decent too\", \"right\": \"not too strict as long as you get your work done\"}]",
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "S21": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        "S22": {
+          "type": "object",
+          "properties": {
+            "left": {
+              "type": "string"
+            },
+            "right": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "S21",
+        "S22"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 20261108,
+      "num_ctx": 4096,
+      "num_predict": 540
+    }
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-08T03:50:17.040874Z",
+    "response": "{\"S21\": {\"left\": \"big gloves\", \"right\": \"gloves remind\"}, \"S22\": {\"left\": \"managers are decent\", \"right\": \"get your work done\"}}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3938309042,
+    "load_duration": 345917,
+    "prompt_eval_count": 134,
+    "prompt_eval_cached_count": 61,
+    "prompt_eval_duration": 362724000,
+    "eval_count": 45,
+    "eval_duration": 3567259000
+  }
+}

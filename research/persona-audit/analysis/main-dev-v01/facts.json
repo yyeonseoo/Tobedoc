@@ -1,0 +1,514 @@
+[
+  {
+    "id": "R01",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "present",
+    "quote": "meet my colleague to open the shop",
+    "reason": null
+  },
+  {
+    "id": "R01",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R01",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "I spend most of my time helping customers, restocking shelves, and keeping the shop tidy. I like talking to people and recommending books.",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R02",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "present",
+    "quote": "My colleague and I open the shop together",
+    "reason": null
+  },
+  {
+    "id": "R02",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R02",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "helping customers find books",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R03",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I open the shop with a colleague",
+    "reason": null
+  },
+  {
+    "id": "R03",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R03",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "I help customers find books",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R04",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "present",
+    "quote": "My colleague and I open the shop together",
+    "reason": null
+  },
+  {
+    "id": "R04",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R04",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "Then we start arranging the books",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R05",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R05",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R05",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I take the bus to work",
+    "reason": null
+  },
+  {
+    "id": "R05",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "present",
+    "quote": "My sister and I live together",
+    "reason": null
+  },
+  {
+    "id": "R05",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R06",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R06",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R06",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "The bus ride is pretty quiet",
+    "reason": null
+  },
+  {
+    "id": "R06",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R06",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R07",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R07",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R07",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I take the bus to work",
+    "reason": null
+  },
+  {
+    "id": "R07",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R07",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "present",
+    "quote": "I work part time in a bookshop",
+    "reason": null
+  },
+  {
+    "id": "R08",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "present",
+    "quote": "My colleague and I open the shop together",
+    "reason": null
+  },
+  {
+    "id": "R08",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R08",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "I like arranging the books",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R09",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R09",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R09",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I take the bus to work",
+    "reason": null
+  },
+  {
+    "id": "R09",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R09",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "present",
+    "quote": "I work part time in a bookshop",
+    "reason": null
+  },
+  {
+    "id": "R10",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R10",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R10",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "The bus ride is pretty quiet, and I usually get to work just in time.",
+    "reason": null
+  },
+  {
+    "id": "R10",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R10",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R11",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I open the shop with a colleague",
+    "reason": null
+  },
+  {
+    "id": "R11",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R11",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "Most of the day is spent helping customers, restocking shelves, and organizing books.",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R12",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R12",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R12",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I take the bus to work",
+    "reason": null
+  },
+  {
+    "id": "R12",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "present",
+    "quote": "My sister lives with me",
+    "reason": null
+  },
+  {
+    "id": "R12",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "my colleague helps me open the shop",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R13",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R13",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R13",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I take the bus to work",
+    "reason": null
+  },
+  {
+    "id": "R13",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "present",
+    "quote": "I live with my sister",
+    "reason": null
+  },
+  {
+    "id": "R13",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R14",
+    "fact": "wake around seven",
+    "scope": "target",
+    "rating": "present",
+    "quote": "wake up around seven",
+    "reason": null
+  },
+  {
+    "id": "R14",
+    "fact": "feed our cat",
+    "scope": "target",
+    "rating": "present",
+    "quote": "feed the cat",
+    "reason": null
+  },
+  {
+    "id": "R14",
+    "fact": "take the bus to work",
+    "scope": "target",
+    "rating": "present",
+    "quote": "I take the bus to work",
+    "reason": null
+  },
+  {
+    "id": "R14",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "present",
+    "quote": "My sister lives with me",
+    "reason": null
+  },
+  {
+    "id": "R14",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R15",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "uncertain",
+    "quote": "I open the door, check the stock, and make sure everything is tidy. My colleague helps me with the heavier tasks, like restocking shelves.",
+    "reason": "개점과 동료의 다른 업무는 언급되나 공동 개점인지는 모호함."
+  },
+  {
+    "id": "R15",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R15",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "help them find books",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  },
+  {
+    "id": "R16",
+    "fact": "open the shop with a colleague",
+    "scope": "target",
+    "rating": "present",
+    "quote": "My colleague and I open the shop together",
+    "reason": null
+  },
+  {
+    "id": "R16",
+    "fact": "live with my sister",
+    "scope": "guard",
+    "rating": "absent",
+    "quote": null,
+    "reason": null
+  },
+  {
+    "id": "R16",
+    "fact": "work part time in a bookshop",
+    "scope": "guard",
+    "rating": "uncertain",
+    "quote": "I help people find books",
+    "reason": "가게 또는 서점 업무 단서는 있지만 서점 시간제 근무까지 확인되지 않음."
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "local_review_role": "One instruction-clarity pass, no response text or labels",
+  "calls": 1,
+  "prompt_tokens": 2036,
+  "output_tokens": 406,
+  "accepted": [
+    {
+      "issue": 2,
+      "change": "Define point estimate over jointly definite C1-C4 question/seed blocks; zero jointly complete blocks gives null case estimate. Preserve all-block unknown bounds."
+    }
+  ],
+  "not_adopted": [
+    {
+      "issue": 1,
+      "reason": "Required verbatim spans/reason and separate between/within-clause rules already present; calibration will resolve borderline interpretations without fabricating labels/examples."
+    },
+    {
+      "issue": 3,
+      "reason": "Auxiliary-only role already explicitly stated; no extra metric or endpoint introduced."
+    }
+  ],
+  "wording_correction": "Qwen used 임상 금기 where clinical gold/diagnosis was intended; do not quote as methodological authority."
+}

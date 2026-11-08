@@ -1,0 +1,66 @@
+{
+  "D-bookshop-Q1-S1-C1": {
+    "previous_id": "D-bookshop-hub_category-normal-morning-20261105",
+    "response_file_sha256": "bbb6a29940a3ce096b390cc76f64d4160e7b33d6b52d6ab333eb7afb81c82360"
+  },
+  "D-bookshop-Q1-S1-C2": {
+    "previous_id": "D-bookshop-hub_category-derailment-morning-20261105",
+    "response_file_sha256": "5574de1ceb362ee3730c8528db2567c983743f6b36867d7f4e990178317b3258"
+  },
+  "D-bookshop-Q1-S1-C3": {
+    "previous_id": "D-bookshop-source_operationalized-normal-morning-20261105",
+    "response_file_sha256": "8ee7050b08d3dc87c851bf8e624769225ade588abe47ecd797c54fb3901a2186"
+  },
+  "D-bookshop-Q1-S1-C4": {
+    "previous_id": "D-bookshop-source_operationalized-derailment-morning-20261105",
+    "response_file_sha256": "06bbb0a807de8497af787705b13a7f53cb27deeacd3d47e2ff02ee6b549545c0"
+  },
+  "D-bookshop-Q1-S2-C1": {
+    "previous_id": "D-bookshop-hub_category-normal-morning-20261106",
+    "response_file_sha256": "e98aa37f4ee7ef9186cf15a41933bc21b98bea6fa58ad4ecb5a7cc192125cfa9"
+  },
+  "D-bookshop-Q1-S2-C2": {
+    "previous_id": "D-bookshop-hub_category-derailment-morning-20261106",
+    "response_file_sha256": "a2daf985caf3bdce6b85e5f08ff8d36ba056e4f457d039c7a1ed29d1291073cf"
+  },
+  "D-bookshop-Q1-S2-C3": {
+    "previous_id": "D-bookshop-source_operationalized-normal-morning-20261106",
+    "response_file_sha256": "a4c25db0278a38f1a425885ced8ef9f61a2d52b6b87945c9871971fc19c62888"
+  },
+  "D-bookshop-Q1-S2-C4": {
+    "previous_id": "D-bookshop-source_operationalized-derailment-morning-20261106",
+    "response_file_sha256": "3278985bfb3bb81cac2b7c87762771a6db08045f72bc72a3e543e48d1b142e59"
+  },
+  "D-bookshop-Q2-S1-C1": {
+    "previous_id": "D-bookshop-hub_category-normal-work-20261105",
+    "response_file_sha256": "331093e77e3291b60e2f4622853698cd5fced0d72f55a22942ae4e2da56b4f02"
+  },
+  "D-bookshop-Q2-S1-C2": {
+    "previous_id": "D-bookshop-hub_category-derailment-work-20261105",
+    "response_file_sha256": "fe06c14d9774471b661926c69fc98878844a7ca9866b41da523dc832eaed7599"
+  },
+  "D-bookshop-Q2-S1-C3": {
+    "previous_id": "D-bookshop-source_operationalized-normal-work-20261105",
+    "response_file_sha256": "bc012509a835f7a6cba08127bfc811139c13364d55460f86ab8ffb6197efcc6e"
+  },
+  "D-bookshop-Q2-S1-C4": {
+    "previous_id": "D-bookshop-source_operationalized-derailment-work-20261105",
+    "response_file_sha256": "60c57565634b88e0160534a207c5aedccd0237a00593b02b8efec28080566277"
+  },
+  "D-bookshop-Q2-S2-C1": {
+    "previous_id": "D-bookshop-hub_category-normal-work-20261106",
+    "response_file_sha256": "c84aad21931f82e5ea3a47ea7c93ff3dec5b675ad86782872a1f3dedbdc19c94"
+  },
+  "D-bookshop-Q2-S2-C2": {
+    "previous_id": "D-bookshop-hub_category-derailment-work-20261106",
+    "response_file_sha256": "4d34d48e8cb0fe6b541bd5ce90c49ff2aba8deb22e06aef50283598b5036dd1b"
+  },
+  "D-bookshop-Q2-S2-C3": {
+    "previous_id": "D-bookshop-source_operationalized-normal-work-20261106",
+    "response_file_sha256": "f63965752be77b8058d9809eec8bcd297f581ee23bedc7ef6ff3919f9dea4792"
+  },
+  "D-bookshop-Q2-S2-C4": {
+    "previous_id": "D-bookshop-source_operationalized-derailment-work-20261106",
+    "response_file_sha256": "966818bcbe1156e194bdf27230651906502c54c9d7681cfeecf4c56805f8083b"
+  }
+}

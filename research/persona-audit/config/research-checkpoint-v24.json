@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "stage": 3,
+  "previous": "config/research-checkpoint-v23.json",
+  "corpus_exploration": "closed",
+  "masked_readings": 30,
+  "first_B_readings_DER3": 10,
+  "new_utterances": 0,
+  "clinical_ratings": 0,
+  "protocol_commit": "ef526f0",
+  "masked_ratings_commit": "c2c2131",
+  "result": "analysis/team-strength-v01/results.json",
+  "next": "Decide whether to release the controlled main experiment; generated data and independent clinical assessment remain separate, unreleased steps."
+}

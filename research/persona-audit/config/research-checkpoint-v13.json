@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-04",
+  "previous_checkpoint": "config/research-checkpoint-v12.json",
+  "status": "Bounded post-hoc INC3 mechanism accounting complete",
+  "spec": "config/inc3-mechanism-v01.json",
+  "report": "share/inc3-mechanism-v01/INC3_어휘구성분해보고서.md",
+  "verification": "analysis/inc3-mechanism-v01/verification.json",
+  "source_rows": 96,
+  "primary_N0_INC3_rows": 24,
+  "new_utterances": 0,
+  "new_embeddings": 0,
+  "clinical_ratings": 0,
+  "paid_api_calls": 0,
+  "local_qwen_calls": 6,
+  "qwen_input_tokens": 5914,
+  "qwen_output_tokens": 2460,
+  "invalid_local_quotes": 2,
+  "main_finding": "Opposite full-text MATTR changes are predominantly accounted for by opposite function-list repetition losses; non-list MATTR25 changes are small and similar",
+  "limitations": [
+    "Post-hoc exact accounting is not causal mediation",
+    "Operational word lists are not contextual POS tags",
+    "Non-list MATTR25 close to ceiling",
+    "Generator/protocol/feedback confounding remains",
+    "One persona and six questions; no independent output repetitions"
+  ],
+  "next_candidate": "Superseded: roadmap stage 2 main comparison specification, not immediate manuscript drafting",
+  "remote_push": false,
+  "superseded_by": "config/research-checkpoint-v14.json"
+}

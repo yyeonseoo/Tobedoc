@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-08",
+  "previous": "config/research-checkpoint-v19.json",
+  "roadmap_stage": 3,
+  "development_cases": 1,
+  "matched_candidate_pairs": 10,
+  "discussion_pairs": 3,
+  "new_utterances": 0,
+  "new_AI_ratings": 0,
+  "clinical_ratings": 0,
+  "source": "analysis/main-boundary-v01/selection.json",
+  "next": "Explore the same textual distinction in existing team data by within-generator, within-question comparisons; account for known calibration overlap and different collection procedures."
+}

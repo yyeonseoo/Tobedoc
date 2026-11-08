@@ -1,0 +1,140 @@
+{
+  "base_case": {
+    "MFC-Profile": {
+      "Identifying data": {
+        "Age": "32",
+        "Sex": "Female",
+        "Marital status": "Single",
+        "Occupation": "Bookshop assistant"
+      },
+      "Chief complaint": "My sister suggested this appointment because I sometimes hear a voice when no one is nearby.",
+      "Present illness": {
+        "Symptom": {
+          "Name": "Intermittent auditory hallucinations",
+          "Length": "18 months",
+          "Alleviating factor": "A quiet routine",
+          "Exacerbating factor": "Poor sleep",
+          "Triggering factor": "No clear trigger",
+          "Stressor": "none"
+        }
+      },
+      "Past psychiatric history": {
+        "Presence": "Yes",
+        "Description": "A previous clinician recorded schizophrenia; this fictional history is not a diagnostic demonstration."
+      },
+      "Past medical history": {
+        "Presence": "No",
+        "History": "No known chronic physical illness"
+      },
+      "Current medication": {
+        "Medication name": "Not specified",
+        "Duration": "Not specified",
+        "Compliance": "Not specified",
+        "Effect": "Not specified",
+        "Side effect": "Not specified"
+      },
+      "Family history": {
+        "Diagnosis": "None known",
+        "Substance use": "None known"
+      },
+      "Developmental/social history": {
+        "Childhood history": {
+          "Home environment": "Stable",
+          "Members of family": "Parents and a sister",
+          "Social environment": "A few close friends"
+        },
+        "School history": "Finished secondary school",
+        "Work history": "Works part time in the same bookshop"
+      },
+      "Impulsivity": {
+        "Suicidal ideation": "Low",
+        "Suicidal plan": "Absence",
+        "Suicidal attempt": "Absence",
+        "Self-mutilating behavior risk": "Low",
+        "Homicide risk": "Low"
+      }
+    },
+    "MFC-History": "I live with my sister and work part time in a bookshop. On workdays I wake around seven, make tea and toast, feed our cat, and take the bus to work. I usually open the shop with a colleague. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I can describe my routine, but I do not know medical terminology.",
+    "MFC-Behavior": {
+      "General appearance/attitude/behavior": "A 32-year-old woman, casually dressed, calm and willing to answer the current question.",
+      "Mood": "Neutral",
+      "Affect": "Mildly restricted",
+      "Spontaneity": "Present",
+      "Verbal productivity": "Normal",
+      "Tone of voice": "Not assessable in text",
+      "Social judgement": "No additional impairment specified",
+      "Insight": "Acknowledges the unusual voice but is unsure what it means",
+      "Reliability": "No deliberate deception specified",
+      "Perception": "Reports an intermittent voice when nobody is nearby",
+      "Thought process": "Normal",
+      "Thought content": "No fixed delusional belief specified"
+    }
+  },
+  "instructions": {
+    "Normal": "Keep a consistent line of explanation. Let each new clause or sentence follow meaningfully from what you have just said, with clear references. Answer as the patient, without naming or discussing the thought-process setting.",
+    "Derailment": "Begin with a relevant reply, then let the spoken train of thought move through weakly connected or unrelated ideas. Connections between successive clauses or sentences may be indirect or difficult for a listener to follow. Do not explain or label the pattern. Do not substitute word salad, forced rapid speech, or a deliberate refusal to answer."
+  },
+  "length_instruction": "Output constraint: write one first-person patient answer in English using between 100 and 140 words inclusive. Count contractions and hyphenated compounds as single words. Return only the spoken answer, without a heading, a word count, an explanation of these instructions, or stage directions. Retain the supplied case facts; do not change the patient's diagnosis or thought-process setting to satisfy the length constraint.",
+  "controls": [
+    {
+      "id": "C0",
+      "name": "neutral",
+      "rule": "Omit Thought process and Experimental thought-process instruction; preserve all other profile and output fields"
+    },
+    {
+      "id": "C1",
+      "name": "category_normal",
+      "reuse_arm": "hub_category",
+      "thought": "Normal"
+    },
+    {
+      "id": "C2",
+      "name": "category_derailment",
+      "reuse_arm": "hub_category",
+      "thought": "Derailment"
+    },
+    {
+      "id": "C3",
+      "name": "operational_normal",
+      "reuse_arm": "source_operationalized",
+      "thought": "Normal"
+    },
+    {
+      "id": "C4",
+      "name": "operational_derailment",
+      "reuse_arm": "source_operationalized",
+      "thought": "Derailment"
+    },
+    {
+      "id": "C5",
+      "name": "coherent_multitopic",
+      "rule": "Same as neutral with benign instruction",
+      "instruction": "Discuss several aspects of the requested activity, keeping the transitions understandable through ordinary temporal, causal, or elaborative connections. Keep answering the question. Do not name this instruction."
+    }
+  ],
+  "seeds": [
+    20261105,
+    20261106
+  ],
+  "runtime_lock": {
+    "version": {
+      "version": "0.40.6"
+    },
+    "template_sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4",
+    "parameters_sha256": "d6b2700710ae824c6690a7b47383ea3836790cb59d52dc3018ad7b5530faf124",
+    "options": {
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "repeat_penalty": 1.0,
+      "num_ctx": 16384,
+      "num_predict": 768
+    },
+    "think": false,
+    "context_policy": "One user turn per fresh conversation; no shared generated history; identical question in all conditions",
+    "model": "qwen3:14b",
+    "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "quantization": "Q4_K_M"
+  },
+  "source_template": "PatientHub data/prompts/client/psyche.yaml, English system_prompt; local PSYCHE-style port"
+}

@@ -1,0 +1,216 @@
+{
+  "date": "2026-11-01",
+  "verification_level": "Selected existing result artifacts read and checked; NOT a new full raw-data replay or clinical validation",
+  "team_reported_not_recomputed": {
+    "source": "/Users/ohs/Downloads/투비닥터_중간보고서_MindCraft.pptx",
+    "source_sha256": "bbf6bc7cd40097d5d2e57b53a31bdc8117fe0cb5f64301e080e00e868d36e348",
+    "classification_auroc": [
+      0.782,
+      0.594
+    ],
+    "generation": {
+      "reported_answers_per_generator": 114,
+      "generators": [
+        "Claude",
+        "GPT-4.1"
+      ],
+      "intended_vs_blind_llm_severity_rho": 0.89,
+      "no_metric_passed_both_tracking_and_control_discrimination": true
+    },
+    "localization": {
+      "reported_overlap": 0.41,
+      "reported_chance": 0.25,
+      "reported_p": 0.001,
+      "status": "exploratory; raw spans, null model, clustering and selection procedure not linked in this synthesis"
+    }
+  },
+  "local_persona_instruction_audit": {
+    "response_records_in_four_main_tasks_including_followup": 240,
+    "not_independent_patients_or_unique_texts": true,
+    "backbone_scope": "Prompt modules ported to Qwen, not native-framework efficacy",
+    "verbosity": {
+      "simple_verbose_words": 127.1875,
+      "psi_verbose_words": 238.5625,
+      "sim_verbose_words": 309.6875,
+      "simple_requested_refs": 64,
+      "psi_requested_refs": 62,
+      "sim_requested_refs": 64,
+      "denominator": 64
+    },
+    "disclosure": {
+      "brief_refs": 24,
+      "psi_refs": 13,
+      "sim_refs": 19,
+      "denominator": 24
+    },
+    "downplaying_scope": "표현 완화 문구와 주어진 값과 다른 수치 보고를 분리했다. PatientSim의 수치 축소는 원문 underreporting 요구와 함께 해석한다.",
+    "numeric_repair_not_reliable_default": {
+      "psi": false,
+      "sim": false
+    }
+  },
+  "disclosure_transfer": {
+    "responses": 32,
+    "cases": 2,
+    "primary_interaction": -0.5416666666666667,
+    "prewritten_descriptive_rule_met": true,
+    "meaning": "Source-value alias identification changed with question order and instruction; not proof of clinical guardedness"
+  },
+  "topic_measurement": {
+    "responses_reused": 48,
+    "requested_refs": {
+      "plain": [
+        48,
+        48
+      ],
+      "verbose": [
+        48,
+        48
+      ],
+      "tangent": [
+        48,
+        48
+      ]
+    },
+    "adjacent_cos_tangent_minus_verbose": -0.038558647807359854,
+    "other_vs_requested_insertion_adjacent_increased": 20,
+    "insertion_comparisons": 48
+  },
+  "external_measurement": {
+    "source_records": 1600,
+    "eligible": 1542,
+    "articles": 100,
+    "systems": 16,
+    "adjacent_cos": {
+      "summary_spearman": 0.03172687265499582,
+      "article_cluster_ci95": [
+        -0.03931682453707933,
+        0.09999324075975108
+      ],
+      "bootstrap_valid": 2000,
+      "within_article_mean_spearman": 0.060393748950852935,
+      "within_article_valid": 100,
+      "within_article_total": 100,
+      "system_mean_spearman": 0.08823529411764706,
+      "systems": 16
+    },
+    "scope": "One OS embedding backend, general-news summaries, posthoc boundary amendment; not all semantic metrics or psychiatric validation"
+  },
+  "psyche_controls": {
+    "effective_responses": 32,
+    "origins": {
+      "new_local_call": 28,
+      "exact_cache": 4
+    },
+    "arms": [
+      {
+        "arm": "direct_numeric",
+        "target_hits": 6,
+        "positive_pairs": 4,
+        "mean_long_minus_short_words": 85.75
+      },
+      {
+        "arm": "hub_label",
+        "target_hits": null,
+        "positive_pairs": 1,
+        "mean_long_minus_short_words": 3.75
+      },
+      {
+        "arm": "hub_json_numeric",
+        "target_hits": 7,
+        "positive_pairs": 4,
+        "mean_long_minus_short_words": 65.75
+      },
+      {
+        "arm": "hub_tail_numeric",
+        "target_hits": 4,
+        "positive_pairs": 4,
+        "mean_long_minus_short_words": 90.5
+      }
+    ],
+    "decision": "retain_for_bounded_output_control_only"
+  },
+  "psyche_thought_development": {
+    "development_complete": true,
+    "development_responses": 16,
+    "holdout_responses": 0,
+    "holdout_requests_sealed": 32,
+    "clinical_ratings_obtained": 0,
+    "clinical_improvement_claim": false,
+    "automatic_scores_are_not_thought_disorder_scores": true,
+    "arms": [
+      {
+        "arm": "hub_category",
+        "responses": 8,
+        "target_hits": 6,
+        "normal_mean_words": 111.25,
+        "derailment_mean_words": 100.75,
+        "exact_equal_pairs": 0,
+        "pairs": 4,
+        "length_sensitivity_pairs": 2,
+        "segmentation_errors": 0,
+        "answers_with_literal_label": 0
+      },
+      {
+        "arm": "source_operationalized",
+        "responses": 8,
+        "target_hits": 7,
+        "normal_mean_words": 108.25,
+        "derailment_mean_words": 112,
+        "exact_equal_pairs": 0,
+        "pairs": 4,
+        "length_sensitivity_pairs": 3,
+        "segmentation_errors": 0,
+        "answers_with_literal_label": 0
+      }
+    ]
+  },
+  "cost_this_synthesis": {
+    "new_generation": 0,
+    "new_judge_calls": 0,
+    "installs": 0,
+    "downloads": 0,
+    "old_data_deleted": 0,
+    "experiments_automatically_resumed": false
+  },
+  "source_hashes": {
+    "analysis/integrated-checkpoint-v05/results.json": "396ee6b27ecb41eee67409eb91c1b6b74a1c22ae28c64a2980f8eb65dfcfefcc",
+    "analysis/disclosure-transfer-v01/results.json": "3636b2fcb7466ca580122706eccbf3f416e2d3471674948da0c2051001e6692f",
+    "analysis/topic-local-separation-v01/results.json": "c35f3d930a436150adbe1e0fa5f6c0f759cd00b7ca12914cdb8235ba9057000f",
+    "analysis/measurement-external-v03/results.json": "5d969c1215468fa0285281885839741829ade46b911c91b00e31959eaf2f84f5",
+    "analysis/psyche-controls-v01/summary.json": "500a59cf48ec085e88f3ce7280baf999c3eb5425051f147b8d51600af65cdef2",
+    "analysis/psyche-thought-v01/development-summary.json": "f62a76a3c509c57fca7df10c03b500673c76a51e35d98075dcf832f7451a290d",
+    "config/research-checkpoint-v06.json": "7129a23df37cf543c3107d22ee1fb4f1f5b7b73b314ce6d7dee7794631bd187a",
+    "config/research-checkpoint-v07.json": "e2bc8f12c1226f5e780ba85a17c2688528e93dfba5826bb17e0f46c3775f06d3",
+    "share/overnight-completion-v01/README.ko.md": "55ae5bbc088a4438436ef028e3fbe6cadc0e6e042f2d266466534b9eebcb6133"
+  },
+  "update_20261104": {
+    "raw_corpus_acquired": true,
+    "validated_rows": 228,
+    "validated_per_generator": 114,
+    "description_acquired": true,
+    "new_analysis": "analysis/team-corpus-v01/results.json",
+    "original_ratings_recomputed": false,
+    "localization_recomputed": false,
+    "description_reported_rho_not_recomputed": {
+      "Claude": 0.89,
+      "GPT-4.1": 0.61
+    },
+    "generation_protocols_differ": true,
+    "claude_pilot_ids": null
+  },
+  "inc3_followup_20261104": {
+    "status": "complete",
+    "report": "share/inc3-mechanism-v01/INC3_어휘구성분해보고서.md",
+    "verification": "analysis/inc3-mechanism-v01/verification.json",
+    "function_repeat_loss_delta": {
+      "Claude": 0.23908138618295469,
+      "GPT-4.1": -0.06992586309073168
+    },
+    "nonlist_mattr25_delta": {
+      "Claude": 0.009275110425566169,
+      "GPT-4.1": 0.0092038894153502
+    },
+    "scope": "post-hoc lexical accounting; not clinical/causal validation"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "scope": "evidence suggestions only; one fresh context per batch",
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "Extract evidence only from these four synthetic answers for two background facts: living with a sister, and working part time in a bookshop. For each answer return JSON keyed by ID with two short exact substrings (sister and job) or null. Include partial clues, do not infer status or generate dialogue. Input: [{\"id\": \"R01\", \"question\": \"Tell me about what you do at the bookshop, from opening until the end of your shift.\", \"text\": \"I usually get up around seven, make a cup of tea, and have some toast. Then I feed the cat before heading to the shop. I take the bus to work and meet my colleague to open the shop. We unlock the doors, turn on the lights, and start arranging the books. I spend most of my time helping customers, restocking shelves, and keeping the shop tidy. I like talking to people and recommending books. My shift ends around four, and I take the bus home. I try to keep a quiet routine because that seems to help me feel more stable.\"}, {\"id\": \"R02\", \"question\": \"Tell me about what you do at the bookshop, from opening until the end of your shift.\", \"text\": \"I get there around seven thirty, usually. My colleague and I open the shop together—check the locks, turn on the lights, make sure the display shelves look neat. Then I spend most of the day restocking, helping customers find books, and tidying up. There's not too much else to do really. I like the quiet of it, actually. It helps me focus. Sometimes, when it's really still in the shop, I think I hear a voice, but I can't be sure. It's not every day, just now and then. I just try to keep going with my work.\"}, {\"id\": \"R03\", \"question\": \"Tell me about what you do at the bookshop, from opening until the end of your shift.\", \"text\": \"I usually get up around seven, make a cup of tea, and have some toast. Then I feed the cat before heading to the shop. My shift starts at nine, and I open the shop with a colleague. We tidy up the displays, check the stock, and make sure everything is ready for customers. Throughout the day, I help customers find books, restock shelves, and sometimes run the till. The work is pretty routine, and I find it calming. I like the quiet of the shop, and it helps me feel more in control. I usually finish around five and take the bus home.\"}, {\"id\": \"R04\", \"question\": \"Tell me about what you do at the bookshop, from opening until the end of your shift.\", \"text\": \"I get there around eight, usually. My colleague and I open the shop together—unlock the door, switch on the lights, and tidy up a bit. Then we start arranging the books, making sure the shelves look neat. Throughout the day, I help customers find things, maybe restock some shelves when they get too low. I also take care of the cash register, so I handle the payments and keep track of the till. The busiest times are in the afternoons, when more people come in. I try to stay calm and friendly, even when it gets a bit hectic. By the time my shift ends, I just close up, lock the door, and go home.\"}]",
+    "think": false,
+    "format": "json",
+    "stream": false,
+    "options": {
+      "seed": 20261105,
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 450
+    }
+  },
+  "raw": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-05T06:55:40.624641Z",
+    "response": "{\"R01\": {\"sister\": null, \"job\": \"bookshop\"} }",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5685443959,
+    "load_duration": 1545087167,
+    "prompt_eval_count": 734,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2575772000,
+    "eval_count": 20,
+    "eval_duration": 1554218000
+  }
+}

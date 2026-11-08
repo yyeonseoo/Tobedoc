@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-04",
+  "previous_checkpoint": "config/research-checkpoint-v14.json",
+  "roadmap_stage": 2,
+  "status": "Comparison architecture specified and source audit completed; human calibration pending, stage2 not fully complete",
+  "design": "share/main-comparison-v01/본실험_한장설계.md",
+  "spec": "config/main-comparison-v01.json",
+  "evidence": "analysis/main-comparison-v01/evidence-audit.json",
+  "user_packet": "share/main-comparison-v01/블라인드16개_검토.md",
+  "annotations": "share/main-comparison-v01/annotations.json",
+  "current_results": [
+    "Existing 48-response semantic formulas and 48 matched insertions recomputed; 20/48 other-topic insertions increase adjacent cosine",
+    "107 prior source hashes checked",
+    "16 original blinded calibration items prepared; zero ratings completed"
+  ],
+  "user_input": "User can initially review alone; no independent interrater reliability or clinical gold claimed",
+  "next_step": "User reviews B01-B16 in batches; freeze rubric from documented ambiguities, then finalize prompt/fact/case manifests and a bounded stage3 generation decision",
+  "new_generation": 0,
+  "new_embeddings": 0,
+  "new_clinical_ratings": 0,
+  "local_qwen_instruction_review_calls": 1,
+  "old_holdout_responses": 0,
+  "month_horizon_preserved": true,
+  "manuscript_next": false
+}

@@ -1,0 +1,420 @@
+{
+  "metric_file_sha256": "1bc111897c92eb5d486f31038dcf9f7727a24120c8bce0a2871c0238ae0f0fb4",
+  "corpus_sha256": "5b8d11491f2ab5fc4ef0612e6ddc28411c59e70719ecf3147fd400775185c116",
+  "by_source": {
+    "Claude": {
+      "counts": {
+        "N0": {
+          "hits": 1,
+          "boundaries": 97,
+          "missing": 0
+        },
+        "NMULTI": {
+          "hits": 1,
+          "boundaries": 114,
+          "missing": 0
+        },
+        "CIRC2": {
+          "hits": 5,
+          "boundaries": 95,
+          "missing": 0
+        },
+        "DER1": {
+          "hits": 2,
+          "boundaries": 100,
+          "missing": 0
+        },
+        "DER2": {
+          "hits": 32,
+          "boundaries": 115,
+          "missing": 0
+        },
+        "DER3": {
+          "hits": 84,
+          "boundaries": 196,
+          "missing": 0
+        },
+        "PER1": {
+          "hits": 3,
+          "boundaries": 105,
+          "missing": 0
+        },
+        "PER2": {
+          "hits": 21,
+          "boundaries": 126,
+          "missing": 0
+        },
+        "PER3": {
+          "hits": 143,
+          "boundaries": 292,
+          "missing": 0
+        }
+      },
+      "contrasts": {
+        "DER2-PER2": {
+          "pp": {
+            "Q01": 8.333,
+            "Q02": 5.952,
+            "Q04": 26.923,
+            "Q05": 12.462,
+            "Q06": 6.268
+          },
+          "median_pp": 8.333,
+          "win": 5,
+          "tie": 0,
+          "loss": 0,
+          "missing": 0,
+          "representative_q": "Q01"
+        },
+        "DER2-CIRC2": {
+          "pp": {
+            "Q01": 16.667,
+            "Q02": 2.521,
+            "Q04": 50.0,
+            "Q05": 9.0,
+            "Q06": 37.037
+          },
+          "median_pp": 16.667,
+          "win": 5,
+          "tie": 0,
+          "loss": 0,
+          "missing": 0,
+          "representative_q": "Q01"
+        },
+        "DER2-NMULTI": {
+          "pp": {
+            "Q01": 16.667,
+            "Q02": 9.74,
+            "Q04": 50.0,
+            "Q05": 24.0,
+            "Q06": 37.037
+          },
+          "median_pp": 24.0,
+          "win": 5,
+          "tie": 0,
+          "loss": 0,
+          "missing": 0,
+          "representative_q": "Q05"
+        },
+        "CIRC2-NMULTI": {
+          "pp": {
+            "Q01": 0.0,
+            "Q02": 7.219,
+            "Q04": 0.0,
+            "Q05": 15.0,
+            "Q06": 0.0
+          },
+          "median_pp": 0.0,
+          "win": 2,
+          "tie": 3,
+          "loss": 0,
+          "missing": 0,
+          "representative_q": "Q01"
+        },
+        "PER2-NMULTI": {
+          "pp": {
+            "Q01": 8.333,
+            "Q02": 3.788,
+            "Q04": 23.077,
+            "Q05": 11.538,
+            "Q06": 30.769
+          },
+          "median_pp": 11.538,
+          "win": 5,
+          "tie": 0,
+          "loss": 0,
+          "missing": 0,
+          "representative_q": "Q05"
+        },
+        "DER3-PER3": {
+          "pp": {
+            "Q01": 13.485,
+            "Q02": -10.821,
+            "Q04": 10.0,
+            "Q05": -11.057,
+            "Q06": -21.486
+          },
+          "median_pp": -10.821,
+          "win": 2,
+          "tie": 0,
+          "loss": 3,
+          "missing": 0,
+          "representative_q": "Q02"
+        }
+      },
+      "trends": {
+        "DER": {
+          "strict": 3,
+          "nondecreasing": 4,
+          "missing": 0,
+          "rates_pp": {
+            "Q01": [
+              0.0,
+              16.667,
+              56.667
+            ],
+            "Q02": [
+              0.0,
+              14.286,
+              38.235
+            ],
+            "Q04": [
+              0.0,
+              50.0,
+              50.0
+            ],
+            "Q05": [
+              4.762,
+              24.0,
+              38.095
+            ],
+            "Q06": [
+              4.545,
+              37.037,
+              36.538
+            ]
+          }
+        },
+        "PER": {
+          "strict": 5,
+          "nondecreasing": 5,
+          "missing": 0,
+          "rates_pp": {
+            "Q01": [
+              0.0,
+              8.333,
+              43.182
+            ],
+            "Q02": [
+              0.0,
+              8.333,
+              49.057
+            ],
+            "Q04": [
+              8.696,
+              23.077,
+              40.0
+            ],
+            "Q05": [
+              0.0,
+              11.538,
+              49.153
+            ],
+            "Q06": [
+              4.167,
+              30.769,
+              58.025
+            ]
+          }
+        }
+      }
+    },
+    "GPT-4.1": {
+      "counts": {
+        "N0": {
+          "hits": 0,
+          "boundaries": 107,
+          "missing": 0
+        },
+        "NMULTI": {
+          "hits": 2,
+          "boundaries": 111,
+          "missing": 0
+        },
+        "CIRC2": {
+          "hits": 0,
+          "boundaries": 138,
+          "missing": 0
+        },
+        "DER1": {
+          "hits": 2,
+          "boundaries": 113,
+          "missing": 0
+        },
+        "DER2": {
+          "hits": 2,
+          "boundaries": 112,
+          "missing": 0
+        },
+        "DER3": {
+          "hits": 3,
+          "boundaries": 114,
+          "missing": 0
+        },
+        "PER1": {
+          "hits": 5,
+          "boundaries": 145,
+          "missing": 0
+        },
+        "PER2": {
+          "hits": 14,
+          "boundaries": 180,
+          "missing": 0
+        },
+        "PER3": {
+          "hits": 22,
+          "boundaries": 154,
+          "missing": 0
+        }
+      },
+      "contrasts": {
+        "DER2-PER2": {
+          "pp": {
+            "Q01": -5.556,
+            "Q02": -8.696,
+            "Q04": 3.141,
+            "Q05": -12.821,
+            "Q06": -5.714
+          },
+          "median_pp": -5.714,
+          "win": 1,
+          "tie": 0,
+          "loss": 4,
+          "missing": 0,
+          "representative_q": "Q06"
+        },
+        "DER2-CIRC2": {
+          "pp": {
+            "Q01": 0.0,
+            "Q02": 0.0,
+            "Q04": 9.524,
+            "Q05": 0.0,
+            "Q06": 0.0
+          },
+          "median_pp": 0.0,
+          "win": 1,
+          "tie": 4,
+          "loss": 0,
+          "missing": 0,
+          "representative_q": "Q01"
+        },
+        "DER2-NMULTI": {
+          "pp": {
+            "Q01": 0.0,
+            "Q02": -4.167,
+            "Q04": 9.524,
+            "Q05": -5.263,
+            "Q06": 0.0
+          },
+          "median_pp": 0.0,
+          "win": 1,
+          "tie": 2,
+          "loss": 2,
+          "missing": 0,
+          "representative_q": "Q01"
+        },
+        "CIRC2-NMULTI": {
+          "pp": {
+            "Q01": 0.0,
+            "Q02": -4.167,
+            "Q04": 0.0,
+            "Q05": -5.263,
+            "Q06": 0.0
+          },
+          "median_pp": 0.0,
+          "win": 0,
+          "tie": 3,
+          "loss": 2,
+          "missing": 0,
+          "representative_q": "Q01"
+        },
+        "PER2-NMULTI": {
+          "pp": {
+            "Q01": 5.556,
+            "Q02": 4.529,
+            "Q04": 6.383,
+            "Q05": 7.557,
+            "Q06": 5.714
+          },
+          "median_pp": 5.714,
+          "win": 5,
+          "tie": 0,
+          "loss": 0,
+          "missing": 0,
+          "representative_q": "Q06"
+        },
+        "DER3-PER3": {
+          "pp": {
+            "Q01": -21.622,
+            "Q02": 4.396,
+            "Q04": -3.448,
+            "Q05": -18.75,
+            "Q06": -17.857
+          },
+          "median_pp": -17.857,
+          "win": 1,
+          "tie": 0,
+          "loss": 4,
+          "missing": 0,
+          "representative_q": "Q06"
+        }
+      },
+      "trends": {
+        "DER": {
+          "strict": 0,
+          "nondecreasing": 2,
+          "missing": 0,
+          "rates_pp": {
+            "Q01": [
+              4.762,
+              0.0,
+              0.0
+            ],
+            "Q02": [
+              0.0,
+              0.0,
+              11.538
+            ],
+            "Q04": [
+              0.0,
+              9.524,
+              0.0
+            ],
+            "Q05": [
+              4.762,
+              0.0,
+              0.0
+            ],
+            "Q06": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "PER": {
+          "strict": 3,
+          "nondecreasing": 3,
+          "missing": 0,
+          "rates_pp": {
+            "Q01": [
+              3.125,
+              5.556,
+              21.622
+            ],
+            "Q02": [
+              0.0,
+              8.696,
+              7.143
+            ],
+            "Q04": [
+              7.143,
+              6.383,
+              3.448
+            ],
+            "Q05": [
+              3.226,
+              12.821,
+              18.75
+            ],
+            "Q06": [
+              3.704,
+              5.714,
+              17.857
+            ]
+          }
+        }
+      }
+    }
+  }
+}

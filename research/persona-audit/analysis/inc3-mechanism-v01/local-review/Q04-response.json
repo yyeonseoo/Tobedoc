@@ -1,0 +1,14 @@
+{
+  "model": "qwen3:14b",
+  "created_at": "2026-11-04T06:35:05.547677Z",
+  "response": "{\n  \"items\": [\n    {\n      \"id\": \"0ec61882c5f5\",\n      \"observation\": \"The text uses a balanced mix of concrete and connecting words, forming coherent, sentence-like structures.\",\n      \"quotes\": [\n        \"It's quite slow at the start, but it pulls you in because everyone in the town seems to be hiding something.\",\n        \"What I liked most was that it wasn't just about who did it, it was about how the whole town reacts, the gossip, the families turning on each other.\"\n      ]\n    },\n    {\n      \"id\": \"22dbcceb36cc\",\n      \"observation\": \"The text uses a moderate amount of connecting words and concrete details, forming mostly sentence-like structures with some list-like elements.\",\n      \"quotes\": [\n        \"I was just flicking through looking for something to watch after work one evening, and the trailer caught my eye.\",\n        \"The characters were actually pretty decent, and it wasn't too over the top.\"\n      ]\n    },\n    {\n      \"id\": \"971c93d2f835\",\n      \"observation\": \"The text contains a high frequency of concrete words with minimal connecting words, forming a list-like structure with frequent ambiguity.\",\n      \"quotes\": [\n        \"Recently, the chase was blue, kitchen lights when running ball over the sky dinner plate football matches, spice up the corner flat, good noise fridge tells laughter on Monday clock.\",\n        \"Shouting the cup, it’s goals boiling story, washing goals in cold rain T-shirt makes scenes louder, but the taste just marching holiday, peppers and road red.\"\n      ]\n    },\n    {\n      \"id\": \"aefe4251f301\",\n      \"observation\": \"The text is highly fragmented, with minimal connecting words and a predominance of concrete words arranged in a list-like structure with significant ambiguity.\",\n      \"quotes\": [\n        \"Detective the fishing of town the boy six the missing of episodes.\",\n        \"Ending the surprise of boat the before of knowing the turning.\"\n      ]\n    }\n  ]\n}",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 37398184167,
+  "load_duration": 549459,
+  "prompt_eval_count": 982,
+  "prompt_eval_cached_count": 141,
+  "prompt_eval_duration": 3191742000,
+  "eval_count": 439,
+  "eval_duration": 34183131999
+}

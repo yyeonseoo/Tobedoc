@@ -1,0 +1,496 @@
+{
+  "summary": {
+    "Claude": {
+      "paired_delta_pp": [
+        16.667,
+        9.74,
+        50.0,
+        24.0,
+        37.037
+      ],
+      "median_delta_pp": 24.0,
+      "positive": 5,
+      "conditions": {
+        "N0": {
+          "hits": 1,
+          "boundaries": 97
+        },
+        "NMULTI": {
+          "hits": 1,
+          "boundaries": 114
+        },
+        "DER2": {
+          "hits": 32,
+          "boundaries": 115
+        }
+      }
+    },
+    "GPT-4.1": {
+      "paired_delta_pp": [
+        0.0,
+        -4.167,
+        9.524,
+        -5.263,
+        0.0
+      ],
+      "median_delta_pp": 0.0,
+      "positive": 1,
+      "conditions": {
+        "N0": {
+          "hits": 0,
+          "boundaries": 107
+        },
+        "NMULTI": {
+          "hits": 2,
+          "boundaries": 111
+        },
+        "DER2": {
+          "hits": 2,
+          "boundaries": 112
+        }
+      }
+    }
+  },
+  "details": {
+    "Claude / N0": {
+      "Q06": {
+        "hits": [],
+        "boundaries": 21,
+        "rate": 0.0
+      },
+      "Q05": {
+        "hits": [],
+        "boundaries": 19,
+        "rate": 0.0
+      },
+      "Q01": {
+        "hits": [],
+        "boundaries": 19,
+        "rate": 0.0
+      },
+      "Q02": {
+        "hits": [],
+        "boundaries": 19,
+        "rate": 0.0
+      },
+      "Q04": {
+        "hits": [
+          {
+            "before": "What I liked most was that it wasn't just about who did it",
+            "after": "it was about how the whole town reacts",
+            "shared": [
+              "about"
+            ]
+          }
+        ],
+        "boundaries": 19,
+        "rate": 0.05263157894736842
+      }
+    },
+    "GPT-4.1 / NMULTI": {
+      "Q05": {
+        "hits": [
+          {
+            "before": "so there were always other kids about to play football with after school",
+            "after": "The local school was all right",
+            "shared": [
+              "school"
+            ]
+          }
+        ],
+        "boundaries": 19,
+        "rate": 0.05263157894736842
+      },
+      "Q06": {
+        "hits": [],
+        "boundaries": 20,
+        "rate": 0.0
+      },
+      "Q01": {
+        "hits": [],
+        "boundaries": 23,
+        "rate": 0.0
+      },
+      "Q02": {
+        "hits": [
+          {
+            "before": "The managers are decent too",
+            "after": "not too strict as long as you get your work done",
+            "shared": [
+              "too"
+            ]
+          }
+        ],
+        "boundaries": 24,
+        "rate": 0.041666666666666664
+      },
+      "Q04": {
+        "hits": [],
+        "boundaries": 25,
+        "rate": 0.0
+      }
+    },
+    "Claude / NMULTI": {
+      "Q05": {
+        "hits": [],
+        "boundaries": 27,
+        "rate": 0.0
+      },
+      "Q01": {
+        "hits": [],
+        "boundaries": 21,
+        "rate": 0.0
+      },
+      "Q06": {
+        "hits": [],
+        "boundaries": 23,
+        "rate": 0.0
+      },
+      "Q04": {
+        "hits": [],
+        "boundaries": 21,
+        "rate": 0.0
+      },
+      "Q02": {
+        "hits": [
+          {
+            "before": "and they give us a bonus at Christmas if we hit the targets",
+            "after": "The targets are the stressful part",
+            "shared": [
+              "targets"
+            ]
+          }
+        ],
+        "boundaries": 22,
+        "rate": 0.045454545454545456
+      }
+    },
+    "Claude / DER2": {
+      "Q01": {
+        "hits": [
+          {
+            "before": "Keepers wear those big gloves",
+            "after": "and gloves remind me of winter",
+            "shared": [
+              "gloves"
+            ]
+          },
+          {
+            "before": "and gloves remind me of winter",
+            "after": "and winter is when the boiler in my building always breaks",
+            "shared": [
+              "winter"
+            ]
+          },
+          {
+            "before": "instant everything now",
+            "after": "instant coffee",
+            "shared": [
+              "instant"
+            ]
+          },
+          {
+            "before": "instant coffee",
+            "after": "instant messages",
+            "shared": [
+              "instant"
+            ]
+          }
+        ],
+        "boundaries": 24,
+        "rate": 0.16666666666666666
+      },
+      "Q05": {
+        "hits": [
+          {
+            "before": "I learned that at school",
+            "after": "and school had a science teacher with one eyebrow",
+            "shared": [
+              "school"
+            ]
+          },
+          {
+            "before": "and school had a science teacher with one eyebrow",
+            "after": "one big eyebrow across",
+            "shared": [
+              "eyebrow"
+            ]
+          },
+          {
+            "before": "they put that on a poster at the doctor's",
+            "after": "The doctor's in our town was above the bank",
+            "shared": [
+              "doctor"
+            ]
+          },
+          {
+            "before": "The doctor's in our town was above the bank",
+            "after": "the bank closed",
+            "shared": [
+              "bank"
+            ]
+          },
+          {
+            "before": "the bank closed",
+            "after": "the docks closed",
+            "shared": [
+              "closed"
+            ]
+          },
+          {
+            "before": "and after that he did taxis at night",
+            "after": "Taxis at night are dangerous",
+            "shared": [
+              "night",
+              "taxis"
+            ]
+          }
+        ],
+        "boundaries": 25,
+        "rate": 0.24
+      },
+      "Q04": {
+        "hits": [
+          {
+            "before": "I've been watching a crime drama about a detective in a fishing town",
+            "after": "Fishing towns have seagulls",
+            "shared": [
+              "fishing"
+            ]
+          },
+          {
+            "before": "Fishing towns have seagulls",
+            "after": "and the seagulls in town steal chips right out of your hand",
+            "shared": [
+              "seagulls"
+            ]
+          },
+          {
+            "before": "one took a whole sausage roll from a woman outside the bakery",
+            "after": "the bakery that does the doughnuts on a Thursday",
+            "shared": [
+              "bakery"
+            ]
+          },
+          {
+            "before": "the bakery that does the doughnuts on a Thursday",
+            "after": "Thursday used to be bin day before the council changed it",
+            "shared": [
+              "thursday"
+            ]
+          },
+          {
+            "before": "Thursday used to be bin day before the council changed it",
+            "after": "they changed it because of the new lorries",
+            "shared": [
+              "changed"
+            ]
+          },
+          {
+            "before": "they changed it because of the new lorries",
+            "after": "the lorries are electric now and you can't hear them coming",
+            "shared": [
+              "lorries"
+            ]
+          },
+          {
+            "before": "A boy goes missing in it",
+            "after": "Missing things",
+            "shared": [
+              "missing"
+            ]
+          },
+          {
+            "before": "Missing things",
+            "after": "I'm always missing my keys",
+            "shared": [
+              "missing"
+            ]
+          },
+          {
+            "before": "she said she'd add it to her list",
+            "after": "her list is very long though",
+            "shared": [
+              "list"
+            ]
+          }
+        ],
+        "boundaries": 18,
+        "rate": 0.5
+      },
+      "Q02": {
+        "hits": [
+          {
+            "before": "You get a scanner and it beeps when you scan",
+            "after": "beeps all day",
+            "shared": [
+              "beeps"
+            ]
+          },
+          {
+            "before": "she scraped it on a bollard last week and the insurance is a nightmare",
+            "after": "insurance companies have those adverts with the meerkats",
+            "shared": [
+              "insurance"
+            ]
+          },
+          {
+            "before": "insurance companies have those adverts with the meerkats",
+            "after": "and meerkats live in deserts",
+            "shared": [
+              "meerkats"
+            ]
+          }
+        ],
+        "boundaries": 21,
+        "rate": 0.14285714285714285
+      },
+      "Q06": {
+        "hits": [
+          {
+            "before": "I like cooking curries",
+            "after": "Curries need spices",
+            "shared": [
+              "curries"
+            ]
+          },
+          {
+            "before": "Curries need spices",
+            "after": "spices came on ships",
+            "shared": [
+              "spices"
+            ]
+          },
+          {
+            "before": "spices came on ships",
+            "after": "ships had rats",
+            "shared": [
+              "ships"
+            ]
+          },
+          {
+            "before": "ships had rats",
+            "after": "rats brought the plague",
+            "shared": [
+              "rats"
+            ]
+          },
+          {
+            "before": "rats brought the plague",
+            "after": "the plague doctors wore bird masks",
+            "shared": [
+              "plague"
+            ]
+          },
+          {
+            "before": "birds migrate south in winter",
+            "after": "south is where Spain is",
+            "shared": [
+              "south"
+            ]
+          },
+          {
+            "before": "I also make bolognese and stir fries",
+            "after": "Stir fries need a wok",
+            "shared": [
+              "fries",
+              "stir"
+            ]
+          },
+          {
+            "before": "and woks get really hot",
+            "after": "hot like the summer we had a few years back when the tarmac melted on the road outside Mum's",
+            "shared": [
+              "hot"
+            ]
+          },
+          {
+            "before": "I burned a risotto last month",
+            "after": "Risotto is from Italy",
+            "shared": [
+              "risotto"
+            ]
+          },
+          {
+            "before": "Risotto is from Italy",
+            "after": "Italy is a boot shape",
+            "shared": [
+              "italy"
+            ]
+          }
+        ],
+        "boundaries": 27,
+        "rate": 0.37037037037037035
+      }
+    },
+    "GPT-4.1 / N0": {
+      "Q02": {
+        "hits": [],
+        "boundaries": 21,
+        "rate": 0.0
+      },
+      "Q01": {
+        "hits": [],
+        "boundaries": 25,
+        "rate": 0.0
+      },
+      "Q05": {
+        "hits": [],
+        "boundaries": 20,
+        "rate": 0.0
+      },
+      "Q04": {
+        "hits": [],
+        "boundaries": 21,
+        "rate": 0.0
+      },
+      "Q06": {
+        "hits": [],
+        "boundaries": 20,
+        "rate": 0.0
+      }
+    },
+    "GPT-4.1 / DER2": {
+      "Q06": {
+        "hits": [],
+        "boundaries": 20,
+        "rate": 0.0
+      },
+      "Q04": {
+        "hits": [
+          {
+            "before": "so I need to make sure I've got snacks in",
+            "after": "Speaking of snacks",
+            "shared": [
+              "snacks"
+            ]
+          },
+          {
+            "before": "I’m trying to cook a few new things because I get bored of the same meals after work",
+            "after": "especially after a late shift",
+            "shared": [
+              "after"
+            ]
+          }
+        ],
+        "boundaries": 21,
+        "rate": 0.09523809523809523
+      },
+      "Q02": {
+        "hits": [],
+        "boundaries": 24,
+        "rate": 0.0
+      },
+      "Q05": {
+        "hits": [],
+        "boundaries": 19,
+        "rate": 0.0
+      },
+      "Q01": {
+        "hits": [],
+        "boundaries": 28,
+        "rate": 0.0
+      }
+    }
+  }
+}

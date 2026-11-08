@@ -1,0 +1,4706 @@
+[
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "i",
+        9
+      ],
+      [
+        "the",
+        8
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "was",
+        6
+      ],
+      [
+        "to",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "weekend",
+        2
+      ],
+      [
+        "get",
+        2
+      ],
+      [
+        "went",
+        2
+      ],
+      [
+        "afternoon",
+        2
+      ],
+      [
+        "watched",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "the",
+        11
+      ],
+      [
+        "i",
+        8
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "my",
+        4
+      ],
+      [
+        "for",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "went",
+        3
+      ],
+      [
+        "weekend",
+        2
+      ],
+      [
+        "work",
+        2
+      ],
+      [
+        "evening",
+        2
+      ],
+      [
+        "last",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "the",
+        18
+      ],
+      [
+        "i",
+        8
+      ],
+      [
+        "a",
+        5
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "in",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "got",
+        3
+      ],
+      [
+        "weekend",
+        2
+      ],
+      [
+        "saturday",
+        2
+      ],
+      [
+        "usual",
+        2
+      ],
+      [
+        "nine",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "the",
+        18
+      ],
+      [
+        "i",
+        7
+      ],
+      [
+        "and",
+        5
+      ],
+      [
+        "on",
+        5
+      ],
+      [
+        "it",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "saturday",
+        2
+      ],
+      [
+        "alarm",
+        2
+      ],
+      [
+        "going",
+        2
+      ],
+      [
+        "bus",
+        2
+      ],
+      [
+        "roadworks",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        15
+      ],
+      [
+        "i",
+        8
+      ],
+      [
+        "and",
+        7
+      ],
+      [
+        "was",
+        5
+      ],
+      [
+        "for",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "went",
+        2
+      ],
+      [
+        "came",
+        2
+      ],
+      [
+        "round",
+        2
+      ],
+      [
+        "last",
+        1
+      ],
+      [
+        "weekend",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        22
+      ],
+      [
+        "of",
+        8
+      ],
+      [
+        "i",
+        7
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "a",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "curry",
+        2
+      ],
+      [
+        "sunday",
+        2
+      ],
+      [
+        "round",
+        2
+      ],
+      [
+        "office",
+        2
+      ],
+      [
+        "plates",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        39
+      ],
+      [
+        "of",
+        19
+      ],
+      [
+        "it",
+        4
+      ],
+      [
+        "in",
+        3
+      ],
+      [
+        "and",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "sunday",
+        3
+      ],
+      [
+        "quiet",
+        3
+      ],
+      [
+        "carpet",
+        2
+      ],
+      [
+        "red",
+        2
+      ],
+      [
+        "warm",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q01",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "in",
+        27
+      ],
+      [
+        "the",
+        26
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "then",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "lie",
+        27
+      ],
+      [
+        "shifts",
+        4
+      ],
+      [
+        "saturday",
+        2
+      ],
+      [
+        "sunday",
+        2
+      ],
+      [
+        "roast",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "a",
+        8
+      ],
+      [
+        "the",
+        8
+      ],
+      [
+        "and",
+        7
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "to",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "work",
+        2
+      ],
+      [
+        "hours",
+        2
+      ],
+      [
+        "items",
+        2
+      ],
+      [
+        "shift",
+        2
+      ],
+      [
+        "part",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "the",
+        16
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "is",
+        4
+      ],
+      [
+        "on",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "part",
+        3
+      ],
+      [
+        "work",
+        2
+      ],
+      [
+        "people",
+        2
+      ],
+      [
+        "bit",
+        2
+      ],
+      [
+        "targets",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "the",
+        15
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "a",
+        5
+      ],
+      [
+        "so",
+        3
+      ],
+      [
+        "i",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "job",
+        2
+      ],
+      [
+        "warehouse",
+        2
+      ],
+      [
+        "roundabout",
+        2
+      ],
+      [
+        "agency",
+        2
+      ],
+      [
+        "picking",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "the",
+        15
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "to",
+        5
+      ],
+      [
+        "there",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "get",
+        3
+      ],
+      [
+        "coffee",
+        2
+      ],
+      [
+        "badge",
+        2
+      ],
+      [
+        "job",
+        1
+      ],
+      [
+        "leaves",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        12
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "to",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "work",
+        2
+      ],
+      [
+        "hours",
+        2
+      ],
+      [
+        "items",
+        2
+      ],
+      [
+        "part",
+        1
+      ],
+      [
+        "time",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        35
+      ],
+      [
+        "of",
+        16
+      ],
+      [
+        "it",
+        3
+      ],
+      [
+        "at",
+        2
+      ],
+      [
+        "is",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "warehouse",
+        2
+      ],
+      [
+        "picking",
+        2
+      ],
+      [
+        "hours",
+        2
+      ],
+      [
+        "work",
+        1
+      ],
+      [
+        "orders",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        45
+      ],
+      [
+        "of",
+        24
+      ],
+      [
+        "now",
+        2
+      ],
+      [
+        "under",
+        1
+      ],
+      [
+        "everyone",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "warehouse",
+        2
+      ],
+      [
+        "picking",
+        2
+      ],
+      [
+        "hours",
+        2
+      ],
+      [
+        "red",
+        2
+      ],
+      [
+        "beeping",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q02",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "the",
+        50
+      ],
+      [
+        "i",
+        3
+      ],
+      [
+        "and",
+        2
+      ],
+      [
+        "to",
+        2
+      ],
+      [
+        "is",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "scanner",
+        39
+      ],
+      [
+        "beep",
+        6
+      ],
+      [
+        "trolley",
+        3
+      ],
+      [
+        "job",
+        3
+      ],
+      [
+        "back",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "my",
+        6
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "the",
+        5
+      ],
+      [
+        "about",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "away",
+        2
+      ],
+      [
+        "sister",
+        2
+      ],
+      [
+        "two",
+        2
+      ],
+      [
+        "works",
+        2
+      ],
+      [
+        "family's",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "and",
+        9
+      ],
+      [
+        "my",
+        8
+      ],
+      [
+        "the",
+        6
+      ],
+      [
+        "a",
+        5
+      ],
+      [
+        "we",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "family",
+        2
+      ],
+      [
+        "works",
+        2
+      ],
+      [
+        "get",
+        2
+      ],
+      [
+        "sides",
+        1
+      ],
+      [
+        "mum",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "and",
+        8
+      ],
+      [
+        "my",
+        7
+      ],
+      [
+        "in",
+        4
+      ],
+      [
+        "her",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "family",
+        3
+      ],
+      [
+        "mum",
+        3
+      ],
+      [
+        "new",
+        2
+      ],
+      [
+        "two",
+        2
+      ],
+      [
+        "works",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "the",
+        13
+      ],
+      [
+        "my",
+        8
+      ],
+      [
+        "in",
+        8
+      ],
+      [
+        "to",
+        5
+      ],
+      [
+        "it",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "used",
+        3
+      ],
+      [
+        "dad",
+        3
+      ],
+      [
+        "mum",
+        2
+      ],
+      [
+        "car",
+        2
+      ],
+      [
+        "park",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "of",
+        7
+      ],
+      [
+        "my",
+        5
+      ],
+      [
+        "and",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "small",
+        2
+      ],
+      [
+        "really",
+        2
+      ],
+      [
+        "mum",
+        2
+      ],
+      [
+        "away",
+        2
+      ],
+      [
+        "sister",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        34
+      ],
+      [
+        "of",
+        19
+      ],
+      [
+        "my",
+        5
+      ],
+      [
+        "is",
+        3
+      ],
+      [
+        "her",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "close",
+        3
+      ],
+      [
+        "mum",
+        2
+      ],
+      [
+        "sister",
+        2
+      ],
+      [
+        "boy",
+        2
+      ],
+      [
+        "table",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        41
+      ],
+      [
+        "of",
+        27
+      ],
+      [
+        "not",
+        2
+      ],
+      [
+        "them",
+        2
+      ],
+      [
+        "on",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "table",
+        2
+      ],
+      [
+        "quiet",
+        2
+      ],
+      [
+        "mum",
+        1
+      ],
+      [
+        "canteen",
+        1
+      ],
+      [
+        "custard",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q03",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "the",
+        11
+      ],
+      [
+        "my",
+        7
+      ],
+      [
+        "always",
+        2
+      ],
+      [
+        "at",
+        2
+      ],
+      [
+        "is",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "lunch",
+        40
+      ],
+      [
+        "sunday",
+        39
+      ],
+      [
+        "roast",
+        4
+      ],
+      [
+        "family",
+        3
+      ],
+      [
+        "sister",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "the",
+        10
+      ],
+      [
+        "it",
+        9
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "about",
+        4
+      ],
+      [
+        "in",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        3
+      ],
+      [
+        "really",
+        2
+      ],
+      [
+        "series",
+        2
+      ],
+      [
+        "detective",
+        2
+      ],
+      [
+        "watch",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "a",
+        12
+      ],
+      [
+        "the",
+        12
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "i",
+        4
+      ],
+      [
+        "which",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "cooking",
+        3
+      ],
+      [
+        "drama",
+        2
+      ],
+      [
+        "really",
+        2
+      ],
+      [
+        "end",
+        2
+      ],
+      [
+        "film",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "a",
+        7
+      ],
+      [
+        "the",
+        7
+      ],
+      [
+        "it",
+        6
+      ],
+      [
+        "one",
+        4
+      ],
+      [
+        "to",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        3
+      ],
+      [
+        "show",
+        2
+      ],
+      [
+        "watched",
+        2
+      ],
+      [
+        "sister",
+        2
+      ],
+      [
+        "crime",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "a",
+        13
+      ],
+      [
+        "the",
+        12
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "on",
+        5
+      ],
+      [
+        "had",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "telly",
+        3
+      ],
+      [
+        "thing",
+        2
+      ],
+      [
+        "got",
+        2
+      ],
+      [
+        "shop",
+        2
+      ],
+      [
+        "down",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        16
+      ],
+      [
+        "it",
+        8
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "in",
+        5
+      ],
+      [
+        "about",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        3
+      ],
+      [
+        "episodes",
+        2
+      ],
+      [
+        "detective",
+        2
+      ],
+      [
+        "turning",
+        2
+      ],
+      [
+        "made",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        37
+      ],
+      [
+        "of",
+        18
+      ],
+      [
+        "it",
+        6
+      ],
+      [
+        "i",
+        3
+      ],
+      [
+        "in",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        3
+      ],
+      [
+        "drama",
+        2
+      ],
+      [
+        "detective",
+        2
+      ],
+      [
+        "slow",
+        2
+      ],
+      [
+        "turning",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        38
+      ],
+      [
+        "of",
+        26
+      ],
+      [
+        "it",
+        5
+      ],
+      [
+        "everyone",
+        1
+      ],
+      [
+        "in",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        3
+      ],
+      [
+        "slow",
+        2
+      ],
+      [
+        "turning",
+        2
+      ],
+      [
+        "down",
+        2
+      ],
+      [
+        "detective",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q04",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "the",
+        48
+      ],
+      [
+        "my",
+        3
+      ],
+      [
+        "is",
+        2
+      ],
+      [
+        "after",
+        1
+      ],
+      [
+        "one",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "detective",
+        40
+      ],
+      [
+        "show",
+        3
+      ],
+      [
+        "town",
+        3
+      ],
+      [
+        "fishing",
+        2
+      ],
+      [
+        "looks",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "the",
+        13
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "of",
+        6
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "i",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        2
+      ],
+      [
+        "place",
+        2
+      ],
+      [
+        "beach",
+        2
+      ],
+      [
+        "bit",
+        2
+      ],
+      [
+        "lot",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "the",
+        10
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "was",
+        7
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "i",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        3
+      ],
+      [
+        "work",
+        3
+      ],
+      [
+        "small",
+        2
+      ],
+      [
+        "sea",
+        2
+      ],
+      [
+        "part",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "the",
+        13
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "it",
+        5
+      ],
+      [
+        "was",
+        5
+      ],
+      [
+        "in",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "grew",
+        2
+      ],
+      [
+        "town",
+        2
+      ],
+      [
+        "bit",
+        2
+      ],
+      [
+        "beach",
+        2
+      ],
+      [
+        "quiet",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "the",
+        16
+      ],
+      [
+        "and",
+        7
+      ],
+      [
+        "in",
+        6
+      ],
+      [
+        "it",
+        6
+      ],
+      [
+        "a",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "till",
+        2
+      ],
+      [
+        "went",
+        2
+      ],
+      [
+        "vape",
+        2
+      ],
+      [
+        "shop",
+        2
+      ],
+      [
+        "chippy",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        18
+      ],
+      [
+        "of",
+        9
+      ],
+      [
+        "a",
+        4
+      ],
+      [
+        "it",
+        4
+      ],
+      [
+        "was",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        2
+      ],
+      [
+        "beach",
+        2
+      ],
+      [
+        "back",
+        2
+      ],
+      [
+        "grew",
+        1
+      ],
+      [
+        "small",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        32
+      ],
+      [
+        "of",
+        28
+      ],
+      [
+        "it",
+        5
+      ],
+      [
+        "and",
+        3
+      ],
+      [
+        "was",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        3
+      ],
+      [
+        "summer",
+        2
+      ],
+      [
+        "beach",
+        2
+      ],
+      [
+        "safe",
+        2
+      ],
+      [
+        "sea",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        38
+      ],
+      [
+        "of",
+        30
+      ],
+      [
+        "through",
+        1
+      ],
+      [
+        "outside",
+        1
+      ],
+      [
+        "us",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "summer",
+        2
+      ],
+      [
+        "winter",
+        2
+      ],
+      [
+        "beach",
+        2
+      ],
+      [
+        "sea",
+        2
+      ],
+      [
+        "seaside",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q05",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "the",
+        51
+      ],
+      [
+        "up",
+        3
+      ],
+      [
+        "i",
+        2
+      ],
+      [
+        "on",
+        2
+      ],
+      [
+        "was",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "beach",
+        47
+      ],
+      [
+        "moved",
+        2
+      ],
+      [
+        "away",
+        2
+      ],
+      [
+        "growing",
+        2
+      ],
+      [
+        "grew",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "i",
+        9
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "to",
+        6
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "my",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "cook",
+        4
+      ],
+      [
+        "cooking",
+        2
+      ],
+      [
+        "chicken",
+        2
+      ],
+      [
+        "try",
+        2
+      ],
+      [
+        "really",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "a",
+        7
+      ],
+      [
+        "the",
+        6
+      ],
+      [
+        "i",
+        6
+      ],
+      [
+        "and",
+        5
+      ],
+      [
+        "for",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "cooking",
+        3
+      ],
+      [
+        "thing",
+        2
+      ],
+      [
+        "curries",
+        2
+      ],
+      [
+        "everyday",
+        2
+      ],
+      [
+        "trying",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "and",
+        10
+      ],
+      [
+        "i",
+        7
+      ],
+      [
+        "the",
+        7
+      ],
+      [
+        "of",
+        4
+      ],
+      [
+        "my",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "cooking",
+        3
+      ],
+      [
+        "like",
+        2
+      ],
+      [
+        "cook",
+        2
+      ],
+      [
+        "days",
+        2
+      ],
+      [
+        "curry",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "the",
+        11
+      ],
+      [
+        "and",
+        10
+      ],
+      [
+        "a",
+        7
+      ],
+      [
+        "at",
+        3
+      ],
+      [
+        "was",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "back",
+        3
+      ],
+      [
+        "cooking",
+        2
+      ],
+      [
+        "lifting",
+        2
+      ],
+      [
+        "curries",
+        2
+      ],
+      [
+        "really",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "i",
+        7
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "to",
+        5
+      ],
+      [
+        "a",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "cook",
+        3
+      ],
+      [
+        "cooking",
+        2
+      ],
+      [
+        "chicken",
+        2
+      ],
+      [
+        "really",
+        1
+      ],
+      [
+        "like",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        31
+      ],
+      [
+        "of",
+        25
+      ],
+      [
+        "i",
+        3
+      ],
+      [
+        "it",
+        3
+      ],
+      [
+        "not",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "cooking",
+        3
+      ],
+      [
+        "like",
+        2
+      ],
+      [
+        "pan",
+        2
+      ],
+      [
+        "chicken",
+        2
+      ],
+      [
+        "curry",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        33
+      ],
+      [
+        "of",
+        26
+      ],
+      [
+        "not",
+        3
+      ],
+      [
+        "it",
+        2
+      ],
+      [
+        "nothing",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "chicken",
+        2
+      ],
+      [
+        "curries",
+        1
+      ],
+      [
+        "pan",
+        1
+      ],
+      [
+        "evenings",
+        1
+      ],
+      [
+        "proudest",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "Claude",
+    "q_id": "Q06",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "the",
+        12
+      ],
+      [
+        "my",
+        4
+      ],
+      [
+        "i",
+        3
+      ],
+      [
+        "off",
+        1
+      ],
+      [
+        "no",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "curry",
+        64
+      ],
+      [
+        "cooking",
+        3
+      ],
+      [
+        "spices",
+        2
+      ],
+      [
+        "chicken",
+        2
+      ],
+      [
+        "burned",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "a",
+        11
+      ],
+      [
+        "i",
+        9
+      ],
+      [
+        "the",
+        8
+      ],
+      [
+        "for",
+        4
+      ],
+      [
+        "of",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "bit",
+        3
+      ],
+      [
+        "actually",
+        2
+      ],
+      [
+        "saturday",
+        2
+      ],
+      [
+        "work",
+        2
+      ],
+      [
+        "new",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "i",
+        11
+      ],
+      [
+        "the",
+        10
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "in",
+        6
+      ],
+      [
+        "and",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "actually",
+        2
+      ],
+      [
+        "got",
+        2
+      ],
+      [
+        "curry",
+        2
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "bit",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "the",
+        10
+      ],
+      [
+        "i",
+        8
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "up",
+        4
+      ],
+      [
+        "was",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "weekend",
+        2
+      ],
+      [
+        "bit",
+        2
+      ],
+      [
+        "quite",
+        2
+      ],
+      [
+        "cause",
+        2
+      ],
+      [
+        "watched",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "i",
+        7
+      ],
+      [
+        "the",
+        7
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "to",
+        6
+      ],
+      [
+        "and",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "bit",
+        2
+      ],
+      [
+        "way",
+        2
+      ],
+      [
+        "got",
+        2
+      ],
+      [
+        "last",
+        1
+      ],
+      [
+        "weekend",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        4
+      ],
+      [
+        "with",
+        3
+      ],
+      [
+        "then",
+        3
+      ],
+      [
+        "so",
+        3
+      ],
+      [
+        "and",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "football",
+        3
+      ],
+      [
+        "last",
+        2
+      ],
+      [
+        "weekend",
+        2
+      ],
+      [
+        "toast",
+        2
+      ],
+      [
+        "made",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "and",
+        5
+      ],
+      [
+        "i",
+        4
+      ],
+      [
+        "you",
+        3
+      ],
+      [
+        "then",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "erm",
+        9
+      ],
+      [
+        "football",
+        3
+      ],
+      [
+        "know",
+        3
+      ],
+      [
+        "match",
+        3
+      ],
+      [
+        "shift",
+        3
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "my",
+        2
+      ],
+      [
+        "i",
+        2
+      ],
+      [
+        "you",
+        1
+      ],
+      [
+        "of",
+        1
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "football",
+        3
+      ],
+      [
+        "toast",
+        2
+      ],
+      [
+        "kettle",
+        2
+      ],
+      [
+        "sky",
+        2
+      ],
+      [
+        "running",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q01",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "i",
+        18
+      ],
+      [
+        "the",
+        16
+      ],
+      [
+        "was",
+        6
+      ],
+      [
+        "about",
+        6
+      ],
+      [
+        "it",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "football",
+        15
+      ],
+      [
+        "watched",
+        4
+      ],
+      [
+        "thought",
+        4
+      ],
+      [
+        "yeah",
+        3
+      ],
+      [
+        "watch",
+        3
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "the",
+        7
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "of",
+        5
+      ],
+      [
+        "it",
+        4
+      ],
+      [
+        "but",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "time",
+        3
+      ],
+      [
+        "get",
+        3
+      ],
+      [
+        "bit",
+        3
+      ],
+      [
+        "work",
+        2
+      ],
+      [
+        "sometimes",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "i",
+        9
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "the",
+        5
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "so",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "work",
+        3
+      ],
+      [
+        "early",
+        2
+      ],
+      [
+        "shifts",
+        2
+      ],
+      [
+        "bit",
+        2
+      ],
+      [
+        "got",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "i",
+        7
+      ],
+      [
+        "the",
+        7
+      ],
+      [
+        "a",
+        5
+      ],
+      [
+        "so",
+        4
+      ],
+      [
+        "on",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "sometimes",
+        4
+      ],
+      [
+        "get",
+        3
+      ],
+      [
+        "yeah",
+        2
+      ],
+      [
+        "big",
+        2
+      ],
+      [
+        "know",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "the",
+        11
+      ],
+      [
+        "i",
+        6
+      ],
+      [
+        "a",
+        5
+      ],
+      [
+        "my",
+        4
+      ],
+      [
+        "at",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "sure",
+        2
+      ],
+      [
+        "job",
+        2
+      ],
+      [
+        "warehouse",
+        2
+      ],
+      [
+        "know",
+        2
+      ],
+      [
+        "morning",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "and",
+        10
+      ],
+      [
+        "the",
+        8
+      ],
+      [
+        "i",
+        3
+      ],
+      [
+        "on",
+        3
+      ],
+      [
+        "with",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "sometimes",
+        4
+      ],
+      [
+        "boxes",
+        3
+      ],
+      [
+        "shelves",
+        3
+      ],
+      [
+        "yeah",
+        2
+      ],
+      [
+        "work",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        7
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "i",
+        6
+      ],
+      [
+        "it",
+        3
+      ],
+      [
+        "it's",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "erm",
+        7
+      ],
+      [
+        "sometimes",
+        6
+      ],
+      [
+        "beep",
+        3
+      ],
+      [
+        "boxes",
+        2
+      ],
+      [
+        "clock",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        10
+      ],
+      [
+        "i",
+        6
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "you",
+        3
+      ],
+      [
+        "well",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "sometimes",
+        4
+      ],
+      [
+        "shift",
+        3
+      ],
+      [
+        "boxes",
+        3
+      ],
+      [
+        "trolley",
+        3
+      ],
+      [
+        "football",
+        3
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q02",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "and",
+        12
+      ],
+      [
+        "the",
+        11
+      ],
+      [
+        "at",
+        7
+      ],
+      [
+        "it's",
+        5
+      ],
+      [
+        "i",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "shifts",
+        9
+      ],
+      [
+        "warehouse",
+        8
+      ],
+      [
+        "picking",
+        6
+      ],
+      [
+        "packing",
+        6
+      ],
+      [
+        "shift",
+        4
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "my",
+        6
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "but",
+        4
+      ],
+      [
+        "we",
+        4
+      ],
+      [
+        "up",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "family",
+        2
+      ],
+      [
+        "bit",
+        2
+      ],
+      [
+        "got",
+        2
+      ],
+      [
+        "oh",
+        1
+      ],
+      [
+        "yeah",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "a",
+        6
+      ],
+      [
+        "my",
+        5
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "we",
+        4
+      ],
+      [
+        "of",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "really",
+        3
+      ],
+      [
+        "got",
+        2
+      ],
+      [
+        "family's",
+        1
+      ],
+      [
+        "big",
+        1
+      ],
+      [
+        "mum",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "the",
+        7
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "my",
+        4
+      ],
+      [
+        "in",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "bit",
+        2
+      ],
+      [
+        "say",
+        2
+      ],
+      [
+        "live",
+        2
+      ],
+      [
+        "actually",
+        2
+      ],
+      [
+        "grew",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "i",
+        7
+      ],
+      [
+        "and",
+        7
+      ],
+      [
+        "my",
+        7
+      ],
+      [
+        "to",
+        6
+      ],
+      [
+        "a",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "brother",
+        3
+      ],
+      [
+        "big",
+        2
+      ],
+      [
+        "morning",
+        2
+      ],
+      [
+        "get",
+        2
+      ],
+      [
+        "especially",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        10
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "we",
+        4
+      ],
+      [
+        "but",
+        3
+      ],
+      [
+        "on",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "shoes",
+        3
+      ],
+      [
+        "really",
+        3
+      ],
+      [
+        "sometimes",
+        3
+      ],
+      [
+        "mum",
+        2
+      ],
+      [
+        "um",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "and",
+        8
+      ],
+      [
+        "the",
+        5
+      ],
+      [
+        "i",
+        4
+      ],
+      [
+        "my",
+        3
+      ],
+      [
+        "always",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "family",
+        3
+      ],
+      [
+        "um",
+        3
+      ],
+      [
+        "sometimes",
+        3
+      ],
+      [
+        "know",
+        2
+      ],
+      [
+        "mum",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        15
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "with",
+        3
+      ],
+      [
+        "then",
+        3
+      ],
+      [
+        "but",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "family",
+        2
+      ],
+      [
+        "window",
+        2
+      ],
+      [
+        "sky",
+        2
+      ],
+      [
+        "blue",
+        2
+      ],
+      [
+        "mum",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q03",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "you",
+        9
+      ],
+      [
+        "and",
+        8
+      ],
+      [
+        "my",
+        5
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "they're",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "family",
+        20
+      ],
+      [
+        "family's",
+        3
+      ],
+      [
+        "know",
+        3
+      ],
+      [
+        "think",
+        3
+      ],
+      [
+        "really",
+        3
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "i",
+        7
+      ],
+      [
+        "the",
+        7
+      ],
+      [
+        "and",
+        5
+      ],
+      [
+        "a",
+        4
+      ],
+      [
+        "it",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "got",
+        2
+      ],
+      [
+        "actually",
+        2
+      ],
+      [
+        "watch",
+        2
+      ],
+      [
+        "caught",
+        2
+      ],
+      [
+        "yeah",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "i",
+        8
+      ],
+      [
+        "the",
+        7
+      ],
+      [
+        "of",
+        5
+      ],
+      [
+        "and",
+        3
+      ],
+      [
+        "those",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "quite",
+        3
+      ],
+      [
+        "like",
+        3
+      ],
+      [
+        "night",
+        2
+      ],
+      [
+        "agent",
+        2
+      ],
+      [
+        "action",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "i",
+        7
+      ],
+      [
+        "and",
+        7
+      ],
+      [
+        "i'd",
+        6
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "the",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "get",
+        3
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "night",
+        2
+      ],
+      [
+        "thought",
+        2
+      ],
+      [
+        "let",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "i",
+        15
+      ],
+      [
+        "the",
+        9
+      ],
+      [
+        "to",
+        7
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "and",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "actually",
+        2
+      ],
+      [
+        "really",
+        2
+      ],
+      [
+        "tv",
+        2
+      ],
+      [
+        "get",
+        2
+      ],
+      [
+        "home",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        12
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "i",
+        4
+      ],
+      [
+        "was",
+        3
+      ],
+      [
+        "they",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "like",
+        3
+      ],
+      [
+        "dinners",
+        2
+      ],
+      [
+        "onions",
+        2
+      ],
+      [
+        "mixing",
+        2
+      ],
+      [
+        "yeah",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        24
+      ],
+      [
+        "and",
+        6
+      ],
+      [
+        "in",
+        5
+      ],
+      [
+        "i",
+        3
+      ],
+      [
+        "with",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "right",
+        5
+      ],
+      [
+        "running",
+        3
+      ],
+      [
+        "like",
+        3
+      ],
+      [
+        "yeah",
+        2
+      ],
+      [
+        "um",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        13
+      ],
+      [
+        "in",
+        3
+      ],
+      [
+        "on",
+        2
+      ],
+      [
+        "but",
+        2
+      ],
+      [
+        "and",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "lights",
+        2
+      ],
+      [
+        "running",
+        2
+      ],
+      [
+        "sky",
+        2
+      ],
+      [
+        "football",
+        2
+      ],
+      [
+        "matches",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q04",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "the",
+        20
+      ],
+      [
+        "of",
+        14
+      ],
+      [
+        "i",
+        13
+      ],
+      [
+        "always",
+        4
+      ],
+      [
+        "every",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "match",
+        13
+      ],
+      [
+        "day",
+        12
+      ],
+      [
+        "week",
+        4
+      ],
+      [
+        "watch",
+        3
+      ],
+      [
+        "like",
+        3
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "a",
+        6
+      ],
+      [
+        "to",
+        6
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "it",
+        5
+      ],
+      [
+        "was",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "grew",
+        2
+      ],
+      [
+        "really",
+        2
+      ],
+      [
+        "down",
+        2
+      ],
+      [
+        "used",
+        2
+      ],
+      [
+        "school",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "a",
+        12
+      ],
+      [
+        "was",
+        6
+      ],
+      [
+        "the",
+        6
+      ],
+      [
+        "and",
+        5
+      ],
+      [
+        "it",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "town",
+        2
+      ],
+      [
+        "place",
+        2
+      ],
+      [
+        "big",
+        2
+      ],
+      [
+        "school",
+        2
+      ],
+      [
+        "little",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "the",
+        7
+      ],
+      [
+        "was",
+        6
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "to",
+        5
+      ],
+      [
+        "it",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "right",
+        2
+      ],
+      [
+        "town",
+        2
+      ],
+      [
+        "place",
+        2
+      ],
+      [
+        "oh",
+        1
+      ],
+      [
+        "grew",
+        1
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "was",
+        7
+      ],
+      [
+        "and",
+        5
+      ],
+      [
+        "to",
+        5
+      ],
+      [
+        "i",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "know",
+        2
+      ],
+      [
+        "place",
+        2
+      ],
+      [
+        "yeah",
+        2
+      ],
+      [
+        "used",
+        2
+      ],
+      [
+        "sometimes",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "was",
+        4
+      ],
+      [
+        "but",
+        3
+      ],
+      [
+        "on",
+        3
+      ],
+      [
+        "i",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "rain",
+        3
+      ],
+      [
+        "sometimes",
+        3
+      ],
+      [
+        "know",
+        2
+      ],
+      [
+        "football",
+        2
+      ],
+      [
+        "afternoons",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        12
+      ],
+      [
+        "in",
+        4
+      ],
+      [
+        "never",
+        3
+      ],
+      [
+        "was",
+        3
+      ],
+      [
+        "then",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "sometimes",
+        3
+      ],
+      [
+        "know",
+        2
+      ],
+      [
+        "flat",
+        2
+      ],
+      [
+        "really",
+        2
+      ],
+      [
+        "running",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        9
+      ],
+      [
+        "and",
+        3
+      ],
+      [
+        "under",
+        2
+      ],
+      [
+        "all",
+        2
+      ],
+      [
+        "on",
+        2
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "dinner",
+        3
+      ],
+      [
+        "swimming",
+        2
+      ],
+      [
+        "football",
+        2
+      ],
+      [
+        "sky",
+        2
+      ],
+      [
+        "sometimes",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q05",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "was",
+        7
+      ],
+      [
+        "it",
+        6
+      ],
+      [
+        "the",
+        6
+      ],
+      [
+        "just",
+        6
+      ],
+      [
+        "always",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "busy",
+        20
+      ],
+      [
+        "people",
+        4
+      ],
+      [
+        "really",
+        3
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "everywhere",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "N0",
+    "function_top5": [
+      [
+        "i",
+        8
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "of",
+        6
+      ],
+      [
+        "the",
+        4
+      ],
+      [
+        "and",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "make",
+        3
+      ],
+      [
+        "like",
+        2
+      ],
+      [
+        "cooking",
+        2
+      ],
+      [
+        "quite",
+        2
+      ],
+      [
+        "got",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "NMULTI",
+    "function_top5": [
+      [
+        "i",
+        9
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "or",
+        5
+      ],
+      [
+        "on",
+        5
+      ],
+      [
+        "and",
+        5
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "like",
+        4
+      ],
+      [
+        "bit",
+        3
+      ],
+      [
+        "making",
+        2
+      ],
+      [
+        "got",
+        2
+      ],
+      [
+        "time",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "CIRC1",
+    "function_top5": [
+      [
+        "i",
+        8
+      ],
+      [
+        "a",
+        8
+      ],
+      [
+        "to",
+        6
+      ],
+      [
+        "my",
+        4
+      ],
+      [
+        "i've",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "yeah",
+        2
+      ],
+      [
+        "really",
+        2
+      ],
+      [
+        "bit",
+        2
+      ],
+      [
+        "like",
+        2
+      ],
+      [
+        "pasta",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "CIRC2",
+    "function_top5": [
+      [
+        "i",
+        13
+      ],
+      [
+        "the",
+        9
+      ],
+      [
+        "a",
+        4
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "it",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "really",
+        3
+      ],
+      [
+        "know",
+        3
+      ],
+      [
+        "got",
+        2
+      ],
+      [
+        "moved",
+        2
+      ],
+      [
+        "actually",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "INC1",
+    "function_top5": [
+      [
+        "the",
+        13
+      ],
+      [
+        "i",
+        7
+      ],
+      [
+        "with",
+        5
+      ],
+      [
+        "and",
+        5
+      ],
+      [
+        "on",
+        4
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "like",
+        3
+      ],
+      [
+        "together",
+        3
+      ],
+      [
+        "erm",
+        3
+      ],
+      [
+        "know",
+        2
+      ],
+      [
+        "sometimes",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "INC2",
+    "function_top5": [
+      [
+        "the",
+        14
+      ],
+      [
+        "and",
+        8
+      ],
+      [
+        "with",
+        7
+      ],
+      [
+        "so",
+        4
+      ],
+      [
+        "it's",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "sauce",
+        3
+      ],
+      [
+        "yeah",
+        2
+      ],
+      [
+        "pans",
+        2
+      ],
+      [
+        "garlic",
+        2
+      ],
+      [
+        "running",
+        2
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "INC3",
+    "function_top5": [
+      [
+        "the",
+        11
+      ],
+      [
+        "i",
+        5
+      ],
+      [
+        "when",
+        3
+      ],
+      [
+        "with",
+        3
+      ],
+      [
+        "in",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "er",
+        5
+      ],
+      [
+        "sometimes",
+        4
+      ],
+      [
+        "football",
+        3
+      ],
+      [
+        "jumping",
+        3
+      ],
+      [
+        "shoes",
+        3
+      ]
+    ]
+  },
+  {
+    "generator": "GPT-4.1",
+    "q_id": "Q06",
+    "condition": "PER3",
+    "function_top5": [
+      [
+        "i",
+        13
+      ],
+      [
+        "the",
+        4
+      ],
+      [
+        "and",
+        4
+      ],
+      [
+        "it's",
+        4
+      ],
+      [
+        "to",
+        3
+      ]
+    ],
+    "nonlist_top5": [
+      [
+        "pasta",
+        19
+      ],
+      [
+        "like",
+        5
+      ],
+      [
+        "sometimes",
+        4
+      ],
+      [
+        "really",
+        3
+      ],
+      [
+        "cook",
+        3
+      ]
+    ]
+  }
+]

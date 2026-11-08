@@ -1,0 +1,104 @@
+{
+  "purpose": "posthoc qualitative boundary discussion only; selected using existing labels, not an agreement sample",
+  "counts_all": {
+    "no": 7,
+    "yes": 3,
+    "uncertain": 6
+  },
+  "counts_voice": {
+    "no": 2,
+    "yes": 3,
+    "uncertain": 6
+  },
+  "counts_without_voice": {
+    "no": 5
+  },
+  "voice_ids": [
+    "R02",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14"
+  ],
+  "candidate_pairs": {
+    "yes/no": [
+      [
+        "R12",
+        "R14"
+      ]
+    ],
+    "yes/uncertain": [
+      [
+        "R05",
+        "R06"
+      ],
+      [
+        "R05",
+        "R09"
+      ],
+      [
+        "R06",
+        "R07"
+      ],
+      [
+        "R07",
+        "R09"
+      ],
+      [
+        "R10",
+        "R12"
+      ],
+      [
+        "R12",
+        "R13"
+      ]
+    ],
+    "no/uncertain": [
+      [
+        "R02",
+        "R08"
+      ],
+      [
+        "R10",
+        "R14"
+      ],
+      [
+        "R13",
+        "R14"
+      ]
+    ]
+  },
+  "selected_pairs": [
+    [
+      "R12",
+      "R14"
+    ],
+    [
+      "R05",
+      "R06"
+    ],
+    [
+      "R02",
+      "R08"
+    ]
+  ],
+  "reviewer_id_lookup": {
+    "R12": "K01",
+    "R06": "K02",
+    "R02": "K03",
+    "R05": "K04",
+    "R14": "K05",
+    "R08": "K06"
+  },
+  "inputs_sha256": {
+    "masked.json": "4bd5a058e0c4612b817435102039d3aaa45071099ff8e5bf7ef1d4cee4f155d6",
+    "results.json": "ec2ff4fc1eb45292d15128576362ad74c0cbe5f75aff9c082037d344448ddef3",
+    "discourse.json": "65147c561b97807a30854a97e69abafefbf4f927c31b3f6372fb7738a130028b"
+  }
+}

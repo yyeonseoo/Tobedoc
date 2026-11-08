@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-08",
+  "stage": 3,
+  "previous": "config/research-checkpoint-v21.json",
+  "protocol_commit": "2e0a0b0",
+  "existing_utterances": 90,
+  "reused": 30,
+  "new_utterances": 0,
+  "new_ratings": 0,
+  "clinical_ratings": 0,
+  "decision": "Lexical echo is a descriptive style feature; PER2 exceeds NMULTI in 5/5 questions in each source. Not a standalone derailment indicator.",
+  "next": "Inspect adjacent-span relations on existing texts with and without lexical echo; keep clinical review separate."
+}

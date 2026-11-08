@@ -1,0 +1,188 @@
+{
+  "frame": [
+    {
+      "source": "Claude",
+      "condition": "DER2",
+      "echo": false,
+      "eligible": 65,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "Claude",
+      "condition": "DER2",
+      "echo": true,
+      "eligible": 28,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "Claude",
+      "condition": "NMULTI",
+      "echo": false,
+      "eligible": 86,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "Claude",
+      "condition": "NMULTI",
+      "echo": true,
+      "eligible": 1,
+      "questions": 1,
+      "picked": 1
+    },
+    {
+      "source": "Claude",
+      "condition": "PER2",
+      "echo": false,
+      "eligible": 88,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "Claude",
+      "condition": "PER2",
+      "echo": true,
+      "eligible": 17,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "GPT-4.1",
+      "condition": "DER2",
+      "echo": false,
+      "eligible": 82,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "GPT-4.1",
+      "condition": "DER2",
+      "echo": true,
+      "eligible": 2,
+      "questions": 1,
+      "picked": 1
+    },
+    {
+      "source": "GPT-4.1",
+      "condition": "NMULTI",
+      "echo": false,
+      "eligible": 84,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "GPT-4.1",
+      "condition": "NMULTI",
+      "echo": true,
+      "eligible": 2,
+      "questions": 2,
+      "picked": 2
+    },
+    {
+      "source": "GPT-4.1",
+      "condition": "PER2",
+      "echo": false,
+      "eligible": 64,
+      "questions": 5,
+      "picked": 2
+    },
+    {
+      "source": "GPT-4.1",
+      "condition": "PER2",
+      "echo": true,
+      "eligible": 9,
+      "questions": 5,
+      "picked": 2
+    }
+  ],
+  "by_source_condition": {
+    "Claude/NMULTI": {
+      "False": {
+        "E": 2
+      },
+      "True": {
+        "E": 1
+      }
+    },
+    "Claude/PER2": {
+      "False": {
+        "L": 1,
+        "E": 1
+      },
+      "True": {
+        "E": 1,
+        "L": 1
+      }
+    },
+    "Claude/DER2": {
+      "False": {
+        "E": 1,
+        "W": 1
+      },
+      "True": {
+        "E": 1,
+        "U": 1
+      }
+    },
+    "GPT-4.1/NMULTI": {
+      "False": {
+        "E": 1,
+        "L": 1
+      },
+      "True": {
+        "L": 1,
+        "E": 1
+      }
+    },
+    "GPT-4.1/PER2": {
+      "False": {
+        "E": 2
+      },
+      "True": {
+        "E": 2
+      }
+    },
+    "GPT-4.1/DER2": {
+      "False": {
+        "E": 1,
+        "L": 1
+      },
+      "True": {
+        "U": 1
+      }
+    }
+  },
+  "matched_questions": {
+    "Claude/NMULTI": [],
+    "Claude/PER2": [
+      "Q06"
+    ],
+    "Claude/DER2": [
+      "Q01",
+      "Q05"
+    ],
+    "GPT-4.1/NMULTI": [
+      "Q02",
+      "Q05"
+    ],
+    "GPT-4.1/PER2": [],
+    "GPT-4.1/DER2": [
+      "Q04"
+    ]
+  },
+  "by_echo": {
+    "False": {
+      "E": 8,
+      "L": 3,
+      "W": 1
+    },
+    "True": {
+      "E": 6,
+      "L": 2,
+      "U": 2
+    }
+  },
+  "unique_utterances": 16
+}

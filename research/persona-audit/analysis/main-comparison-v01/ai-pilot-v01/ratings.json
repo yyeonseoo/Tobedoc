@@ -1,0 +1,48 @@
+{
+  "rater": "Codex (AI), single contextual reading",
+  "sample": "First four of 16 calibration items. The 16 comprise eight existing development outputs and eight selected from the 228 team utterances; individual sources masked. Prior exposure possible.",
+  "rubric": "share/main-comparison-v01/블라인드16개_검토.md",
+  "clinical_ratings": 0,
+  "rows": [
+    {
+      "blind_id": "B01",
+      "text_sha256": "8564a8bd69565aefa0093f4a8841f8caefcfccd3f93b50c1aa29377bb88be6dc",
+      "opening_answer": "direct",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "There's my mum, who's the centre of everything,",
+      "next_excerpt": null,
+      "rationale": "가족 구성원을 따라 소개한 뒤 친밀함을 설명한다. 직업·취미 세부사항도 해당 가족과 연결된다."
+    },
+    {
+      "blind_id": "B02",
+      "text_sha256": "15ea262594d55f6aa6afc1db50437c96b46fe1546561636e6da7b246f244dd69",
+      "opening_answer": "direct",
+      "unclear_transition": "yes",
+      "within_clause_difficulty": "no",
+      "excerpt": "I like the routine—it keeps me grounded.",
+      "next_excerpt": "I don’t really think about the voice much during the day, but sometimes I hear it when I’m alone.",
+      "rationale": "일과가 안정감을 준다는 말에서 목소리를 언제 듣는지로 옮겨간다. 두 진술은 이해되지만 이 일과와 목소리의 관계는 제시되지 않는다. 뒤의 during the day가 약한 시간 연결이라는 반대 해석은 가능하다."
+    },
+    {
+      "blind_id": "B03",
+      "text_sha256": "47d7ab3a21722ec92f6eb12415723702bdc3e8051788ee306d9b4bcc13d65876",
+      "opening_answer": "direct",
+      "unclear_transition": "uncertain",
+      "within_clause_difficulty": "no",
+      "excerpt": "The bus ride is pretty quiet, so I often listen to music or just think.",
+      "next_excerpt": "I don’t really pay much attention to the voice unless I’m tired.",
+      "rationale": "조용한 버스·음악에서 목소리로 이동한다. 소리와 주의라는 연결을 추론할 수 있어 불명확한 전환이라고 단정하기 어렵다. 이후 직장·도움 언급도 질문의 출근 맥락에서 가능한 확장이다."
+    },
+    {
+      "blind_id": "B04",
+      "text_sha256": "3daf92fe975e43cf4fa0ec749ff72994a5544ff3430f404c369094b258a448bc",
+      "opening_answer": "partial",
+      "unclear_transition": "no",
+      "within_clause_difficulty": "no",
+      "excerpt": "I remember my dad used to take me and my brother fishing at the weekends, usually early in the morning, which I never liked because I’m not really a morning person.",
+      "next_excerpt": "I always struggled to get out of bed for school, too, especially during winter when it’s still dark out, and mum would have to bang on the door a few times to wake us up.",
+      "rationale": "가족에 대한 직접 설명은 늦지만 낚시에서 학교로 이동하는 두 문장은 아침에 일어나기 힘들었다는 이유로 연결된다. 곁가지와 연결 단절은 구분된다."
+    }
+  ]
+}

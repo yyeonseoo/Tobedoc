@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-01",
+  "previous_checkpoint": "config/research-checkpoint-v10.json",
+  "status": "Research results synthesized and comprehensive roadmap redrawn; no new experiment launched",
+  "main_question": "What do NLP measures capture in controlled thought-disorder simulations, and can target effects be distinguished from style, reporting, length and generator differences?",
+  "roadmap": "config/research-roadmap-v11.json",
+  "report": "share/research-synthesis-v01/성과정리와연구확장로드맵.md",
+  "handoff": "share/research-synthesis-v01/새채팅인계요약.md",
+  "evidence": "analysis/research-synthesis-v01/evidence-ledger.json",
+  "all_previous_data_preserved": true,
+  "expert_access_is_not_gate_for_all_synthetic_analyses": true,
+  "clinical_claims_still_require_appropriate_validation": true,
+  "next_action": "Link team presentation slides 5 to 8 to their raw corpus, conditions, features and reference-span analysis; reproduce existing results before choosing new generation",
+  "user_input_requested": "Folder or files for the Claude/GPT-4.1 114-answer corpora and localization analysis",
+  "while_waiting": "Results inventory and local evidence linkage are completed; no fabricated reconstruction of missing team data",
+  "old_paused_experiments_automatically_resumed": false,
+  "psyche_holdout": "32 requests remain ungenerated; not automatically released by new roadmap",
+  "model_settings_changed": false,
+  "new_paid_api_or_model_calls": 0,
+  "superseded_by": "config/research-checkpoint-v12.json",
+  "current_status_note": "2026-11-04: corpus and description acquired; first feature comparisons complete; historical waiting fields below are obsolete"
+}

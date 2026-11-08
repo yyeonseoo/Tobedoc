@@ -1,0 +1,31 @@
+{
+  "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "scope": "evidence suggestions only; one fresh context per batch",
+  "request": {
+    "model": "qwen3:14b",
+    "prompt": "Extract evidence only from these four synthetic answers for two background facts: living with a sister, and working part time in a bookshop. For each answer return JSON keyed by ID with two short exact substrings (sister and job) or null. Include partial clues, do not infer status or generate dialogue. Input: [{\"id\": \"R13\", \"question\": \"Tell me about your usual morning, from waking up until you get to work.\", \"text\": \"I usually wake up around seven, though sometimes I oversleep if I’m tired. I make a cup of tea and toast, then feed the cat before getting dressed. I take the bus to work, which takes about twenty minutes. I live with my sister, so she’s usually up too, but she’s still asleep most mornings. I don’t mind the routine—it helps me feel calm. I don’t hear the voice every day, just sometimes, especially if I haven’t slept well. It’s not loud or threatening, more like a whisper. I try not to think about it too much.\"}, {\"id\": \"R14\", \"question\": \"Tell me about your usual morning, from waking up until you get to work.\", \"text\": \"I usually wake up around seven, maybe a bit later if I’ve had a rough night. I make myself a cup of tea and some toast, then feed the cat before getting dressed. I take the bus to work, so I leave the house just in time to catch it. My sister lives with me, so we sometimes talk before I leave, but most days it’s pretty quiet. I like the routine—it helps me feel grounded. I don’t really notice the voice in the morning, but it can show up later, especially if I’m tired.\"}, {\"id\": \"R15\", \"question\": \"Tell me about what you do at the bookshop, from opening until the end of your shift.\", \"text\": \"I usually get up around seven, have a quick breakfast, and then head to the shop. I open the door, check the stock, and make sure everything is tidy. My colleague helps me with the heavier tasks, like restocking shelves. Most of the time, I just greet customers, help them find books, and maybe chat a bit. The busiest part is in the afternoon when more people come in. I like the quiet moments too, when I can just sit and read. I stay until closing, then take the bus home. It’s a simple routine, but it keeps me grounded.\"}, {\"id\": \"R16\", \"question\": \"Tell me about what you do at the bookshop, from opening until the end of your shift.\", \"text\": \"I get there around seven, usually. My colleague and I open the shop together—unlock the door, turn on the lights, check the shelves. I like to make sure everything looks neat before customers come in. During the day, I help people find books, restock the shelves, and sometimes read a bit if it's slow. I take breaks when I can, mostly in the back room. The busiest times are in the afternoon, so I keep moving then. I close up at five, lock the door, and take the bus home. It's a quiet job, and I find that helps me stay calm.\"}]",
+    "think": false,
+    "format": "json",
+    "stream": false,
+    "options": {
+      "seed": 20261105,
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 450
+    }
+  },
+  "raw": {
+    "model": "qwen3:14b",
+    "created_at": "2026-11-05T06:56:15.532099Z",
+    "response": "{\n  \"R13\": {\n    \"sister\": \"live with my sister\",\n    \"job\": null\n  },\n  \"R14\": {\n    \"sister\": \"My sister lives with me\",\n    \"job\": null\n  },\n  \"R15\": {\n    \"sister\": null,\n    \"job\": \"bookshop\"\n  },\n  \"R16\": {\n    \"sister\": null,\n    \"job\": \"bookshop\"\n  }\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 10457478250,
+    "load_duration": 540417,
+    "prompt_eval_count": 702,
+    "prompt_eval_cached_count": 72,
+    "prompt_eval_duration": 2183259000,
+    "eval_count": 104,
+    "eval_duration": 8232007000
+  }
+}

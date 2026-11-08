@@ -1,0 +1,9 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "source_sha256": "5b8d11491f2ab5fc4ef0612e6ddc28411c59e70719ecf3147fd400775185c116",
+  "config_sha256": "097112f47290d7508d2123538c79bd5c601b5958c89ae8f9f7723181d101c245",
+  "script_sha256": "1991b550016ef13f0ff22eac995dd7584aca7b8d94066b3f3d04209c925da294",
+  "bootstrap": "all 46656 ordered resamples of six questions; no RNG",
+  "sign_flip": "all 64 sign assignments; no RNG"
+}

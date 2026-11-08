@@ -1,0 +1,27 @@
+{
+  "n_rows": 228,
+  "unique_texts": 228,
+  "unique_cells": 228,
+  "complete_grid": true,
+  "personas": 1,
+  "questions": 6,
+  "outputs_per_cell": 1,
+  "words_lexical": {
+    "min": 123,
+    "median": 155.0,
+    "max": 180,
+    "within_150_170": 168
+  },
+  "words_whitespace": {
+    "min": 123,
+    "median": 155.0,
+    "max": 178
+  },
+  "within_150_170_by_generator": {
+    "Claude": 87,
+    "GPT-4.1": 81
+  },
+  "description_discrepancy": "CIRC1/CIRC2 level=1/2 in CSV despite general statement that controls have level 0",
+  "claude_pilot_question_ids": null,
+  "all_texts_at_least_100_tokens": true
+}

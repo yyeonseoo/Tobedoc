@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-08",
+  "stage": 3,
+  "previous": "config/research-checkpoint-v22.json",
+  "existing_utterances_selected": 16,
+  "masked_boundary_readings": 22,
+  "qwen_batches": 6,
+  "qwen_literal_snippets_exact": 42,
+  "qwen_literal_snippets_total": 44,
+  "new_utterances": 0,
+  "clinical_ratings": 0,
+  "plan_commit": "2e2785f",
+  "ratings_commit": "c89dbdc",
+  "decision": "Keep lexical echo descriptive; same answer contains an echoed elaboration and an unflagged weak association (skins/skin).",
+  "next": "Synthesize stage 3 evidence, boundary consultation examples and remaining control/independent-review needs; do not generate new utterances."
+}

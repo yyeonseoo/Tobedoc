@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-04",
+  "previous_checkpoint": "config/research-checkpoint-v11.json",
+  "status": "Acquired 228 outputs and description; bounded first feature analysis complete",
+  "input": "data/team-corpus-20261104/manifest.json",
+  "spec": "config/team-corpus-v01.json",
+  "results": "analysis/team-corpus-v01/results.json",
+  "report": "share/team-corpus-v01/특징비교보고서.md",
+  "new_utterances": 0,
+  "new_embeddings": 0,
+  "new_llm_ratings": 0,
+  "paid_api_calls": 0,
+  "qwen_documentation_calls": 1,
+  "remaining_missing": [
+    "Original blinded ratings",
+    "Localization reference spans and original analysis",
+    "Exact generation prompts/conversation history",
+    "Claude pilot question IDs"
+  ],
+  "next_candidate": "Existing-data mechanism audit of INC3 lexical-diversity direction reversal; discuss before expanding scope",
+  "clinical_validation": false,
+  "remote_push": false,
+  "git_scope": "Current follow-up dependencies and updated handoff only; older untracked research artifacts remain unchanged",
+  "superseded_by": "config/research-checkpoint-v13.json"
+}

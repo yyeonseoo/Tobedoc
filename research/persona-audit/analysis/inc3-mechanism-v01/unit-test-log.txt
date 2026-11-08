@@ -1,0 +1,9 @@
+test_all_unique (test_inc3_mechanism.TestDecomposition.test_all_unique) ... ok
+test_equal_repetition_of_two_classes (test_inc3_mechanism.TestDecomposition.test_equal_repetition_of_two_classes) ... ok
+test_identity_after_lexicon_change (test_inc3_mechanism.TestDecomposition.test_identity_after_lexicon_change) ... ok
+test_repeated_single_function_word (test_inc3_mechanism.TestDecomposition.test_repeated_single_function_word) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

@@ -1,0 +1,144 @@
+[
+  {
+    "id": "D-bookshop",
+    "split": "development",
+    "questions": [
+      "Tell me about your usual morning, from waking up until you get to work.",
+      "Tell me about what you do at the bookshop, from opening until the end of your shift."
+    ],
+    "facts": {
+      "Q1": [
+        "wake around seven",
+        "feed our cat",
+        "take the bus to work"
+      ],
+      "Q2": [
+        "open the shop with a colleague"
+      ],
+      "guard": [
+        "live with my sister",
+        "work part time in a bookshop"
+      ]
+    }
+  },
+  {
+    "id": "H01",
+    "split": "confirmation",
+    "age": "36",
+    "sex": "Female",
+    "occupation": "Bakery assistant",
+    "work_history": "Works part time at a bakery",
+    "appearance": "A 36-year-old woman, casually dressed, calm and willing to answer the current question.",
+    "history": "I live with my sister and work part time at a bakery. On workdays I wake at six, eat yoghurt, and cycle to the bakery. At work I label the bread trays, wrap loaves, and wipe down the counter. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.",
+    "questions": [
+      "Walk me through a workday morning. How do you start the day and get to your workplace?",
+      "Once you arrive at work, what tasks do you usually do during your shift?"
+    ],
+    "facts": {
+      "Q1": [
+        "wake at six",
+        "eat yoghurt",
+        "cycle to the bakery"
+      ],
+      "Q2": [
+        "label the bread trays",
+        "wrap loaves",
+        "wipe down the counter"
+      ],
+      "guard": [
+        "live with my sister",
+        "work part time at a bakery"
+      ]
+    }
+  },
+  {
+    "id": "H02",
+    "split": "confirmation",
+    "age": "41",
+    "sex": "Male",
+    "occupation": "Cinema assistant",
+    "work_history": "Works part time at a cinema",
+    "appearance": "A 41-year-old man, casually dressed, calm and willing to answer the current question.",
+    "history": "I live with my sister and work part time at a cinema. On workdays I wake at eight, eat cereal, and take the tram to the cinema. At work I check the tickets, fill the snack shelves, and sweep the lobby. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.",
+    "questions": [
+      "Walk me through a workday morning. How do you start the day and get to your workplace?",
+      "Once you arrive at work, what tasks do you usually do during your shift?"
+    ],
+    "facts": {
+      "Q1": [
+        "wake at eight",
+        "eat cereal",
+        "take the tram to the cinema"
+      ],
+      "Q2": [
+        "check the tickets",
+        "fill the snack shelves",
+        "sweep the lobby"
+      ],
+      "guard": [
+        "live with my sister",
+        "work part time at a cinema"
+      ]
+    }
+  },
+  {
+    "id": "H03",
+    "split": "confirmation",
+    "age": "29",
+    "sex": "Male",
+    "occupation": "Laundry assistant",
+    "work_history": "Works part time at a laundry",
+    "appearance": "A 29-year-old man, casually dressed, calm and willing to answer the current question.",
+    "history": "I live with my sister and work part time at a laundry. On workdays I wake at seven, eat toast, and walk to the laundry. At work I sort the incoming bags, fold clean towels, and put away the linen carts. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.",
+    "questions": [
+      "Walk me through a workday morning. How do you start the day and get to your workplace?",
+      "Once you arrive at work, what tasks do you usually do during your shift?"
+    ],
+    "facts": {
+      "Q1": [
+        "wake at seven",
+        "eat toast",
+        "walk to the laundry"
+      ],
+      "Q2": [
+        "sort the incoming bags",
+        "fold clean towels",
+        "put away the linen carts"
+      ],
+      "guard": [
+        "live with my sister",
+        "work part time at a laundry"
+      ]
+    }
+  },
+  {
+    "id": "H04",
+    "split": "confirmation",
+    "age": "47",
+    "sex": "Female",
+    "occupation": "Stationery shop assistant",
+    "work_history": "Works part time at a stationery shop",
+    "appearance": "A 47-year-old woman, casually dressed, calm and willing to answer the current question.",
+    "history": "I live with my sister and work part time at a stationery shop. On workdays I wake at nine, eat porridge, and take the bus to the stationery shop. At work I price the notebooks, refill the pen display, and count the till. I sometimes hear a voice when nobody is nearby. My sister suggested an appointment. I do not know medical terminology.",
+    "questions": [
+      "Walk me through a workday morning. How do you start the day and get to your workplace?",
+      "Once you arrive at work, what tasks do you usually do during your shift?"
+    ],
+    "facts": {
+      "Q1": [
+        "wake at nine",
+        "eat porridge",
+        "take the bus to the stationery shop"
+      ],
+      "Q2": [
+        "price the notebooks",
+        "refill the pen display",
+        "count the till"
+      ],
+      "guard": [
+        "live with my sister",
+        "work part time at a stationery shop"
+      ]
+    }
+  }
+]

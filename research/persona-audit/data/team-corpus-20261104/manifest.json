@@ -1,0 +1,25 @@
+{
+  "acquired_date": "2026-11-04",
+  "files": [
+    {
+      "original_path": "/Users/ohs/Downloads/투비닥터 연구/생성발화/LLM_생성발화_schizophrenia.csv",
+      "file": "utterances.csv",
+      "sha256": "5b8d11491f2ab5fc4ef0612e6ddc28411c59e70719ecf3147fd400775185c116",
+      "bytes": 225015
+    },
+    {
+      "original_path": "/Users/ohs/Downloads/투비닥터 연구/생성발화/조현병_생성발화_데이터설명.docx",
+      "file": "generation-description.docx",
+      "sha256": "9453fade22e08409fe2ddaa677184bc7c068fd6f4ec49d022d90f9d68c3cbf8d",
+      "bytes": 20178
+    }
+  ],
+  "source": "User-supplied local files; not downloaded from teammate GitHub",
+  "github_reference": {
+    "repository": "https://github.com/yyeonseoo/Tobedoc",
+    "tree_sha": "58477f301a5b850b7fe0f8056f18bf9f01a10ea7"
+  },
+  "claude_pilot_question_ids": null,
+  "pilot_id_status": "User cannot currently confirm; do not assume Q01/Q02",
+  "new_utterance_generation": 0
+}
