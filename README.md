@@ -1,3 +1,9 @@
+# 후속 연구 전체 작업본 (2026년 11월 8일)
+
+[전체 연구 폴더](research/persona-audit/) · [코드](research/persona-audit/scripts/) · [분석 결과](research/persona-audit/analysis/) · [원자료 228개](research/persona-audit/data/team-corpus-20261104/utterances.csv) · [중간 회의 보고서](research/persona-audit/share/meeting-20261108/중간회의_연구보고서.pdf) · [Git 이력과 이전 작업](research/persona-audit/archive/README.md)
+
+기존 팀 연구 내용은 아래에 보존했습니다.
+
 # MindCraft: 조현병 발화의 의미 이탈 정량화
 
 ## 중간보고서까지의 정리본 (2026-10-23): 지금 데이터로 알 수 있는 것과 없는 것
