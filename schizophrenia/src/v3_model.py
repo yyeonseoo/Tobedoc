@@ -31,7 +31,8 @@ LABEL = {'drift_slope': '이탈 기울기', 'drift_mean': '평균 이탈', 'adj_
          'jump_max': '최대 점프', 'adj_sd': '인접 거리 변동성', 'global_coh': '전역 응집도', 'sem_redund': '의미 되풀이',
          'recurrence': '어휘 재등장률', 'mattr': 'MATTR', 'sem_density': '의미 밀도', 'rare_rate': '희귀어 비율',
          'clang_rate': '각운 연결'}
-CLAR = re.compile(r'what do you mean|did you say|\bsorry\b|pardon|\brepeat|what was that|not sure i follow|\byou mean\b|say that again|didnt catch|whats that')
+# 되물음: 맞장구("I know what you mean")와 사과("sorry to hear")는 빼고 실제로 다시 묻는 표현만 (2026-10-28 수정)
+CLAR = re.compile(r'(what|how) do you mean|what you mean by|did you say|say that again|pardon|didnt catch|can you repeat|what was that|not sure i follow')
 
 
 def lr(C=1.0):

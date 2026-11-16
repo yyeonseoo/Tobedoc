@@ -1,6 +1,6 @@
 # 03. 팀 노트북 Reddit AUC 재현과 점검 (E6)
 
-재현: `python src/v2_notebook_audit.py`. 팀 노트북(`v1/colab_v5_1.ipynb`, 최신본 `v1/colab_latest.ipynb`도 전처리·피처·모델 코드가 같음)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 4950개, 작성자 4566명). 모델은 구조 지표 8개 로지스틱 회귀, 작성자 단위 5-fold.
+재현: `python src/v2_notebook_audit.py`. 팀 노트북(`notebooks/colab_v5_1.ipynb`, 최신본 `notebooks/colab_latest.ipynb`도 전처리·피처·모델 코드가 같음)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 4950개, 작성자 4566명). 모델은 구조 지표 8개 로지스틱 회귀, 작성자 단위 5-fold.
 
 ## 1. 노트북 주 분석에서 한 가지씩만 바꿨을 때 (전체 표본)
 | 조건                                                        |   작성자 단위 AUC |

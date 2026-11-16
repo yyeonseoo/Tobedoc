@@ -1,4 +1,4 @@
-"""E6: 팀 Colab 노트북(v1/colab_v5_1.ipynb)의 Reddit 작성자 단위 AUC 재현과 점검 -> reports/03_notebook_audit.md.
+"""E6: 팀 Colab 노트북(notebooks/colab_v5_1.ipynb)의 Reddit 작성자 단위 AUC 재현과 점검 -> reports/03_notebook_audit.md.
 
 노트북의 전처리·지표·모델을 그대로 옮기고(아래 '노트북 그대로' 구간), 한 번에 하나씩 바꿔 AUC 변화를 본다.
 """
@@ -159,7 +159,7 @@ def main():
     s['대조 평균'] = fa[fa.label == 0][STRUCTURAL].mean()
     md = f"""# 03. 팀 노트북 Reddit AUC 재현과 점검 (E6)
 
-재현: `python src/v2_notebook_audit.py`. 팀 노트북(`v1/colab_v5_1.ipynb`, 최신본 `v1/colab_latest.ipynb`도 전처리·피처·모델 코드가 같음)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 {len(df)}개, 작성자 {df.author.nunique()}명). 모델은 구조 지표 8개 로지스틱 회귀, 작성자 단위 5-fold.
+재현: `python src/v2_notebook_audit.py`. 팀 노트북(`notebooks/colab_v5_1.ipynb`, 최신본 `notebooks/colab_latest.ipynb`도 전처리·피처·모델 코드가 같음)의 전처리·지표·모델을 그대로 옮겼다 (80~1,200단어 글 {len(df)}개, 작성자 {df.author.nunique()}명). 모델은 구조 지표 8개 로지스틱 회귀, 작성자 단위 5-fold.
 
 ## 1. 노트북 주 분석에서 한 가지씩만 바꿨을 때 (전체 표본)
 {tab(t1)}

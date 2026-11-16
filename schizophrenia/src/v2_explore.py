@@ -88,7 +88,8 @@ def e3(f):
 
 
 FIRST_PERSON = {'im', 'ive', 'id', 'ill'}
-CLAR = re.compile(r'what do you mean|did you say|\bsorry\b|pardon|\brepeat|what was that|not sure i follow|\byou mean\b|say that again|didnt catch|whats that')
+# 되물음: 맞장구("I know what you mean")와 사과("sorry to hear")는 빼고 실제로 다시 묻는 표현만 (2026-10-28 수정)
+CLAR = re.compile(r'(what|how) do you mean|what you mean by|did you say|say that again|pardon|didnt catch|can you repeat|what was that|not sure i follow')
 
 
 def e4(r1):
