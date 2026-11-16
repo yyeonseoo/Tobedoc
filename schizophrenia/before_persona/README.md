@@ -1,4 +1,6 @@
-# MindCraft: 조현병 발화의 의미 이탈 정량화
+# 페르소나 모델 이전 작업 (v1~v4, 2026-10-01~11-08)
+
+실제 데이터(DAIS-C, Reddit) 분석과 TLC 합성 발화로 지표 세트를 만든 과정. 지금 하는 페르소나 모델은 main 브랜치의 `schizophrenia/persona/`에 있다. 코드는 이 폴더 기준으로 실행한다(`cd before_persona`).
 
 ## 최종 정리 (2026-10-23): 지금 데이터로 알 수 있는 것과 없는 것
 
@@ -119,17 +121,14 @@
 - 실제처럼 미묘한 생성 발화(답변 대부분은 정상, 한두 문장만 사고장애, 112개)로 다시 봤다. 조건 모르는 평가자가 정상·우회증은 모두 0점으로, 사고장애 구간은 생성 때 표시한 위치 그대로 골라 생성이 의도대로 됐음을 확인했다. 답변 단위 지표로는 정상 답변과 구분되지 않았다. 다만 답변 안에서 질문과 가장 먼 구간이 표시된 사고장애 구간과 겹치는 비율은 우연보다 높았다(41% 대 25%, 주제 이탈 63%). DAIS-C에서는 위치 맞히기도 우연 수준이었다. [reports/v4/07_local.md](reports/v4/07_local.md)
 - 생성 발화는 교과서 정의에 맞는지만 확인된 것이라, 실제 환자에게 그대로 적용되는지는 알 수 없다. 자세한 내용: [reports/v4/01_results.md](reports/v4/01_results.md)
 
-### 8. v5 (2026-11-08): 페르소나 모델 v1
+### 8. 이후
 
-- 인물 설정과 TLC 증상 설정(항목과 단계)을 넣으면 질문 8개의 여러 턴 면담을 만드는 프롬프트 기반 모델을 만들었다(src/persona_model.py). 인물 3명 × 설정 5개(정상, 탈선 2, 지리멸렬 2, 말의 빈곤 2, 혼합) × 반복 2를 GPT-4.1과 Claude로 생성했다(면담 60개, 480턴, GPT 비용 약 1달러).
-- 교차 블라인드 평가와 고정 지표 세트로 판정했다. 단일 증상 설정 6개(생성 모델 2 × 설정 3) 중 4개가 사전 기준을 모두 통과했고, 나머지 2개(Claude 탈선, 말의 빈곤)도 평균 평가 점수만 1.0에 조금 못 미쳤다. 증상은 8턴 내내 유지됐고(1점 이상 턴 92~100%), 정상 면담의 오탐은 0%였다.
-- 한계: 탈선 설정은 우회증으로도, 지리멸렬 설정은 탈선으로도 평가돼 증상이 하나만 나오지 않았다. 놀람도는 아주 짧은 답(말의 빈곤)에서 오작동해 길이 조건이 필요하다. 1단계 증상 세 개를 섞은 혼합 설정은 평가자가 거의 알아보지 못했다. [reports/v5/01_persona_v1.md](reports/v5/01_persona_v1.md)
+이 지표 세트로 페르소나 모델 v1을 만들고 평가했다. `../persona/` 참고.
 
 ### 세부 보고서
 
 | 내용 | 문서 |
 |---|---|
-| v5 페르소나 모델 v1 | [01 결과](reports/v5/01_persona_v1.md), 계획 [00](reports/v5/00_plan.md) |
 | v4 단계별 사고장애 발화로 지표 점검 | [01 결과](reports/v4/01_results.md), [02 선행연구 지표](reports/v4/02_literature_metrics.md), [03 새 발화 검증](reports/v4/03_v4b_validation.md), [04 견고성](reports/v4/04_robustness.md), [05 페르소나 모델](reports/v4/05_persona.md), [06 DAIS-C](reports/v4/06_daisc.md), [07 미묘한 발화](reports/v4/07_local.md), [08 생성 모델 효과](reports/v4/08_generator.md), [09 놀람도](reports/v4/09_surprisal.md), [10 고장 점검](reports/v4/10_checks.md), [11 지표 세트](reports/v4/11_metric_set.md), 계획 [00](reports/v4/00_plan.md) |
 | v3 임상 피처 13개 결과 | [reports/v3/01_results.md](reports/v3/01_results.md), 계획 [reports/v3/00_plan.md](reports/v3/00_plan.md) |
 | 팀 노트북 재현·점검 | [reports/v2/03_notebook_audit.md](reports/v2/03_notebook_audit.md) |
@@ -154,9 +153,8 @@
 | `src/v2_*.py` | v2: SBERT 이탈 지표 분석, 탐색 분석, 팀 노트북 점검 |
 | `src/v3_*.py` | v3: 임상 피처 13개와 교란 기준선 모델 |
 | `src/v4*.py` | v4: 생성 발화, 블라인드 평가, 지표 점검, 페르소나 모델, DAIS-C 적용 |
-| `src/metrics.py` | 고정 지표 세트 (유형별 담당 지표, 계산 캐시, 정상 기준 표준화) |
-| `src/persona_model.py`, `src/v5_eval.py` | v5: 페르소나 모델 v1과 평가 |
-| `reports/v1/` ~ `reports/v5/` | 버전별 계획(00), 결과(01~), 보고서, 그림. v1은 코드 없이 보고서만 남김 |
+| `src/metrics.py` | 고정 지표 세트 v4j 판정 당시 버전 (페르소나 쪽은 `../persona/src/metrics.py`에 같은 계산으로 옮김) |
+| `reports/v1/` ~ `reports/v4/` | 버전별 계획(00), 결과(01~), 보고서, 그림. v1은 코드 없이 보고서만 남김 |
 | `data/raw/`, `data/processed/` | 원본과 산출물 (git 제외) |
 | `notebooks/` | 팀 Colab 노트북 v5.1과 최신본 (조회용) |
 | `shared_data/` | 팀 공유용 생성 발화 228개 |
@@ -201,12 +199,4 @@ python src/v4i_checks.py           # 지표 고장 점검 + 놀람도(v4f, DAIS-
 python src/v4j_poverty.py          # 말 빈곤 발화 생성 + 평가 (GPT-4.1, 키 필요) -> data/v4j/
 python src/v4j_metric_set.py       # 고정 지표 세트 확인 + 말 빈곤 판정      -> reports/v4/11_metric_set.md
 
-# v5 페르소나 모델 v1
-python src/persona_model.py        # GPT-4.1 면담 생성 (비용 상한 2.5달러)   -> data/v5/gen_gpt.json
-python src/persona_model.py --claude-tasks  # Claude 에이전트용 지시문       -> data/v5/tasks/
-python src/persona_model.py --chat A DER=2  # 직접 질문하는 대화 모드 (설정 이름도 가능: --chat B MIX, 빈 줄 = 종료)
-#   (Claude 에이전트가 같은 지시문으로 면담 작성                          -> data/v5/gen_claude_*.json)
-python src/v5_eval.py --rate       # GPT-4.1이 Claude 면담 평가 + 블라인드 파일
-#   (data/v5/blind_*.jsonl을 조건 모르는 Claude 에이전트가 평가            -> data/v5/judge_claude_on_gpt_*.csv)
-python src/v5_eval.py              # 지표 + 판정                              -> reports/v5/01_persona_v1.md
 ```

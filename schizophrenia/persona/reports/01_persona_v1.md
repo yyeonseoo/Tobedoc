@@ -1,6 +1,6 @@
-# v5: 페르소나 모델 v1 평가
+# 페르소나 모델 v1 평가
 
-재현: `python src/persona_model.py`(GPT 생성), `python src/v5_eval.py --rate`, `python src/v5_eval.py`. 계획: [00_plan.md](00_plan.md). 모델: [src/persona_model.py](../../src/persona_model.py).
+재현: `python src/persona_model.py`(GPT 생성), `python src/evaluate.py --rate`, `python src/evaluate.py`. 계획: [00_plan.md](00_plan.md). 모델: [src/persona_model.py](../src/persona_model.py).
 
 인물 3명 × 증상 설정 5개 × 반복 2 = 면담 30개 × 8턴, 생성 모델마다 240턴. 평가는 교차 블라인드 평가(Claude가 쓴 것은 GPT-4.1, GPT-4.1이 쓴 것은 Claude 에이전트)이고 턴 단위로 섞어서 했다. 지표 표시(z)는 같은 생성 모델의 NORM 턴 기준이다.
 

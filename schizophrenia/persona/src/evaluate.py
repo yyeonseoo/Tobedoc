@@ -1,7 +1,7 @@
-"""v5: 페르소나 모델 v1 평가 -> reports/v5/01_persona_v1.md. 계획: reports/v5/00_plan.md.
+"""페르소나 모델 v1 평가 -> reports/01_persona_v1.md. 계획: reports/00_plan.md.
 
-python src/v5_eval.py --rate   # GPT-4.1이 Claude 면담 평가 + Claude 평가용 블라인드 파일(GPT 면담) 생성
-python src/v5_eval.py          # 지표 계산 + 판정 + 보고서
+python src/evaluate.py --rate   GPT-4.1이 Claude 면담 채점 + Claude가 채점할 블라인드 파일(GPT 면담) 생성
+python src/evaluate.py          지표 계산, 판정, 보고서
 """
 import glob
 import json
@@ -14,15 +14,11 @@ import pandas as pd
 from scipy import stats
 
 from metrics import PROFILE, Cached, flags
-from persona_model import OUT, PROFILES, Budget
-from v4_judge import RUBRIC as TLC_RUBRIC, rate_items
+from persona_model import OUT, PROFILES
+from tlc import ITEMS, RUBRIC, Budget, rate_items
 
-REP = os.path.join(OUT, '..', '..', 'reports', 'v5')
-ITEMS = ['derailment', 'tangentiality', 'incoherence', 'perseveration', 'clanging', 'circumstantiality', 'poverty_of_speech']
+REP = os.path.join(OUT, '..', 'reports')
 RATE = dict(DER='derailment', INC='incoherence', POV='poverty_of_speech', PER='perseveration')
-RUBRIC = TLC_RUBRIC.replace(
-    '- circumstantiality:', '- poverty_of_speech: restriction in the amount of spontaneous speech; replies are brief and unelaborated.\n- circumstantiality:').replace(
-    '"circumstantiality":n,', '"circumstantiality":n,"poverty_of_speech":n,')
 SINGLE = ['DER', 'INC', 'POV']
 NCLAUDE = 4  # Claude 평가 에이전트 수
 
@@ -92,9 +88,9 @@ def main():
     norm_fp = d[d.profile == 'NORM'].groupby('gen').apply(lambda g: (g[ITEMS].max(axis=1) >= 1).mean())
     words = d.groupby(['gen', 'profile']).n_words.median()
     T = lambda x, i=False: x.to_markdown(index=i, floatfmt='.2f')
-    md = f"""# v5: 페르소나 모델 v1 평가
+    md = f"""# 페르소나 모델 v1 평가
 
-재현: `python src/persona_model.py`(GPT 생성), `python src/v5_eval.py --rate`, `python src/v5_eval.py`. 계획: [00_plan.md](00_plan.md). 모델: [src/persona_model.py](../../src/persona_model.py).
+재현: `python src/persona_model.py`(GPT 생성), `python src/evaluate.py --rate`, `python src/evaluate.py`. 계획: [00_plan.md](00_plan.md). 모델: [src/persona_model.py](../src/persona_model.py).
 
 인물 3명 × 증상 설정 5개 × 반복 2 = 면담 30개 × 8턴, 생성 모델마다 240턴. 평가는 교차 블라인드 평가(Claude가 쓴 것은 GPT-4.1, GPT-4.1이 쓴 것은 Claude 에이전트)이고 턴 단위로 섞어서 했다. 지표 표시(z)는 같은 생성 모델의 NORM 턴 기준이다.
 
@@ -134,5 +130,4 @@ NORM 면담에서 어느 항목이든 1점 이상인 턴 비율(오탐): {', '.j
 
 
 if __name__ == '__main__':
-    assert '"poverty_of_speech":n' in RUBRIC and '- poverty_of_speech:' in RUBRIC
     rate() if '--rate' in sys.argv else main()

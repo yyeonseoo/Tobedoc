@@ -1,20 +1,17 @@
-"""페르소나 모델 v1: 인물 + TLC 증상 설정 -> 여러 턴 면담. 계획: reports/v5/00_plan.md.
+"""페르소나 모델 v1: 인물 + TLC 증상 설정 -> 여러 턴 면담. 계획: reports/00_plan.md.
 
-사용: from persona_model import interview; interview(client, 'A', {'DER': 2})
-일괄 생성(GPT-4.1): python src/persona_model.py  -> data/v5/gen_gpt.json (이미 만든 면담은 건너뜀, 비용 상한 있음)
-Claude 작성용 지시문: python src/persona_model.py --claude-tasks -> data/v5/tasks/
-대화 모드: python src/persona_model.py --chat A DER=2   (설정 이름도 가능: --chat B MIX / --chat C NORM, 빈 줄 입력 시 종료)
+python src/persona_model.py                 GPT-4.1로 면담 일괄 생성 -> data/gen_gpt.json (이미 만든 면담은 건너뜀)
+python src/persona_model.py --claude-tasks  Claude 에이전트가 쓸 지시문 -> data/tasks/
+python src/persona_model.py --chat A DER=2  직접 질문하는 대화 모드 (--chat B MIX 처럼 설정 이름도 됨, 빈 줄 = 종료)
 """
 import json
 import os
 import sys
 
-from v4b_generate import DEF as TLC, LEVEL
-from v4j_poverty import DEF as NEG
+from tlc import DEF, LEVEL, Budget, client
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, 'data', 'v5')
-DEF = {**TLC, 'POV': NEG['POV']}
+OUT = os.path.join(ROOT, 'data')
 PERSONAS = {
     'A': 'a 34-year-old man who lives alone in a flat in an English town, works part-time shifts in a warehouse, and likes football and cooking',
     'B': ('a 52-year-old woman, a retired nurse who worked on hospital wards for 25 years, widowed, lives in a semi-detached '
@@ -23,16 +20,17 @@ PERSONAS = {
           'in a northern English city, and likes drawing'),
 }
 PROFILES = {'NORM': {}, 'DER': {'DER': 2}, 'INC': {'INC': 2}, 'POV': {'POV': 2}, 'MIX': {'DER': 1, 'PER': 1, 'POV': 1}}
-QUESTIONS = {}  # Q01~Q06은 v4와 같음 (main에서 채움)
-EXTRA = {'Q07': 'How have you been sleeping lately?', 'Q08': 'What are your plans for the next few weeks?'}
+QUESTIONS = {
+    'Q01': 'What did you do last weekend?',
+    'Q02': 'Can you tell me a bit about your job?',
+    'Q03': "What's your family like?",
+    'Q04': "What's a film or TV show you've enjoyed recently?",
+    'Q05': 'What was it like where you grew up?',
+    'Q06': 'What do you like to cook?',
+    'Q07': 'How have you been sleeping lately?',
+    'Q08': 'What are your plans for the next few weeks?',
+}
 REPS = 2
-BUDGET = 2.5  # 달러, 생성 + 평가 합계
-PRICE_IN, PRICE_OUT = 2 / 1e6, 8 / 1e6
-
-
-def questions():
-    from v4g_generate import questions as q6
-    return {**q6(), **EXTRA}
 
 
 def system_prompt(persona, profile):
@@ -51,21 +49,9 @@ def system_prompt(persona, profile):
     return '\n'.join(p)
 
 
-class Budget:
-    def __init__(self, path):
-        self.path = path
-        self.spent = json.load(open(path))['spent'] if os.path.exists(path) else 0.0
-
-    def add(self, usage):
-        self.spent += usage.prompt_tokens * PRICE_IN + usage.completion_tokens * PRICE_OUT
-        json.dump({'spent': self.spent}, open(self.path, 'w'))
-        if self.spent > BUDGET:
-            sys.exit(f'비용 상한 {BUDGET}달러 도달 ({self.spent:.2f}). 중단.')
-
-
 def interview(client, persona, profile, qs=None, budget=None, model='gpt-4.1'):
     """한 턴씩 실제로 대화한다. -> [{'q', 'question', 'text'}]"""
-    qs = qs or questions()
+    qs = qs or QUESTIONS
     msgs = [{'role': 'system', 'content': system_prompt(persona, profile)}]
     turns = []
     for q, qt in qs.items():
@@ -91,13 +77,6 @@ def parse_profile(args):
     return {k: int(v) for k, v in (a.split('=') for a in args)}
 
 
-def client():
-    from dotenv import load_dotenv
-    from openai import OpenAI
-    load_dotenv(os.path.join(ROOT, '..', '.env'))
-    return OpenAI()
-
-
 def chat(persona, profile):
     sys.stdout.reconfigure(errors='replace')
     c, msgs = client(), [{'role': 'system', 'content': system_prompt(persona, profile)}]
@@ -110,7 +89,7 @@ def chat(persona, profile):
 def claude_tasks():
     """Claude 에이전트용: 인물마다 지시문 10개(설정 5 × 반복 2)와 질문을 담은 작업 파일."""
     os.makedirs(os.path.join(OUT, 'tasks'), exist_ok=True)
-    qs = questions()
+    qs = QUESTIONS
     for p in PERSONAS:
         jobs = [{'persona': p, 'profile': name, 'rep': r, 'system': system_prompt(p, prof)}
                 for name, prof in PROFILES.items() for r in range(REPS)]
@@ -125,7 +104,7 @@ def main():
     data = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {'interviews': []}
     have = {(i['persona'], i['profile'], i['rep']) for i in data['interviews']}
     budget = Budget(os.path.join(OUT, 'spent.json'))
-    qs = questions()
+    qs = QUESTIONS
     for p in PERSONAS:
         for name, prof in PROFILES.items():
             for r in range(REPS):
