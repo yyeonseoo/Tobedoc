@@ -20,9 +20,13 @@ MFC_PATH = os.path.join(OUT, 'mfc.json')
 DER_LEVELS = {
     1: ('- derailment: in some answers (not all), your ideas slip off track once onto an obliquely related idea and you '
         'carry on from there; otherwise you are easy to follow.'),
-    2: ('- derailment: within each answer, your ideas slip off track two to four times onto obliquely related or '
-        'unrelated ideas, and you do not return to the question; each sentence makes sense on its own, but the '
-        'links between them are lost.'),
+    # 2단계는 TLC 원문 탈선 설명의 특징을 옮긴 문구(04 9단계, GPT 채점자 0.4 -> 0.83). 앞 문구는 psyche_ablation DER_W에 남김
+    2: ('- derailment: your ideas slip off the track onto other ideas that are only obliquely related or completely '
+        'unrelated. You put things side by side that have no meaningful connection, and you shift from one frame of '
+        'reference to another without warning. Your sentences are disjointed: they do not hang together, and you use '
+        '"it", "they" or "that" without making clear who or what you mean. With each slip you get farther from the '
+        'question, and you do not notice that your answer no longer has anything to do with it. This happens several '
+        'times in every answer.'),
     3: ('- derailment: in every answer, your ideas keep slipping off track, five or more times, onto obliquely related '
         'or unrelated ideas; you never get back to the question and the answer as a whole is hard to follow, although '
         'each sentence makes sense on its own.')}
@@ -116,7 +120,7 @@ if __name__ == '__main__':
     s = system_prompt(m, {'DER': 2})
     assert 'five or more times' in system_prompt(m, {'DER': 3}) and KEEP_FORM in system_prompt(m, {'DER': 2}) and KEEP_FORM not in system_prompt(m, {})
     assert 'two to four spoken sentences' in system_prompt(m, {}, short=True)
-    assert 'two to four times' in s and 'two to four times' not in system_prompt(m, {'DER': 2}, der_original=False)
+    assert 'disjointed' in s and 'disjointed' not in system_prompt(m, {'DER': 2}, der_original=False)
     assert s.index('derailment') < s.index('WHO YOU ARE') and 'Decreased' not in s and 'natural spoken length' in s
     assert 'natural spoken length' not in system_prompt(m, {'POV': 2}) and 'What you believe' not in summary(m, False)
     a = sys.argv[1:]

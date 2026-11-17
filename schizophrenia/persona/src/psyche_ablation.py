@@ -49,6 +49,28 @@ INTERP = """### 해석
 - **한계**: 채점은 AI(Claude). v1 확인은 인물 3명 반복 1회. Qwen 인물 B의 지리멸렬 면담 두 답이 600토큰에서 잘렸다(끝없이 이어 쓰는 문제)."""
 
 
+# 9단계: TLC 원문(Andreasen 1986) 탈선 설명의 특징을 그대로 옮긴 2단계 문구. 원문 예시는 베낄까 봐 넣지 않는다
+DER_X = ('- derailment: your ideas slip off the track onto other ideas that are only obliquely related or completely '
+         'unrelated. You put things side by side that have no meaningful connection, and you shift from one frame of '
+         'reference to another without warning. Your sentences are disjointed: they do not hang together, and you use '
+         '"it", "they" or "that" without making clear who or what you mean. With each slip you get farther from the '
+         'question, and you do not notice that your answer no longer has anything to do with it. This happens several '
+         'times in every answer.')
+
+
+# 5~8단계의 2단계 탈선 문구. patient_model 기본값이 9단계 문구(DER_X)로 바뀌어, 앞 단계 조건을 재현하려고 남긴다
+DER_W = ('- derailment: within each answer, your ideas slip off track two to four times onto obliquely related or '
+         'unrelated ideas, and you do not return to the question; each sentence makes sense on its own, but the '
+         'links between them are lost.')
+
+
+def old_der(s, prof):
+    if prof.get('DER') == 2:
+        i = s.index('- derailment:')
+        s = s[:i] + DER_W + s[s.index('\n', i):]
+    return s
+
+
 def parse_cond(cond):
     """'BASE' -> {}, 'DER3' -> {'DER': 3}, 'DER2INC1' -> {'DER': 2, 'INC': 1}"""
     import re
@@ -56,17 +78,23 @@ def parse_cond(cond):
 
 
 def variant_prompt(mfc, cond, variant):
-    if variant.startswith('final'):  # 8단계: 우리 모델 기본값 그대로. final 일상 질문, final_clin 병원 질문
-        return system_prompt(mfc, parse_cond(cond))
+    if variant == 'final_x':  # 9단계: 기본값에서 탈선 문구만 DER_X로
+        s = system_prompt(mfc, parse_cond(cond))
+        if 'DER' in parse_cond(cond):
+            i = s.index('- derailment:')
+            s = s[:i] + DER_X + s[s.index('\n', i):]
+        return s
+    if variant.startswith('final'):  # 8단계: 그때의 우리 모델 기본값(2단계 탈선은 DER_W)
+        return old_der(system_prompt(mfc, parse_cond(cond)), parse_cond(cond))
     if variant.startswith('model'):  # 우리 모델(patient_model): model 일상 질문, model_short 짧게, model_clin 병원 질문, model_clinfix 병원 질문 + 말투 유지
-        return system_prompt(mfc, parse_cond(cond), keep_form=variant == 'model_clinfix', short=variant == 'model_short',
-                             levels=('DER',))  # 7단계 조건 그대로 재현
+        return old_der(system_prompt(mfc, parse_cond(cond), keep_form=variant == 'model_clinfix', short=variant == 'model_short',
+                                     levels=('DER',)), parse_cond(cond))  # 7단계 조건 그대로 재현
     if variant.startswith(('tlc_first', 'tf_life')):
         prof = {'BASE': {}, 'DER': {'DER': 2}, 'DERS': {'DER': 2}, 'INC': {'INC': 2}, 'POV': {'POV': 2},
                 'MIX': {'DER': 1, 'PER': 1, 'POV': 1}, 'DERW': {'DER': 2},
                 'TAN': {'TAN': 2}, 'PER': {'PER': 2}, 'CLANG': {'CLANG': 2}}[cond]  # DERS: 탈선 + 120단어 상한, MIX: v1과 같은 섞음 설정
         return system_prompt(mfc, prof, symptoms=not variant.startswith('tf_life'), max_words=120 if cond == 'DERS' else None,
-                             der_original=cond == 'DERW', keep_form=False)  # 앞 단계 조건 그대로 재현
+                             der_original=False, keep_form=False) if cond != 'DERW' else             old_der(system_prompt(mfc, prof, keep_form=False), prof)  # 앞 단계 조건 그대로 재현
     s = patient_prompt(mfc, cond)
     for k in VARIANTS[variant]:
         a, b = CUT[k]
@@ -108,7 +136,7 @@ def run(name, jobs, chat, only=None):
                 while temp() > 85:
                     time.sleep(30)
             t0, msgs, turns = time.time(), [{'role': 'system', 'content': variant_prompt({**MFC, **NEW}[pid], cond, v)}], []
-            for k, q in enumerate(DAY_QUESTIONS if v.endswith('_day') or v in ('model', 'model_short', 'final') else QUESTIONS):
+            for k, q in enumerate(DAY_QUESTIONS if v.endswith('_day') or v in ('model', 'model_short', 'final', 'final_x') else QUESTIONS):
                 msgs.append({'role': 'user', 'content': q})
                 a = chat(msgs)
                 msgs.append({'role': 'assistant', 'content': a})
@@ -187,7 +215,7 @@ def evaluate():
     sc.save()
     # 지표 기준: 같은 모델, 같은 환자의 FULL BASE 턴(v1 인물은 v1 BASE 턴)
     # 질문 묶음이 다르면 기준도 따로: 병원 질문은 FULL BASE, 일상 질문은 tlc_first_day BASE(v1 인물은 v1 BASE)
-    d['qset'] = (d.variant.str.endswith('_day') | d.variant.isin(['v1', 'model', 'model_short', 'final'])).map({True: 'day', False: 'clinic'})
+    d['qset'] = (d.variant.str.endswith('_day') | d.variant.isin(['v1', 'model', 'model_short', 'final', 'final_x'])).map({True: 'day', False: 'clinic'})
     normal = d.variant.isin(['FULL', 'v1', 'tlc_first_day', 'model_clin']) & (d.cond == 'BASE')  # model_short BASE는 비교 대상이라 기준에서 뺀다
     z = pd.concat([flags(g, normal[g.index]) for _, g in d.groupby(['model', 'patient', 'qset'])]).loc[d.index]
     d = pd.concat([d, z.add_prefix('z_')], axis=1)
@@ -281,8 +309,8 @@ def rate_gpt():
     """Claude와 같은 채점표로 GPT-4.1이 다시 채점한다(조건은 모름). 대상: P4~P6의 tlc_first_day, model, final 면담."""
     from tlc import RUBRIC, rate_items
     d = load()
-    d = d[(d.model == 'gpt') & d.patient.isin(['P4', 'P5', 'P6']) & d.variant.isin(['tlc_first_day', 'model', 'final'])]
-    d = d.groupby(['variant', 'cond'], group_keys=False).apply(lambda g: g.sample(min(len(g), 10), random_state=3))  # 조건마다 10턴, 비용을 줄이려고
+    d = d[(d.model == 'gpt') & d.patient.isin(['P4', 'P5', 'P6']) & d.variant.isin(['tlc_first_day', 'model', 'final', 'final_x'])]
+    d = d.groupby(['variant', 'cond'], group_keys=False).apply(lambda g: g.sample(len(g) if g.name[0] == 'final_x' else min(len(g), 10), random_state=3))  # 조건마다 10턴(9단계는 전부), 비용을 줄이려고
     rate_items(d[['tid', 'question', 'text']], os.path.join(OUT, 'gpt_rater.csv'), 'tid', RUBRIC,
                Budget(os.path.join(OUT, 'spent_08.json'), cap=2.0))
     print('rated', len(d))
@@ -295,8 +323,10 @@ if __name__ == '__main__':
     s = variant_prompt(m, 'DER', 'no_all')
     assert 'paralanguage' not in s and 'Verbal productivity”** controls' not in s and 'SECTION 4' in s and 'Avoid copying' in s
     a = sys.argv[1:]
+    assert 'disjointed' in variant_prompt(m, 'DER2', 'final_x') and 'two to four times' not in variant_prompt(m, 'DER2', 'final_x')
     assert parse_cond('DER2INC1') == {'DER': 2, 'INC': 1} and parse_cond('BASE') == {}
     assert 'one or two words at most' in variant_prompt(m, 'POV3', 'final') and 'one or two words at most' not in variant_prompt(m, 'POV3', 'model')
+    assert 'two to four times' in variant_prompt(m, 'DER2', 'final') and 'two to four times' in variant_prompt(m, 'DER2', 'model_clin')
     s = variant_prompt(m, 'DERW', 'tlc_first_day')
     assert 'two to four times' in s and 'obliquely related or unrelated ideas within the answer' not in s and 'WHO YOU ARE' in s
     s = variant_prompt(m, 'DER', 'tf_life_day')
@@ -315,6 +345,9 @@ if __name__ == '__main__':
         jobs = [('final', c, 0) for c in ['POV1', 'POV3', 'PER1', 'PER2', 'DER2INC1', 'POV2PER1']]
         jobs += [('final', c, 1) for c in ['BASE', 'DER2', 'INC2', 'POV2']]
         run('gpt', jobs, gpt(client(), Budget(os.path.join(OUT, 'spent_08.json'), cap=2.0)), only=['P4', 'P5', 'P6'])
+    elif a and a[0] == 'gpt_step9':  # 04 9단계: 원문 특징 탈선 문구, 새 환자 P4~P6, 반복 2회 (8단계 상한 파일)
+        run('gpt', [('final_x', 'DER2', r) for r in range(2)], gpt(client(), Budget(os.path.join(OUT, 'spent_08.json'), cap=2.0)),
+            only=['P4', 'P5', 'P6'])
     elif a and a[0] == 'gpt_rate':  # 04 8단계: 두 번째 채점자 GPT-4.1, 새 환자 P4~P6의 우리 모델 면담 (같은 상한 파일)
         rate_gpt()
     elif a and a[0] == 'gpt_step7':  # 04 7단계: 세기, 병원 질문, 길이 (새 환자 P4~P6)
