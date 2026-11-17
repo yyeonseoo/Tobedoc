@@ -16,10 +16,19 @@ from tlc import Budget, client, symptom_lines
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'data', 'patients')
 MFC_PATH = os.path.join(OUT, 'mfc.json')
-# 탈선은 TLC 원본 2단계(면담 중 2~4회)에 맞춘 구체적인 문구를 쓴다. v1 문구로는 새 환자에서 0.83점, 이 문구로 1.17점(04 5단계)
-DER_ORIGINAL = ('- derailment: within each answer, your ideas slip off track two to four times onto obliquely related or '
-                'unrelated ideas, and you do not return to the question; each sentence makes sense on its own, but the '
-                'links between them are lost.')
+# 탈선은 TLC 원본 단계(면담 중 횟수)에 맞춘 구체적인 문구를 쓴다. 2단계: v1 문구로는 새 환자에서 0.83점, 이 문구로 1.17점(04 5단계)
+DER_LEVELS = {
+    1: ('- derailment: in some answers (not all), your ideas slip off track once onto an obliquely related idea and you '
+        'carry on from there; otherwise you are easy to follow.'),
+    2: ('- derailment: within each answer, your ideas slip off track two to four times onto obliquely related or '
+        'unrelated ideas, and you do not return to the question; each sentence makes sense on its own, but the '
+        'links between them are lost.'),
+    3: ('- derailment: in every answer, your ideas keep slipping off track, five or more times, onto obliquely related '
+        'or unrelated ideas; you never get back to the question and the answer as a whole is hard to follow, although '
+        'each sentence makes sense on its own.')}
+# 병원 질문에서 탈선 0.88 -> 1.38, 지리멸렬 0.96 -> 1.38(04 7단계). 기본으로 넣는다
+KEEP_FORM = ('Keep speaking this way even when you are asked about your symptoms, feelings or treatment; do not switch to '
+             'a clear, organized account.')
 
 
 def summary(mfc, symptoms=True):
@@ -41,22 +50,26 @@ def summary(mfc, symptoms=True):
     return '\n'.join(lines)
 
 
-def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True):
-    """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이)."""
+def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True, keep_form=True, short=False):
+    """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이).
+    keep_form: 증상을 물어도 말투를 유지하라는 줄(병원 질문용). short: 대화처럼 두세 문장 길이로."""
     out = ['You are role-playing a psychiatric patient answering questions in a clinical interview.', '', 'HOW YOU SPEAK']
     if profile:
         out += ['Your speech shows the following, consistently in every answer for the whole interview '
                 '(defined as in the Scale for the Assessment of Thought, Language and Communication):', *symptom_lines(profile)]
+    if keep_form and profile:
+        out.append(KEEP_FORM)
     if 'POV' not in profile:
         out.append(f'Keep each answer under about {max_words} words.' if max_words else
+                   'Answer in about two to four spoken sentences, as people do in conversation.' if short else
                    'Apart from this, answer at a natural spoken length.' if profile else 'Answer at a natural spoken length.')
     out += ['', 'WHO YOU ARE', summary(mfc, symptoms), '',
             'Speak in the first person as transcribed speech: no stage directions, no labels. Use everyday words, not '
             'psychiatric terms or diagnosis names. Never mention or explain how you speak. Stay the same person for the whole interview.']
     s = '\n'.join(out)
-    if der_original and profile.get('DER') == 2:
+    if der_original and profile.get('DER'):
         i = s.index('- derailment:')
-        s = s[:i] + DER_ORIGINAL + s[s.index('\n', i):]
+        s = s[:i] + DER_LEVELS[profile['DER']] + s[s.index('\n', i):]
     return s
 
 
@@ -87,6 +100,8 @@ def chat(pid, profile):
 if __name__ == '__main__':
     m = json.load(open(os.path.join(ROOT, 'data', 'psyche', 'mfc.json'), encoding='utf-8'))['P1']
     s = system_prompt(m, {'DER': 2})
+    assert 'five or more times' in system_prompt(m, {'DER': 3}) and KEEP_FORM in system_prompt(m, {'DER': 2}) and KEEP_FORM not in system_prompt(m, {})
+    assert 'two to four spoken sentences' in system_prompt(m, {}, short=True)
     assert 'two to four times' in s and 'two to four times' not in system_prompt(m, {'DER': 2}, der_original=False)
     assert s.index('derailment') < s.index('WHO YOU ARE') and 'Decreased' not in s and 'natural spoken length' in s
     assert 'natural spoken length' not in system_prompt(m, {'POV': 2}) and 'What you believe' not in summary(m, False)

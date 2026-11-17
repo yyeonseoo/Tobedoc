@@ -50,12 +50,15 @@ INTERP = """### 해석
 
 
 def variant_prompt(mfc, cond, variant):
+    if variant.startswith('model'):  # 우리 모델(patient_model): model 일상 질문, model_short 짧게, model_clin 병원 질문, model_clinfix 병원 질문 + 말투 유지
+        prof = {} if cond == 'BASE' else {cond[:-1]: int(cond[-1])}  # 'DER3' -> {'DER': 3}
+        return system_prompt(mfc, prof, keep_form=variant == 'model_clinfix', short=variant == 'model_short')  # 7단계 비교용이라 명시
     if variant.startswith(('tlc_first', 'tf_life')):
         prof = {'BASE': {}, 'DER': {'DER': 2}, 'DERS': {'DER': 2}, 'INC': {'INC': 2}, 'POV': {'POV': 2},
                 'MIX': {'DER': 1, 'PER': 1, 'POV': 1}, 'DERW': {'DER': 2},
                 'TAN': {'TAN': 2}, 'PER': {'PER': 2}, 'CLANG': {'CLANG': 2}}[cond]  # DERS: 탈선 + 120단어 상한, MIX: v1과 같은 섞음 설정
         return system_prompt(mfc, prof, symptoms=not variant.startswith('tf_life'), max_words=120 if cond == 'DERS' else None,
-                             der_original=cond == 'DERW')
+                             der_original=cond == 'DERW', keep_form=False)  # 앞 단계 조건 그대로 재현
     s = patient_prompt(mfc, cond)
     for k in VARIANTS[variant]:
         a, b = CUT[k]
@@ -87,7 +90,7 @@ def run(name, jobs, chat, only=None):
     ivs = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else []
     have = {(i['patient'], i['variant'], i['cond'], i['rep']) for i in ivs}
     for v, cond, rep in jobs:
-        for pid in (MFC if v != 'tlc_first_day' else {**MFC, **NEW}):
+        for pid in (MFC if not (v == 'tlc_first_day' or v.startswith('model')) else {**MFC, **NEW}):
             if only and pid not in only:
                 continue
             if (pid, v, cond, rep) in have:
@@ -97,7 +100,7 @@ def run(name, jobs, chat, only=None):
                 while temp() > 85:
                     time.sleep(30)
             t0, msgs, turns = time.time(), [{'role': 'system', 'content': variant_prompt({**MFC, **NEW}[pid], cond, v)}], []
-            for k, q in enumerate(DAY_QUESTIONS if v.endswith('_day') else QUESTIONS):
+            for k, q in enumerate(DAY_QUESTIONS if v.endswith('_day') or v in ('model', 'model_short') else QUESTIONS):
                 msgs.append({'role': 'user', 'content': q})
                 a = chat(msgs)
                 msgs.append({'role': 'assistant', 'content': a})
@@ -176,18 +179,18 @@ def evaluate():
     sc.save()
     # 지표 기준: 같은 모델, 같은 환자의 FULL BASE 턴(v1 인물은 v1 BASE 턴)
     # 질문 묶음이 다르면 기준도 따로: 병원 질문은 FULL BASE, 일상 질문은 tlc_first_day BASE(v1 인물은 v1 BASE)
-    d['qset'] = (d.variant.str.endswith('_day') | (d.variant == 'v1')).map({True: 'day', False: 'clinic'})
-    normal = d.variant.isin(['FULL', 'v1', 'tlc_first_day']) & (d.cond == 'BASE')
+    d['qset'] = (d.variant.str.endswith('_day') | d.variant.isin(['v1', 'model', 'model_short'])).map({True: 'day', False: 'clinic'})
+    normal = d.variant.isin(['FULL', 'v1', 'tlc_first_day', 'model_clin']) & (d.cond == 'BASE')  # model_short BASE는 비교 대상이라 기준에서 뺀다
     z = pd.concat([flags(g, normal[g.index]) for _, g in d.groupby(['model', 'patient', 'qset'])]).loc[d.index]
     d = pd.concat([d, z.add_prefix('z_')], axis=1)
     item = dict(BASE=None, DER='derailment', DERS='derailment', DERW='derailment', INC='incoherence', POV='poverty_of_speech', MIX=None,
                 TAN='tangentiality', PER='perseveration', CLANG='clanging')
     rows = []
     for (m, v, c), g in d.groupby(['model', 'variant', 'cond']):
-        it = item[c]
+        it = item[c] if c in item else item[c[:-1]]  # 'DER3' 같은 우리 모델 조건은 유형 이름으로
         b = d[(d.model == m) & normal & (d.qset == g.qset.iloc[0]) & (d.patient.isin(g.patient))]
         p_item = stats.mannwhitneyu(g[it], b[it], alternative='greater').pvalue if it else None
-        zc = 'z_DER' if c in ('DERS', 'DERW') else f'z_{c}'
+        zc = 'z_DER' if c in ('DERS', 'DERW') else f'z_{c}' if c in item else f'z_{c[:-1]}'
         p_z = stats.mannwhitneyu(g[zc].dropna(), b[zc].dropna(), alternative='greater').pvalue if it else None
         rows.append(dict(모델=m, 변형=v, 조건=c, 턴수=len(g), 발현_p=p_item and round(p_item, 3), 지표_p=p_z and round(p_z, 3),
                          의도항목=round(g[it].mean(), 2) if it else None,
@@ -286,6 +289,11 @@ if __name__ == '__main__':
         run('qwen', [(v, c, r) for r in range(2) for v in VARIANTS for c in CONDS], qwen)
     elif a and a[0] == 'qwen_v1':
         qwen_v1()
+    elif a and a[0] == 'gpt_step7':  # 04 7단계: 세기, 병원 질문, 길이 (새 환자 P4~P6)
+        jobs = [('model', c, 0) for c in ['DER1', 'DER3', 'INC1', 'INC3', 'POV1', 'POV3', 'PER1']]
+        jobs += [('model_clin', c, 0) for c in ['BASE', 'DER2', 'INC2']] + [('model_clinfix', c, 0) for c in ['DER2', 'INC2']]
+        jobs += [('model_short', c, 0) for c in ['BASE', 'DER2', 'INC2']]
+        run('gpt', jobs, gpt(client(), Budget(os.path.join(OUT, 'spent_04.json'))), only=['P4', 'P5', 'P6'])
     elif a and a[0] == 'gpt_step5':  # 04 5단계: 새 환자 P4~P6만
         run('gpt', [('tlc_first_day', c, 0) for c in ['TAN', 'PER', 'CLANG', 'DERW']] + [('tlc_first_day', c, 1) for c in ['BASE', 'DER']],
             gpt(client(), Budget(os.path.join(OUT, 'spent_04.json'))), only=['P4', 'P5', 'P6'])
