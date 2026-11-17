@@ -16,6 +16,10 @@ from tlc import Budget, client, symptom_lines
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'data', 'patients')
 MFC_PATH = os.path.join(OUT, 'mfc.json')
+# 탈선은 TLC 원본 2단계(면담 중 2~4회)에 맞춘 구체적인 문구를 쓴다. v1 문구로는 새 환자에서 0.83점, 이 문구로 1.17점(04 5단계)
+DER_ORIGINAL = ('- derailment: within each answer, your ideas slip off track two to four times onto obliquely related or '
+                'unrelated ideas, and you do not return to the question; each sentence makes sense on its own, but the '
+                'links between them are lost.')
 
 
 def summary(mfc, symptoms=True):
@@ -37,7 +41,7 @@ def summary(mfc, symptoms=True):
     return '\n'.join(lines)
 
 
-def system_prompt(mfc, profile, symptoms=True, max_words=None):
+def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True):
     """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이)."""
     out = ['You are role-playing a psychiatric patient answering questions in a clinical interview.', '', 'HOW YOU SPEAK']
     if profile:
@@ -49,7 +53,11 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None):
     out += ['', 'WHO YOU ARE', summary(mfc, symptoms), '',
             'Speak in the first person as transcribed speech: no stage directions, no labels. Use everyday words, not '
             'psychiatric terms or diagnosis names. Never mention or explain how you speak. Stay the same person for the whole interview.']
-    return '\n'.join(out)
+    s = '\n'.join(out)
+    if der_original and profile.get('DER') == 2:
+        i = s.index('- derailment:')
+        s = s[:i] + DER_ORIGINAL + s[s.index('\n', i):]
+    return s
 
 
 def load_mfc():
@@ -79,6 +87,7 @@ def chat(pid, profile):
 if __name__ == '__main__':
     m = json.load(open(os.path.join(ROOT, 'data', 'psyche', 'mfc.json'), encoding='utf-8'))['P1']
     s = system_prompt(m, {'DER': 2})
+    assert 'two to four times' in s and 'two to four times' not in system_prompt(m, {'DER': 2}, der_original=False)
     assert s.index('derailment') < s.index('WHO YOU ARE') and 'Decreased' not in s and 'natural spoken length' in s
     assert 'natural spoken length' not in system_prompt(m, {'POV': 2}) and 'What you believe' not in summary(m, False)
     a = sys.argv[1:]

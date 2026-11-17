@@ -52,8 +52,10 @@ INTERP = """### 해석
 def variant_prompt(mfc, cond, variant):
     if variant.startswith(('tlc_first', 'tf_life')):
         prof = {'BASE': {}, 'DER': {'DER': 2}, 'DERS': {'DER': 2}, 'INC': {'INC': 2}, 'POV': {'POV': 2},
-                'MIX': {'DER': 1, 'PER': 1, 'POV': 1}}[cond]  # DERS: 탈선 + 120단어 상한, MIX: v1과 같은 섞음 설정
-        return system_prompt(mfc, prof, symptoms=not variant.startswith('tf_life'), max_words=120 if cond == 'DERS' else None)
+                'MIX': {'DER': 1, 'PER': 1, 'POV': 1}, 'DERW': {'DER': 2},
+                'TAN': {'TAN': 2}, 'PER': {'PER': 2}, 'CLANG': {'CLANG': 2}}[cond]  # DERS: 탈선 + 120단어 상한, MIX: v1과 같은 섞음 설정
+        return system_prompt(mfc, prof, symptoms=not variant.startswith('tf_life'), max_words=120 if cond == 'DERS' else None,
+                             der_original=cond == 'DERW')
     s = patient_prompt(mfc, cond)
     for k in VARIANTS[variant]:
         a, b = CUT[k]
@@ -77,7 +79,7 @@ def gpt(c, budget):
     return f
 
 
-def run(name, jobs, chat):
+def run(name, jobs, chat, only=None):
     """jobs: [(variant, cond, rep)]. 이미 만든 면담은 건너뛴다(중간에 끊겨도 이어서 돈다)."""
     from metrics import temp
     os.makedirs(OUT, exist_ok=True)
@@ -86,6 +88,8 @@ def run(name, jobs, chat):
     have = {(i['patient'], i['variant'], i['cond'], i['rep']) for i in ivs}
     for v, cond, rep in jobs:
         for pid in (MFC if v != 'tlc_first_day' else {**MFC, **NEW}):
+            if only and pid not in only:
+                continue
             if (pid, v, cond, rep) in have:
                 continue
             if temp() >= 95:
@@ -176,13 +180,14 @@ def evaluate():
     normal = d.variant.isin(['FULL', 'v1', 'tlc_first_day']) & (d.cond == 'BASE')
     z = pd.concat([flags(g, normal[g.index]) for _, g in d.groupby(['model', 'patient', 'qset'])]).loc[d.index]
     d = pd.concat([d, z.add_prefix('z_')], axis=1)
-    item = dict(BASE=None, DER='derailment', DERS='derailment', INC='incoherence', POV='poverty_of_speech', MIX=None)
+    item = dict(BASE=None, DER='derailment', DERS='derailment', DERW='derailment', INC='incoherence', POV='poverty_of_speech', MIX=None,
+                TAN='tangentiality', PER='perseveration', CLANG='clanging')
     rows = []
     for (m, v, c), g in d.groupby(['model', 'variant', 'cond']):
         it = item[c]
         b = d[(d.model == m) & normal & (d.qset == g.qset.iloc[0]) & (d.patient.isin(g.patient))]
         p_item = stats.mannwhitneyu(g[it], b[it], alternative='greater').pvalue if it else None
-        zc = 'z_DER' if c == 'DERS' else f'z_{c}'
+        zc = 'z_DER' if c in ('DERS', 'DERW') else f'z_{c}'
         p_z = stats.mannwhitneyu(g[zc].dropna(), b[zc].dropna(), alternative='greater').pvalue if it else None
         rows.append(dict(모델=m, 변형=v, 조건=c, 턴수=len(g), 발현_p=p_item and round(p_item, 3), 지표_p=p_z and round(p_z, 3),
                          의도항목=round(g[it].mean(), 2) if it else None,
@@ -199,6 +204,67 @@ def evaluate():
     print(md[len(plan):])
 
 
+# 6단계: TLC 원본(Andreasen 1986) 방식, 면담 전체를 보고 0~4점. 단계 문구는 reports/tlc_original.md
+IV_ITEMS = ['poverty_of_speech', 'poverty_of_content', 'tangentiality', 'derailment', 'incoherence', 'clanging',
+            'perseveration', 'circumstantiality']
+IV_RUBRIC = """You are an experienced psychiatrist rating formal thought disorder with Andreasen's Scale for the Assessment of Thought, Language and Communication (TLC, 1986). You will read one whole transcribed interview (several questions and answers). Rate the interview as a whole, using only what is in the text. Ordinary speakers score 0 on every item.
+
+Definitions:
+- poverty_of_speech: restriction in the amount of spontaneous speech; replies are brief, concrete and unelaborated.
+- poverty_of_content: replies are long enough but convey little information; vague, overabstract or overconcrete, repetitive or stereotyped.
+- tangentiality: replying to a question in an oblique or irrelevant manner; the reply is related to the question in a distant way or not at all.
+- derailment: ideas slip off the track onto another one that is obliquely related or completely unrelated.
+- incoherence: speech that is essentially incomprehensible at times; words or phrases joined without meaningful connection, within the sentence.
+- clanging: sounds rather than meaningful relationships govern word choice (rhyme, puns).
+- perseveration: persistent repetition of words, ideas or subjects.
+- circumstantiality: speech that is very indirect and delayed in reaching its goal because of tedious detail; the goal is eventually reached.
+
+Scales:
+- poverty_of_speech 0-4: 0 none (replies include additional information); 1 slight (occasional replies not elaborated when appropriate); 2 moderate (some replies not elaborated, many monosyllabic or very brief); 3 severe (answers rarely more than a few words); 4 extreme (essentially mute).
+- poverty_of_content 0-4: 0 none; 1 mild (occasional replies too vague or can be markedly condensed); 2 moderate (such replies make up at least a quarter of the interview); 3 severe (at least half); 4 extreme (most of the interview).
+- tangentiality, derailment, incoherence, clanging 0-4: 0 none; 1 mild (occurs once in the interview); 2 moderate (two to four times); 3 severe (5 to 10 times); 4 extreme (more than 10 times, or so often the interview is incomprehensible).
+- perseveration 0-3: 0 none; 1 mild (persistent repetition of one set of words or ideas); 2 moderate (two or three sets); 3 severe (four or more sets).
+- circumstantiality 0-3: 0 none; 1 mild (occasional circumstantial reply); 2 moderate (several circumstantial replies); 3 severe (many circumstantial replies).
+
+Return one CSV row per interview: id,poverty_of_speech,poverty_of_content,tangentiality,derailment,incoherence,clanging,perseveration,circumstantiality"""
+
+
+def blind_iv():
+    """우리 모델(tlc_first_day) GPT 면담 전체를 섞어 면담 단위 블라인드 파일로."""
+    d = load()
+    d = d[(d.model == 'gpt') & (d.variant == 'tlc_first_day')]
+    ivs = [(k, g.sort_values('turn')) for k, g in d.groupby(['patient', 'cond', 'rep'])]
+    random.Random(17).shuffle(ivs)
+    key, n = {}, 3
+    for b in range(n):
+        with open(os.path.join(OUT, f'iv_blind_{b + 1}.jsonl'), 'w', encoding='utf-8') as f:
+            for j, (k, g) in list(enumerate(ivs))[b::n]:
+                key[f'I{j:03d}'] = '_'.join(map(str, k))
+                f.write(json.dumps(dict(id=f'I{j:03d}', turns=[dict(question=q, answer=t) for q, t in zip(g.question, g.text)]),
+                                   ensure_ascii=False) + '\n')
+    json.dump(key, open(os.path.join(OUT, 'iv_key.json'), 'w'))
+    open(os.path.join(OUT, 'iv_rubric.txt'), 'w', encoding='utf-8').write(IV_RUBRIC)
+    print('interviews', len(ivs))
+
+
+def eval_iv():
+    import pandas as pd
+    key = json.load(open(os.path.join(OUT, 'iv_key.json')))
+    j = pd.concat([pd.read_csv(os.path.join(OUT, f)) for f in sorted(os.listdir(OUT)) if f.startswith('iv_judge_')])
+    j[['patient', 'cond', 'rep']] = j.id.map(key).str.split('_', expand=True)
+    m = j.groupby('cond')[IV_ITEMS].mean().round(2)
+    m.insert(0, '면담수', j.groupby('cond').size())
+    target = dict(DER='derailment', DERS='derailment', DERW='derailment', INC='incoherence', POV='poverty_of_speech',
+                  TAN='tangentiality', PER='perseveration', CLANG='clanging')
+    hit = {c: f"{(g[target[c]] >= 2).mean():.0%}" for c, g in j.groupby('cond') if c in target}
+    base_ok = (j[j.cond == 'BASE'][IV_ITEMS].max(axis=1) <= 1).mean()
+    out = f"{m.to_markdown()}\n\n의도한 항목 2점 이상 면담 비율: {hit}\n\n지시 없는 면담 중 모든 항목 1점 이하: {base_ok:.0%}\n"
+    j.to_csv(os.path.join(OUT, 'iv_scores.csv'), index=False)
+    print(out)
+    return out
+
+
+
 if __name__ == '__main__':
     m = MFC['P1']
     assert 'Answer **only what is asked**' in variant_prompt(m, 'DER', 'FULL')
@@ -206,6 +272,8 @@ if __name__ == '__main__':
     s = variant_prompt(m, 'DER', 'no_all')
     assert 'paralanguage' not in s and 'Verbal productivity”** controls' not in s and 'SECTION 4' in s and 'Avoid copying' in s
     a = sys.argv[1:]
+    s = variant_prompt(m, 'DERW', 'tlc_first_day')
+    assert 'two to four times' in s and 'obliquely related or unrelated ideas within the answer' not in s and 'WHO YOU ARE' in s
     s = variant_prompt(m, 'DER', 'tf_life_day')
     assert 'What you believe' not in s and 'School and work' in s and 'derailment' in s
     assert 'What you believe' in variant_prompt(m, 'DER', 'tlc_first_day')
@@ -218,6 +286,9 @@ if __name__ == '__main__':
         run('qwen', [(v, c, r) for r in range(2) for v in VARIANTS for c in CONDS], qwen)
     elif a and a[0] == 'qwen_v1':
         qwen_v1()
+    elif a and a[0] == 'gpt_step5':  # 04 5단계: 새 환자 P4~P6만
+        run('gpt', [('tlc_first_day', c, 0) for c in ['TAN', 'PER', 'CLANG', 'DERW']] + [('tlc_first_day', c, 1) for c in ['BASE', 'DER']],
+            gpt(client(), Budget(os.path.join(OUT, 'spent_04.json'))), only=['P4', 'P5', 'P6'])
     elif a and a[0] == 'gpt_step4':  # 04 4단계: 탈선 + 길이 상한, 섞음 설정 (6명)
         run('gpt', [('tlc_first_day', c, 0) for c in ['DERS', 'MIX']], gpt(client(), Budget(os.path.join(OUT, 'spent_04.json'))))
     elif a and a[0] == 'gpt_check':  # 04 검증: 고른 구조로 새 환자 포함 BASE, DER, INC, POV
@@ -229,4 +300,4 @@ if __name__ == '__main__':
         run('gpt', [('FULL', 'BASE', r) for r in range(2)] + [(a[1], c, r) for r in range(2) for c in ['BASE', 'DER', 'INC', 'POV']],
             gpt(client(), Budget(os.path.join(OUT, 'spent.json'))))
     elif a:
-        {'--blind': blind, '--eval': evaluate}[a[0]]()
+        {'--blind': blind, '--eval': evaluate, '--blind-iv': blind_iv, '--eval-iv': eval_iv}[a[0]]()
