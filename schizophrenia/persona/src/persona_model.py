@@ -8,7 +8,7 @@ import json
 import os
 import sys
 
-from tlc import DEF, LEVEL, Budget, client
+from tlc import Budget, client, symptom_lines
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'data')
@@ -43,7 +43,7 @@ def system_prompt(persona, profile):
     else:
         p.append('Your speech shows the following, consistently in every answer for the whole interview '
                  '(defined as in the Scale for the Assessment of Thought, Language and Communication):')
-        p += [f'- {DEF[t]}. Severity {lv} ({LEVEL[lv]}).' for t, lv in profile.items()]
+        p += symptom_lines(profile)
         if 'POV' not in profile:
             p.append('Apart from this, answer at a natural spoken length.')
     return '\n'.join(p)

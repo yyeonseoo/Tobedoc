@@ -2,7 +2,8 @@
 
 Scorer()(text, question) -> 유형별 담당 지표. Cached()는 계산 결과를 data/scores_cache.json에 저장해 다시 쓴다.
 flags(f, normal) -> 같은 자료의 정상 답변 기준 z 점수(양수 = 그 유형 쪽).
-계산은 검증(pre-persona 브랜치 before_persona/reports/v4/11_metric_set.md) 때와 같다.
+계산은 검증(pre-persona 브랜치 before_persona/reports/v4/11_metric_set.md) 때와 같고, 하나만 다르다:
+놀람도는 머뭇거림(uh, um 등)을 뺀 텍스트로 계산한다(2026-11-16, reports/02_psyche_tlc.md). 검증 자료에는 머뭇거림이 거의 없어 단계 ρ가 그대로다.
 """
 import hashlib
 import json
@@ -21,6 +22,9 @@ ELV_WIN, ELV_CUT = 8, 100  # 질문 유사도: 앞 100단어를 8단어 창으�
 FILLERS = {'er', 'erm', 'mm', 'mhm', 'ah', 'oh', 'um', 'uh', 'hmm'}
 DIRECT = re.compile(r'^(?:schizophren\w*|schizo\w*|psychosis|psychotic|antipsychotic\w*|neuroleptic\w*|haloperidol|clozapine|'
                     r'olanzapine|risperidone|quetiapine|aripiprazole|diagnos\w*|hallucinat\w*|delusion\w*)$')
+
+FILL_RE = re.compile(r"\b(?:uh|um|uhm|er|erm|hmm|mm)\b[,.…]*\s*", re.I)
+VERSION = 2  # 지표 정의가 바뀌면 올린다. 캐시 키에 들어가 예전 값을 다시 쓰지 않는다
 
 # 유형: (담당 지표, 사고장애일수록 +1 높음 / -1 낮음)
 PROFILE = {'DER': ('elv_mean', -1), 'TAN': ('elv_mean', -1), 'INC': ('surp_mean', 1), 'PER': ('mattr', -1),
@@ -48,6 +52,10 @@ def words(text):
 def content(text):
     """불용어, 더듬기, 진단 단어를 뺀 내용어."""
     return [w for w in words(text) if w not in STOP and w not in FILLERS and not DIRECT.match(w)]
+
+
+def strip_fillers(text):
+    return re.sub(r'\s+', ' ', FILL_RE.sub('', text)).strip()
 
 
 def mattr(ws, w=MATTR_WIN):
@@ -101,7 +109,7 @@ class Scorer:
         w, tok = content(text), words(text)
         head = tok[:100]
         elv = elv_mean(self.m, text, question) if len(tok) >= 20 else np.nan  # 20단어 미만은 창이 너무 적다
-        return dict(elv_mean=elv, **self.lm(text), mattr=mattr(w[:HEAD]), clang_rate=clang(w[:HEAD]),
+        return dict(elv_mean=elv, **self.lm(strip_fillers(text)), mattr=mattr(w[:HEAD]), clang_rate=clang(w[:HEAD]),
                     n_words=len(tok), info_rate=len(set(content(' '.join(head)))) / max(len(head), 1))
 
 
@@ -123,7 +131,7 @@ class Cached:
         self.sc, self.n = None, 0
 
     def __call__(self, text, question):
-        k = hashlib.md5((question + '\n' + text).encode()).hexdigest()
+        k = hashlib.md5(f'{VERSION}\n{question}\n{text}'.encode()).hexdigest()
         if k not in self.c:
             self.sc = self.sc or Scorer()
             self.n += 1
@@ -150,6 +158,7 @@ def flags(f, normal):
 
 
 if __name__ == '__main__':
+    assert strip_fillers('I, uh, mostly um stay in, erm, my room') == 'I, mostly stay in, my room'
     assert words("I'm  OK, really!") == ['im', 'ok', 'really']
     assert content("My son was diagnosed with schizophrenia erm last year") == ['son', 'last', 'year']
     assert clang('cat hat sat mat'.split()) == 0.0 and clang('fight light night'.split()) == 1.0

@@ -40,7 +40,11 @@
 | `src/metrics.py` | 지표 세트 계산, 계산값 저장, 정상 기준 z 점수 |
 | `src/persona_model.py` | 페르소나 모델 (면담 생성, 대화 모드) |
 | `src/evaluate.py` | 교차 채점 준비, 지표, 판정, 보고서 |
-| `reports/` | 계획(00)과 결과(01) |
+| `src/psyche_tlc.py`, `psyche/` | PSYCHE 원본 구조(PatientHub 프롬프트) + TLC 지시 실험. 결과는 `reports/02_psyche_tlc.md` |
+| `src/psyche_ablation.py` | PSYCHE 규칙을 하나씩 빼는 실험(Qwen 7B, GPT-4.1). 결과는 `reports/03_psyche_ablation.md` |
+| `src/patient_model.py` | 우리 모델: PSYCHE MFC(증상 내용) + 맨 앞의 TLC 말하기 방식. 계획과 검증은 `reports/04_patient_model.md` |
+| `reports/tlc_original.md` | TLC 원본(Andreasen 1986) 채점 기준 정리 |
+| `reports/` | v1 계획(00)과 결과(01), PSYCHE + TLC 실험(02), PSYCHE 규칙 빼기(03), 우리 모델(04) |
 | `data/` | 생성 면담, 채점, 계산값 (git 제외) |
 
 ## 실행

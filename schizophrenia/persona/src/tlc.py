@@ -24,6 +24,13 @@ DEF = {
             'unelaborated and add nothing beyond what is strictly asked'),
 }
 
+
+
+def symptom_lines(profile):
+    """{'DER': 2} -> 지시문에 넣을 정의와 단계 줄."""
+    return [f'- {DEF[t]}. Severity {lv} ({LEVEL[lv]}).' for t, lv in profile.items()]
+
+
 ITEMS = ['derailment', 'tangentiality', 'incoherence', 'perseveration', 'clanging', 'circumstantiality', 'poverty_of_speech']
 RUBRIC = """You are an experienced psychiatrist rating formal thought disorder in a transcribed interview answer, using the definitions of Andreasen's Scale for the Assessment of Thought, Language and Communication (TLC). Rate only what is in the text. Most answers from ordinary people score 0.
 
