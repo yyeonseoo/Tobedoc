@@ -35,76 +35,96 @@
 
 ### 조건별 요약
 
-| 모델   | 변형          | 조건   |   턴수 |   발현_p |   지표_p |   의도항목 |   지속_1점이상 |   지표_z |   아무항목_1점이상 |   단어수_중앙값 |
-|:-------|:--------------|:-------|-------:|---------:|---------:|-----------:|---------------:|---------:|-------------------:|----------------:|
-| gpt    | FULL          | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.1  |            43.5 |
-| gpt    | model         | DER1   |     24 |    0     |    0.001 |       0.5  |           0.5  |     0.76 |               0.5  |           188.5 |
-| gpt    | model         | DER3   |     24 |    0     |    0     |       1.92 |           1    |     1.5  |               1    |           242   |
-| gpt    | model         | INC1   |     24 |    0     |    0     |       0.38 |           0.38 |     3.71 |               0.88 |           163   |
-| gpt    | model         | INC3   |     24 |    0     |    0     |       1.58 |           0.92 |     5.85 |               1    |           124   |
-| gpt    | model         | PER1   |     24 |    0     |    0     |       2.08 |           1    |     3.37 |               1    |           134.5 |
-| gpt    | model         | POV1   |     24 |    0     |    0     |       0.83 |           0.75 |     4.15 |               0.75 |            19.5 |
-| gpt    | model         | POV3   |     24 |    0     |    0     |       1.17 |           1    |     4.47 |               1    |            15   |
-| gpt    | model_clin    | BASE   |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |           101   |
-| gpt    | model_clin    | DER2   |     24 |    0     |    0.001 |       0.88 |           0.58 |     0.93 |               0.58 |           142.5 |
-| gpt    | model_clin    | INC2   |     24 |    0     |    0     |       0.96 |           0.79 |     4.46 |               1    |           112   |
-| gpt    | model_clinfix | DER2   |     24 |    0     |    0     |       1.38 |           0.96 |     1.42 |               0.96 |           179   |
-| gpt    | model_clinfix | INC2   |     24 |    0     |    0     |       1.38 |           0.96 |     8.86 |               1    |            88.5 |
-| gpt    | model_short   | BASE   |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.25 |            47   |
-| gpt    | model_short   | DER2   |     24 |    0     |    0     |       0.96 |           0.88 |     1.11 |               0.88 |           120   |
-| gpt    | model_short   | INC2   |     24 |    0     |    0     |       1.42 |           0.96 |     8.49 |               1    |            73.5 |
-| gpt    | no_all        | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            84.5 |
-| gpt    | no_all        | DER    |     48 |    0     |    0     |       0.69 |           0.67 |     0.94 |               0.77 |           159.5 |
-| gpt    | no_all        | INC    |     48 |    0     |    0     |       1.31 |           0.96 |     1.2  |               1    |            78.5 |
-| gpt    | no_all        | POV    |     48 |    0     |    0     |       0.65 |           0.6  |     1.37 |               0.6  |            27   |
-| gpt    | tf_life       | BASE   |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.12 |            91.5 |
-| gpt    | tf_life       | DER    |     24 |    0     |    0     |       0.92 |           0.88 |     1.1  |               1    |           176   |
-| gpt    | tf_life       | INC    |     24 |    0     |    0     |       1.08 |           0.88 |     1.03 |               1    |           114.5 |
-| gpt    | tf_life_day   | BASE   |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.08 |            78   |
-| gpt    | tf_life_day   | DER    |     24 |    0     |    0     |       1.04 |           0.92 |     1.08 |               1    |           182.5 |
-| gpt    | tf_life_day   | INC    |     24 |    0     |    0     |       1.17 |           0.92 |     7.9  |               1    |           106   |
-| gpt    | tlc_first     | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            90.5 |
-| gpt    | tlc_first     | DER    |     48 |    0     |    0     |       0.77 |           0.75 |     1    |               0.94 |           220.5 |
-| gpt    | tlc_first     | INC    |     48 |    0     |    0     |       0.83 |           0.73 |     0.61 |               1    |           131   |
-| gpt    | tlc_first     | POV    |     48 |    0     |    0     |       1.15 |           0.98 |     1.83 |               0.98 |            22   |
-| gpt    | tlc_first_day | BASE   |     72 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            84.5 |
-| gpt    | tlc_first_day | CLANG  |     24 |    0     |    0     |       3    |           1    |    24.31 |               1    |            78.5 |
-| gpt    | tlc_first_day | DER    |     72 |    0     |    0     |       0.83 |           0.79 |     1.11 |               0.94 |           205   |
-| gpt    | tlc_first_day | DERS   |     48 |    0     |    0     |       0.71 |           0.65 |     1.13 |               0.75 |           119.5 |
-| gpt    | tlc_first_day | DERW   |     24 |    0     |    0     |       1.17 |           1    |     1.13 |               1    |           157   |
-| gpt    | tlc_first_day | INC    |     48 |    0     |    0     |       1.23 |           0.94 |     6.93 |               1    |           123   |
-| gpt    | tlc_first_day | MIX    |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.54 |            90.5 |
-| gpt    | tlc_first_day | PER    |     24 |    0     |    0     |       2.54 |           1    |     9.24 |               1    |           144.5 |
-| gpt    | tlc_first_day | POV    |     48 |    0     |    0     |       1.1  |           1    |     4.75 |               1    |            18   |
-| gpt    | tlc_first_day | TAN    |     24 |    0.007 |    0     |       0.12 |           0.12 |     1.3  |               0.88 |           154.5 |
-| qwen   | FULL          | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.02 |            36.5 |
-| qwen   | FULL          | DER    |     48 |    0.164 |    0.175 |       0.02 |           0.02 |     0.16 |               0.08 |            41.5 |
-| qwen   | FULL          | INC    |     48 |    1     |    0.114 |       0    |           0    |     0.44 |               0.31 |            28   |
-| qwen   | no_all        | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            55   |
-| qwen   | no_all        | DER    |     48 |    0.164 |    0.437 |       0.02 |           0.02 |     0.04 |               0.02 |            49   |
-| qwen   | no_all        | INC    |     48 |    1     |    0.88  |       0    |           0    |    -0.23 |               0.08 |            36.5 |
-| qwen   | no_brief      | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.06 |            42.5 |
-| qwen   | no_brief      | DER    |     48 |    1     |    0.055 |       0    |           0    |     0.25 |               0.04 |            43   |
-| qwen   | no_brief      | INC    |     48 |    1     |    0     |       0    |           0    |     1.22 |               0.62 |            25   |
-| qwen   | no_para       | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.02 |            30   |
-| qwen   | no_para       | DER    |     48 |    1     |    0.29  |       0    |           0    |     0.08 |               0.31 |            24.5 |
-| qwen   | no_para       | INC    |     48 |    1     |    0     |       0    |           0    |     3.25 |               0.79 |            14.5 |
-| qwen   | no_vp         | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.04 |            58   |
-| qwen   | no_vp         | DER    |     48 |    0.041 |    0.05  |       0.06 |           0.06 |     0.34 |               0.19 |            63   |
-| qwen   | no_vp         | INC    |     48 |    1     |    1     |       0    |           0    |    -1.13 |               0.1  |            42.5 |
-| qwen   | tlc_first     | BASE   |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.06 |            71.5 |
-| qwen   | tlc_first     | DER    |     48 |    0.006 |    0.008 |       0.12 |           0.12 |     0.4  |               0.46 |           106.5 |
-| qwen   | tlc_first     | INC    |     48 |    1     |    1     |       0    |           0    |    -1.38 |               0.21 |            58.5 |
-| qwen   | tlc_first     | POV    |     48 |    0     |    0.101 |       0.31 |           0.31 |     0.23 |               0.35 |            35   |
-| qwen   | v1            | BASE   |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            59.5 |
-| qwen   | v1            | DER    |     24 |    0.001 |    0.002 |       0.38 |           0.38 |     0.97 |               0.96 |           173.5 |
-| qwen   | v1            | INC    |     24 |    0     |    0     |       0.62 |           0.62 |     3.76 |               0.79 |            43.5 |
+| 모델   | 변형          | 조건     |   턴수 |   발현_p |   지표_p |   의도항목 |   지속_1점이상 |   지표_z |   아무항목_1점이상 |   단어수_중앙값 |
+|:-------|:--------------|:---------|-------:|---------:|---------:|-----------:|---------------:|---------:|-------------------:|----------------:|
+| gpt    | FULL          | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.1  |            43.5 |
+| gpt    | final         | BASE     |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            85.5 |
+| gpt    | final         | DER2     |     24 |    0     |    0     |       1.29 |           1    |     1.38 |               1    |           170.5 |
+| gpt    | final         | DER2INC1 |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               1    |           160.5 |
+| gpt    | final         | INC2     |     24 |    0     |    0     |       1.54 |           1    |     8.51 |               1    |            93   |
+| gpt    | final         | PER1     |     24 |    0     |    0.131 |       1    |           0.92 |     0.24 |               0.92 |           122   |
+| gpt    | final         | PER2     |     24 |    0     |    0.215 |       1.21 |           1    |     0.44 |               1    |           164   |
+| gpt    | final         | POV1     |     24 |    0     |    0     |       0.92 |           0.92 |     4.27 |               0.92 |            18   |
+| gpt    | final         | POV2     |     24 |    0     |    0     |       1.17 |           1    |     4.82 |               1    |            10   |
+| gpt    | final         | POV2PER1 |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               1    |            16.5 |
+| gpt    | final         | POV3     |     24 |    0     |    0     |       1.88 |           1    |     5.24 |               1    |             3   |
+| gpt    | model         | DER1     |     24 |    0     |    0.001 |       0.5  |           0.5  |     0.76 |               0.5  |           188.5 |
+| gpt    | model         | DER3     |     24 |    0     |    0     |       1.92 |           1    |     1.5  |               1    |           242   |
+| gpt    | model         | INC1     |     24 |    0     |    0     |       0.38 |           0.38 |     3.71 |               0.88 |           163   |
+| gpt    | model         | INC3     |     24 |    0     |    0     |       1.58 |           0.92 |     5.85 |               1    |           124   |
+| gpt    | model         | PER1     |     24 |    0     |    0     |       2.08 |           1    |     3.37 |               1    |           134.5 |
+| gpt    | model         | POV1     |     24 |    0     |    0     |       0.83 |           0.75 |     4.15 |               0.75 |            19.5 |
+| gpt    | model         | POV3     |     24 |    0     |    0     |       1.17 |           1    |     4.47 |               1    |            15   |
+| gpt    | model_clin    | BASE     |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |           101   |
+| gpt    | model_clin    | DER2     |     24 |    0     |    0.001 |       0.88 |           0.58 |     0.93 |               0.58 |           142.5 |
+| gpt    | model_clin    | INC2     |     24 |    0     |    0     |       0.96 |           0.79 |     4.46 |               1    |           112   |
+| gpt    | model_clinfix | DER2     |     24 |    0     |    0     |       1.38 |           0.96 |     1.42 |               0.96 |           179   |
+| gpt    | model_clinfix | INC2     |     24 |    0     |    0     |       1.38 |           0.96 |     8.86 |               1    |            88.5 |
+| gpt    | model_short   | BASE     |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.25 |            47   |
+| gpt    | model_short   | DER2     |     24 |    0     |    0     |       0.96 |           0.88 |     1.11 |               0.88 |           120   |
+| gpt    | model_short   | INC2     |     24 |    0     |    0     |       1.42 |           0.96 |     8.49 |               1    |            73.5 |
+| gpt    | no_all        | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            84.5 |
+| gpt    | no_all        | DER      |     48 |    0     |    0     |       0.69 |           0.67 |     0.94 |               0.77 |           159.5 |
+| gpt    | no_all        | INC      |     48 |    0     |    0     |       1.31 |           0.96 |     1.2  |               1    |            78.5 |
+| gpt    | no_all        | POV      |     48 |    0     |    0     |       0.65 |           0.6  |     1.37 |               0.6  |            27   |
+| gpt    | tf_life       | BASE     |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.12 |            91.5 |
+| gpt    | tf_life       | DER      |     24 |    0     |    0     |       0.92 |           0.88 |     1.1  |               1    |           176   |
+| gpt    | tf_life       | INC      |     24 |    0     |    0     |       1.08 |           0.88 |     1.03 |               1    |           114.5 |
+| gpt    | tf_life_day   | BASE     |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.08 |            78   |
+| gpt    | tf_life_day   | DER      |     24 |    0     |    0     |       1.04 |           0.92 |     1.08 |               1    |           182.5 |
+| gpt    | tf_life_day   | INC      |     24 |    0     |    0     |       1.17 |           0.92 |     7.9  |               1    |           106   |
+| gpt    | tlc_first     | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            90.5 |
+| gpt    | tlc_first     | DER      |     48 |    0     |    0     |       0.77 |           0.75 |     1    |               0.94 |           220.5 |
+| gpt    | tlc_first     | INC      |     48 |    0     |    0     |       0.83 |           0.73 |     0.61 |               1    |           131   |
+| gpt    | tlc_first     | POV      |     48 |    0     |    0     |       1.15 |           0.98 |     1.83 |               0.98 |            22   |
+| gpt    | tlc_first_day | BASE     |     72 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            84.5 |
+| gpt    | tlc_first_day | CLANG    |     24 |    0     |    0     |       3    |           1    |    24.31 |               1    |            78.5 |
+| gpt    | tlc_first_day | DER      |     72 |    0     |    0     |       0.83 |           0.79 |     1.11 |               0.94 |           205   |
+| gpt    | tlc_first_day | DERS     |     48 |    0     |    0     |       0.71 |           0.65 |     1.13 |               0.75 |           119.5 |
+| gpt    | tlc_first_day | DERW     |     24 |    0     |    0     |       1.17 |           1    |     1.13 |               1    |           157   |
+| gpt    | tlc_first_day | INC      |     48 |    0     |    0     |       1.23 |           0.94 |     6.93 |               1    |           123   |
+| gpt    | tlc_first_day | MIX      |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.54 |            90.5 |
+| gpt    | tlc_first_day | PER      |     24 |    0     |    0     |       2.54 |           1    |     9.24 |               1    |           144.5 |
+| gpt    | tlc_first_day | POV      |     48 |    0     |    0     |       1.1  |           1    |     4.75 |               1    |            18   |
+| gpt    | tlc_first_day | TAN      |     24 |    0.007 |    0     |       0.12 |           0.12 |     1.3  |               0.88 |           154.5 |
+| qwen   | FULL          | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.02 |            36.5 |
+| qwen   | FULL          | DER      |     48 |    0.164 |    0.175 |       0.02 |           0.02 |     0.16 |               0.08 |            41.5 |
+| qwen   | FULL          | INC      |     48 |    1     |    0.114 |       0    |           0    |     0.44 |               0.31 |            28   |
+| qwen   | no_all        | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            55   |
+| qwen   | no_all        | DER      |     48 |    0.164 |    0.437 |       0.02 |           0.02 |     0.04 |               0.02 |            49   |
+| qwen   | no_all        | INC      |     48 |    1     |    0.88  |       0    |           0    |    -0.23 |               0.08 |            36.5 |
+| qwen   | no_brief      | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.06 |            42.5 |
+| qwen   | no_brief      | DER      |     48 |    1     |    0.055 |       0    |           0    |     0.25 |               0.04 |            43   |
+| qwen   | no_brief      | INC      |     48 |    1     |    0     |       0    |           0    |     1.22 |               0.62 |            25   |
+| qwen   | no_para       | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.02 |            30   |
+| qwen   | no_para       | DER      |     48 |    1     |    0.29  |       0    |           0    |     0.08 |               0.31 |            24.5 |
+| qwen   | no_para       | INC      |     48 |    1     |    0     |       0    |           0    |     3.25 |               0.79 |            14.5 |
+| qwen   | no_vp         | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.04 |            58   |
+| qwen   | no_vp         | DER      |     48 |    0.041 |    0.05  |       0.06 |           0.06 |     0.34 |               0.19 |            63   |
+| qwen   | no_vp         | INC      |     48 |    1     |    1     |       0    |           0    |    -1.13 |               0.1  |            42.5 |
+| qwen   | tlc_first     | BASE     |     48 |  nan     |  nan     |     nan    |         nan    |   nan    |               0.06 |            71.5 |
+| qwen   | tlc_first     | DER      |     48 |    0.006 |    0.008 |       0.12 |           0.12 |     0.4  |               0.46 |           106.5 |
+| qwen   | tlc_first     | INC      |     48 |    1     |    1     |       0    |           0    |    -1.38 |               0.21 |            58.5 |
+| qwen   | tlc_first     | POV      |     48 |    0     |    0.101 |       0.31 |           0.31 |     0.23 |               0.35 |            35   |
+| qwen   | v1            | BASE     |     24 |  nan     |  nan     |     nan    |         nan    |   nan    |               0    |            59.5 |
+| qwen   | v1            | DER      |     24 |    0.001 |    0.002 |       0.38 |           0.38 |     0.97 |               0.96 |           173.5 |
+| qwen   | v1            | INC      |     24 |    0     |    0     |       0.62 |           0.62 |     3.76 |               0.79 |            43.5 |
 
 ### 항목별 평균 (0~3)
 
 |                                   |   derailment |   tangentiality |   incoherence |   perseveration |   clanging |   circumstantiality |   poverty_of_speech |
 |:----------------------------------|-------------:|----------------:|--------------:|----------------:|-----------:|--------------------:|--------------------:|
 | ('gpt', 'FULL', 'BASE')           |         0    |            0    |          0    |            0    |          0 |                0    |                0.1  |
+| ('gpt', 'final', 'BASE')          |         0    |            0    |          0    |            0    |          0 |                0    |                0    |
+| ('gpt', 'final', 'DER2')          |         1.29 |            0.17 |          0    |            0    |          0 |                0.71 |                0    |
+| ('gpt', 'final', 'DER2INC1')      |         1.88 |            0.58 |          0.04 |            0    |          0 |                0.54 |                0    |
+| ('gpt', 'final', 'INC2')          |         2    |            0.71 |          1.54 |            0    |          0 |                0    |                0    |
+| ('gpt', 'final', 'PER1')          |         0    |            0    |          0    |            1    |          0 |                0    |                0    |
+| ('gpt', 'final', 'PER2')          |         0.08 |            0    |          0    |            1.21 |          0 |                0    |                0    |
+| ('gpt', 'final', 'POV1')          |         0    |            0    |          0    |            0    |          0 |                0    |                0.92 |
+| ('gpt', 'final', 'POV2')          |         0    |            0    |          0    |            0    |          0 |                0    |                1.17 |
+| ('gpt', 'final', 'POV2PER1')      |         0.21 |            0    |          0    |            0    |          0 |                0    |                1    |
+| ('gpt', 'final', 'POV3')          |         0    |            0    |          0    |            0    |          0 |                0    |                1.88 |
 | ('gpt', 'model', 'DER1')          |         0.5  |            0    |          0    |            0    |          0 |                0.08 |                0    |
 | ('gpt', 'model', 'DER3')          |         1.92 |            0.62 |          0    |            0    |          0 |                0.96 |                0    |
 | ('gpt', 'model', 'INC1')          |         0.88 |            0    |          0.38 |            0    |          0 |                0.04 |                0    |

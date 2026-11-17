@@ -26,6 +26,18 @@ DER_LEVELS = {
     3: ('- derailment: in every answer, your ideas keep slipping off track, five or more times, onto obliquely related '
         'or unrelated ideas; you never get back to the question and the answer as a whole is hard to follow, although '
         'each sentence makes sense on its own.')}
+# 말의 빈곤과 보속증도 원본 단계 문구로 (04 8단계에서 확인). 원본: 말의 빈곤은 짧은 답의 비율, 보속증은 반복되는 묶음 수
+POV_LEVELS = {
+    1: '- poverty of speech: now and then a reply is short and you do not add detail even where it would be natural; most replies are ordinary.',
+    2: ('- poverty of speech: many of your replies are only one to a few words ("Yeah." "Not really." "Last week."), and '
+        'you rarely add any detail unless asked again.'),
+    3: '- poverty of speech: you answer in one or two words at most, and sometimes you give no answer at all ("..." or "Don\'t know.").'}
+PER_LEVELS = {
+    1: '- perseveration: there is one phrase or idea that you keep coming back to in some of your answers.',
+    2: '- perseveration: there are two or three phrases or ideas that you keep coming back to across your answers.',
+    3: '- perseveration: there are four or more phrases or ideas that you keep coming back to, in almost every answer.'}
+LEVEL_TEXT = {'DER': DER_LEVELS, 'POV': POV_LEVELS, 'PER': PER_LEVELS}
+LINE_START = {'DER': '- derailment:', 'POV': '- poverty of speech:', 'PER': '- perseveration:'}
 # 병원 질문에서 탈선 0.88 -> 1.38, 지리멸렬 0.96 -> 1.38(04 7단계). 기본으로 넣는다
 KEEP_FORM = ('Keep speaking this way even when you are asked about your symptoms, feelings or treatment; do not switch to '
              'a clear, organized account.')
@@ -50,7 +62,8 @@ def summary(mfc, symptoms=True):
     return '\n'.join(lines)
 
 
-def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True, keep_form=True, short=False):
+def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True, keep_form=True, short=False,
+                  levels=('DER', 'POV', 'PER')):
     """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이).
     keep_form: 증상을 물어도 말투를 유지하라는 줄(병원 질문용). short: 대화처럼 두세 문장 길이로."""
     out = ['You are role-playing a psychiatric patient answering questions in a clinical interview.', '', 'HOW YOU SPEAK']
@@ -67,9 +80,10 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True
             'Speak in the first person as transcribed speech: no stage directions, no labels. Use everyday words, not '
             'psychiatric terms or diagnosis names. Never mention or explain how you speak. Stay the same person for the whole interview.']
     s = '\n'.join(out)
-    if der_original and profile.get('DER'):
-        i = s.index('- derailment:')
-        s = s[:i] + DER_LEVELS[profile['DER']] + s[s.index('\n', i):]
+    for t in (levels if der_original else ()):  # 단계별 원본 기준 문구로 바꿔 넣는다
+        if profile.get(t):
+            i = s.index(LINE_START[t])
+            s = s[:i] + LEVEL_TEXT[t][profile[t]] + s[s.index('\n', i):]
     return s
 
 

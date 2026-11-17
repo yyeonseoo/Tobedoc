@@ -61,15 +61,15 @@ def client():
 
 class Budget:
     """토큰 사용량으로 비용을 누적해 파일에 적고, 상한을 넘으면 멈춘다."""
-    def __init__(self, path):
-        self.path = path
+    def __init__(self, path, cap=BUDGET):
+        self.path, self.cap = path, cap
         self.spent = json.load(open(path))['spent'] if os.path.exists(path) else 0.0
 
     def add(self, usage):
         self.spent += usage.prompt_tokens * PRICE_IN + usage.completion_tokens * PRICE_OUT
         json.dump({'spent': self.spent}, open(self.path, 'w'))
-        if self.spent > BUDGET:
-            sys.exit(f'비용 상한 {BUDGET}달러 도달 ({self.spent:.2f}). 중단.')
+        if self.spent > self.cap:
+            sys.exit(f'비용 상한 {self.cap}달러 도달 ({self.spent:.2f}). 중단.')
 
 
 def rate(c, question, text, rubric=RUBRIC, budget=None, model='gpt-4.1'):
