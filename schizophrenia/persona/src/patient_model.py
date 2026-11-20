@@ -9,6 +9,7 @@ python src/patient_model.py --chat P4 DER=2 POV=1        직접 질문하는 대
 """
 import json
 import os
+import re
 import sys
 
 from tlc import Budget, client, symptom_lines
@@ -62,12 +63,26 @@ PER_LEVELS_11 = {
         'across your answers, even when they do not fit the question.'),
     3: ('- perseveration: four or more exact phrases or words keep coming back in almost every answer, whatever the '
         'question is.')}
+# 12단계: 탈선은 우리가 TLC 특징대로 쓴 짧은 예시를 붙인다(원문 환자 예시는 베낄까 봐 쓰지 않음). 보속증은 스스로 만든 표현
+DER_EXAMPLES = ('For example (the kind of thing, not the content; never reuse these words): asked about weekends: "Weekends, '
+                'yeah. I go to the shop on the corner, they changed the sign. My uncle had a boat. It doesn\'t sit right, so '
+                'they keep moving it. Anyway, the bus." Asked about sleep: "Not bad. The ceiling\'s white, they did it in '
+                'spring. That\'s when the letters came. You can\'t keep it all in the drawer, she said, but it was the blue one."')
+OWN_WORDS = 'WHO YOU ARE below is background, not lines to recite: say things in your own words and do not repeat its sentences.'
+PER_LEVELS_12 = {
+    1: ('- perseveration: you have one pet phrase of your own (make it up; do not take it from WHO YOU ARE) that keeps '
+        'coming back in some answers, even where it does not fit.'),
+    2: ('- perseveration: you have two or three pet phrases of your own (make them up; do not take them from WHO YOU ARE) '
+        'that keep coming back across your answers, even when they do not fit the question.'),
+    3: ('- perseveration: you have four or more pet phrases of your own (make them up; do not take them from WHO YOU ARE) '
+        'that come back in almost every answer, whatever the question is.')}
 KEEP_FORM = ('Keep speaking this way even when you are asked about your symptoms, feelings or treatment; do not switch to '
              'a clear, organized account.')
 
 
-def summary(mfc, symptoms=True):
-    """MFC에서 증상 내용과 배경만 추린다. 모델로 요약하지 않고 칸을 그대로 옮긴다."""
+def summary(mfc, symptoms=True, quotes=True):
+    """MFC에서 증상 내용과 배경만 추린다. 모델로 요약하지 않고 칸을 그대로 옮긴다.
+    quotes=False면 MFC 예시 대사의 따옴표를 뺀다(내용은 남김). 12단계: 모델이 따옴표 대사를 매 답 그대로 베꼈다."""
     p, b = mfc['MFC-Profile'], mfc['MFC-Behavior']
     i, s, d, m = p['Identifying data'], p['Present illness']['Symptom'], p['Developmental/social history'], p['Current medication']
     lines = [
@@ -80,17 +95,20 @@ def summary(mfc, symptoms=True):
         f"- Medication: {m['Medication name']}, {m['Compliance']}",
         f"- Family: {d['Childhood history']['Members of family']} {d['Childhood history']['Home environment']} {p['Family history']['Substance use']}",
         f"- School and work: {d['School history']} {d['Work history']}"]
+    if not quotes:
+        lines = [re.sub(r'["“”]', '', l) for l in lines]  # 따옴표만 빼고 내용은 남긴다
     if not symptoms:  # 증상 내용(주 증상, 환청, 망상, 병식, 약)을 빼고 생활 배경만
         lines = [l for l in lines if not l.startswith(('- Main problem', '- What you', '- How you see', '- Medication'))]
     return '\n'.join(lines)
 
 
 def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True, keep_form=True, short=False,
-                  levels=('DER', 'POV', 'PER'), natural=True, step=11):
+                  levels=('DER', 'POV', 'PER'), natural=True, step=12):
     """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이).
     keep_form: 증상을 물어도 말투를 유지하라는 줄(병원 질문용). short: 대화처럼 두세 문장 길이로.
     natural: 질문에 맞춘 길이와 구어체(10단계). False면 9단계까지의 지시문.
-    step: natural일 때 10이면 10단계 지시문, 11이면 와해형 길이(DIS_LENGTH), 답마다 변화(VARY), 보속증 문구(PER_LEVELS_11)."""
+    step: natural일 때 10이면 10단계 지시문, 11이면 와해형 길이(DIS_LENGTH), 답마다 변화(VARY), 보속증 문구(PER_LEVELS_11).
+    12면 배경의 예시 대사를 빼고, 탈선 2단계에 예시(DER_EXAMPLES), 보속증은 스스로 만든 표현(PER_LEVELS_12)."""
     out = ['You are role-playing a psychiatric patient answering questions in a clinical interview.', '', 'HOW YOU SPEAK']
     if profile:
         out += [('Your speech shows the following throughout the interview, whenever you say more than a few words '
@@ -109,13 +127,17 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True
                    'Apart from this, answer at a natural spoken length.' if profile else 'Answer at a natural spoken length.')
     if natural:
         out.append(SPOKEN)
-    out += ['', 'WHO YOU ARE', summary(mfc, symptoms), '',
+    if natural and step >= 12 and profile.get('DER') == 2:
+        out.append(DER_EXAMPLES)
+    if natural and step >= 12:
+        out.append(OWN_WORDS)
+    out += ['', 'WHO YOU ARE', summary(mfc, symptoms, quotes=not (natural and step >= 12)), '',
             'Speak in the first person as transcribed speech: no stage directions, no labels. Use everyday words, not '
             'psychiatric terms or diagnosis names. Never mention or explain how you speak. Stay the same person for the whole interview.']
     s = '\n'.join(out)
     for t in (levels if der_original else ()):  # 단계별 원본 기준 문구로 바꿔 넣는다
         if profile.get(t):
-            text = PER_LEVELS_11 if t == 'PER' and natural and step >= 11 else LEVEL_TEXT[t]
+            text = (PER_LEVELS_12 if step >= 12 else PER_LEVELS_11) if t == 'PER' and natural and step >= 11 else LEVEL_TEXT[t]
             i = s.index(LINE_START[t])
             s = s[:i] + text[profile[t]] + s[s.index('\n', i):]
     return s
@@ -151,9 +173,12 @@ if __name__ == '__main__':
     assert 'five or more times' in system_prompt(m, {'DER': 3}) and KEEP_FORM in system_prompt(m, {'DER': 2}) and KEEP_FORM not in system_prompt(m, {})
     assert 'two to four spoken sentences' in system_prompt(m, {}, short=True)
     assert 'disjointed' in s and 'disjointed' not in system_prompt(m, {'DER': 2}, der_original=False)
+    s = system_prompt(m, {'DER': 2}, step=11)
     assert DIS_LENGTH in s and VARY in s and NATURAL_LENGTH in system_prompt(m, {}) and VARY not in system_prompt(m, {})
-    assert VARY not in system_prompt(m, {'POV': 2}) and system_prompt(m, {'POV': 2}) == system_prompt(m, {'POV': 2}, step=10)
-    assert 'exact phrases' in system_prompt(m, {'PER': 2}) and 'exact phrases' not in system_prompt(m, {'PER': 2}, step=10)
+    assert VARY not in system_prompt(m, {'POV': 2}) and system_prompt(m, {'POV': 2}, step=11) == system_prompt(m, {'POV': 2}, step=10)
+    assert 'exact phrases' in system_prompt(m, {'PER': 2}, step=11) and 'pet phrases' in system_prompt(m, {'PER': 2})
+    assert DER_EXAMPLES in system_prompt(m, {'DER': 2}) and DER_EXAMPLES not in system_prompt(m, {'DER': 2}, step=11)
+    assert '"' not in summary(m, quotes=False) and '"' in summary(m) and OWN_WORDS in system_prompt(m, {}) and OWN_WORDS not in system_prompt(m, {}, step=11)
     s = system_prompt(m, {'DER': 2}, step=10)
     assert NATURAL_LENGTH in s and SPOKEN in s and VARY not in s
     assert 'natural spoken length' in system_prompt(m, {'DER': 2}, natural=False) and SPOKEN not in system_prompt(m, {}, natural=False)

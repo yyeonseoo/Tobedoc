@@ -92,7 +92,9 @@ def variant_prompt(mfc, cond, variant):
         return s
     if variant == 'v10_new':  # 10단계: 질문에 맞춘 길이, 구어체
         return system_prompt(mfc, parse_cond(cond), step=10)
-    if variant == 'v11':  # 11단계: 지금 우리 모델 기본값
+    if variant == 'v11':  # 11단계
+        return system_prompt(mfc, parse_cond(cond), step=11)
+    if variant == 'v12':  # 12단계: 지금 우리 모델 기본값
         return system_prompt(mfc, parse_cond(cond))
     if variant.startswith('final'):  # 8단계: 그때의 우리 모델 기본값(2단계 탈선은 DER_W)
         return old_der(system_prompt(mfc, parse_cond(cond), natural=False), parse_cond(cond))
@@ -137,7 +139,7 @@ def run(name, jobs, chat, only=None):
     ivs = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else []
     have = {(i['patient'], i['variant'], i['cond'], i['rep']) for i in ivs}
     for v, cond, rep in jobs:
-        for pid in (MFC if not (v == 'tlc_first_day' or v.startswith(('model', 'final', 'v10', 'v11'))) else {**MFC, **NEW}):
+        for pid in (MFC if not (v == 'tlc_first_day' or v.startswith(('model', 'final', 'v10', 'v11', 'v12'))) else {**MFC, **NEW}):
             if only and pid not in only:
                 continue
             if (pid, v, cond, rep) in have:
@@ -147,7 +149,7 @@ def run(name, jobs, chat, only=None):
                 while temp() > 85:
                     time.sleep(30)
             t0, msgs, turns = time.time(), [{'role': 'system', 'content': variant_prompt({**MFC, **NEW}[pid], cond, v)}], []
-            qs = MIX_QUESTIONS if v.startswith(('v10', 'v11')) else DAY_QUESTIONS if v.endswith('_day') or v in ('model', 'model_short', 'final', 'final_x') else QUESTIONS
+            qs = MIX_QUESTIONS if v.startswith(('v10', 'v11', 'v12')) else DAY_QUESTIONS if v.endswith('_day') or v in ('model', 'model_short', 'final', 'final_x') else QUESTIONS
             for k, q in enumerate(qs):
                 msgs.append({'role': 'user', 'content': q})
                 a = chat(msgs)
@@ -227,7 +229,7 @@ def evaluate():
     sc.save()
     # 지표 기준: 같은 모델, 같은 환자의 FULL BASE 턴(v1 인물은 v1 BASE 턴)
     # 질문 묶음이 다르면 기준도 따로: 병원 질문은 FULL BASE, 일상 질문은 tlc_first_day BASE(v1 인물은 v1 BASE)
-    d['qset'] = (d.variant.str.endswith('_day') | d.variant.isin(['v1', 'model', 'model_short', 'final', 'final_x', 'v10_old', 'v10_new', 'v11'])).map({True: 'day', False: 'clinic'})
+    d['qset'] = (d.variant.str.endswith('_day') | d.variant.isin(['v1', 'model', 'model_short', 'final', 'final_x', 'v10_old', 'v10_new', 'v11', 'v12'])).map({True: 'day', False: 'clinic'})
     normal = d.variant.isin(['FULL', 'v1', 'tlc_first_day', 'model_clin']) & (d.cond == 'BASE')
     normal |= (d.variant == 'v10_old') & (d.cond == 'BASE')  # 10단계는 질문이 달라 같은 질문의 9단계 기본값 BASE를 기준으로  # model_short BASE는 비교 대상이라 기준에서 뺀다
     z = pd.concat([flags(g, normal[g.index]) for _, g in d.groupby(['model', 'patient', 'qset'])]).loc[d.index]
@@ -336,7 +338,7 @@ def blind_real():
     """10단계 면담(v10_old, v10_new)을 섞어 면담 단위 현실성 채점 파일로. 조건은 숨기고 환자 배경(summary)만 붙인다."""
     from patient_model import summary
     d = load()
-    d = d[(d.model == 'gpt') & d.variant.isin(['v10_old', 'v10_new', 'v11'])]
+    d = d[(d.model == 'gpt') & d.variant.isin(['v10_old', 'v10_new', 'v11', 'v12'])]
     ivs = [(k, g.sort_values('turn')) for k, g in d.groupby(['patient', 'variant', 'cond'])]
     random.Random(len(ivs)).shuffle(ivs)  # 11단계에서 세 지시문을 한 번에 다시 채점
     key = {}
@@ -355,7 +357,7 @@ def rate_gpt():
     """Claude와 같은 채점표로 GPT-4.1이 다시 채점한다(조건은 모름). 대상: P4~P6의 tlc_first_day, model, final 면담."""
     from tlc import RUBRIC, rate_items
     d = load()
-    d = d[(d.model == 'gpt') & d.patient.isin(['P4', 'P5', 'P6']) & d.variant.isin(['tlc_first_day', 'model', 'final', 'final_x'])]
+    d = d[(d.model == 'gpt') & d.patient.isin(['P4', 'P5', 'P6']) & d.variant.isin(['tlc_first_day', 'model', 'final', 'final_x', 'v11', 'v12'])]
     d = d.groupby(['variant', 'cond'], group_keys=False).apply(lambda g: g.sample(len(g) if g.name[0] == 'final_x' else min(len(g), 10), random_state=3))  # 조건마다 10턴(9단계는 전부), 비용을 줄이려고
     rate_items(d[['tid', 'question', 'text']], os.path.join(OUT, 'gpt_rater.csv'), 'tid', RUBRIC,
                Budget(os.path.join(OUT, 'spent_08.json'), cap=2.0))
@@ -393,6 +395,9 @@ if __name__ == '__main__':
         jobs = [('final', c, 0) for c in ['POV1', 'POV3', 'PER1', 'PER2', 'DER2INC1', 'POV2PER1']]
         jobs += [('final', c, 1) for c in ['BASE', 'DER2', 'INC2', 'POV2']]
         run('gpt', jobs, gpt(client(), Budget(os.path.join(OUT, 'spent_08.json'), cap=2.0)), only=['P4', 'P5', 'P6'])
+    elif a and a[0] == 'gpt_step12':  # 04 12단계: 배경 대사 제거, 탈선 예시, 보속증 표현 (10단계와 같은 상한 파일)
+        run('gpt', [('v12', c, 0) for c in ['BASE', 'DER2', 'POV2', 'PER2']],
+            gpt(client(), Budget(os.path.join(OUT, 'spent_10.json'), cap=2.0)), only=['P4', 'P5', 'P6'])
     elif a and a[0] == 'gpt_step11':  # 04 11단계: 와해형 길이, 답마다 변화, 보속증 문구 (10단계와 같은 상한 파일)
         run('gpt', [('v11', c, 0) for c in ['BASE', 'DER2', 'INC2', 'POV2', 'PER2']],
             gpt(client(), Budget(os.path.join(OUT, 'spent_10.json'), cap=2.0)), only=['P4', 'P5', 'P6'])
