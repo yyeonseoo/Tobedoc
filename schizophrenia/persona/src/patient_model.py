@@ -50,6 +50,18 @@ NATURAL_LENGTH = ('Match the length to the question, as real patients do: a gree
 SPOKEN = ('Talk like a real person in a clinic, not like a writer: plain everyday words, short or unfinished sentences, '
           'false starts and fillers now and then ("I dunno", "kind of", "like"). No vivid images, metaphors or literary '
           'descriptions, and do not narrate scenes in detail.')
+# 11단계: 와해형은 열린 질문에서 말할 여지를 조금 더 주고, 답마다 정도를 다르게 하고, 보속증은 같은 표현의 반복으로 쓴다
+DIS_LENGTH = ('Match the length to the question: a greeting or a yes/no or simple factual question gets one or two sentences; '
+              'an open question gets up to about five sentences, enough for your way of speaking to show. Never give a long speech.')
+VARY = ('How strongly this shows varies from answer to answer, as in real patients: some answers are fairly clear, others '
+        'are badly affected. Do not make every answer the same.')
+PER_LEVELS_11 = {
+    1: ('- perseveration: one exact phrase (the same words, not just the same topic) keeps coming back in some of your '
+        'answers, even where it does not fit.'),
+    2: ('- perseveration: two or three exact phrases or words (the same wording, not just the same worry) keep coming back '
+        'across your answers, even when they do not fit the question.'),
+    3: ('- perseveration: four or more exact phrases or words keep coming back in almost every answer, whatever the '
+        'question is.')}
 KEEP_FORM = ('Keep speaking this way even when you are asked about your symptoms, feelings or treatment; do not switch to '
              'a clear, organized account.')
 
@@ -74,10 +86,11 @@ def summary(mfc, symptoms=True):
 
 
 def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True, keep_form=True, short=False,
-                  levels=('DER', 'POV', 'PER'), natural=True):
+                  levels=('DER', 'POV', 'PER'), natural=True, step=11):
     """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이).
     keep_form: 증상을 물어도 말투를 유지하라는 줄(병원 질문용). short: 대화처럼 두세 문장 길이로.
-    natural: 질문에 맞춘 길이와 구어체(10단계). False면 9단계까지의 지시문."""
+    natural: 질문에 맞춘 길이와 구어체(10단계). False면 9단계까지의 지시문.
+    step: natural일 때 10이면 10단계 지시문, 11이면 와해형 길이(DIS_LENGTH), 답마다 변화(VARY), 보속증 문구(PER_LEVELS_11)."""
     out = ['You are role-playing a psychiatric patient answering questions in a clinical interview.', '', 'HOW YOU SPEAK']
     if profile:
         out += [('Your speech shows the following throughout the interview, whenever you say more than a few words '
@@ -85,8 +98,11 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True
                 + '(defined as in the Scale for the Assessment of Thought, Language and Communication):', *symptom_lines(profile)]
     if keep_form and profile:
         out.append(KEEP_FORM)
+    if natural and step >= 11 and profile:
+        out.append(VARY)
     if natural and 'POV' not in profile and not max_words and not short:
-        out.append(NATURAL_LENGTH)
+        dis = step >= 11 and any(t in profile for t in ('DER', 'INC', 'TAN', 'CLANG', 'PER'))
+        out.append(DIS_LENGTH if dis else NATURAL_LENGTH)
     elif 'POV' not in profile:
         out.append(f'Keep each answer under about {max_words} words.' if max_words else
                    'Answer in about two to four spoken sentences, as people do in conversation.' if short else
@@ -99,8 +115,9 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True
     s = '\n'.join(out)
     for t in (levels if der_original else ()):  # 단계별 원본 기준 문구로 바꿔 넣는다
         if profile.get(t):
+            text = PER_LEVELS_11 if t == 'PER' and natural and step >= 11 else LEVEL_TEXT[t]
             i = s.index(LINE_START[t])
-            s = s[:i] + LEVEL_TEXT[t][profile[t]] + s[s.index('\n', i):]
+            s = s[:i] + text[profile[t]] + s[s.index('\n', i):]
     return s
 
 
@@ -134,7 +151,10 @@ if __name__ == '__main__':
     assert 'five or more times' in system_prompt(m, {'DER': 3}) and KEEP_FORM in system_prompt(m, {'DER': 2}) and KEEP_FORM not in system_prompt(m, {})
     assert 'two to four spoken sentences' in system_prompt(m, {}, short=True)
     assert 'disjointed' in s and 'disjointed' not in system_prompt(m, {'DER': 2}, der_original=False)
-    assert NATURAL_LENGTH in s and SPOKEN in s and 'every answer' not in s
+    assert DIS_LENGTH in s and VARY in s and NATURAL_LENGTH in system_prompt(m, {}) and VARY not in system_prompt(m, {})
+    assert 'exact phrases' in system_prompt(m, {'PER': 2}) and 'exact phrases' not in system_prompt(m, {'PER': 2}, step=10)
+    s = system_prompt(m, {'DER': 2}, step=10)
+    assert NATURAL_LENGTH in s and SPOKEN in s and VARY not in s
     assert 'natural spoken length' in system_prompt(m, {'DER': 2}, natural=False) and SPOKEN not in system_prompt(m, {}, natural=False)
     assert NATURAL_LENGTH not in system_prompt(m, {'POV': 2}) and SPOKEN in system_prompt(m, {'POV': 2})
     assert s.index('derailment') < s.index('WHO YOU ARE') and 'Decreased' not in s and 'What you believe' not in summary(m, False)
