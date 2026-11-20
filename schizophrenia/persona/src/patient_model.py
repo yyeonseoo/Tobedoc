@@ -98,7 +98,7 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True
                 + '(defined as in the Scale for the Assessment of Thought, Language and Communication):', *symptom_lines(profile)]
     if keep_form and profile:
         out.append(KEEP_FORM)
-    if natural and step >= 11 and profile:
+    if natural and step >= 11 and any(t in profile for t in ('DER', 'INC', 'TAN', 'CLANG')):  # 말의 빈곤은 VARY를 넣으면 길게 답해 약해짐(11단계)
         out.append(VARY)
     if natural and 'POV' not in profile and not max_words and not short:
         dis = step >= 11 and any(t in profile for t in ('DER', 'INC', 'TAN', 'CLANG', 'PER'))
@@ -152,6 +152,7 @@ if __name__ == '__main__':
     assert 'two to four spoken sentences' in system_prompt(m, {}, short=True)
     assert 'disjointed' in s and 'disjointed' not in system_prompt(m, {'DER': 2}, der_original=False)
     assert DIS_LENGTH in s and VARY in s and NATURAL_LENGTH in system_prompt(m, {}) and VARY not in system_prompt(m, {})
+    assert VARY not in system_prompt(m, {'POV': 2}) and system_prompt(m, {'POV': 2}) == system_prompt(m, {'POV': 2}, step=10)
     assert 'exact phrases' in system_prompt(m, {'PER': 2}) and 'exact phrases' not in system_prompt(m, {'PER': 2}, step=10)
     s = system_prompt(m, {'DER': 2}, step=10)
     assert NATURAL_LENGTH in s and SPOKEN in s and VARY not in s
