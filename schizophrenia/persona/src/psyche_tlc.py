@@ -154,13 +154,16 @@ def ask(c, budget, system, schema=None):
     return r.choices[0].message.content.strip()
 
 
-def make_mfc(c, budget, age, sex, diagnosis='Schizophrenia'):
-    """PatientHub PsycheGenerator와 같은 순서: Profile -> History -> Behavior."""
+def make_mfc(c, budget, age, sex, diagnosis='Schizophrenia', case=None):
+    """PatientHub PsycheGenerator와 같은 순서: Profile -> History -> Behavior.
+    case: 팀 환자 프로필 같은 사례 설명. 있으면 세 단계 프롬프트 끝에 붙여 MFC가 이를 따르게 한다(원본 프롬프트는 그대로)."""
     g, seed = prompts('generator'), dict(diagnosis=diagnosis, age=age, sex=sex)
-    profile = ask(c, budget, g['MFC_Profile'].render(**seed), MFCProfile)
+    add = ('' if not case else '\n\nAdditional case information (the MFC must be consistent with it and must not contradict it):\n'
+           + case)
+    profile = ask(c, budget, g['MFC_Profile'].render(**seed) + add, MFCProfile)
     pj = json.dumps(profile, ensure_ascii=False)
-    history = ask(c, budget, g['MFC_History'].render(**seed, mfc_profile_json=pj))
-    behavior = ask(c, budget, g['MFC_Behavior'].render(**seed, mfc_profile_json=pj, mfc_history_json=history), MFCBehavior)
+    history = ask(c, budget, g['MFC_History'].render(**seed, mfc_profile_json=pj) + add)
+    behavior = ask(c, budget, g['MFC_Behavior'].render(**seed, mfc_profile_json=pj, mfc_history_json=history) + add, MFCBehavior)
     return {'MFC-Profile': profile, 'MFC-History': history, 'MFC-Behavior': behavior}
 
 

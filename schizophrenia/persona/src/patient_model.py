@@ -5,6 +5,7 @@ MFC는 PSYCHE 원본 프롬프트로 만든다(src/psyche_tlc.py make_mfc). 인�
 04의 2 × 2에서 증상 내용은 넣고, 면담 질문은 병원 질문보다 일상 질문(persona_model.QUESTIONS)을 쓸 때 탈선과 지리멸렬이 잘 나왔다.
 
 python src/patient_model.py --new P4 30 Female           새 환자 MFC 생성 (GPT-4.1) -> data/patients/mfc.json
+python src/patient_model.py --new C05 31 Male "사례 설명"  사례 설명(팀 프로필 등)을 따르는 MFC
 python src/patient_model.py --chat P4 DER=2 POV=1        직접 질문하는 대화 모드 (빈 줄 = 종료)
 """
 import json
@@ -147,12 +148,13 @@ def load_mfc():
     return json.load(open(MFC_PATH, encoding='utf-8')) if os.path.exists(MFC_PATH) else {}
 
 
-def new_patient(pid, age, sex, diagnosis='Schizophrenia'):
+def new_patient(pid, age, sex, diagnosis='Schizophrenia', case=None):
+    """case: 팀 환자 프로필 같은 사례 설명(선택). 주면 MFC가 그 설정을 따른다."""
     from psyche_tlc import make_mfc
     os.makedirs(OUT, exist_ok=True)
     mfcs = load_mfc()
     if pid not in mfcs:
-        mfcs[pid] = make_mfc(client(), Budget(os.path.join(OUT, 'spent.json')), age, sex, diagnosis)
+        mfcs[pid] = make_mfc(client(), Budget(os.path.join(OUT, 'spent.json')), age, sex, diagnosis, case)
         json.dump(mfcs, open(MFC_PATH, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     return mfcs[pid]
 
@@ -185,8 +187,8 @@ if __name__ == '__main__':
     assert NATURAL_LENGTH not in system_prompt(m, {'POV': 2}) and SPOKEN in system_prompt(m, {'POV': 2})
     assert s.index('derailment') < s.index('WHO YOU ARE') and 'Decreased' not in s and 'What you believe' not in summary(m, False)
     a = sys.argv[1:]
-    if a[:1] == ['--new']:
-        print(json.dumps(new_patient(a[1], int(a[2]), a[3])['MFC-Behavior'], ensure_ascii=False, indent=1))
+    if a[:1] == ['--new']:  # --new C05 31 Male "사례 설명" (사례 설명은 선택)
+        print(json.dumps(new_patient(a[1], int(a[2]), a[3], case=a[4] if len(a) > 4 else None)['MFC-Behavior'], ensure_ascii=False, indent=1))
     elif a[:1] == ['--chat']:
         from persona_model import parse_profile
         chat(a[1], parse_profile(a[2:]) if a[2:] else {})
