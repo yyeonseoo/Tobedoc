@@ -16,7 +16,7 @@ from tlc import Budget, client, symptom_lines
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'data', 'patients')
 MFC_PATH = os.path.join(OUT, 'mfc.json')
-# 탈선은 TLC 원본 단계(면담 중 횟수)에 맞춘 구체적인 문구를 쓴다. 2단계: v1 문구로는 새 환자에서 0.83점, 이 문구로 1.17점(04 5단계)
+# 탈선은 TLC 원본 단계(면담 중 횟수)에 맞춘 구체적인 문구를 쓴다. 1, 3단계는 04 7단계에서 세기가 조절됨을 확인
 DER_LEVELS = {
     1: ('- derailment: in some answers (not all), your ideas slip off track once onto an obliquely related idea and you '
         'carry on from there; otherwise you are easy to follow.'),
@@ -25,8 +25,8 @@ DER_LEVELS = {
         'unrelated. You put things side by side that have no meaningful connection, and you shift from one frame of '
         'reference to another without warning. Your sentences are disjointed: they do not hang together, and you use '
         '"it", "they" or "that" without making clear who or what you mean. With each slip you get farther from the '
-        'question, and you do not notice that your answer no longer has anything to do with it. This happens several '
-        'times in every answer.'),
+        'question, and you do not notice that your answer no longer has anything to do with it. This happens whenever '
+        'you talk for more than a sentence or two.'),
     3: ('- derailment: in every answer, your ideas keep slipping off track, five or more times, onto obliquely related '
         'or unrelated ideas; you never get back to the question and the answer as a whole is hard to follow, although '
         'each sentence makes sense on its own.')}
@@ -43,6 +43,13 @@ PER_LEVELS = {
 LEVEL_TEXT = {'DER': DER_LEVELS, 'POV': POV_LEVELS, 'PER': PER_LEVELS}
 LINE_START = {'DER': '- derailment:', 'POV': '- poverty of speech:', 'PER': '- perseveration:'}
 # 병원 질문에서 탈선 0.88 -> 1.38, 지리멸렬 0.96 -> 1.38(04 7단계). 기본으로 넣는다
+# 10단계: 말 길이와 구어체. 질문에 맞춰 길이를 바꾸고 글처럼 쓰지 않게 한다
+NATURAL_LENGTH = ('Match the length to the question, as real patients do: a greeting or a yes/no or simple factual question gets '
+                  'a short reply (a few words or one sentence); an open question gets a few sentences at most. Never give a '
+                  'long speech.')
+SPOKEN = ('Talk like a real person in a clinic, not like a writer: plain everyday words, short or unfinished sentences, '
+          'false starts and fillers now and then ("I dunno", "kind of", "like"). No vivid images, metaphors or literary '
+          'descriptions, and do not narrate scenes in detail.')
 KEEP_FORM = ('Keep speaking this way even when you are asked about your symptoms, feelings or treatment; do not switch to '
              'a clear, organized account.')
 
@@ -67,19 +74,25 @@ def summary(mfc, symptoms=True):
 
 
 def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True, keep_form=True, short=False,
-                  levels=('DER', 'POV', 'PER')):
+                  levels=('DER', 'POV', 'PER'), natural=True):
     """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이).
-    keep_form: 증상을 물어도 말투를 유지하라는 줄(병원 질문용). short: 대화처럼 두세 문장 길이로."""
+    keep_form: 증상을 물어도 말투를 유지하라는 줄(병원 질문용). short: 대화처럼 두세 문장 길이로.
+    natural: 질문에 맞춘 길이와 구어체(10단계). False면 9단계까지의 지시문."""
     out = ['You are role-playing a psychiatric patient answering questions in a clinical interview.', '', 'HOW YOU SPEAK']
     if profile:
-        out += ['Your speech shows the following, consistently in every answer for the whole interview '
-                '(defined as in the Scale for the Assessment of Thought, Language and Communication):', *symptom_lines(profile)]
+        out += [('Your speech shows the following throughout the interview, whenever you say more than a few words '
+                 if natural else 'Your speech shows the following, consistently in every answer for the whole interview ')
+                + '(defined as in the Scale for the Assessment of Thought, Language and Communication):', *symptom_lines(profile)]
     if keep_form and profile:
         out.append(KEEP_FORM)
-    if 'POV' not in profile:
+    if natural and 'POV' not in profile and not max_words and not short:
+        out.append(NATURAL_LENGTH)
+    elif 'POV' not in profile:
         out.append(f'Keep each answer under about {max_words} words.' if max_words else
                    'Answer in about two to four spoken sentences, as people do in conversation.' if short else
                    'Apart from this, answer at a natural spoken length.' if profile else 'Answer at a natural spoken length.')
+    if natural:
+        out.append(SPOKEN)
     out += ['', 'WHO YOU ARE', summary(mfc, symptoms), '',
             'Speak in the first person as transcribed speech: no stage directions, no labels. Use everyday words, not '
             'psychiatric terms or diagnosis names. Never mention or explain how you speak. Stay the same person for the whole interview.']
@@ -121,8 +134,10 @@ if __name__ == '__main__':
     assert 'five or more times' in system_prompt(m, {'DER': 3}) and KEEP_FORM in system_prompt(m, {'DER': 2}) and KEEP_FORM not in system_prompt(m, {})
     assert 'two to four spoken sentences' in system_prompt(m, {}, short=True)
     assert 'disjointed' in s and 'disjointed' not in system_prompt(m, {'DER': 2}, der_original=False)
-    assert s.index('derailment') < s.index('WHO YOU ARE') and 'Decreased' not in s and 'natural spoken length' in s
-    assert 'natural spoken length' not in system_prompt(m, {'POV': 2}) and 'What you believe' not in summary(m, False)
+    assert NATURAL_LENGTH in s and SPOKEN in s and 'every answer' not in s
+    assert 'natural spoken length' in system_prompt(m, {'DER': 2}, natural=False) and SPOKEN not in system_prompt(m, {}, natural=False)
+    assert NATURAL_LENGTH not in system_prompt(m, {'POV': 2}) and SPOKEN in system_prompt(m, {'POV': 2})
+    assert s.index('derailment') < s.index('WHO YOU ARE') and 'Decreased' not in s and 'What you believe' not in summary(m, False)
     a = sys.argv[1:]
     if a[:1] == ['--new']:
         print(json.dumps(new_patient(a[1], int(a[2]), a[3])['MFC-Behavior'], ensure_ascii=False, indent=1))

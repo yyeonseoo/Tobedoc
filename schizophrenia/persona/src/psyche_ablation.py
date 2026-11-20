@@ -33,6 +33,12 @@ VARIANTS = {'FULL': [], 'no_brief': ['brief'], 'no_para': ['para'], 'no_vp': ['v
 CONDS = ['BASE', 'DER', 'INC']
 NCLAUDE = 6
 DAY_QUESTIONS = list(V1_QUESTIONS.values())  # 일상 질문(v1과 같음). 변형 이름이 _day로 끝나면 이 질문을 쓴다
+# 10단계: 짧은 질문(인사, 예/아니오)과 열린 질문을 섞은 10개. 번호 1, 2, 4, 6, 8, 10이 짧은 질문
+MIX_QUESTIONS = ['Hi, how are you doing today?', 'Did you find the clinic okay?', 'What did you do last weekend?',
+                 'Do you live with anyone?', "What's your family like?", 'Have you been sleeping alright?',
+                 'What do you usually do during the day?', 'Are you still taking your medication?',
+                 'What are your plans for the next few weeks?', "Okay, thanks. Is there anything else you'd like to tell me?"]
+SHORT_Q = {1, 2, 4, 6, 8, 10}
 GRID = ['tf_life', 'tlc_first_day', 'tf_life_day']  # tlc_first(증상 내용 + 병원 질문)와 함께 2 × 2
 
 
@@ -78,23 +84,26 @@ def parse_cond(cond):
 
 
 def variant_prompt(mfc, cond, variant):
-    if variant == 'final_x':  # 9단계: 기본값에서 탈선 문구만 DER_X로
-        s = system_prompt(mfc, parse_cond(cond))
+    if variant in ('final_x', 'v10_old'):  # 9단계 기본값(탈선 문구 DER_X). v10_old는 10단계 비교용으로 같은 지시문
+        s = system_prompt(mfc, parse_cond(cond), natural=False)
         if 'DER' in parse_cond(cond):
             i = s.index('- derailment:')
             s = s[:i] + DER_X + s[s.index('\n', i):]
         return s
+    if variant == 'v10_new':  # 10단계: 지금 우리 모델 기본값(질문에 맞춘 길이, 구어체)
+        return system_prompt(mfc, parse_cond(cond))
     if variant.startswith('final'):  # 8단계: 그때의 우리 모델 기본값(2단계 탈선은 DER_W)
-        return old_der(system_prompt(mfc, parse_cond(cond)), parse_cond(cond))
+        return old_der(system_prompt(mfc, parse_cond(cond), natural=False), parse_cond(cond))
     if variant.startswith('model'):  # 우리 모델(patient_model): model 일상 질문, model_short 짧게, model_clin 병원 질문, model_clinfix 병원 질문 + 말투 유지
         return old_der(system_prompt(mfc, parse_cond(cond), keep_form=variant == 'model_clinfix', short=variant == 'model_short',
-                                     levels=('DER',)), parse_cond(cond))  # 7단계 조건 그대로 재현
+                                     levels=('DER',), natural=False), parse_cond(cond))  # 7단계 조건 그대로 재현
     if variant.startswith(('tlc_first', 'tf_life')):
         prof = {'BASE': {}, 'DER': {'DER': 2}, 'DERS': {'DER': 2}, 'INC': {'INC': 2}, 'POV': {'POV': 2},
                 'MIX': {'DER': 1, 'PER': 1, 'POV': 1}, 'DERW': {'DER': 2},
                 'TAN': {'TAN': 2}, 'PER': {'PER': 2}, 'CLANG': {'CLANG': 2}}[cond]  # DERS: 탈선 + 120단어 상한, MIX: v1과 같은 섞음 설정
         return system_prompt(mfc, prof, symptoms=not variant.startswith('tf_life'), max_words=120 if cond == 'DERS' else None,
-                             der_original=False, keep_form=False) if cond != 'DERW' else             old_der(system_prompt(mfc, prof, keep_form=False), prof)  # 앞 단계 조건 그대로 재현
+                             der_original=False, keep_form=False, natural=False) if cond != 'DERW' else \
+            old_der(system_prompt(mfc, prof, keep_form=False, natural=False), prof)  # 앞 단계 조건 그대로 재현
     s = patient_prompt(mfc, cond)
     for k in VARIANTS[variant]:
         a, b = CUT[k]
@@ -126,7 +135,7 @@ def run(name, jobs, chat, only=None):
     ivs = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else []
     have = {(i['patient'], i['variant'], i['cond'], i['rep']) for i in ivs}
     for v, cond, rep in jobs:
-        for pid in (MFC if not (v == 'tlc_first_day' or v.startswith(('model', 'final'))) else {**MFC, **NEW}):
+        for pid in (MFC if not (v == 'tlc_first_day' or v.startswith(('model', 'final', 'v10'))) else {**MFC, **NEW}):
             if only and pid not in only:
                 continue
             if (pid, v, cond, rep) in have:
@@ -136,7 +145,8 @@ def run(name, jobs, chat, only=None):
                 while temp() > 85:
                     time.sleep(30)
             t0, msgs, turns = time.time(), [{'role': 'system', 'content': variant_prompt({**MFC, **NEW}[pid], cond, v)}], []
-            for k, q in enumerate(DAY_QUESTIONS if v.endswith('_day') or v in ('model', 'model_short', 'final', 'final_x') else QUESTIONS):
+            qs = MIX_QUESTIONS if v.startswith('v10') else DAY_QUESTIONS if v.endswith('_day') or v in ('model', 'model_short', 'final', 'final_x') else QUESTIONS
+            for k, q in enumerate(qs):
                 msgs.append({'role': 'user', 'content': q})
                 a = chat(msgs)
                 msgs.append({'role': 'assistant', 'content': a})
@@ -215,8 +225,9 @@ def evaluate():
     sc.save()
     # 지표 기준: 같은 모델, 같은 환자의 FULL BASE 턴(v1 인물은 v1 BASE 턴)
     # 질문 묶음이 다르면 기준도 따로: 병원 질문은 FULL BASE, 일상 질문은 tlc_first_day BASE(v1 인물은 v1 BASE)
-    d['qset'] = (d.variant.str.endswith('_day') | d.variant.isin(['v1', 'model', 'model_short', 'final', 'final_x'])).map({True: 'day', False: 'clinic'})
-    normal = d.variant.isin(['FULL', 'v1', 'tlc_first_day', 'model_clin']) & (d.cond == 'BASE')  # model_short BASE는 비교 대상이라 기준에서 뺀다
+    d['qset'] = (d.variant.str.endswith('_day') | d.variant.isin(['v1', 'model', 'model_short', 'final', 'final_x', 'v10_old', 'v10_new'])).map({True: 'day', False: 'clinic'})
+    normal = d.variant.isin(['FULL', 'v1', 'tlc_first_day', 'model_clin']) & (d.cond == 'BASE')
+    normal |= (d.variant == 'v10_old') & (d.cond == 'BASE')  # 10단계는 질문이 달라 같은 질문의 9단계 기본값 BASE를 기준으로  # model_short BASE는 비교 대상이라 기준에서 뺀다
     z = pd.concat([flags(g, normal[g.index]) for _, g in d.groupby(['model', 'patient', 'qset'])]).loc[d.index]
     d = pd.concat([d, z.add_prefix('z_')], axis=1)
     item = dict(BASE=None, DER='derailment', DERS='derailment', DERW='derailment', INC='incoherence', POV='poverty_of_speech', MIX=None,
@@ -305,6 +316,39 @@ def eval_iv():
 
 
 
+# 10단계: 현실성(PATIENTSIM 방식 1~4점, 현서님 설계의 앵커 요약을 정신과 면담에 맞춤). 면담 전체와 환자 배경만 준다
+REAL_RUBRIC = """You are an experienced psychiatrist. You will read the background of a simulated psychiatric outpatient and a whole transcribed interview with that patient. Judge only this: given the background, is the patient's overall way of communicating what you would expect from a real patient in a psychiatric outpatient interview?
+
+Score 1-4:
+1 = very artificial; the speech is clearly unlike a real patient or does not fit the background.
+2 = partly natural, but unrealistic features are noticeable (for example speech-like monologues, literary or written-style language, answers far too long or too polished for the question, explaining symptoms like a textbook).
+3 = mostly natural, with only small awkward points.
+4 = very convincing; this is how a real patient with this background could talk.
+
+Do not reward or penalise the presence or severity of symptoms, short answers, or disorganised speech by themselves; judge whether the whole way of talking is believable for a real patient. Ignore voice, face and body, which you cannot see.
+
+Return one CSV row per interview: id,score,reason (reason under 25 words, no commas)."""
+
+
+def blind_real():
+    """10단계 면담(v10_old, v10_new)을 섞어 면담 단위 현실성 채점 파일로. 조건은 숨기고 환자 배경(summary)만 붙인다."""
+    from patient_model import summary
+    d = load()
+    d = d[(d.model == 'gpt') & d.variant.isin(['v10_old', 'v10_new'])]
+    ivs = [(k, g.sort_values('turn')) for k, g in d.groupby(['patient', 'variant', 'cond'])]
+    random.Random(23).shuffle(ivs)
+    key = {}
+    with open(os.path.join(OUT, 'real_blind.jsonl'), 'w', encoding='utf-8') as f:
+        for j, (k, g) in enumerate(ivs):
+            key[f'R{j:02d}'] = '_'.join(k)
+            f.write(json.dumps(dict(id=f'R{j:02d}', background=summary({**MFC, **NEW}[k[0]]),
+                                    turns=[dict(question=q, answer=t) for q, t in zip(g.question, g.text)]), ensure_ascii=False) + '\n')
+    json.dump(key, open(os.path.join(OUT, 'real_key.json'), 'w'))
+    open(os.path.join(OUT, 'real_rubric.txt'), 'w', encoding='utf-8').write(REAL_RUBRIC)
+    print('interviews', len(ivs))
+
+
+
 def rate_gpt():
     """Claude와 같은 채점표로 GPT-4.1이 다시 채점한다(조건은 모름). 대상: P4~P6의 tlc_first_day, model, final 면담."""
     from tlc import RUBRIC, rate_items
@@ -324,6 +368,8 @@ if __name__ == '__main__':
     assert 'paralanguage' not in s and 'Verbal productivity”** controls' not in s and 'SECTION 4' in s and 'Avoid copying' in s
     a = sys.argv[1:]
     assert 'disjointed' in variant_prompt(m, 'DER2', 'final_x') and 'two to four times' not in variant_prompt(m, 'DER2', 'final_x')
+    assert 'whenever you talk for more than' in variant_prompt(m, 'DER2', 'v10_new') and 'disjointed' in variant_prompt(m, 'DER2', 'v10_old')
+    assert 'Never give a long speech' not in variant_prompt(m, 'DER2', 'v10_old') and 'two to four times' in variant_prompt(m, 'DER2', 'final')
     assert parse_cond('DER2INC1') == {'DER': 2, 'INC': 1} and parse_cond('BASE') == {}
     assert 'one or two words at most' in variant_prompt(m, 'POV3', 'final') and 'one or two words at most' not in variant_prompt(m, 'POV3', 'model')
     assert 'two to four times' in variant_prompt(m, 'DER2', 'final') and 'two to four times' in variant_prompt(m, 'DER2', 'model_clin')
@@ -345,6 +391,9 @@ if __name__ == '__main__':
         jobs = [('final', c, 0) for c in ['POV1', 'POV3', 'PER1', 'PER2', 'DER2INC1', 'POV2PER1']]
         jobs += [('final', c, 1) for c in ['BASE', 'DER2', 'INC2', 'POV2']]
         run('gpt', jobs, gpt(client(), Budget(os.path.join(OUT, 'spent_08.json'), cap=2.0)), only=['P4', 'P5', 'P6'])
+    elif a and a[0] == 'gpt_step10':  # 04 10단계: 말 길이와 구어체 전후 비교, 새 환자 P4~P6, 상한 2달러
+        jobs = [('v10_old', c, 0) for c in ['BASE', 'DER2', 'INC2']] + [('v10_new', c, 0) for c in ['BASE', 'DER2', 'INC2', 'POV2', 'PER2']]
+        run('gpt', jobs, gpt(client(), Budget(os.path.join(OUT, 'spent_10.json'), cap=2.0)), only=['P4', 'P5', 'P6'])
     elif a and a[0] == 'gpt_step9':  # 04 9단계: 원문 특징 탈선 문구, 새 환자 P4~P6, 반복 2회 (8단계 상한 파일)
         run('gpt', [('final_x', 'DER2', r) for r in range(2)], gpt(client(), Budget(os.path.join(OUT, 'spent_08.json'), cap=2.0)),
             only=['P4', 'P5', 'P6'])
@@ -369,4 +418,4 @@ if __name__ == '__main__':
         run('gpt', [('FULL', 'BASE', r) for r in range(2)] + [(a[1], c, r) for r in range(2) for c in ['BASE', 'DER', 'INC', 'POV']],
             gpt(client(), Budget(os.path.join(OUT, 'spent.json'))))
     elif a:
-        {'--blind': blind, '--eval': evaluate, '--blind-iv': blind_iv, '--eval-iv': eval_iv}[a[0]]()
+        {'--blind': blind, '--eval': evaluate, '--blind-iv': blind_iv, '--eval-iv': eval_iv, '--blind-real': blind_real}[a[0]]()
