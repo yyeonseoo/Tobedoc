@@ -266,6 +266,33 @@ def evaluate(model, sub=''):
     print(txt)
     return txt
 
+
+DEV_VARIANTS = {'cur': dict(), 'dx1': dict(step=13), 'dx2': dict(step=13, der_examples=True),
+                'dx3': dict(step=13, der_examples=True, der_most=True)}  # 13단계 탈선 다듬기 (dx3은 13b)
+
+
+def dev_der(model):
+    """개발: 기존 환자 P4~P6(팀 프로필 아님), 탈선 2단계, 질문 12개로 지시문 세 가지."""
+    from patient_model import load_mfc
+    d = os.path.join(OUT, model, 'dev_der')
+    os.makedirs(d, exist_ok=True)
+    c, budget = client(), Budget(os.path.join(OUT, 'spent.json'), cap=CAP)
+    ip = os.path.join(d, 'interviews.json')
+    ivs, mfcs = load(ip, []), load_mfc()
+    for v, kw in DEV_VARIANTS.items():
+        for pid in ['P4', 'P5', 'P6']:
+            if any(i['pid'] == pid and i['arm'] == v for i in ivs):
+                continue
+            msgs, turns = [{'role': 'system', 'content': system_prompt(mfcs[pid], {'DER': 2}, **kw)}], []
+            for k, q in enumerate(QUESTIONS):
+                msgs.append({'role': 'user', 'content': q})
+                a = chat(c, budget, model, msgs)
+                msgs.append({'role': 'assistant', 'content': a})
+                turns.append({'turn': k + 1, 'question': q, 'text': a})
+            ivs.append(dict(pid=pid, arm=v, type=2, model=model, turns=turns))
+            json.dump(ivs, open(ip, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+            print(pid, v, [len(t['text'].split()) for t in turns], f'${budget.spent:.2f}', flush=True)
+
 if __name__ == '__main__':
     m = {'Profile': {}, 'x': 1}
     assert len(QUESTIONS) == 12 and len(CASES) == 12 and all(CASES[p][2] in TYPE_PROFILE for p in CASES)
@@ -276,6 +303,8 @@ if __name__ == '__main__':
         translate(a[1])
     elif a[:1] == ['blind']:
         blind(a[1])
+    elif a[:1] == ['dev-der']:
+        dev_der(a[1])
     elif a[:1] == ['blind-profile']:
         blind_real_profile(a[1])
     elif a[:1] == ['eval']:

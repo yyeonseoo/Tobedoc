@@ -69,6 +69,21 @@ DER_EXAMPLES = ('For example (the kind of thing, not the content; never reuse th
                 'yeah. I go to the shop on the corner, they changed the sign. My uncle had a boat. It doesn\'t sit right, so '
                 'they keep moving it. Anyway, the bus." Asked about sleep: "Not bad. The ceiling\'s white, they did it in '
                 'spring. That\'s when the letters came. You can\'t keep it all in the drawer, she said, but it was the blue one."')
+# 13단계(탈선 다듬기): 05에서 탈선이 "매 답 끝에 엉뚱한 꼬리를 같은 공식으로 붙인다"는 평을 받았다. 예시 두 개가 같은 모양이었다
+DER2_13 = ('- derailment: your ideas slip off the track onto other ideas that are only obliquely related or completely '
+           'unrelated. You put things side by side that have no meaningful connection, sentences do not hang together, and '
+           'you sometimes use "it", "they" or "that" without making clear who or what you mean. You do not notice when your '
+           'answer has drifted away from the question. This shows in about half of your longer answers, not in every one.')
+DER2_13B = DER2_13.replace('This shows in about half of your longer answers, not in every one.',
+                           'This shows in most of your longer answers, though not in every one.')  # 13b: dx2의 빈도만 올림
+DER_VARY_13 = ('Do not use one pattern. In particular, do not answer the question and then tack an unrelated remark onto the '
+               'end. Vary where and how you slip: sometimes you lose the thread right at the start, sometimes in the middle, '
+               'sometimes you never get to the point, sometimes you half come back, and some answers are fairly clear.')
+DER_EXAMPLES_13 = ('For example (the kind of thing, not the content; never reuse these words): asked about work: "Work, I was '
+                   'on the, they had the forms, the green ones. My cousin does that too, in the summer, with the boats." Asked '
+                   'about sleep: "Sleep is okay. Mostly okay. The thing about the neighbours, it is the same as the radio, you '
+                   'turn it and it is still there." Asked about family: "My mum calls on Sundays. She is fine, she worries. '
+                   'My brother moved, so."')
 OWN_WORDS = 'WHO YOU ARE below is background, not lines to recite: say things in your own words and do not repeat its sentences.'
 PER_LEVELS_12 = {
     1: ('- perseveration: you have one pet phrase of your own (make it up; do not take it from WHO YOU ARE) that keeps '
@@ -104,12 +119,13 @@ def summary(mfc, symptoms=True, quotes=True):
 
 
 def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True, keep_form=True, short=False,
-                  levels=('DER', 'POV', 'PER'), natural=True, step=12):
+                  levels=('DER', 'POV', 'PER'), natural=True, step=12, der_examples=False, der_most=False):
     """profile: {'DER': 2} 같은 TLC 설정. 빈 dict면 말하기 지시 없음. max_words: 답 길이 상한(없으면 자연스러운 길이).
     keep_form: 증상을 물어도 말투를 유지하라는 줄(병원 질문용). short: 대화처럼 두세 문장 길이로.
     natural: 질문에 맞춘 길이와 구어체(10단계). False면 9단계까지의 지시문.
     step: natural일 때 10이면 10단계 지시문, 11이면 와해형 길이(DIS_LENGTH), 답마다 변화(VARY), 보속증 문구(PER_LEVELS_11).
-    12면 배경의 예시 대사를 빼고, 탈선 2단계에 예시(DER_EXAMPLES), 보속증은 스스로 만든 표현(PER_LEVELS_12)."""
+    12면 배경의 예시 대사를 빼고, 탈선 2단계에 예시(DER_EXAMPLES), 보속증은 스스로 만든 표현(PER_LEVELS_12).
+    13이면 탈선 2단계를 DER2_13(긴 답의 절반 정도)과 패턴을 바꾸라는 줄(DER_VARY_13)로, der_examples=True면 모양이 다른 예시 셋."""
     out = ['You are role-playing a psychiatric patient answering questions in a clinical interview.', '', 'HOW YOU SPEAK']
     if profile:
         out += [('Your speech shows the following throughout the interview, whenever you say more than a few words '
@@ -128,8 +144,12 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True
                    'Apart from this, answer at a natural spoken length.' if profile else 'Answer at a natural spoken length.')
     if natural:
         out.append(SPOKEN)
-    if natural and step >= 12 and profile.get('DER') == 2:
+    if natural and step == 12 and profile.get('DER') == 2:
         out.append(DER_EXAMPLES)
+    if natural and step >= 13 and profile.get('DER') == 2:
+        out.append(DER_VARY_13)
+        if der_examples:
+            out.append(DER_EXAMPLES_13)
     if natural and step >= 12:
         out.append(OWN_WORDS)
     out += ['', 'WHO YOU ARE', summary(mfc, symptoms, quotes=not (natural and step >= 12)), '',
@@ -139,6 +159,8 @@ def system_prompt(mfc, profile, symptoms=True, max_words=None, der_original=True
     for t in (levels if der_original else ()):  # 단계별 원본 기준 문구로 바꿔 넣는다
         if profile.get(t):
             text = (PER_LEVELS_12 if step >= 12 else PER_LEVELS_11) if t == 'PER' and natural and step >= 11 else LEVEL_TEXT[t]
+            if t == 'DER' and natural and step >= 13 and profile[t] == 2:
+                text = {2: DER2_13B if der_most else DER2_13}
             i = s.index(LINE_START[t])
             s = s[:i] + text[profile[t]] + s[s.index('\n', i):]
     return s
@@ -179,6 +201,10 @@ if __name__ == '__main__':
     assert DIS_LENGTH in s and VARY in s and NATURAL_LENGTH in system_prompt(m, {}) and VARY not in system_prompt(m, {})
     assert VARY not in system_prompt(m, {'POV': 2}) and system_prompt(m, {'POV': 2}, step=11) == system_prompt(m, {'POV': 2}, step=10)
     assert 'exact phrases' in system_prompt(m, {'PER': 2}, step=11) and 'pet phrases' in system_prompt(m, {'PER': 2})
+    s13 = system_prompt(m, {'DER': 2}, step=13)
+    assert DER2_13 in s13 and DER_VARY_13 in s13 and DER_EXAMPLES not in s13 and DER_EXAMPLES_13 not in s13
+    assert DER_EXAMPLES_13 in system_prompt(m, {'DER': 2}, step=13, der_examples=True) and DER_VARY_13 not in system_prompt(m, {}, step=13)
+    assert DER2_13B in system_prompt(m, {'DER': 2}, step=13, der_examples=True, der_most=True)
     assert DER_EXAMPLES in system_prompt(m, {'DER': 2}) and DER_EXAMPLES not in system_prompt(m, {'DER': 2}, step=11)
     assert '"' not in summary(m, quotes=False) and '"' in summary(m) and OWN_WORDS in system_prompt(m, {}) and OWN_WORDS not in system_prompt(m, {}, step=11)
     s = system_prompt(m, {'DER': 2}, step=10)
